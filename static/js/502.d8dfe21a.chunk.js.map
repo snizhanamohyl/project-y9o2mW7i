@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/502.d8dfe21a.chunk.js","mappings":"gMAAe,SAASA,IACpB,OAAOC,EAAAA,EAAAA,KAAA,MAAAC,SAAI,oBACf,C","sources":["pages/ShoppingListPage/ShoppingListPage.jsx"],"sourcesContent":["export default function ShoppingListPage() {\n    return <h1>ShoppingListPage</h1>\n}"],"names":["ShoppingListPage","_jsx","children"],"sourceRoot":""}
