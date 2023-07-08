@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { Field} from 'formik';
+import { Field } from 'formik';
+import { NavLink } from 'react-router-dom';
 
 const Img = styled.img`
   width: 285px;
@@ -12,6 +13,12 @@ const Img = styled.img`
     width: 409px;
     height: 359px;
   }
+  @media screen and (min-width: 1440px) {
+    margin: 0;
+    width: 532px;
+    height: 468px;
+    margin-right: 115px;
+  }
 `;
 
 const Section = styled.div`
@@ -21,6 +28,9 @@ const Section = styled.div`
   position: relative;
   @media screen and (min-width: 768px) {
     height: 606px;
+  }
+  @media screen and (min-width: 1440px) {
+    background-image: none;
   }
 `;
 
@@ -43,6 +53,13 @@ const Wrapper = styled.div`
     height: 481px;
     padding-top: 44px;
     padding-left: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    height: 484px;
+  }
+  @media screen and (min-width: 1440px) {
+    position: static;
+    margin-bottom: 18px;
   }
 `;
 
@@ -108,13 +125,14 @@ const Button = styled.button`
   font-size: 16px;
   line-height: 1.13;
   color: #fafafa;
+  cursor: pointer;
   @media screen and (min-width: 768px) {
     width: 400px;
     height: 56px;
   }
 `;
 
-const Link = styled.a`
+const Link = styled(NavLink)`
   font-family: inherit;
   font-size: 14px;
   color: #fafafa;
@@ -125,6 +143,9 @@ const Link = styled.a`
   margin-top: -10px;
   @media screen and (min-width: 768px) {
     font-size: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-top: 0;
   }
 `;
 
@@ -156,6 +177,20 @@ const SvgPass = styled(Svg)`
   }
 `;
 
+const Container = styled.div`
+  @media screen and (min-width: 1440px) {
+    box-sizing:border-box;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 150px;
+    background-image: url(images/bg-desk.png);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+`;
+
 export {
   Img,
   Section,
@@ -168,4 +203,5 @@ export {
   Svg,
   SvgEmail,
   SvgPass,
+  Container,
 };

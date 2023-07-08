@@ -13,7 +13,7 @@ import {
   Svg,
   SvgEmail,
   SvgPass,
-  Forma,
+  Container,
 } from './RegisterPageStyles';
 
 const schema = yup.object().shape({
@@ -35,7 +35,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <>
+    <Container>
       <Img src="images/Registration.png" alt="signup" />
       <Section>
         <Wrapper>
@@ -100,8 +100,8 @@ export default function RegisterPage() {
             </Form>
           </Formik>
         </Wrapper>
-        <Link href="/">Sign in</Link>
+        <Link to="/signin">Sign in</Link>
       </Section>
-    </>
+    </Container>
   );
 }
