@@ -1,79 +1,85 @@
 import styled from 'styled-components';
+import bgDesk from '../../assets/images/welcomePage/bg.jpg';
+import bgDeskRetina from '../../assets/images/welcomePage/bg@2x.jpg';
+import bgTab from '../../assets/images/welcomePage/bgTab.jpg';
+import bgTabRetina from '../../assets/images/welcomePage/bgTab@2x.jpg';
+import bgMob from '../../assets/images/welcomePage/bgMob.jpg';
+import bgMobRetina from '../../assets/images/welcomePage/bgMob@2x.jpg';
 
-// export const WelcomeWrapper = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   width: 100vw;
-//   height: 100vh;
-//   justify-content: center;
-//   align-items: center;
-//   background-image: url('${bgMob}'),
-//     linear-gradient(
-//       180deg,
-//       rgba(0, 0, 0, 0.6) 46.3%,
-//       rgba(0, 0, 0, 0.35) 72.75%,
-//       rgba(0, 0, 0, 0) 100%
-//     );
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-position: center;
+export const WelcomeWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url('${bgMob}'),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 46.3%,
+      rgba(0, 0, 0, 0.35) 72.75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-//   @media (min-device-pixel-ratio: 2),
-//     (min-resolution: 192dpi),
-//     (min-resolution: 2dppx) {
-//     background-image: url('${bgMobRetina}'),
-//       linear-gradient(
-//         180deg,
-//         rgba(0, 0, 0, 0.6) 46.3%,
-//         rgba(0, 0, 0, 0.35) 72.75%,
-//         rgba(0, 0, 0, 0) 100%
-//       );
-//   }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('${bgMobRetina}'),
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6) 46.3%,
+        rgba(0, 0, 0, 0.35) 72.75%,
+        rgba(0, 0, 0, 0) 100%
+      );
+  }
 
-//   @media screen and (min-width: 768px) {
-//     background-image: url('${bgTab}'),
-//       linear-gradient(
-//         180deg,
-//         rgba(0, 0, 0, 0.6) 46.3%,
-//         rgba(0, 0, 0, 0.35) 72.75%,
-//         rgba(0, 0, 0, 0) 100%
-//       );
+  @media screen and (min-width: 768px) {
+    background-image: url('${bgTab}'),
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6) 46.3%,
+        rgba(0, 0, 0, 0.35) 72.75%,
+        rgba(0, 0, 0, 0) 100%
+      );
 
-//     @media (min-device-pixel-ratio: 2),
-//       (min-resolution: 192dpi),
-//       (min-resolution: 2dppx) {
-//       background-image: url('${bgTabRetina}'),
-//         linear-gradient(
-//           180deg,
-//           rgba(0, 0, 0, 0.6) 46.3%,
-//           rgba(0, 0, 0, 0.35) 72.75%,
-//           rgba(0, 0, 0, 0) 100%
-//         );
-//     }
-//   }
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('${bgTabRetina}'),
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.6) 46.3%,
+          rgba(0, 0, 0, 0.35) 72.75%,
+          rgba(0, 0, 0, 0) 100%
+        );
+    }
+  }
 
-//   @media screen and (min-width: 1200px) {
-//     background-image: url('${bgDesk}'),
-//       linear-gradient(
-//         180deg,
-//         rgba(0, 0, 0, 0.6) 46.3%,
-//         rgba(0, 0, 0, 0.35) 72.75%,
-//         rgba(0, 0, 0, 0) 100%
-//       );
+  @media screen and (min-width: 1200px) {
+    background-image: url('${bgDesk}'),
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6) 46.3%,
+        rgba(0, 0, 0, 0.35) 72.75%,
+        rgba(0, 0, 0, 0) 100%
+      );
 
-//     @media (min-device-pixel-ratio: 2),
-//       (min-resolution: 192dpi),
-//       (min-resolution: 2dppx) {
-//       background-image: url('${bgDeskRetina}'),
-//         linear-gradient(
-//           180deg,
-//           rgba(0, 0, 0, 0.6) 46.3%,
-//           rgba(0, 0, 0, 0.35) 72.75%,
-//           rgba(0, 0, 0, 0) 100%
-//         );
-//     }
-//   }
-// `;
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('${bgDeskRetina}'),
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.6) 46.3%,
+          rgba(0, 0, 0, 0.35) 72.75%,
+          rgba(0, 0, 0, 0) 100%
+        );
+    }
+  }
+`;
 
 
 export const Logo = styled.img`
