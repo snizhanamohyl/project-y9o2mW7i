@@ -1,12 +1,102 @@
 @import-normalize; /* bring in normalize.css styles */
 
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url(./fonts/Poppins/Poppins-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url(./fonts/Poppins/Poppins-Medium.ttf) format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url(./fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url(./fonts/Poppins/Poppins-Bold.ttf) format("truetype");
+  font-weight: bold;
+}
+
+:root {
+  --text-primary: #23262A;
+  --bg-color: #FAFAFA;
+  --title-color: #001833;
+  --pre-title-color: #3E4462;
+  --accent: #8BAA36;
+  --dark-accent: #22252A;
+  --light-green-bg: #EBF3D4;
+  --placeholder-color: #BDBDBD;
+  --border-bottom-color: #E0E0E0;
+  --line-color: #707070;
+  --input-bg-color: #D9D9D9;
+  --checkbox-color: rgba(126, 126, 126, 0.5);
+  --pagination-color: #656565;
+  --black: #000000;
+  --white: #FFFFFF;
+
+  --transition-time: 250ms;
+  --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.28px;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.36px;
+  }
+
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased; 
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 code {
