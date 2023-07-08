@@ -2,6 +2,8 @@ import { styled } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const StyledLink = styled(NavLink)`
+  display: flex;
+  align-items: center;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;

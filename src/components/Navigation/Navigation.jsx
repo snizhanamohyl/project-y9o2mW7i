@@ -1,3 +1,4 @@
+import SearchIcon from "components/SearchIcon/SearchIcon";
 import { NavWrap, StyledLink } from "./Navigation.styled";
 
 export default function Navigation() {
@@ -7,6 +8,6 @@ export default function Navigation() {
         <StyledLink to='/my'>My recipes</StyledLink>
         <StyledLink to='/favorite'>Favorites</StyledLink>
         <StyledLink to='/shopping-list'>Shopping list</StyledLink>
-        <StyledLink to='/search'>O</StyledLink>
+        <StyledLink to='/search'><SearchIcon/></StyledLink>
     </NavWrap>
 }
