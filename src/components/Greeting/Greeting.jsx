@@ -5,7 +5,7 @@ import {
   StyledText,
 
 } from './Greeting.styled';
-// import { AuthNav } from 'components/AuthNav/AuthNav';
+import AuthNav from '../AuthNav/AuthNav';
 
 export default function Greeting() { 
   return (
@@ -21,7 +21,7 @@ export default function Greeting() {
         your own recipes at any time.
       </StyledText>
 
-      {/* <AuthNav/> */}
+      <AuthNav/>
     </WelcomeWrapper>
   );
 }
