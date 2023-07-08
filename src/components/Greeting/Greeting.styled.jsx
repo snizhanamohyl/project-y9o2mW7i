@@ -88,21 +88,19 @@ export const Logo = styled.img`
 `;
 
 
-// export const StyledTitle = styled.h1`
-//   color: #fafafa;
-//   margin-top: 28px;
-//   margin-bottom: 14px;
-//   font-weight: 600;
-//   font-size: 24px;
-//   line-height: 24px;
-//   letter-spacing: -0.02em;
+export const StyledTitle = styled.h1`
+  color: #fafafa;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.48px;
+  margin: 0 0 14px 0;
 
-//   @media screen and (min-width: 768px) {
-//     margin-top: 42px;
-//     font-size: 28px;
-//     line-height: 28px;
-//   }
-// `;
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+    letter-spacing: -0.56px;
+  }
+`;
 
 // export const StyledText = styled.p`
 //     color: #fafafa;
