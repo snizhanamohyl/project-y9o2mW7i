@@ -1,3 +1,11 @@
+import SearchInput from 'components/SearchInput/SearchInput';
+import { Title } from './SearchPage.styled';
+
 export default function SearchPage() {
-    return <h1>SearchPage</h1>
+  return (
+    <>
+      <Title>Search</Title>
+      <SearchInput />
+    </>
+  );
 }
