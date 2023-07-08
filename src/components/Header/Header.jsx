@@ -1,3 +1,8 @@
+import Logo from "components/Logo/Logo";
+
 export default function Header() {
-    return <p>Header</p>
+    return <>
+        <Logo isFooter/>
+        <p>Header</p>
+    </>
 }
