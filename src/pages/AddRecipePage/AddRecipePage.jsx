@@ -5,7 +5,7 @@ import PopularRecipe from 'components/PopularRecipe';
 export default function AddRecipePage() {
   return (
     <>
-      <h1>AddRecipePage</h1>
+      <h1>Add recipe</h1>
       <AddRecipeForm />
       <FollowUs />
       <PopularRecipe />
