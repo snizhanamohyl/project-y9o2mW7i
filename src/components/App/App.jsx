@@ -5,6 +5,7 @@ import PrivateRoute from "components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "components/RestrictedRoute/RestrictedRoute";
 import SharedLayout from "components/SharedLayout/SharedLayout";
 
+const WelcomePage = lazy(()=> import('pages/WelcomePage/WelcomePage'))
 const MainPage = lazy(() => import('pages/MainPage/MainPage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 const SigninPage = lazy(() => import('pages/SigninPage/SigninPage'));
@@ -18,6 +19,7 @@ const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 export default function App() {  
   return <Routes>
+    <Route index element={<WelcomePage />} />
     <Route path='/signin' element={<RestrictedRoute component={SigninPage} redirectTo='/signin'/>}></Route>
     <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/register' />}></Route>
 
