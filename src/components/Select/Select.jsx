@@ -1,8 +1,17 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { Wrapper, Button, ButtonText, List, Option } from './Select.styled';
+import {
+  Wrapper,
+  Button,
+  ButtonText,
+  ListWrapper,
+  List,
+  Option,
+  ScrollBar,
+} from './Select.styled';
 import Sprite from 'assets/images/sprite.svg';
+import 'simplebar-react/dist/simplebar.min.css';
 
 export default function Select({ options, currentOption, onSelect }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,11 +25,15 @@ export default function Select({ options, currentOption, onSelect }) {
         </svg>
       </Button>
 
-      <List isOpen={isOpen}>
-        {options.map(({ label, value }) => (
-          <Option onClick={() => onSelect(value)}>{label}</Option>
-        ))}
-      </List>
+      <ListWrapper isOpen={isOpen}>
+        <ScrollBar>
+          <List>
+            {options.map(({ label, value }) => (
+              <Option onClick={() => onSelect(value)}>{label}</Option>
+            ))}
+          </List>
+        </ScrollBar>
+      </ListWrapper>
     </Wrapper>
   );
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SimpleBar from 'simplebar-react';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -24,19 +25,25 @@ export const ButtonText = styled.span`
   font-size: 12px;
   font-style: normal;
   line-height: 12px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
-export const List = styled.ul`
+export const ListWrapper = styled.div`
   position: absolute;
   top: 100%;
   right: 0;
   z-index: 10;
 
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+`;
+
+export const List = styled.ul`
   margin: 0;
   padding: 4px 14px;
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   min-width: 100%;
-  max-height: 144px;
   width: max-content;
 
   background-color: var(--white);
@@ -44,7 +51,7 @@ export const List = styled.ul`
   border-radius: 6px;
   box-shadow: 0px 6.518518447875977px 7.8222222328186035px 0px
     rgba(0, 0, 0, 0.03);
-  overflow: auto;
+  /* overflow: auto; */
 `;
 
 export const Option = styled.li`
@@ -58,4 +65,22 @@ export const Option = styled.li`
   line-height: normal;
   letter-spacing: -0.24px;
   opacity: 0.5;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+`;
+
+export const ScrollBar = styled(SimpleBar)`
+  min-width: 100%;
+  width: max-content;
+  max-height: 144px;
+
+  .simplebar-scrollbar::before {
+    background-color: var(--scroll-bar-color);
+    width: 4px;
+  }
+  .simplebar-scrollbar.simplebar-visible::before {
+    opacity: 1;
+  }
 `;
