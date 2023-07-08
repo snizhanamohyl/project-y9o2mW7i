@@ -1,4 +1,4 @@
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 // export const WelcomeWrapper = styled.section`
 //   display: flex;
@@ -75,6 +75,17 @@
 //   }
 // `;
 
+
+export const Logo = styled.img`
+  width: 54px;
+  height: 54px;
+  margin-bottom: 44px;
+
+  @media screen and (min-width: 768px) {
+    width: 68px;
+    height: 68px;
+  }
+`;
 
 
 // export const StyledTitle = styled.h1`
