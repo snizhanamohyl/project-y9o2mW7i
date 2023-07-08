@@ -1,45 +1,47 @@
-@import-normalize; /* bring in normalize.css styles */
-
 @font-face {
-  font-family: "Poppins";
-  src: local("Poppins"), url(./fonts/Poppins/Poppins-Regular.ttf) format("truetype");
+  font-family: 'Poppins';
+  src: local('Poppins'),
+    url(./fonts/Poppins/Poppins-Regular.ttf) format('truetype');
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: local("Poppins"), url(./fonts/Poppins/Poppins-Medium.ttf) format("truetype");
+  font-family: 'Poppins';
+  src: local('Poppins'),
+    url(./fonts/Poppins/Poppins-Medium.ttf) format('truetype');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: local("Poppins"), url(./fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
+  font-family: 'Poppins';
+  src: local('Poppins'),
+    url(./fonts/Poppins/Poppins-SemiBold.ttf) format('truetype');
   font-weight: 600;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: local("Poppins"), url(./fonts/Poppins/Poppins-Bold.ttf) format("truetype");
+  font-family: 'Poppins';
+  src: local('Poppins'),
+    url(./fonts/Poppins/Poppins-Bold.ttf) format('truetype');
   font-weight: bold;
 }
 
 :root {
-  --text-primary: #23262A;
-  --bg-color: #FAFAFA;
+  --text-primary: #23262a;
+  --bg-color: #fafafa;
   --title-color: #001833;
-  --pre-title-color: #3E4462;
-  --accent: #8BAA36;
-  --dark-accent: #22252A;
-  --light-green-bg: #EBF3D4;
-  --placeholder-color: #BDBDBD;
-  --border-bottom-color: #E0E0E0;
+  --pre-title-color: #3e4462;
+  --accent: #8baa36;
+  --dark-accent: #22252a;
+  --light-green-bg: #ebf3d4;
+  --placeholder-color: #bdbdbd;
+  --border-bottom-color: #e0e0e0;
   --line-color: #707070;
-  --input-bg-color: #D9D9D9;
+  --input-bg-color: #d9d9d9;
   --checkbox-color: rgba(126, 126, 126, 0.5);
   --pagination-color: #656565;
   --black: #000000;
-  --white: #FFFFFF;
+  --white: #ffffff;
 
   --transition-time: 250ms;
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,7 +62,7 @@ body {
   }
 
   color: var(--text-primary);
-  -webkit-font-smoothing: antialiased; 
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
