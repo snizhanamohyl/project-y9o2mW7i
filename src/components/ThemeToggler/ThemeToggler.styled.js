@@ -7,6 +7,10 @@ export const SwitchBody = styled.button`
   border-radius: 50px;
   background-color: #efefef;
   box-shadow: 0px 6px 8px 3px rgba(0, 0, 0, 0.1) inset;
+
+  @media (max-width: 1439px) {
+    display: none;
+  }
 `;
 
 export const Switch = styled.div`
