@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import { Form, Button, Input } from './SearchInput.styled';
 
-export default function SearchInput() {
+export const SearchInput = () => {
   return (
     <Formik
       initialValues={{
@@ -23,4 +23,4 @@ export default function SearchInput() {
       </Form>
     </Formik>
   );
-}
+};
