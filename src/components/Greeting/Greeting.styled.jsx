@@ -102,25 +102,24 @@ export const StyledTitle = styled.h1`
   }
 `;
 
-// export const StyledText = styled.p`
-//     color: #fafafa;
-//     font-weight: 400;
-//     font-size: 14px;
-//     line-height: 18px;
-//     text-align: center;
-//     letter-spacing: -0.02em;
-//     margin-bottom: 44px;
-//     padding: 0 35px;
+export const StyledText = styled.p`
+  width: 305px;
+  color: #fafafa;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.286;
+  letter-spacing: -0.28px;
+  margin: 0 0 40px 0;
 
-// @media screen and (min-width: 768px) {
-//     font-size: 18px;
-//     line-height: 24px;
-//     margin-bottom: 42px;
-//     padding: 0 134px;
-// }
+  @media screen and (min-width: 768px) {
+    width: 505px;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -0.36px;
+  }
 
-// @media screen and (min-width: 1440px) {
-//     margin-bottom: 40px;
-//     padding: 0 448px;
-// }
-// `;
+  @media screen and (min-width: 1200px) {
+    width: 540px;
+  }
+`;
