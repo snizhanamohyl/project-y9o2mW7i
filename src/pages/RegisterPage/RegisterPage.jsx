@@ -14,12 +14,25 @@ import {
   SvgEmail,
   SvgPass,
   Container,
+  Error,
+  ErrorEmail,
+  ErrorPass,
 } from './RegisterPageStyles';
 
 const schema = yup.object().shape({
-  name: yup.string().required(),
-  email: yup.string().email().required(),
-  password: yup.string().min(6).max(16).required(),
+  name: yup
+    .string()
+    .required('Name is required')
+    .matches(/^[aA-zZ\s]+$/, 'Only alphabets are allowed for this field '),
+  email: yup
+    .string()
+    .email('Please enter a valid email')
+    .required('Email is required'),
+  password: yup
+    .string()
+    .min(6, 'Password must contain at least 6 characters')
+    .max(16, 'Password must contain 16 characters at most')
+    .required('Password is required'),
 });
 
 const initialValues = {
@@ -29,6 +42,7 @@ const initialValues = {
 };
 
 export default function RegisterPage() {
+
   const handlesubmit = (values, { resetForm }) => {
     console.log(values);
     resetForm();
@@ -44,8 +58,10 @@ export default function RegisterPage() {
             initialValues={initialValues}
             validationSchema={schema}
             onSubmit={handlesubmit}
+            validateOnChange={false}
+            validateOnBlur={false}
           >
-            <Form>
+            <Form autoComplete="off">
               <Input type="text" name="name" placeholder="Name" />
               <Svg
                 viewBox="0 0 18 18"
@@ -59,8 +75,8 @@ export default function RegisterPage() {
                   strokeLinejoin="round"
                 />
               </Svg>
-              <ErrorMessage component="div" name="name" />
-              <Input type="email" name="email" placeholder="Email" />
+              <ErrorMessage component={Error} name="name" />
+              <Input name="email" placeholder="Email" />
               <SvgEmail
                 viewBox="0 0 18 18"
                 fill="none"
@@ -75,7 +91,7 @@ export default function RegisterPage() {
                   />
                 </g>
               </SvgEmail>
-              <ErrorMessage component="div" name="email" />
+              <ErrorMessage component={ErrorEmail} name="email" />
               <LastInput
                 type="password"
                 name="password"
@@ -95,7 +111,7 @@ export default function RegisterPage() {
                   />
                 </g>
               </SvgPass>
-              <ErrorMessage component="div" name="password" />
+              <ErrorMessage component={ErrorPass} name="password" />
               <Button type="submit">Sign up</Button>
             </Form>
           </Formik>

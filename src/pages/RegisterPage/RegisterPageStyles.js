@@ -83,27 +83,22 @@ const Input = styled(Field)`
   border-radius: 6px;
   border: 0.5px solid #fafafa;
   background-color: transparent;
+  color: #fafafa;
+  padding-left: 45px;
   ::placeholder,
   ::-webkit-input-placeholder {
     color: #fafafa;
-    padding-left: 40px;
+    padding-left: 7px;
   }
   :-ms-input-placeholder {
     color: #fafafa;
-    padding-left: 40px;
+    padding-left: 7px;
   }
   @media screen and (min-width: 768px) {
     width: 400px;
     height: 59px;
     font-size: 18px;
     margin-bottom: 24px;
-    ::placeholder,
-    ::-webkit-input-placeholder {
-      padding-left: 50px;
-    }
-    :-ms-input-placeholder {
-      padding-left: 50px;
-    }
   }
 `;
 
@@ -159,7 +154,7 @@ const Svg = styled.svg`
     width: 24px;
     height: 24px;
     top: 112px;
-    left: 65px;
+    left: 67px;
   }
 `;
 
@@ -179,7 +174,7 @@ const SvgPass = styled(Svg)`
 
 const Container = styled.div`
   @media screen and (min-width: 1440px) {
-    box-sizing:border-box;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -190,6 +185,22 @@ const Container = styled.div`
     background-size: contain;
   }
 `;
+
+const Error = styled.div`
+  font-size: 14px;
+  color: #E74A3B;
+  position: absolute;
+  top: 155px;
+`;
+
+const ErrorEmail = styled(Error)`
+  top: 237px;
+`;
+
+const ErrorPass = styled(Error)`
+  top: 320px;
+`;
+
 
 export {
   Img,
@@ -204,4 +215,7 @@ export {
   SvgEmail,
   SvgPass,
   Container,
+  Error,
+  ErrorEmail,
+  ErrorPass,
 };

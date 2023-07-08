@@ -80,27 +80,22 @@ const Input = styled(Field)`
   border-radius: 6px;
   border: 0.5px solid #fafafa;
   background-color: transparent;
+  color: #fafafa;
+  padding-left: 45px;
   ::placeholder,
   ::-webkit-input-placeholder {
     color: #fafafa;
-    padding-left: 40px;
+    padding-left: 7px;
   }
   :-ms-input-placeholder {
     color: #fafafa;
-    padding-left: 40px;
+    padding-left: 7px;
   }
   @media screen and (min-width: 768px) {
     width: 400px;
     height: 59px;
     font-size: 18px;
     margin-bottom: 24px;
-    ::placeholder,
-    ::-webkit-input-placeholder {
-      padding-left: 50px;
-    }
-    :-ms-input-placeholder {
-      padding-left: 50px;
-    }
   }
 `;
 
