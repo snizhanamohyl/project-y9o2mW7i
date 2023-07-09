@@ -1,4 +1,4 @@
-import SearchIcon from "components/SearchIcon/SearchIcon";
+import SearchIcon from "iconsComponents/SearchIcon/SearchIcon";
 import { NavWrap, StyledLink } from "./Navigation.styled";
 
 export default function Navigation() {
