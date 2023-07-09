@@ -11,39 +11,38 @@ export const BtnWrapper = styled.div`
 `;
 
 export const SignUpBtn = styled(NavLink)`
-  font-size: 14px;
   line-height: 1.5;
   display: block;
   padding: 12px 24px;
   border-radius: 24px 44px;
   border: none;
-  background-color: #8baa36;
-  color: #fafafa;
+  background-color: var(--accent);
+  color: var(--bg-color);
   cursor: pointer;
 
-&:hover, &:focus {
-  background-color: #22252a;
-}
-@media screen and (min-width: 768px) {
+  &:hover,
+  &:focus {
+    background-color: var(--dark-accent);
+  }
+  @media screen and (min-width: 768px) {
     font-size: 16px;
     padding: 22px 44px;
-}
+  }
 `;
 
 export const SignInBtn = styled(NavLink)`
-  font-size: 14px;
   line-height: 1.5;
   display: block;
   background-color: transparent;
   padding: 12px 24px;
   border-radius: 24px 44px;
-  border: 2px solid #fafafa;
-  color: #fafafa;
+  border: 2px solid var(--bg-color);
+  color: var(--bg-color);
   cursor: pointer;
 
 &:hover, &:focus {
-  background-color: #22252a;
-  border: 2px solid #22252a;
+  background-color: var(--dark-accent);
+  border: 2px solid var(--dark-accent);
 }
 @media screen and (min-width: 768px) {
     font-size: 16px;

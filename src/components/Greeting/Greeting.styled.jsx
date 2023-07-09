@@ -6,6 +6,8 @@ import bgTabRetina from '../../assets/images/welcomePage/bgTab@2x.jpg';
 import bgMob from '../../assets/images/welcomePage/bgMob.jpg';
 import bgMobRetina from '../../assets/images/welcomePage/bgMob@2x.jpg';
 
+const retinaDisplay = `(min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)`;
+
 export const WelcomeWrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -13,74 +15,31 @@ export const WelcomeWrapper = styled.section`
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-image: url('${bgMob}'),
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.6) 46.3%,
-      rgba(0, 0, 0, 0.35) 72.75%,
-      rgba(0, 0, 0, 0) 100%
-    );
+  background-image: url('${bgMob}'), var(--bcg-gradient)
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: url('${bgMobRetina}'),
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.6) 46.3%,
-        rgba(0, 0, 0, 0.35) 72.75%,
-        rgba(0, 0, 0, 0) 100%
-      );
+  @media ${retinaDisplay} {
+    background-image: url('${bgMobRetina}'), var(--bcg-gradient);
   }
 
   @media screen and (min-width: 768px) {
-    background-image: url('${bgTab}'),
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.6) 46.3%,
-        rgba(0, 0, 0, 0.35) 72.75%,
-        rgba(0, 0, 0, 0) 100%
-      );
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url('${bgTabRetina}'),
-        linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.6) 46.3%,
-          rgba(0, 0, 0, 0.35) 72.75%,
-          rgba(0, 0, 0, 0) 100%
-        );
+    background-image: url('${bgTab}'), var(--bcg-gradient);
+    
+    @media ${retinaDisplay} {
+      background-image: url('${bgTabRetina}'), var(--bcg-gradient);
     }
   }
 
-  @media screen and (min-width: 1200px) {
-    background-image: url('${bgDesk}'),
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.6) 46.3%,
-        rgba(0, 0, 0, 0.35) 72.75%,
-        rgba(0, 0, 0, 0) 100%
-      );
-
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url('${bgDeskRetina}'),
-        linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.6) 46.3%,
-          rgba(0, 0, 0, 0.35) 72.75%,
-          rgba(0, 0, 0, 0) 100%
-        );
+  @media screen and (min-width: 1440px) {
+    background-image: url('${bgDesk}'),var(--bcg-gradient); 
+    
+    @media ${retinaDisplay} {
+      background-image: url('${bgDeskRetina}'), var(--bcg-gradient);
     }
   }
 `;
-
 
 export const Logo = styled.img`
   width: 54px;
@@ -93,14 +52,13 @@ export const Logo = styled.img`
   }
 `;
 
-
 export const StyledTitle = styled.h1`
-  color: #fafafa;
+  color: var(--bg-color);
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.48px;
-  margin: 0 0 14px 0;
+  margin-bottom: 14px;
 
   @media screen and (min-width: 768px) {
     font-size: 28px;
@@ -110,13 +68,9 @@ export const StyledTitle = styled.h1`
 
 export const StyledText = styled.p`
   width: 305px;
-  color: #fafafa;
+  color: var(--bg-color);
   text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.286;
-  letter-spacing: -0.28px;
-  margin: 0 0 40px 0;
+  margin-bottom: 40px;
 
   @media screen and (min-width: 768px) {
     width: 505px;
@@ -125,7 +79,7 @@ export const StyledText = styled.p`
     letter-spacing: -0.36px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1440px) {
     width: 540px;
   }
 `;

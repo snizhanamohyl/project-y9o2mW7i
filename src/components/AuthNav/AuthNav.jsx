@@ -4,7 +4,7 @@ export default function AuthNav() {
   return (
     <BtnWrapper>
       <SignUpBtn to="/register">Registration</SignUpBtn>
-      <SignInBtn to="/signIn">SignIn</SignInBtn>
+      <SignInBtn to="/signin">Sign In</SignInBtn>
     </BtnWrapper>
   );
 }
