@@ -1,34 +1,82 @@
 import styled from 'styled-components';
 
+export const ShoppingListTitle = styled.h1`
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.56px;
+  color: var(--title-color);
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.64px;
+    margin-top: 72px;
+    margin-bottom: 72px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 44px;
+    line-height: 44px;
+    letter-spacing: -0.88px;
+    margin-top: 102px;
+    margin-bottom: 72px;
+  }
+`;
+
 export const ShoppingListHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  padding: 17px 40px;
+  padding: 10px;
   background-color: var(--accent);
   border-radius: 8px;
   color: var(--bg-color);
-  font-size: 18px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 600;
-  line-height: 26px;
-  margin-bottom: 50px;
+  line-height: 18px;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 50px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 17px 40px;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 50px;
+  }
 `;
 
 export const OptionNameContainer = styled.div`
   display: flex;
-  gap: 142px;
-`;
+  gap: 24px;
 
-export const OptionContainer = styled.div`
-  display: flex;
-  gap: 174px;
+  @media screen and (min-width: 768px) {
+    gap: 78px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 142px;
+  }
 `;
 
 export const ShoppingList = styled.ul`
-padding: 0 30px;
-`
+  padding: 0;
+
+  @media screen and (min-width: 1440px) {
+    padding: 0 40px;
+  }
+`;
 
 export const ShoppingListItem = styled.li`
   display: flex;
@@ -37,15 +85,15 @@ export const ShoppingListItem = styled.li`
   list-style: none;
   padding: 0;
   color: var(--pre-title-color);
-  font-size: 16px;
+  font-size: 10px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  height: 140px;
+  font-weight: 600;
+  line-height: 18px;
+  height: 84px;
   position: relative;
 
   &:not(:last-child) {
-    margin-bottom: 44px;
+    margin-bottom: 24px;
   }
 
   &::after {
@@ -53,29 +101,38 @@ export const ShoppingListItem = styled.li`
     left: 0;
     right: 0;
     bottom: 0;
-    content: "";
+    content: '';
     height: 0px;
     width: 100%;
     border: 1px solid var(--border-bottom-color);
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+    height: 140px;
+
+    &:not(:last-child) {
+      margin-bottom: 44px;
+    }
+  }
 `;
 
-export const NumberContainer = styled.span`
-  width: 68px;
-  padding: 4px 0;
-  background-color: var(--accent);
-  border-radius: 4px;
-  text-align: center;
-  color: var(--bg-color);
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 26px;
-`
-
 export const RemoveBtn = styled.button`
-  background-color: var(--bg-color);
-  width: 20px;
-  height: 20px;
-  margin-right: 28px;
-`
+  background-color: transparent;
+  width: 14px;
+  height: 14px;
+  margin-right: 19px;
+
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+    margin-right: 45px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 20px;
+    height: 20px;
+    margin-right: 28px;
+  }
+`;

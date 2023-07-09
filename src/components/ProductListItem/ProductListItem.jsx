@@ -10,7 +10,7 @@ export default function ProductListItem({children, name, number, url}) {
     <>
         <ProductContainer>
         <ProductImg src={url}/>
-        <p>{name}</p>
+        <span>{name}</span>
         </ProductContainer>
         <OptionContainer>
         <NumberContainer>{number}</NumberContainer>

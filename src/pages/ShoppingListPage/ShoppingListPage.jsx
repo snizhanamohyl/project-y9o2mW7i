@@ -4,12 +4,15 @@ import {
   OptionNameContainer,
   ShoppingList,
   RemoveBtn,
+  ShoppingListTitle
 } from './ShoppingListPage.styled';
 import ProductListItem from 'components/ProductListItem/ProductListItem';
+import RemoveIcon from 'iconsComponents/RemoveIcon/RemoveIcon';
 
 export default function ShoppingListPage() {
   return (
     <div>
+      <ShoppingListTitle>Shopping list</ShoppingListTitle>
       <ShoppingListHeader>
         <p>Products</p>
         <OptionNameContainer>
@@ -20,22 +23,22 @@ export default function ShoppingListPage() {
       <ShoppingList>
       <ShoppingListItem>
         <ProductListItem name="Cucumber" number="5">
-            <RemoveBtn>X</RemoveBtn>
+            <RemoveBtn><RemoveIcon/></RemoveBtn>
           </ProductListItem>
         </ShoppingListItem>
         <ShoppingListItem>
         <ProductListItem name="Cucumber" number="5">
-            <RemoveBtn>X</RemoveBtn>
+            <RemoveBtn><RemoveIcon/></RemoveBtn>
           </ProductListItem>
         </ShoppingListItem>
         <ShoppingListItem>
         <ProductListItem name="Cucumber" number="5">
-            <RemoveBtn>X</RemoveBtn>
+            <RemoveBtn><RemoveIcon/></RemoveBtn>
           </ProductListItem>
         </ShoppingListItem>
         <ShoppingListItem>
         <ProductListItem name="Cucumber" number="5">
-            <RemoveBtn>X</RemoveBtn>
+            <RemoveBtn><RemoveIcon/></RemoveBtn>
           </ProductListItem>
         </ShoppingListItem>
       </ShoppingList>
