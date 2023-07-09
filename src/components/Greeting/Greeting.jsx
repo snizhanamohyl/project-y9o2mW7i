@@ -11,7 +11,7 @@ export default function Greeting() {
   return (
     <WelcomeWrapper>
       <Logo
-        src={require('../../assets/svg/logo.svg').default}
+        src={require('../../images/welcomePage/logo.svg').default}
         alt="logo"
       />
       <StyledTitle>Welcome to the app!</StyledTitle>
