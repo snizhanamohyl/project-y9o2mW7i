@@ -23,6 +23,8 @@ export const SignUpBtn = styled(NavLink)`
   &:hover,
   &:focus {
     background-color: var(--dark-accent);
+    transition: var(--transition-time) var(--transition-function);
+}
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -43,8 +45,9 @@ export const SignInBtn = styled(NavLink)`
 &:hover, &:focus {
   background-color: var(--dark-accent);
   border: 2px solid var(--dark-accent);
+  transition: var(--transition-time) var(--transition-function);
 }
 @media screen and (min-width: 768px) {
     font-size: 16px;
-    padding: 22px 44px;
+    padding: 22px 44px;}
 `;
