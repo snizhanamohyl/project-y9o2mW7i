@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import bgDesk from '../../assets/images/welcomePage/bg.jpg';
-import bgDeskRetina from '../../assets/images/welcomePage/bg@2x.jpg';
-import bgTab from '../../assets/images/welcomePage/bgTab.jpg';
-import bgTabRetina from '../../assets/images/welcomePage/bgTab@2x.jpg';
-import bgMob from '../../assets/images/welcomePage/bgMob.jpg';
-import bgMobRetina from '../../assets/images/welcomePage/bgMob@2x.jpg';
+import bgDesk from '../../images/welcomePage/bg.jpg';
+import bgDeskRetina from '../../images/welcomePage/bg@2x.jpg';
+import bgTab from '../../images/welcomePage/bgTab.jpg';
+import bgTabRetina from '../../images/welcomePage/bgTab@2x.jpg';
+import bgMob from '../../images/welcomePage/bgMob.jpg';
+import bgMobRetina from '../../images/welcomePage/bgMob@2x.jpg';
 
 const retinaDisplay = `(min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)`;
 
