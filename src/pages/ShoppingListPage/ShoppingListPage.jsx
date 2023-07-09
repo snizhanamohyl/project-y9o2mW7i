@@ -5,7 +5,9 @@ import {
   OptionNameContainer,
   ShoppingList,
   NumberContainer,
+  RemoveBtn,
 } from './ShoppingListPage.styled';
+import ProductListItem from 'components/ProductListItem/ProductListItem';
 
 export default function ShoppingListPage() {
   return (
@@ -18,28 +20,28 @@ export default function ShoppingListPage() {
         </OptionNameContainer>
       </ShoppingListHeader>
       <ShoppingList>
-        <ShoppingListItem>
-          <p>Salmon</p>
-          <OptionContainer>
-            <NumberContainer>5</NumberContainer>
-            <button>X</button>
-          </OptionContainer>
+      <ShoppingListItem>
+        <ProductListItem name="Cucumber" number="5">
+            <RemoveBtn>X</RemoveBtn>
+          </ProductListItem>
         </ShoppingListItem>
         <ShoppingListItem>
-          <p>Cucumber</p>
-          <OptionContainer>
-            <NumberContainer>400g</NumberContainer>
-            <button>X</button>
-          </OptionContainer>
+        <ProductListItem name="Cucumber" number="5">
+            <RemoveBtn>X</RemoveBtn>
+          </ProductListItem>
         </ShoppingListItem>
         <ShoppingListItem>
-          <p>Lime</p>
-          <OptionContainer>
-            <NumberContainer>1</NumberContainer>
-            <button>X</button>
-          </OptionContainer>
+        <ProductListItem name="Cucumber" number="5">
+            <RemoveBtn>X</RemoveBtn>
+          </ProductListItem>
+        </ShoppingListItem>
+        <ShoppingListItem>
+        <ProductListItem name="Cucumber" number="5">
+            <RemoveBtn>X</RemoveBtn>
+          </ProductListItem>
         </ShoppingListItem>
       </ShoppingList>
+
     </div>
   );
 }
