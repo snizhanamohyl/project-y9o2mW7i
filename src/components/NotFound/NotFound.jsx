@@ -11,9 +11,7 @@ export default function NotFound() {
               srcset="./images/errMob 1x, ./images/ErrMob@2x.jpg 2x" src="./images/errMob.jpg" alt="Error"/>
           </ErrorPic>
           <ErrorTitle>We are sorry,</ErrorTitle>
-          <ErrorText>
-            but the page you were looking for can’t be found..
-          </ErrorText>
+          <ErrorText>but the page you were looking for can’t be found..</ErrorText>
         </ErrorThumb>
       </ErrorWrapper>
     );
