@@ -25,7 +25,7 @@ export const SignUpBtn = styled(NavLink)`
     background-color: var(--dark-accent);
     transition: background-color var(--transition-time) var(--transition-function);
 }
-  }
+  
   @media screen and (min-width: 768px) {
     font-size: 16px;
     padding: 22px 44px;
