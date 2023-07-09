@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const BtnWrapper = styled.div`
   display: flex;
@@ -9,7 +10,7 @@ export const BtnWrapper = styled.div`
   }
 `;
 
-export const SignUpBtn = styled.NavLink`
+export const SignUpBtn = styled(NavLink)`
   font-size: 14px;
   line-height: 1.5;
   display: block;
@@ -19,7 +20,7 @@ export const SignUpBtn = styled.NavLink`
   background-color: #8baa36;
   color: #fafafa;
   cursor: pointer;
-}
+
 &:hover, &:focus {
   background-color: #22252a;
 }
@@ -29,7 +30,7 @@ export const SignUpBtn = styled.NavLink`
 }
 `;
 
-export const SignInBtn = styled.NavLink`
+export const SignInBtn = styled(NavLink)`
   font-size: 14px;
   line-height: 1.5;
   display: block;
@@ -39,7 +40,7 @@ export const SignInBtn = styled.NavLink`
   border: 2px solid #fafafa;
   color: #fafafa;
   cursor: pointer;
-}
+
 &:hover, &:focus {
   background-color: #22252a;
   border: 2px solid #22252a;
