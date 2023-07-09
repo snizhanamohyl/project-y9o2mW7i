@@ -64,7 +64,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #fafafa;
+  color: var(--bg-color);
   font-size: 24;
   line-height: 1.17;
   margin-bottom: 18px;
@@ -81,17 +81,17 @@ const Input = styled(Field)`
   height: 45px;
   margin-bottom: 12px;
   border-radius: 6px;
-  border: 0.5px solid #fafafa;
+  border: 0.5px solid var(--bg-color);
   background-color: transparent;
-  color: #fafafa;
+  color: var(--bg-color);
   padding-left: 45px;
   ::placeholder,
   ::-webkit-input-placeholder {
-    color: #fafafa;
+    color: var(--bg-color);
     padding-left: 7px;
   }
   :-ms-input-placeholder {
-    color: #fafafa;
+    color: var(--bg-color);
     padding-left: 7px;
   }
   @media screen and (min-width: 768px) {
@@ -113,13 +113,13 @@ const Button = styled.button`
   box-sizing: border-box;
   width: 279px;
   height: 45px;
-  background-color: #8baa36;
+  background-color: var(--accent);
   padding: 12px 106px;
   border-radius: 6px;
   font-family: inherit;
   font-size: 16px;
   line-height: 1.13;
-  color: #fafafa;
+  color: var(--bg-color);
   cursor: pointer;
   @media screen and (min-width: 768px) {
     width: 400px;
@@ -130,7 +130,7 @@ const Button = styled.button`
 const Link = styled(NavLink)`
   font-family: inherit;
   font-size: 14px;
-  color: #fafafa;
+  color: var(--bg-color);
   margin: auto;
   display: block;
   text-align: center;
