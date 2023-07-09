@@ -32,7 +32,7 @@ padding: 0 30px;
 
 export const ShoppingListItem = styled.li`
   display: flex;
-  align-items: baseline;
+  align-items: top;
   justify-content: space-between;
   list-style: none;
   padding: 0;
@@ -71,4 +71,11 @@ export const NumberContainer = styled.span`
   font-style: normal;
   font-weight: 600;
   line-height: 26px;
+`
+
+export const RemoveBtn = styled.button`
+  background-color: var(--bg-color);
+  width: 20px;
+  height: 20px;
+  margin-right: 28px;
 `
