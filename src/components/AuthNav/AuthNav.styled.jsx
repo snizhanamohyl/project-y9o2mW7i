@@ -23,7 +23,7 @@ export const SignUpBtn = styled(NavLink)`
   &:hover,
   &:focus {
     background-color: var(--dark-accent);
-    transition: var(--transition-time) var(--transition-function);
+    transition: background-color var(--transition-time) var(--transition-function);
 }
   }
   @media screen and (min-width: 768px) {
@@ -42,12 +42,14 @@ export const SignInBtn = styled(NavLink)`
   color: var(--bg-color);
   cursor: pointer;
 
-&:hover, &:focus {
-  background-color: var(--dark-accent);
-  border: 2px solid var(--dark-accent);
-  transition: var(--transition-time) var(--transition-function);
-}
-@media screen and (min-width: 768px) {
+  &:hover,
+  &:focus {
+    background-color: var(--dark-accent);
+    border: 2px solid var(--dark-accent);
+    transition: background-color, border, var(--transition-time) var(--transition-function);
+  }
+  @media screen and (min-width: 768px) {
     font-size: 16px;
-    padding: 22px 44px;}
+    padding: 22px 44px;
+  }
 `;
