@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import background from '../../assets/images/hero-2x.png';
-import frame from '../../assets/images/btn.png';
 
 export const SectionHero = styled.section`
   width: 375px;
@@ -14,16 +13,16 @@ export const SectionHero = styled.section`
   &:before {
     content: '';
     position: absolute;
-    width: 375px;
-    height: 455px;
-    top: 0;
-    left: 0;
-    z-index: -1;
     width: 100%;
     height: 100%;
+    top: -93px;
+    left: 0;
+    z-index: -1;
+
     background-image: url(${background});
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 375px;
+    background-size: contain;
   }
 `;
 
@@ -76,6 +75,7 @@ export const ContainerTimePrepare = styled.div`
 
 export const IngredientsListHead = styled.section`
   padding: 32px 0 50px 0;
+  background-color: var(--bg-color);
 `;
 export const NameColumn = styled.div`
   display: flex;
@@ -134,6 +134,7 @@ export const ListItem = styled.li`
 
 export const RecipeInstruction = styled.section`
   padding-bottom: 100px;
+  background-color: var(--bg-color);
 `;
 
 export const Title = styled.h3`
