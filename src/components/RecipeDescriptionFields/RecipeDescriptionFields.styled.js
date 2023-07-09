@@ -16,24 +16,31 @@ export const FileWrapper = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 268px;
+  height: 268px;
 
-  background-color: var(--accent);
+  background-color: ${({ $isEmpty }) =>
+    $isEmpty ? 'var(--accent)' : 'transparent'};
   border-radius: 8px;
   cursor: pointer;
 
   svg {
     transition: transform var(--transition-time) var(--transition-function);
   }
+
   &:hover {
     svg {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 
   @media screen and (min-width: 768px) {
     margin: 0;
   }
+`;
+
+export const Preview = styled.img`
+  object-fit: cover;
+  height: auto;
 `;
 
 export const Container = styled.label`

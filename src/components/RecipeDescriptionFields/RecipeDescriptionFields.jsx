@@ -9,6 +9,7 @@ import {
   Row,
   Input,
   Text,
+  Preview,
 } from './RecipeDescriptionFields.styled.js';
 import Sprite from 'assets/images/sprite.svg';
 
@@ -25,7 +26,11 @@ export default function RecipeDescriptionFields({
 }) {
   const [categories, setCategories] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('');
-  const [cookingTime, setCookingtime] = useState('');
+  const [cookingTime, setCookingTime] = useState('');
+
+  const [imgUrl, setImgUrl] = useState('');
+
+  console.log(imgUrl);
 
   useEffect(() => {
     setCategories(categoriesData);
@@ -40,11 +45,26 @@ export default function RecipeDescriptionFields({
 
   return (
     <Wrapper>
-      <FileWrapper>
-        <input type="file" hidden />
-        <svg width={64} height={64}>
-          <use href={Sprite + '#icon-camera'}></use>
-        </svg>
+      <FileWrapper $isEmpty={!imgUrl}>
+        <input
+          type="file"
+          accept="image/*"
+          hidden
+          onChange={({ target }) => {
+            const file = target.files[0];
+            if (typeof file === 'object') {
+              setImgUrl(URL.createObjectURL(file));
+            }
+          }}
+        />
+
+        {imgUrl ? (
+          <Preview src={imgUrl} alt="Preview" />
+        ) : (
+          <svg width={64} height={64}>
+            <use href={Sprite + '#icon-camera'}></use>
+          </svg>
+        )}
       </FileWrapper>
 
       <div>
@@ -71,7 +91,7 @@ export default function RecipeDescriptionFields({
             <Select
               options={periods}
               currentOption={cookingTime}
-              onSelect={setCookingtime}
+              onSelect={setCookingTime}
             />
           </Row>
         </Container>

@@ -37,7 +37,7 @@ export const ListWrapper = styled.div`
   right: 0;
   z-index: 10;
 
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+  display: ${({ $isOpen }) => ($isOpen ? 'block' : 'none')};
 `;
 
 export const List = styled.ul`

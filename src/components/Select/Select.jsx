@@ -25,11 +25,13 @@ export default function Select({ options, currentOption, onSelect }) {
         </svg>
       </Button>
 
-      <ListWrapper isOpen={isOpen}>
+      <ListWrapper $isOpen={isOpen}>
         <ScrollBar>
           <List>
             {options.map(({ label, value }) => (
-              <Option onClick={() => onSelect(value)}>{label}</Option>
+              <Option key={value} onClick={() => onSelect(value)}>
+                {label}
+              </Option>
             ))}
           </List>
         </ScrollBar>
