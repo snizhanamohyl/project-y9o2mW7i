@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Title = styled.h2`
+export const MainPageTitle = styled.h2`
   margin-top: 104px;
   font-size: 44px;
   font-weight: 600;

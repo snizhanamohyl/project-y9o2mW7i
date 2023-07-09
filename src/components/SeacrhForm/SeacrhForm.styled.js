@@ -9,17 +9,26 @@ export const Form = styled.form`
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 54px 104px 54px 104px;
+  &:focus-within {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  &:focus-within button {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const Input = styled.input`
+  width: 295px;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   border: none;
   outline: none;
+  /* &:-internal-autofill-selected {
+    background-color: var(--bg-color) !important;
+  } */
 `;
 
 export const Button = styled.button`
@@ -30,7 +39,6 @@ export const Button = styled.button`
   line-height: 1.5;
   color: var(--bg-color);
   background-color: var(--accent);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 54px 104px 54px 104px;
   cursor: pointer;
 `;
