@@ -21,18 +21,19 @@ export default function Select({ options, currentOption, onSelect }) {
       return;
     }
 
-    const handleClick = ({ target }) => {
-      const clickedList = target.closest(`.${List.styledComponentId}`);
-      if (!clickedList) {
-        setIsOpen(false);
-        document.removeEventListener('click', handleClick);
-      }
+    const handleNextClick = () => {
+      setIsOpen(false);
+      document.removeEventListener('click', handleNextClick);
     };
 
     setTimeout(() => {
-      document.addEventListener('click', handleClick);
+      document.addEventListener('click', handleNextClick);
     }, 0);
   }, [isOpen]);
+
+  const handleSelect = value => {
+    onSelect(value);
+  };
 
   return (
     <Wrapper>
@@ -47,7 +48,7 @@ export default function Select({ options, currentOption, onSelect }) {
         <ScrollBar>
           <List>
             {options.map(({ label, value }) => (
-              <Option key={value} onClick={() => onSelect(value)}>
+              <Option key={value} onClick={() => handleSelect(value)}>
                 {label}
               </Option>
             ))}
