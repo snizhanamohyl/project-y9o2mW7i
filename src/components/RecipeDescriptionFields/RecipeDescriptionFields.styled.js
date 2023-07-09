@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   margin-bottom: 68px;
 
   @media screen and (min-width: 768px) {
@@ -41,6 +41,7 @@ export const FileWrapper = styled.label`
 export const Preview = styled.img`
   object-fit: cover;
   height: auto;
+  border-radius: 8px;
 `;
 
 export const Container = styled.label`

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
@@ -15,6 +15,24 @@ import 'simplebar-react/dist/simplebar.min.css';
 
 export default function Select({ options, currentOption, onSelect }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const handleClick = ({ target }) => {
+      const clickedList = target.closest(`.${List.styledComponentId}`);
+      if (!clickedList) {
+        setIsOpen(false);
+        document.removeEventListener('click', handleClick);
+      }
+    };
+
+    setTimeout(() => {
+      document.addEventListener('click', handleClick);
+    }, 0);
+  }, [isOpen]);
 
   return (
     <Wrapper>

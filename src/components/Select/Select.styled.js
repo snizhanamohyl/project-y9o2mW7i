@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   position: relative;
 `;
 
-export const Button = styled.button`
+export const Button = styled.div`
   display: flex;
   align-items: center;
 
@@ -51,7 +51,6 @@ export const List = styled.ul`
   border-radius: 6px;
   box-shadow: 0px 6.518518447875977px 7.8222222328186035px 0px
     rgba(0, 0, 0, 0.03);
-  /* overflow: auto; */
 `;
 
 export const Option = styled.li`
