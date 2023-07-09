@@ -1,10 +1,8 @@
 import {
   ShoppingListHeader,
   ShoppingListItem,
-  OptionContainer,
   OptionNameContainer,
   ShoppingList,
-  NumberContainer,
   RemoveBtn,
 } from './ShoppingListPage.styled';
 import ProductListItem from 'components/ProductListItem/ProductListItem';
