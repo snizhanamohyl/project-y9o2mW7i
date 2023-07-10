@@ -14,6 +14,7 @@ export const HeaderWrap = styled.div`
 export const Menu = styled.div`
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 `;
 
 export const NavigationMenu = styled.div`

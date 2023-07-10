@@ -1,4 +1,6 @@
 import { styled } from 'styled-components';
+import heroArrowTab from '../../images/hero-arrow-tab.svg';
+import heroArrowDesk from '../../images/hero-arrow.svg';
 
 export const HeroWrap = styled.div`
   position: relative;
@@ -17,6 +19,27 @@ export const HeroWrap = styled.div`
   @media (min-width: 1440px) {
     padding-top: 164px;
     padding-bottom: 268px;
+  }
+
+  &::after {
+    @media (min-width: 768px) {
+      content: '';
+      position: absolute;
+      z-index: 5;
+      width: 186px;
+      height: 115px;
+      bottom: 84px;
+      right: 32px;
+      background: url(${heroArrowTab}) no-repeat;
+    }
+
+    @media (min-width: 1440px) {
+      width: 220px;
+      height: 148px;
+      bottom: 114px;
+      right: 70px;
+      background: url(${heroArrowDesk}) no-repeat;
+    }
   }
 `;
 
