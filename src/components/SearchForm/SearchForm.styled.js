@@ -4,7 +4,6 @@ export const Form = styled.form`
   width: 295px;
   display: flex;
   align-items: center;
-  margin-top: 24px;
   background-color: var(--white);
   border: 1px solid var(--input-border-color);
   border-radius: 54px 104px 54px 104px;

@@ -1,12 +1,7 @@
 import { styled } from 'styled-components';
-// import bgSpinachImg from '../../images/hero-bg-spinach-mob.png';
-// import bgSpinachMiniImg from '../../images/hero-bg-spinach-mini-mob.png';
-// import bgShapeImg from '../../images/bg-shape-mob.svg';
-// import bgSpinachImgTab from '../../images/hero-bg-spinach-tab.png';
-// import bgSpinachMiniImgTab from '../../images/hero-bg-spinach-mini-tab.png';
-// import bgShapeImgTab from '../../images/bg-shape-tab.svg';
 
 export const HeroWrap = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,14 +63,17 @@ export const Descr = styled.p`
 `;
 
 export const Image = styled.img`
+  margin-bottom: 24px;
+
   @media (min-width: 768px) {
+    margin-bottom: 0;
     position: absolute;
-    top: 159px;
-    right: 0px;
+    top: 95px;
+    right: -32px;
   }
 
   @media (min-width: 1440px) {
-    top: 126px;
-    right: 184px;
+    top: 64px;
+    right: 84px;
   }
 `;
