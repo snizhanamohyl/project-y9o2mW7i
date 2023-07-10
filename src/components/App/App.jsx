@@ -18,7 +18,6 @@ const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 export default function App() {  
   return <Routes>
-    <Route index element={<PrivateRoute component={NotFoundPage} redirectTo='/' />}></Route>
     <Route path='/signin' element={<RestrictedRoute component={SigninPage} redirectTo='/signin'/>}></Route>
     <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/register' />}></Route>
 
@@ -30,7 +29,7 @@ export default function App() {
       <Route path='/favorite' element={<PrivateRoute component={FavoritePage} redirectTo='/favorite' />}></Route>
       <Route path='/shopping-list' element={<PrivateRoute component={ShoppingListPage} redirectTo='/shopping-list' />}></Route>
       <Route path='/search' element={<PrivateRoute component={SearchPage} redirectTo='/search' />}></Route>
-      {/* <Route path='*' element={<NotFoundPage />}></Route> */}
+      <Route path='*' element={<NotFoundPage />}></Route>
     </Route>    
   </Routes>
 };

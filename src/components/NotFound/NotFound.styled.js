@@ -2,49 +2,63 @@ import { styled } from 'styled-components';
 
 export const ErrorWrapper = styled.div`
   display: flex;
-  margin: 200px 58px 0px 58px;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 100px 0;
+  max-width: 259px;
 
   @media screen and (min-width: 768px) {
-    margin: 200px 130px 0px 130px;
+    padding: 100px 0 204px 0;
+    max-width: 498px;
   }
+
   @media screen and (min-width: 1440px) {
-    margin: 200px 470px 0px 470px;
+    padding: 138px 0 204px 0;
   }
 `;
 
-export const ErrorThumb = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 10px;
-  margin-bottom: 100px;
+export const ErrorPicThumb = styled.div`
+  height: 170px;
+  margin-bottom: 14px;
+
+  @media screen and (min-width: 768px) {
+    height: 327px;
+    margin-bottom: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    height: 331px;
+  }
 `;
 
 export const ErrorTitle = styled.p`
+  display: block;
+  margin-bottom: 8px;
   font-weight: 600;
   font-size: 18px;
-  line-height: 20px;
-  letter-spacing: -0.02em;
-  color: #000000;
+  line-height: 1.1;
+  letter-spacing: -0.36px;
+  color: var(--black);
 
   @media screen and (min-width: 768px) {
+    margin-bottom: 14px;
     font-size: 24px;
-    line-height: 24px;
+    line-height: 1;
+  }
+  @media screen and (min-width: 1440px) {
+    letter-spacing: -0.48px;
   }
 `;
 
 export const ErrorText = styled.p`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
   text-align: center;
-  letter-spacing: -0.02em;
-  color: #000000;
+  color: var(--black);
   opacity: 0.5;
 
-@media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     font-size: 18px;
-    line-height: 24px;
+    line-height: 1.33;
+    letter-spacing: -0.36px;
   }
 `;
