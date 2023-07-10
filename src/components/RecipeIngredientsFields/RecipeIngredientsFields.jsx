@@ -12,7 +12,7 @@ import {
   NumericInput,
   RemoveBtn,
 } from './RecipeIngredientsFields.styled';
-import Sprite from 'assets/images/sprite.svg';
+import Sprite from 'assets/sprite.svg';
 import units from 'data/units.json';
 
 export default function RecipeIngredientsFields() {
@@ -46,7 +46,7 @@ export default function RecipeIngredientsFields() {
           </InputWrapper>
           <RemoveBtn type="button">
             <svg stroke="var(--black)">
-              <use href={Sprite + '#icon-cross'}></use>
+              <use href={Sprite + '#icon-X'}></use>
             </svg>
           </RemoveBtn>
         </Item>

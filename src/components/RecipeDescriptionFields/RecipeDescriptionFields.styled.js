@@ -39,8 +39,9 @@ export const FileWrapper = styled.label`
 `;
 
 export const Preview = styled.img`
+  max-width: auto;
   object-fit: cover;
-  height: auto;
+  height: 100%;
   border-radius: 8px;
 `;
 

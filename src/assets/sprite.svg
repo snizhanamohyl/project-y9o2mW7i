@@ -147,7 +147,7 @@
 			<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857"
 				d="M4 16h24M4 8h24M4 24h16"></path>
 		</symbol>
-		<symbol id="icon-Minus" viewBox="0 0 32 32">
+		<symbol id="icon-minus" viewBox="0 0 32 32">
 			<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M5 16h22">
 			</path>
 		</symbol>
@@ -157,10 +157,10 @@
 			</path>
 		</symbol>
 		<symbol id="icon-plus" viewBox="0 0 32 32">
-			<path fill="none" stroke="#fafafa" style="stroke: var(--color1, #fafafa)" stroke-linejoin="round"
-				stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M16 6.667v18.667"></path>
-			<path fill="none" stroke="#fafafa" style="stroke: var(--color1, #fafafa)" stroke-linejoin="round"
-				stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M6.667 16h18.667"></path>
+			<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556"
+				d="M16 6.667v18.667"></path>
+			<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556"
+				d="M6.667 16h18.667"></path>
 		</symbol>
 		<symbol id="icon-Plus-14x14" viewBox="0 0 32 32">
 			<path fill="none" stroke="#8baa36" style="stroke: var(--color4, #8baa36)" stroke-linejoin="round"

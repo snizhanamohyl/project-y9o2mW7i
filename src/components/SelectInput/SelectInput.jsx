@@ -10,7 +10,7 @@ import {
   Option,
   ScrollBar,
 } from './SelectInput.styled';
-import Sprite from 'assets/images/sprite.svg';
+import Sprite from 'assets/sprite.svg';
 import 'simplebar-react/dist/simplebar.min.css';
 
 export default function SelectInput({ options, currentOption, onSelect }) {
@@ -40,7 +40,7 @@ export default function SelectInput({ options, currentOption, onSelect }) {
       <Label type="button" onClick={() => setIsOpen(state => !state)}>
         <InputFiled type="text" />
         <svg width={20} height={20}>
-          <use href={Sprite + '#icon-arrow-down'}></use>
+          <use href={Sprite + '#icon-down'}></use>
         </svg>
       </Label>
 

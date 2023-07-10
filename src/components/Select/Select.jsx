@@ -10,7 +10,7 @@ import {
   Option,
   ScrollBar,
 } from './Select.styled';
-import Sprite from 'assets/images/sprite.svg';
+import Sprite from 'assets/sprite.svg';
 import 'simplebar-react/dist/simplebar.min.css';
 
 export default function Select({ options, currentOption, onSelect }) {
@@ -38,9 +38,9 @@ export default function Select({ options, currentOption, onSelect }) {
   return (
     <Wrapper>
       <Button type="button" onClick={() => setIsOpen(state => !state)}>
-        <ButtonText>{currentOption ? currentOption : 'Select..'}</ButtonText>
+        <ButtonText>{currentOption ? currentOption : 'Select...'}</ButtonText>
         <svg width={20} height={20}>
-          <use href={Sprite + '#icon-arrow-down'}></use>
+          <use href={Sprite + '#icon-down'}></use>
         </svg>
       </Button>
 

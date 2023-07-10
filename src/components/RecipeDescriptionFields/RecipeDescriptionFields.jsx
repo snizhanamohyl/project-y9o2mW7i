@@ -11,7 +11,7 @@ import {
   Text,
   Preview,
 } from './RecipeDescriptionFields.styled.js';
-import Sprite from 'assets/images/sprite.svg';
+import Sprite from 'assets/sprite.svg';
 
 import categoriesData from 'data/categories.json';
 
@@ -62,7 +62,7 @@ export default function RecipeDescriptionFields({
           <Preview src={imgUrl} alt="Preview" />
         ) : (
           <svg width={64} height={64}>
-            <use href={Sprite + '#icon-camera'}></use>
+            <use href={Sprite + '#icon-add-foto'}></use>
           </svg>
         )}
       </FileWrapper>
