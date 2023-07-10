@@ -13,7 +13,7 @@ export default function SearchForm({ onType }){
       <Input
         id="search"
         name="search"
-        placeholder="Type your request"
+        placeholder="salad"
         type="text"
         onChange={handleChangeQueue}
       />
