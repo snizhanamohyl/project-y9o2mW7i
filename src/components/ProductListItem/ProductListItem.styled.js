@@ -45,6 +45,7 @@ export const ProductImg = styled.img`
   display: block;
   width: 60px;
   height: 60px;
+  border-radius: 8px;
 
   @media screen and (min-width: 768px) {
     width: 93px;
@@ -59,6 +60,25 @@ export const ProductContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     gap: 16px;
+  }
+`;
+
+export const RemoveBtn = styled.button`
+  background-color: transparent;
+  width: 14px;
+  height: 14px;
+  margin-right: 19px;
+
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+    margin-right: 45px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 20px;
+    height: 20px;
+    margin-right: 28px;
   }
 `;
 

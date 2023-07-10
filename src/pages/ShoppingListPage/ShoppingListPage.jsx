@@ -3,13 +3,18 @@ import {
   ShoppingListItem,
   OptionNameContainer,
   ShoppingList,
-  RemoveBtn,
-  ShoppingListTitle
+  ShoppingListTitle,
 } from './ShoppingListPage.styled';
 import ProductListItem from 'components/ProductListItem/ProductListItem';
-import RemoveIcon from 'iconsComponents/RemoveIcon/RemoveIcon';
+import { useState } from 'react';
 
 export default function ShoppingListPage() {
+  const [items, setItems] = useState([]);
+
+  const onDeleteClick = id => {
+    setItems(state => state.filter(item => item.id !== id));
+  };
+
   return (
     <div>
       <ShoppingListTitle>Shopping list</ShoppingListTitle>
@@ -21,28 +26,38 @@ export default function ShoppingListPage() {
         </OptionNameContainer>
       </ShoppingListHeader>
       <ShoppingList>
-      <ShoppingListItem>
-        <ProductListItem name="Cucumber" number="5">
-            <RemoveBtn><RemoveIcon/></RemoveBtn>
-          </ProductListItem>
-        </ShoppingListItem>
-        <ShoppingListItem>
-        <ProductListItem name="Cucumber" number="5">
-            <RemoveBtn><RemoveIcon/></RemoveBtn>
-          </ProductListItem>
-        </ShoppingListItem>
-        <ShoppingListItem>
-        <ProductListItem name="Cucumber" number="5">
-            <RemoveBtn><RemoveIcon/></RemoveBtn>
-          </ProductListItem>
-        </ShoppingListItem>
-        <ShoppingListItem>
-        <ProductListItem name="Cucumber" number="5">
-            <RemoveBtn><RemoveIcon/></RemoveBtn>
-          </ProductListItem>
-        </ShoppingListItem>
+        {items &&
+          items.map(item => {
+            return (
+              <ShoppingListItem key={item.id}>
+                <ProductListItem
+                  name={item.name}
+                  number={item.number}
+                  id={item.id}
+                  onDeleteClick={onDeleteClick}
+                >
+                </ProductListItem>
+              </ShoppingListItem>
+            );
+          })}
       </ShoppingList>
-
     </div>
   );
 }
+
+{/* <ShoppingListItem>
+<ProductListItem name="Cucumber" number="5">
+</ProductListItem>
+</ShoppingListItem>
+<ShoppingListItem>
+<ProductListItem name="Cucumber" number="5">
+</ProductListItem>
+</ShoppingListItem>
+<ShoppingListItem>
+<ProductListItem name="Cucumber" number="5">
+</ProductListItem>
+</ShoppingListItem>
+<ShoppingListItem>
+<ProductListItem name="Cucumber" number="5">
+</ProductListItem>
+</ShoppingListItem> */}

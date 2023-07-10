@@ -2,10 +2,12 @@ import {
   OptionContainer,
   NumberContainer,
   ProductImg,
-  ProductContainer
+  ProductContainer,
+  RemoveBtn
 } from './ProductListItem.styled';
+import RemoveIcon from 'iconsComponents/RemoveIcon/RemoveIcon';
 
-export default function ProductListItem({children, name, number, url}) {
+export default function ProductListItem({id, name, number, url, onDeleteClick}) {
   return (
     <>
         <ProductContainer>
@@ -14,7 +16,9 @@ export default function ProductListItem({children, name, number, url}) {
         </ProductContainer>
         <OptionContainer>
         <NumberContainer>{number}</NumberContainer>
-          {children}
+        <RemoveBtn onClick={() => onDeleteClick(id)}>
+              <RemoveIcon />
+            </RemoveBtn>
         </OptionContainer>
     </>
   );

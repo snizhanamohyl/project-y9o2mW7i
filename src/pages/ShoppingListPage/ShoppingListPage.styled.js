@@ -71,7 +71,11 @@ export const OptionNameContainer = styled.div`
 `;
 
 export const ShoppingList = styled.ul`
-  padding: 0;
+  padding: 0 8px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 
   @media screen and (min-width: 1440px) {
     padding: 0 40px;
@@ -118,21 +122,4 @@ export const ShoppingListItem = styled.li`
   }
 `;
 
-export const RemoveBtn = styled.button`
-  background-color: transparent;
-  width: 14px;
-  height: 14px;
-  margin-right: 19px;
 
-  @media screen and (min-width: 768px) {
-    width: 20px;
-    height: 20px;
-    margin-right: 45px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 20px;
-    height: 20px;
-    margin-right: 28px;
-  }
-`;
