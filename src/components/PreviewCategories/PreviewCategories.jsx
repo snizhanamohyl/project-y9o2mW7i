@@ -2,16 +2,29 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import {
-   RecipeListMob,RecipeCardMob,
-   RecipeTitleMob,ImgBoxMob,
+   OtherBtnIcon,
+   RecipeListMob, RecipeCardMob,
+   RecipeTitleMob, ImgBoxMob,
    RecipeImgMob, RecipMob,
    SeeAllLinkMob,
-
+} from "./PreviewCategories.styledMob";
+import {
    RecipeListTab, RecipeCardTab,
-   ImgBoxTab, RecipTab, GroupNameTab,
-   SeeAllLinkTab
-} from "./PreviewCategories.styled";
-import OtherBtnIcon from "../../iconsComponents/OtherBtnIcon/OtherBtnIcon";
+   ImgBoxTab, RecipTab,
+   GroupNameTab, SeeAllLinkTab,
+   SeeAllLinkTabLast
+} from "./PreviewCategories.styledTab";
+
+import {
+   GroupNameDesk, RecipeListDesk,
+   RecipeCardDesk, ImgBoxDesk,
+   RecipDesk, SeeAllLinkDesk,
+   SeeAllLinkDeskLast, OtherBtnIconDesk
+} from "./PreviewCategories.styledDesk";
+   
+   
+
+
 import { getAllRecipes } from "../../utils/getAllRecipes";
 
 
@@ -28,10 +41,15 @@ export default function PreviewCategories() {
     }, []);
    
    const recipeMob = recipes.slice(0, 4);
-   const breakfast = recipes.filter(el => el.title === "Breakfast").slice(0, 2);
-   const miscellaneous = recipes.filter(el => el.title === "Miscellaneous").slice(0, 2);
-   const chicken = recipes.filter(el => el.title === "Chicken").slice(0, 2);
-   const desserts = recipes.filter(el => el.title === "Desserts").slice(0, 2);
+   const breakfastTab = recipes.filter(el => el.title === "Breakfast").slice(0, 2);
+   const miscellaneousTab = recipes.filter(el => el.title === "Miscellaneous").slice(0, 2);
+   const chickenTab = recipes.filter(el => el.title === "Chicken").slice(0, 2);
+   const dessertsTab = recipes.filter(el => el.title === "Desserts").slice(0, 2);
+
+   const breakfastDesk = recipes.filter(el => el.title === "Breakfast").slice(0, 4);
+   const miscellaneousDesk = recipes.filter(el => el.title === "Miscellaneous").slice(0, 4);
+   const chickenDesk = recipes.filter(el => el.title === "Chicken").slice(0, 4);
+   const dessertsDesk = recipes.filter(el => el.title === "Desserts").slice(0, 4);
    
 
 
@@ -39,19 +57,22 @@ export default function PreviewCategories() {
       return (
          <>
             <RecipeListMob>
-               {recipeMob.map(recip =>
-                  <RecipeCardMob key={recip.id}>
-                     <RecipeTitleMob>{recip.title}</RecipeTitleMob>
+               {recipeMob.map(recipe =>
+                  <RecipeCardMob key={recipe.id}>
+                     <RecipeTitleMob>{recipe.title}</RecipeTitleMob>
                      <ImgBoxMob>
                         <RecipeImgMob src="#" alt="img" />
-                        <RecipMob>{recip.dish}</RecipMob>
+                        <RecipMob>{recipe.dish}</RecipMob>
                      </ImgBoxMob>
                      <Link to={`#`}>
                         <SeeAllLinkMob>See all</SeeAllLinkMob>
                      </Link>
                   </RecipeCardMob>)}
             </RecipeListMob>
-            <OtherBtnIcon/>
+            <Link to={"#"}>
+               <OtherBtnIcon>Other categories</OtherBtnIcon>
+            </Link>
+            
          </>
       )
    }
@@ -59,11 +80,11 @@ export default function PreviewCategories() {
       return (<>
          <GroupNameTab>Breakfast</GroupNameTab>
          <RecipeListTab>
-            {breakfast.map(recip => 
-               <RecipeCardTab key={recip.id}>
+            {breakfastTab.map(recipe => 
+               <RecipeCardTab key={recipe.id}>
                   <ImgBoxTab>
                     <RecipeImgMob src="#" alt="img" />
-                     <RecipTab>{recip.dish}</RecipTab>
+                     <RecipTab>{recipe.dish}</RecipTab>
                   </ImgBoxTab>
                 </RecipeCardTab>
             )}
@@ -75,11 +96,11 @@ export default function PreviewCategories() {
          
          <GroupNameTab>Miscellaneous</GroupNameTab>
          <RecipeListTab>
-            {miscellaneous.map(recip => 
-               <RecipeCardTab key={recip.id}>
+            {miscellaneousTab.map(recipe => 
+               <RecipeCardTab key={recipe.id}>
                   <ImgBoxTab>
                     <RecipeImgMob src="#" alt="img" />
-                     <RecipTab>{recip.dish}</RecipTab>
+                     <RecipTab>{recipe.dish}</RecipTab>
                   </ImgBoxTab>
                 </RecipeCardTab>
             )}
@@ -90,11 +111,11 @@ export default function PreviewCategories() {
 
          <GroupNameTab>Chicken</GroupNameTab>
          <RecipeListTab>
-            {chicken.map(recip => 
-               <RecipeCardTab key={recip.id}>
+            {chickenTab.map(recipe => 
+               <RecipeCardTab key={recipe.id}>
                   <ImgBoxTab>
                     <RecipeImgMob src="#" alt="img" />
-                     <RecipTab>{recip.dish}</RecipTab>
+                     <RecipTab>{recipe.dish}</RecipTab>
                   </ImgBoxTab>
                 </RecipeCardTab>
             )}
@@ -106,23 +127,93 @@ export default function PreviewCategories() {
 
          <GroupNameTab>Desserts</GroupNameTab>
          <RecipeListTab>
-            {desserts.map(recip => 
-               <RecipeCardTab key={recip.id}>
+            {dessertsTab.map(recipe => 
+               <RecipeCardTab key={recipe.id}>
                   <ImgBoxTab>
                     <RecipeImgMob src="#" alt="img" />
-                     <RecipTab>{recip.dish}</RecipTab>
+                     <RecipTab>{recipe.dish}</RecipTab>
                   </ImgBoxTab>
                 </RecipeCardTab>
             )}
          </RecipeListTab>
          <Link to={`#`}>
-         <SeeAllLinkTab>See all</SeeAllLinkTab>
+         <SeeAllLinkTabLast>See all</SeeAllLinkTabLast>
          </Link>
-      
+
+         <Link to={"#"}>
+               <OtherBtnIcon>Other categories</OtherBtnIcon>
+         </Link>
       </>)  
    };
 
      if (window.innerWidth > 1440) {
-      return(<p>Desctop</p>)  
+        return (<>
+           <GroupNameDesk>Breakfast</GroupNameDesk>
+           <RecipeListDesk>
+              {breakfastDesk.map(recipe =>
+               <RecipeCardDesk key={recipe.id}>
+                 <ImgBoxDesk>
+                    <RecipeImgMob src="#" alt="img" />
+                     <RecipDesk>{recipe.dish}</RecipDesk>
+                  </ImgBoxDesk> 
+              </RecipeCardDesk>
+               )} 
+           </RecipeListDesk>
+            <Link to={`#`}>
+            <SeeAllLinkDesk>See all</SeeAllLinkDesk>
+           </Link>
+           
+
+           <GroupNameDesk>Miscellaneous</GroupNameDesk>
+           <RecipeListDesk>
+              {miscellaneousDesk.map(recipe =>
+               <RecipeCardDesk key={recipe.id}>
+                 <ImgBoxDesk>
+                    <RecipeImgMob src="#" alt="img" />
+                     <RecipDesk>{recipe.dish}</RecipDesk>
+                  </ImgBoxDesk> 
+              </RecipeCardDesk>
+               )} 
+           </RecipeListDesk>
+            <Link to={`#`}>
+            <SeeAllLinkDesk>See all</SeeAllLinkDesk>
+            </Link>
+ 
+        
+            <GroupNameDesk>Chicken</GroupNameDesk>
+           <RecipeListDesk>
+              {chickenDesk.map(recipe =>
+               <RecipeCardDesk key={recipe.id}>
+                 <ImgBoxDesk>
+                    <RecipeImgMob src="#" alt="img" />
+                     <RecipDesk>{recipe.dish}</RecipDesk>
+                  </ImgBoxDesk> 
+              </RecipeCardDesk>
+               )} 
+           </RecipeListDesk>
+            <Link to={`#`}>
+            <SeeAllLinkDesk>See all</SeeAllLinkDesk>
+           </Link>
+
+
+            <GroupNameDesk>Desserts</GroupNameDesk>
+           <RecipeListDesk>
+              {dessertsDesk.map(recipe =>
+               <RecipeCardDesk key={recipe.id}>
+                 <ImgBoxDesk>
+                    <RecipeImgMob src="#" alt="img" />
+                     <RecipDesk>{recipe.dish}</RecipDesk>
+                  </ImgBoxDesk> 
+              </RecipeCardDesk>
+               )} 
+           </RecipeListDesk>
+            <Link to={`#`}>
+            <SeeAllLinkDeskLast>See all</SeeAllLinkDeskLast>
+           </Link>
+
+           <Link to={"#"}>
+               <OtherBtnIconDesk>Other categories</OtherBtnIconDesk>
+          </Link>
+        </>)  
    };
 };

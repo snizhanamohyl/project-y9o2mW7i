@@ -1,6 +1,17 @@
 import styled from 'styled-components';
 
 
+export const OtherBtnIcon = styled.button`
+    display: block;
+    margin: 0  auto 100px auto;
+    width: 240px;
+    height: 60px;
+    border: 2px solid var(--accent);
+    border-radius: 18px 36px;
+   
+    font-size: 16px;
+    color: var(--dark-accent);
+`;
 
 export const RecipeListMob = styled.ul`
   display: flex;
@@ -12,6 +23,10 @@ export const RecipeListMob = styled.ul`
 
 export const RecipeCardMob = styled.li`
     margin-bottom: 32px; 
+
+    &:last-child {
+    margin-bottom: 40px;
+  }
 `;
 
 
@@ -25,8 +40,8 @@ export const RecipeTitleMob = styled.h2`
 
 export const ImgBoxMob = styled.div`
    position:relative;
-   width: 343px;
-   height: 323px;
+   width: 344px;
+   height: 322px;
    background-color: grey;
    border-radius: 8px;
 `;
@@ -71,70 +86,3 @@ export const SeeAllLinkMob = styled.p`
 
 
 
-
-
-export const GroupNameTab = styled.h2`
-    margin-bottom: 40px; 
-
-    color: var(--title-color);
-    font-size: 44px;
-    font-weight: 600;
-`;
-
-export const RecipeListTab = styled.ul`
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: space-between;
-   
-`;
-
-
-export const RecipeCardTab = styled.li`
-   width: 336px;
-   height: 323px;
-`;
-
-export const ImgBoxTab = styled.div`
-    position:relative;
-    background-color: grey;
-    border-radius: 8px;
-`;
-
-
-
-export const RecipTab = styled.p`
-    position: absolute;
-    bottom: 26px;
-    left: 18px;
-
-    width: 300px;
-    height: 52px;
-    padding-top: 16px;
-    padding-bottom:16px;
-    padding-left: 16px;
-    margin-top:0;
-    margin-bottom:0;
-    background-color: white;
-    border-radius: 8px;
-
-   
-    font-weight: 500;
-    line-height: 20px;
-    font-size: 16px;
-    color:var(--pre-title-color);
-`;
-
-
-export const SeeAllLinkTab = styled.p`
-    text-align: center;
-    margin-left: auto;
-    margin-bottom: 50px;
-    margin-top:40px;
-    width: 94px;
-    height: 38px;
-    padding: 10px 24px;
-    background-color: var(--accent);
-    border-radius: 6px;
-    color: var(--bg-color);
-`;
