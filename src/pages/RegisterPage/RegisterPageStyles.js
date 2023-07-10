@@ -102,6 +102,10 @@ const Input = styled(Field)`
   }
 `;
 
+const ErrorInput = styled(Input)`
+  border: 1px solid var(--error-red);
+`;
+
 const LastInput = styled(Input)`
   margin-bottom: 28px;
   @media screen and (min-width: 768px) {
@@ -178,7 +182,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     height: 100vh;
-    padding-top: 150px;
+    padding-top: 170px;
     background-image: url(images/bg-desk.png);
     background-position: 100% 100%;
     background-repeat: no-repeat;
@@ -187,20 +191,46 @@ const Container = styled.div`
 `;
 
 const Error = styled.div`
-  font-size: 14px;
-  color: #E74A3B;
+  font-size: 10px;
+  color: #e74a3b;
   position: absolute;
-  top: 155px;
+  top: 127px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 154px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 155px;
+  }
 `;
 
 const ErrorEmail = styled(Error)`
-  top: 237px;
+  top: 184px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 236px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 237px;
+  }
 `;
 
 const ErrorPass = styled(Error)`
-  top: 320px;
-`;
+  top: 241px;
 
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 319px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 320px;
+  }
+`;
 
 export {
   Img,
@@ -218,4 +248,5 @@ export {
   Error,
   ErrorEmail,
   ErrorPass,
+  ErrorInput,
 };

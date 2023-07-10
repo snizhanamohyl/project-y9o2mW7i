@@ -3,8 +3,9 @@
 // import { selectToken } from 'redux/selectors';
 
 export default function RestrictedRoute({ component: Component, redirectTo = '/' }) {
-	// const isLogggedIn = useSelector(selectToken);
+	// const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+	// console.log(isLoggedIn);
 
-	// return isLogggedIn ? <Navigate to={redirectTo} /> : <Component />;
+	// return isLoggedIn ? <Navigate to={redirectTo} /> : <Component />;
     return <Component />;
 }

@@ -99,6 +99,10 @@ const Input = styled(Field)`
   }
 `;
 
+const ErrorInput = styled(Input)`
+  border: 1px solid var(--error-red);
+`;
+
 const LastInput = styled(Input)`
   margin-bottom: 28px;
   @media screen and (min-width: 768px) {
@@ -106,11 +110,15 @@ const LastInput = styled(Input)`
   }
 `;
 
+const ErrorLastInput = styled(LastInput)`
+  border: 1px solid var(--error-red);
+`;
+
 const Button = styled.button`
   box-sizing: border-box;
   width: 279px;
   height: 45px;
-  background-color: #8baa36;
+  background-color: var(--accent);
   padding: 12px 106px;
   border-radius: 6px;
   font-family: inherit;
@@ -164,15 +172,36 @@ const SvgPass = styled(Svg)`
 
 const Container = styled.div`
   @media screen and (min-width: 1440px) {
-    box-sizing:border-box;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     height: 100vh;
-    padding-top: 150px;
+    padding-top: 170px;
     background-image: url(images/bg-desk.png);
     background-position: 100% 100%;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+`;
+
+const Error = styled.div`
+  font-size: 10px;
+  color: var(--error-red);
+  position: absolute;
+  top: 149px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 175px;
+  }
+`;
+
+const ErrorPass = styled(Error)`
+  top: 206px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 257px;
   }
 `;
 
@@ -188,4 +217,8 @@ export {
   Svg,
   SvgPass,
   Container,
+  Error,
+  ErrorPass,
+  ErrorInput,
+  ErrorLastInput,
 };
