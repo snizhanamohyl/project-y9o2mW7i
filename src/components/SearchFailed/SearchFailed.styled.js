@@ -8,12 +8,10 @@ export const Image = styled.img`
 
 export const Description = styled.p`
   margin-top: 32px;
-  color: #000;
-  font-family: Poppins;
+  color: var(--black);
   font-size: 24px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1;
   letter-spacing: -0.48px;
   text-align: center;
   opacity: 0.5;

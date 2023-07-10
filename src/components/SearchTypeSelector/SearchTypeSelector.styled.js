@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Select } from '@mui/material';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -10,22 +11,18 @@ export const Wrapper = styled.div`
 `;
 
 export const Label = styled.p`
-  color: #001833;
+  color: var(--title-color);
   font-size: 18px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1.33;
   letter-spacing: -0.24px;
 `;
 
-export const Select = styled.div`
+export const Menu = styled(Select)`
   width: 198px;
   height: 49px;
-  padding: 14px;
-  font-size: 14px;
   letter-spacing: -0.28px;
-  background-color: #d9d9d9;
-  color: #000;
+  background-color: var(--input-bg-color);
+  color: var(--black);
   opacity: 0.5;
-  border: none;
-  outline: none;
 `;

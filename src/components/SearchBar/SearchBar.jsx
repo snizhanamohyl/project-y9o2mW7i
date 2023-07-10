@@ -1,10 +1,10 @@
 import { SeacrhForm } from 'components/SeacrhForm/SeacrhForm';
 import { SearchTypeSelector } from 'components/SearchTypeSelector/SearchTypeSelector';
 
-export const SearchBar = ({ onType }) => {
+export const SearchBar = ({ onSubmit }) => {
   return (
     <>
-      <SeacrhForm onType={onType} />
+      <SeacrhForm onSubmit={onSubmit} />
       <SearchTypeSelector />
     </>
   );
