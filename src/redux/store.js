@@ -1,4 +1,3 @@
-import { authReducer } from './auth/authSlice';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
   FLUSH,
@@ -11,6 +10,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import persistStore from 'redux-persist/es/persistStore';
+import { authReducer } from './auth/auth-slice';
 
 const persistConfig = {
   key: 'auth',
