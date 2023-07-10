@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
-import heroArrowTab from '../../images/hero-arrow-tab.svg';
-import heroArrowDesk from '../../images/hero-arrow.svg';
+import heroArrowTab from '../../assets/images/tablet/hero-arrow.svg';
+import heroArrowDesk from '../../assets/images/desktop/hero-arrow.svg';
 
 export const HeroWrap = styled.div`
   position: relative;

@@ -1,8 +1,8 @@
 import SearchForm from 'components/SearchForm/SearchForm';
 import СhooseYourBreakfast from 'components/СhooseYourBreakfast/СhooseYourBreakfast';
-import heroDishImgMob from '../../images/hero-dish-mob.png'
-import heroDishImgTab from '../../images/hero-dish-tab.png'
-import heroDishImgDesk from '../../images/hero-dish-desk.png'
+import heroDishImgMob from '../../assets/images/mobile/hero-dish.png'
+import heroDishImgTab from '../../assets/images/tablet/hero-dish.png'
+import heroDishImgDesk from '../../assets/images/desktop/hero-dish.png'
 import { AccentSpan, Descr, HeroWrap, Image, Title } from './Hero.styled';
 
 export default function Hero() {

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import bgSpinachImg from '../../images/hero-bg-spinach-mob.png';
-import bgSpinachMiniImg from '../../images/hero-bg-spinach-mini-mob.png';
-import bgShapeImg from '../../images/bg-shape-mob.svg';
-import bgSpinachImgTab from '../../images/hero-bg-spinach-tab.png';
-import bgSpinachMiniImgTab from '../../images/hero-bg-spinach-mini-tab.png';
-import bgShapeImgTab from '../../images/bg-shape-tab.svg';
-import bgSpinachImgDesk from '../../images/hero-bg-spinach-desk.png';
-import bgSpinachMiniImgDesk from '../../images/hero-bg-spinach-mini-desk.png';
-import bgShapeImgDesk from '../../images/bg-shape-desk.svg';
+import bgSpinachImg from '../../assets/images/mobile/hero-bg-spinach.png';
+import bgSpinachMiniImg from '../../assets/images/mobile/hero-bg-spinach-mini.png';
+import bgShapeImg from '../../assets/images/mobile/bg-shape.svg';
+import bgSpinachImgTab from '../../assets/images/tablet/hero-bg-spinach.png';
+import bgSpinachMiniImgTab from '../../assets/images/tablet/hero-bg-spinach-mini.png';
+import bgShapeImgTab from '../../assets/images/tablet/bg-shape.svg';
+import bgSpinachImgDesk from '../../assets/images/desktop/hero-bg-spinach.png';
+import bgSpinachMiniImgDesk from '../../assets/images/desktop/hero-bg-spinach-mini.png';
+import bgShapeImgDesk from '../../assets/images/desktop/bg-shape.svg';
 
 const heroBgMob = `url(${bgSpinachMiniImg}) left 30px no-repeat,
   url(${bgSpinachImg}) left 54px no-repeat,
