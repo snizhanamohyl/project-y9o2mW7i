@@ -1,5 +1,6 @@
 import Select from 'components/Select';
 import SelectInput from 'components/SelectInput';
+import SectionTitle from 'components/SectionTitle';
 import {
   Section,
   Row,
@@ -18,7 +19,7 @@ export default function RecipeIngredientsFields() {
   return (
     <Section>
       <Row>
-        <h1>Ingredients</h1>
+        <SectionTitle>Ingredients</SectionTitle>
         <Block>
           <Controller type="button">
             <svg stroke="var(--button-border-color)">

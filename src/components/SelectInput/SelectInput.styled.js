@@ -20,6 +20,8 @@ export const Label = styled.label`
 `;
 
 export const InputFiled = styled.input`
+  width: 100%;
+
   color: var(--black);
   font-family: Poppins;
   font-size: 14px;

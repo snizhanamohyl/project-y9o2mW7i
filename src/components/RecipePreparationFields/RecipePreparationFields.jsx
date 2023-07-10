@@ -1,9 +1,10 @@
+import SectionTitle from 'components/SectionTitle';
 import { Section, TextArea } from './RecipePreparationFields.styled';
 
 export default function RecipePreparationFields() {
   return (
     <Section>
-      <h1>Recipe Preparation</h1>
+      <SectionTitle>Recipe Preparation</SectionTitle>
       <TextArea placeholder="Enter recipe"></TextArea>
     </Section>
   );

@@ -36,6 +36,8 @@ export const TextArea = styled.textarea`
 
   @media screen and (min-width: 768px) {
     margin-top: 32px;
+    width: 505px;
+
     font-size: 18px;
   }
 
