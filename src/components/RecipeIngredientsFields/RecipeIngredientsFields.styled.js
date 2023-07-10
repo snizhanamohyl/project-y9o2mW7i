@@ -45,6 +45,7 @@ export const Controller = styled.button`
 `;
 
 export const Ingredients = styled.ul`
+  padding: 0;
   display: flex;
   flex-direction: column;
   row-gap: 18px;
@@ -95,6 +96,10 @@ export const NumericInput = styled(InputNumber)`
   background-color: transparent;
   border: none;
   outline: none;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const RemoveBtn = styled.button`

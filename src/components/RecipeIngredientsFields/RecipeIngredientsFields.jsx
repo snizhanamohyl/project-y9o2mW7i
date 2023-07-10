@@ -1,4 +1,5 @@
 import Select from 'components/Select';
+import SelectInput from 'components/SelectInput';
 import {
   Section,
   Row,
@@ -35,7 +36,9 @@ export default function RecipeIngredientsFields() {
 
       <Ingredients>
         <Item>
-          <Select />
+          <InputWrapper>
+            <SelectInput placeholder="Enter ingredient" />
+          </InputWrapper>
           <InputWrapper>
             <NumericInput maxLength={3} />
             <Select options={units} />
