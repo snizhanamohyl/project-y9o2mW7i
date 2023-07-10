@@ -46,6 +46,7 @@
   --black: #000000;
   --white: #ffffff;
   --scroll-bar-color: #e7e5e5;
+  --hover-dark: #1e1f28;
 
   --transition-time: 250ms;
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1);

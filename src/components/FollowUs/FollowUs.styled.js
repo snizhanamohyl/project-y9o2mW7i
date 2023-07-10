@@ -21,6 +21,16 @@ export const Socials = styled.ul`
 
 export const Item = styled.li`
   svg {
-    fill: black;
+    fill: var(--accent);
+    transition: fill var(--transition-time) var(--transition-function);
+  }
+
+  a:hover,
+  a:focus {
+    outline: none;
+
+    svg {
+      fill: var(--hover-dark);
+    }
   }
 `;
