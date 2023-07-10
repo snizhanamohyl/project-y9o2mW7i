@@ -42,8 +42,8 @@
 				d="M16 8v8l5.333 2.667"></path>
 		</symbol>
 		<symbol id="icon-down" viewBox="0 0 32 32">
-			<path fill="none" stroke="#8baa36" style="stroke: var(--color4, #8baa36)" stroke-linejoin="round"
-				stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.0476" d="M23.619 12.19l-7.619 7.619-7.619-7.619">
+			<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.0476"
+				d="M23.619 12.19l-7.619 7.619-7.619-7.619">
 			</path>
 		</symbol>
 		<symbol id="icon-down-18x18" viewBox="0 0 32 32">

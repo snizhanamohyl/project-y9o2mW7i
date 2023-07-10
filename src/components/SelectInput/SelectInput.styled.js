@@ -3,11 +3,13 @@ import SimpleBar from 'simplebar-react';
 
 export const Wrapper = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 export const Label = styled.label`
   display: flex;
   align-items: center;
+  width: 100%;
 
   border: none;
   outline: none;

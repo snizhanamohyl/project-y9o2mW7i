@@ -6,6 +6,7 @@ import {
   Wrapper,
   FileWrapper,
   Container,
+  Label,
   Row,
   Input,
   Text,
@@ -27,10 +28,7 @@ export default function RecipeDescriptionFields({
   const [categories, setCategories] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('');
   const [cookingTime, setCookingTime] = useState('');
-
   const [imgUrl, setImgUrl] = useState('');
-
-  console.log(imgUrl);
 
   useEffect(() => {
     setCategories(categoriesData);
@@ -69,10 +67,14 @@ export default function RecipeDescriptionFields({
 
       <div>
         <Container>
-          <Input type="text" placeholder="Enter item title" />
+          <Label>
+            <Input type="text" placeholder="Enter item title" />
+          </Label>
         </Container>
         <Container>
-          <Input type="text" placeholder="Enter about recipe" />
+          <Label>
+            <Input type="text" placeholder="Enter about recipe" />
+          </Label>
         </Container>
 
         <Container>

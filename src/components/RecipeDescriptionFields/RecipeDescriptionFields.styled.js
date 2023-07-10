@@ -45,7 +45,7 @@ export const Preview = styled.img`
   border-radius: 8px;
 `;
 
-export const Container = styled.label`
+export const Container = styled.div`
   display: flex;
   align-items: flex-start;
   height: 40px;
@@ -63,6 +63,11 @@ export const Container = styled.label`
       margin-bottom: 32px;
     }
   }
+`;
+
+export const Label = styled.label`
+  display: flex;
+  align-items: flex-start;
 `;
 
 export const Row = styled.div`

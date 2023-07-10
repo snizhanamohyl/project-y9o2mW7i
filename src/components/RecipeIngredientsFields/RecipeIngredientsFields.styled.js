@@ -50,8 +50,8 @@ export const Controller = styled.button`
   &:hover,
   &:focus {
     svg {
-      stroke: ${({ decrement }) =>
-        decrement ? 'var(--accent)' : 'var(--hover-dark)'};
+      stroke: ${({ $decrement }) =>
+        $decrement ? 'var(--accent)' : 'var(--hover-dark)'};
     }
   }
 `;
@@ -78,16 +78,28 @@ export const InputWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 53px;
+  max-width: 194px;
 
   background-color: var(--input-bg-color);
   border-radius: 6px;
 
+  &:first-child {
+    flex: 1;
+  }
+
   & > div {
     position: static;
+    & > div {
+      width: 100%;
+    }
   }
 
   & ul {
     padding-left: 46px;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 398px;
   }
 `;
 

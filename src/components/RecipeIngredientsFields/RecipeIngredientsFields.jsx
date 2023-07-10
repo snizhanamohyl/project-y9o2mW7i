@@ -21,7 +21,7 @@ export default function RecipeIngredientsFields() {
       <Row>
         <SectionTitle>Ingredients</SectionTitle>
         <Block>
-          <Controller type="button" decrement>
+          <Controller type="button" $decrement>
             <svg stroke="var(--button-border-color)">
               <use href={Sprite + '#icon-minus'}></use>
             </svg>

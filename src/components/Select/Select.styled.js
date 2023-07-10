@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   position: relative;
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   display: flex;
   align-items: center;
 
@@ -13,9 +13,21 @@ export const Button = styled.div`
   outline: none;
   background-color: transparent;
 
+  span {
+    transition: color var(--transition-time) var(--transition-function);
+  }
+
   svg {
     margin-left: 8px;
     stroke: var(--accent);
+    transition: stroke var(--transition-time) var(--transition-function);
+  }
+
+  &:hover,
+  &:focus {
+    span {
+      color: var(--accent);
+    }
   }
 `;
 
@@ -38,6 +50,11 @@ export const ListWrapper = styled.div`
   z-index: 10;
 
   display: ${({ $isOpen }) => ($isOpen ? 'block' : 'none')};
+
+  background-color: var(--white);
+  border-radius: 6px;
+  box-shadow: 0px 6.518518447875977px 7.8222222328186035px 0px
+    rgba(0, 0, 0, 0.03);
 `;
 
 export const List = styled.ul`
@@ -46,11 +63,7 @@ export const List = styled.ul`
   min-width: 100%;
   width: max-content;
 
-  background-color: var(--white);
   list-style: none;
-  border-radius: 6px;
-  box-shadow: 0px 6.518518447875977px 7.8222222328186035px 0px
-    rgba(0, 0, 0, 0.03);
 `;
 
 export const Option = styled.li`
@@ -64,6 +77,12 @@ export const Option = styled.li`
   line-height: normal;
   letter-spacing: -0.24px;
   opacity: 0.5;
+  transition: color var(--transition-time) var(--transition-function);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--accent);
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
