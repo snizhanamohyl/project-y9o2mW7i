@@ -1,13 +1,18 @@
 import { Route, Routes } from "react-router-dom";
-import { lazy } from "react";
+import { lazy, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { refreshUser } from "redux/auth/auth-operations";
 
 import PrivateRoute from "components/PrivateRoute/PrivateRoute";
 import RestrictedRoute from "components/RestrictedRoute/RestrictedRoute";
 import SharedLayout from "components/SharedLayout/SharedLayout";
 
+import RegisterPage from "pages/RegisterPage/RegisterPage";
+import SigninPage from "pages/SigninPage/SigninPage";
+
 const MainPage = lazy(() => import('pages/MainPage/MainPage'));
-const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
-const SigninPage = lazy(() => import('pages/SigninPage/SigninPage'));
+// const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
+// const SigninPage = lazy(() => import('pages/SigninPage/SigninPage'));
 const CategoriesPage = lazy(() => import('pages/CategoriesPage/CategoriesPage'));
 const MyRecipesPage = lazy(() => import('pages/MyRecipesPage/MyRecipesPage'));
 const AddRecipePage = lazy(() => import('pages/AddRecipePage/AddRecipePage'));
@@ -17,6 +22,13 @@ const FavoritePage = lazy(() => import('pages/FavoritePage/FavoritePage'));
 const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 export default function App() {  
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return <Routes>
     <Route path='/signin' element={<RestrictedRoute component={SigninPage} redirectTo='/signin'/>}></Route>
     <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/register' />}></Route>
