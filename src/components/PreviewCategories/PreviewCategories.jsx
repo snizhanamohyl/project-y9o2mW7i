@@ -72,7 +72,6 @@ export default function PreviewCategories() {
             <Link to={"#"}>
                <OtherBtnIcon>Other categories</OtherBtnIcon>
             </Link>
-            
          </>
       )
    }
