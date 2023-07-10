@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/645.65b0fa2b.chunk.js","mappings":"gMAAe,SAASA,IACpB,OAAOC,EAAAA,EAAAA,KAAA,MAAAC,SAAI,cACf,C","sources":["pages/SearchPage/SearchPage.jsx"],"sourcesContent":["export default function SearchPage() {\n    return <h1>SearchPage</h1>\n}"],"names":["SearchPage","_jsx","children"],"sourceRoot":""}
