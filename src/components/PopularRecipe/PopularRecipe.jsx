@@ -27,7 +27,7 @@ export default function PopularRecipe() {
 
   return (
     <Section>
-      <SectionTitle>PopularRecipe</SectionTitle>
+      <SectionTitle>Popular recipe</SectionTitle>
       <List>
         {recipesData
           .slice(0, itemsCount)

@@ -37,10 +37,22 @@ export const Controller = styled.button`
   align-items: center;
 
   background-color: transparent;
+  border: none;
+  outline: none;
 
   svg {
     width: 14px;
     height: 14px;
+
+    transition: stroke var(--transition-time) var(--transition-function);
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      stroke: ${({ decrement }) =>
+        decrement ? 'var(--accent)' : 'var(--hover-dark)'};
+    }
   }
 `;
 
@@ -76,9 +88,6 @@ export const InputWrapper = styled.div`
 
   & ul {
     padding-left: 46px;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
   }
 `;
 
@@ -114,5 +123,14 @@ export const RemoveBtn = styled.button`
   svg {
     width: 18px;
     height: 18px;
+
+    transition: stroke var(--transition-time) var(--transition-function);
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      stroke: var(--accent);
+    }
   }
 `;
