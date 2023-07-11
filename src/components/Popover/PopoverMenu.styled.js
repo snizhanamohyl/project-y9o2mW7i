@@ -1,7 +1,18 @@
 const { styled } = require('styled-components');
 
 export const EditLink = styled.a`
-display: block;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 37px;
+  margin-bottom: 28px;
+  font-weight: 500;
+  line-height: 1.6;
+
+  @media screen and (min-width: 768px) {
+    gap: 53px;
+  }
 `;
 
 export const LogOutBtn = styled.a`

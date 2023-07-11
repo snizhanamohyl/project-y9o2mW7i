@@ -9,6 +9,7 @@ const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
+          marginTop: '8px',
           padding: '18px',
           boxShadow: 'none',
           borderRadius: '8px',
