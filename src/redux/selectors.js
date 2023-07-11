@@ -1,2 +1,1 @@
-export const selectSearchedItems = state => state.search.items;
-export const selectSearchType = state => state.search.type;
+export const selectToken = state => state.auth.token;

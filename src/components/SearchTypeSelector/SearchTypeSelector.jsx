@@ -1,15 +1,7 @@
 import { MenuItem } from '@mui/material';
 import { Label, Menu, Wrapper } from './SearchTypeSelector.styled';
-import { useSearchParams } from 'react-router-dom';
 
-export const SearchTypeSelector = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const searchConfig = Object.fromEntries([...searchParams]);
-  const type = searchParams.get('type');
-  const handleChange = e => {
-    setSearchParams({ ...searchConfig, type: e.target.value });
-  };
-
+export const SearchTypeSelector = ({ onChange, type }) => {
   const menuProps = {
     sx: {
       display: 'flex',
@@ -34,7 +26,7 @@ export const SearchTypeSelector = () => {
       <Menu
         id="searchBy"
         value={type ? type : 'query'}
-        onChange={handleChange}
+        onChange={onChange}
         MenuProps={menuProps}
       >
         <MenuItem value="query">Title</MenuItem>
