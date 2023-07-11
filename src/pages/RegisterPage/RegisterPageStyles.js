@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import { Field } from 'formik';
 import { NavLink } from 'react-router-dom';
 
+import bgMob from '../../images/bg-mob.png';
+
 const Img = styled.img`
   width: 285px;
   height: 250px;
@@ -24,11 +26,11 @@ const Img = styled.img`
 const Section = styled.div`
   height: 490px;
   background-size: cover;
-  background-image: url(images/bg-mob.png);
+  background-image: url(${bgMob});
   position: relative;
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     height: 606px;
-  }
+  } */
   @media screen and (min-width: 1440px) {
     background-image: none;
   }
@@ -85,6 +87,7 @@ const Input = styled(Field)`
   background-color: transparent;
   color: var(--bg-color);
   padding-left: 45px;
+  outline: none;
   ::placeholder,
   ::-webkit-input-placeholder {
     color: var(--bg-color);
@@ -100,6 +103,12 @@ const Input = styled(Field)`
     font-size: 18px;
     margin-bottom: 24px;
   }
+  &:hover {
+    border: 1px solid var(--white);
+  }
+  &:focus {
+    border: 1px solid var(--white);
+  }
 `;
 
 const ErrorInput = styled(Input)`
@@ -111,6 +120,10 @@ const LastInput = styled(Input)`
   @media screen and (min-width: 768px) {
     margin-bottom: 50px;
   }
+`;
+
+const ErrorLastInput = styled(LastInput)`
+  border: 1px solid var(--error-red);
 `;
 
 const Button = styled.button`
@@ -148,7 +161,7 @@ const Link = styled(NavLink)`
   }
 `;
 
-const Svg = styled.svg`
+const SvgMan = styled.svg`
   width: 18px;
   height: 18px;
   position: absolute;
@@ -160,19 +173,47 @@ const Svg = styled.svg`
     top: 112px;
     left: 67px;
   }
+  &:hover {
+    &path {
+      stroke: var(--white);
+    }
+  }
+  &:focus {
+    &path {
+      stroke: var(--white);
+    }
+  }
 `;
 
-const SvgEmail = styled(Svg)`
+const SvgManError = styled(SvgMan)`
+  & path {
+    stroke: var(--error-red);
+  }
+`;
+
+const SvgEmail = styled(SvgMan)`
   top: 153px;
   @media screen and (min-width: 768px) {
     top: 195px;
   }
 `;
 
-const SvgPass = styled(Svg)`
+const SvgEmailError = styled(SvgEmail)`
+  & path {
+    stroke: var(--error-red);
+  }
+`;
+
+const SvgPass = styled(SvgMan)`
   top: 210px;
   @media screen and (min-width: 768px) {
     top: 277px;
+  }
+`;
+
+const SvgPassError = styled(SvgPass)`
+  & path {
+    stroke: var(--error-red);
   }
 `;
 
@@ -182,7 +223,8 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     height: 100vh;
-    padding-top: 170px;
+    /* padding-top: 170px; */
+    align-items: center;
     background-image: url(images/bg-desk.png);
     background-position: 100% 100%;
     background-repeat: no-repeat;
@@ -241,7 +283,7 @@ export {
   LastInput,
   Button,
   Link,
-  Svg,
+  SvgMan,
   SvgEmail,
   SvgPass,
   Container,
@@ -249,4 +291,8 @@ export {
   ErrorEmail,
   ErrorPass,
   ErrorInput,
+  ErrorLastInput,
+  SvgManError,
+  SvgEmailError,
+  SvgPassError,
 };

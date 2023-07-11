@@ -22,6 +22,7 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const rootReducer = combineReducers({
   auth: persistedReducer,
+//   cюди додавайте свої reducers
 });
 
 export const store = configureStore({

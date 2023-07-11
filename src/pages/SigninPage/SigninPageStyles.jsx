@@ -26,9 +26,9 @@ const Section = styled.div`
   background-size: cover;
   background-image: url(images/bg-mob.png);
   position: relative;
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     height: 606px;
-  }
+  } */
   @media screen and (min-width: 1440px) {
     background-image: none;
   }
@@ -82,6 +82,7 @@ const Input = styled(Field)`
   background-color: transparent;
   color: var(--bg-color);
   padding-left: 45px;
+  outline: none;
   ::placeholder,
   ::-webkit-input-placeholder {
     color: var(--bg-color);
@@ -176,7 +177,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     height: 100vh;
-    padding-top: 170px;
+    align-items: center;
     background-image: url(images/bg-desk.png);
     background-position: 100% 100%;
     background-repeat: no-repeat;
