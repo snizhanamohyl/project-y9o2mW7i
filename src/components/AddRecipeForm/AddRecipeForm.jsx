@@ -1,8 +1,8 @@
 import { useFormik } from 'formik';
 
-import RecipeDescriptionFields from 'components/RecipeDescriptionFields';
-import RecipeIngredientsFields from 'components/RecipeIngredientsFields';
-import RecipePreparationFields from 'components/RecipePreparationFields';
+import RecipeDescriptionFields from 'components/RecipeDescriptionFields/RecipeDescriptionFields';
+import RecipeIngredientsFields from 'components/RecipeIngredientsFields/RecipeIngredientsFields';
+import RecipePreparationFields from 'components/RecipePreparationFields/RecipePreparationFields';
 import { Form } from './AddRecipeForm.styled';
 
 export default function AddRecipeForm() {

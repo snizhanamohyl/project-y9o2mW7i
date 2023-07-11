@@ -1,4 +1,4 @@
-import SectionTitle from 'components/SectionTitle';
+import SectionTitle from 'components/SectionTitle/SectionTitle';
 import { Wrapper, Socials, Item } from './FollowUs.styled';
 import Sprite from 'assets/sprite.svg';
 

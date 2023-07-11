@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Select from 'components/Select';
+import Select from 'components/Select/Select';
 import {
   Wrapper,
   FileWrapper,

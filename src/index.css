@@ -54,7 +54,6 @@
 
 body {
   margin: 0;
-  padding-top: 18px;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -95,13 +94,9 @@ ul {
   margin-bottom: 0;
 }
 
-.ul {
+ul {
   list-style: none;
   padding-left: 0px;
-}
-
-.is-hidden {
-  display: none;
 }
 
 a {
@@ -112,6 +107,12 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 code {

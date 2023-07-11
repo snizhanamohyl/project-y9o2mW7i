@@ -1,6 +1,6 @@
-import Select from 'components/Select';
-import SelectInput from 'components/SelectInput';
-import SectionTitle from 'components/SectionTitle';
+import Select from 'components/Select/Select';
+import SelectInput from 'components/SelectInput/SelectInput';
+import SectionTitle from 'components/SectionTitle/SectionTitle';
 import {
   Section,
   Row,

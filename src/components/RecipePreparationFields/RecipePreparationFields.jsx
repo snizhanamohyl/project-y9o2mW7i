@@ -1,4 +1,4 @@
-import SectionTitle from 'components/SectionTitle';
+import SectionTitle from 'components/SectionTitle/SectionTitle';
 import { Section, TextArea } from './RecipePreparationFields.styled';
 
 export default function RecipePreparationFields() {
