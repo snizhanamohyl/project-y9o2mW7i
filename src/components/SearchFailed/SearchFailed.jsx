@@ -1,5 +1,5 @@
 import React from 'react';
-import searchFailed from 'assets/images/search-failed.webp';
+import searchFailed from 'assets/images/desktop/search-failed-1x.webp';
 import { Description, Image } from './SearchFailed.styled';
 
 export const SearchFailed = () => {

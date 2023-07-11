@@ -1,16 +1,18 @@
-import { MainPageTitle } from './SearchPage.styled';
+import { useSelector } from 'react-redux';
+import { selectSearchedItems } from 'redux/selectors';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { SearchFailed } from 'components/SearchFailed/SearchFailed';
-import { useState } from 'react';
+import { MainPageTitle } from './SearchPage.styled';
 
 export default function SearchPage() {
-  const [query, setQuery] = useState(null);
+  const items = useSelector(selectSearchedItems);
+
   return (
     <>
       <MainPageTitle>Search</MainPageTitle>
-      <SearchBar onSubmit={setQuery} />
-      {/* {query && <Card />} */}
-      {!query && <SearchFailed />}
+      <SearchBar />
+      {/* {items && <Card />} */}
+      {!items || (items.length === 0 && <SearchFailed />)}
     </>
   );
 }
