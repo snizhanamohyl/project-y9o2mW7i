@@ -15,8 +15,8 @@ export const OptionContainer = styled.div`
 
 export const NumberContainer = styled.span`
   height: 23px;
-  width: 37px;
-  padding: 4px 0;
+  min-width: 37px;
+  padding: 4px 8px;
   background-color: var(--accent);
   border-radius: 4px;
   text-align: center;
@@ -28,14 +28,14 @@ export const NumberContainer = styled.span`
   
   @media screen and (min-width: 768px) {
     height: 35px;
-    width: 68px;
+    min-width: 68px;
     font-size: 18px;
     line-height: 26px;
   }
 
   @media screen and (min-width: 1440px) {
     height: 35px;
-    width: 68px;
+    min-width: 68px;
     font-size: 18px;
     line-height: 26px;
   }
@@ -79,6 +79,22 @@ export const RemoveBtn = styled.button`
     width: 20px;
     height: 20px;
     margin-right: 28px;
+  }
+`;
+
+export const SvgRemove = styled.svg`
+  width: 14px;
+  height: 14px;
+  stroke: #333;
+
+  @media screen and (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 20px;
+    height: 20px;
   }
 `;
 

@@ -5,7 +5,7 @@ import {
   ShoppingList,
   ShoppingListTitle,
 } from './ShoppingListPage.styled';
-import ProductListItem from 'components/ProductListItem/ProductListItem';
+import ProductListItem from 'pages/ShoppingListPage/ShoppingListItem';
 import { useState } from 'react';
 
 export default function ShoppingListPage() {
@@ -26,7 +26,7 @@ export default function ShoppingListPage() {
         </OptionNameContainer>
       </ShoppingListHeader>
       <ShoppingList>
-        {items &&
+        {/* {items &&
           items.map(item => {
             return (
               <ShoppingListItem key={item.id}>
@@ -39,13 +39,29 @@ export default function ShoppingListPage() {
                 </ProductListItem>
               </ShoppingListItem>
             );
-          })}
+          })} */}
+          <ShoppingListItem>
+<ProductListItem name="Cucumber" number="5">
+</ProductListItem>
+</ShoppingListItem>
+<ShoppingListItem>
+<ProductListItem name="Cucumber" number="400g">
+</ProductListItem>
+</ShoppingListItem>
+<ShoppingListItem>
+<ProductListItem name="Cucumber" number="5">
+</ProductListItem>
+</ShoppingListItem>
+<ShoppingListItem>
+<ProductListItem name="Cucumber" number="5">
+</ProductListItem>
+</ShoppingListItem> 
       </ShoppingList>
     </div>
   );
 }
 
-{/* <ShoppingListItem>
+/* <ShoppingListItem>
 <ProductListItem name="Cucumber" number="5">
 </ProductListItem>
 </ShoppingListItem>
@@ -60,4 +76,4 @@ export default function ShoppingListPage() {
 <ShoppingListItem>
 <ProductListItem name="Cucumber" number="5">
 </ProductListItem>
-</ShoppingListItem> */}
+</ShoppingListItem> */
