@@ -6,14 +6,21 @@ import {
   ShoppingListTitle,
 } from './ShoppingListPage.styled';
 import ProductListItem from 'pages/ShoppingListPage/ShoppingListItem';
-import { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 
 export default function ShoppingListPage() {
-  const [items, setItems] = useState([]);
 
-  const onDeleteClick = id => {
-    setItems(state => state.filter(item => item.id !== id));
-  };
+  // const dispatch = useDispatch();
+
+  // const items = useSelector();
+
+//   useEffect(() => {
+//     dispatch(...);
+//   },[dispatch])
+
+//   const onDeleteClick = id => {
+//     dispatch(...(id));
+//  }
 
   return (
     <div>
@@ -26,36 +33,20 @@ export default function ShoppingListPage() {
         </OptionNameContainer>
       </ShoppingListHeader>
       <ShoppingList>
-        {/* {items &&
+        {items &&
           items.map(item => {
             return (
               <ShoppingListItem key={item.id}>
                 <ProductListItem
                   name={item.name}
-                  number={item.number}
+                  number={item.measure}
                   id={item.id}
                   onDeleteClick={onDeleteClick}
                 >
                 </ProductListItem>
               </ShoppingListItem>
             );
-          })} */}
-          <ShoppingListItem>
-<ProductListItem name="Cucumber" number="5">
-</ProductListItem>
-</ShoppingListItem>
-<ShoppingListItem>
-<ProductListItem name="Cucumber" number="400g">
-</ProductListItem>
-</ShoppingListItem>
-<ShoppingListItem>
-<ProductListItem name="Cucumber" number="5">
-</ProductListItem>
-</ShoppingListItem>
-<ShoppingListItem>
-<ProductListItem name="Cucumber" number="5">
-</ProductListItem>
-</ShoppingListItem> 
+          })}
       </ShoppingList>
     </div>
   );
