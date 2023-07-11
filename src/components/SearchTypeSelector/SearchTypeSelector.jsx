@@ -1,13 +1,14 @@
-import { changeSearchType } from 'redux/search/slice';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectSearchType } from 'redux/selectors';
 import { MenuItem } from '@mui/material';
 import { Label, Menu, Wrapper } from './SearchTypeSelector.styled';
+import { useSearchParams } from 'react-router-dom';
 
 export const SearchTypeSelector = () => {
-  const dispatch = useDispatch();
-  const type = useSelector(selectSearchType);
-  const handleChange = e => dispatch(changeSearchType(e.target.value));
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchConfig = Object.fromEntries([...searchParams]);
+  const type = searchParams.get('type');
+  const handleChange = e => {
+    setSearchParams({ ...searchConfig, type: e.target.value });
+  };
 
   const menuProps = {
     sx: {
@@ -32,7 +33,7 @@ export const SearchTypeSelector = () => {
       <Label>Search by:</Label>
       <Menu
         id="searchBy"
-        value={type}
+        value={type ? type : 'query'}
         onChange={handleChange}
         MenuProps={menuProps}
       >
