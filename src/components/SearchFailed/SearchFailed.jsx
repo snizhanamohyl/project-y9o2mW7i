@@ -8,7 +8,7 @@ import { Description, Image } from './SearchFailed.styled';
 const srcsetMob = `${searchFailedMob} 1x, ${searchFailedMobRet} 2x`;
 const srcsetDesk = `${searchFailedDesk} 1x, ${searchFailedDeskRet} 2x`;
 
-export const SearchFailed = () => {
+export default function SearchFailed() {
   return (
     <>
       <Image>
@@ -19,4 +19,4 @@ export const SearchFailed = () => {
       <Description>Try looking for something else..</Description>
     </>
   );
-};
+}

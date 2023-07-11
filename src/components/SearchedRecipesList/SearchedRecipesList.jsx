@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { SearchFailed } from 'components/SearchFailed/SearchFailed';
-import { searchProducts } from 'services/search-api';
+import SearchFailed from 'components/SearchFailed/SearchFailed';
+import SearchProducts from 'services/search-api';
 
-export const SearchedRecipesList = () => {
+export default function SearchedRecipesList() {
   const [items, setItems] = useState([]);
   const [searchParams] = useSearchParams();
 
@@ -12,7 +12,7 @@ export const SearchedRecipesList = () => {
 
   useEffect(() => {
     if (!query || !type) return;
-    searchProducts(type, query).then(data => setItems(data));
+    SearchProducts(type, query).then(data => setItems(data));
   }, [query, type]);
 
   return (
@@ -28,4 +28,4 @@ export const SearchedRecipesList = () => {
       )}
     </>
   );
-};
+}

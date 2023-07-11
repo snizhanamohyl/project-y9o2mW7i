@@ -47,6 +47,13 @@ export const Input = styled.input`
   &::placeholder {
     color: var(--placeholder-color);
   }
+  /*   
+  &:-internal-autofill-selected {
+    appearance: none;
+    background-image: none !important;
+    background-color: inherit !important;
+    color: inherit !important;
+  } */
 
   @media (min-width: 768px) {
     font-size: 16px;

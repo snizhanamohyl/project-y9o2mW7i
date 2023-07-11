@@ -11,20 +11,19 @@ const token = {
   },
 };
 
-export const searchProducts = async (type, query) => {
+const searchProducts = async (type, query) => {
+  // const storage = localStorage.getItem('persist:auth');
+  // const parsedStorage = JSON.parse(storage);
+
   const tempToken =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQyM2M5MzEzZGZhMDhhZjc4MjRkYyIsImlhdCI6MTY4OTA2ODQ4OSwiZXhwIjoxNjg5MTQ3Njg5fQ.XapGFI6xC-6_S1ZVbCyaeEFpL3Mut3bAnCJm0qYPfRE';
 
   const requestType = type === 'query' ? 'search' : 'ingredients';
 
-  // const persistedToken = useSelector(selectToken);
-
-  // console.log('persistedToken:', persistedToken);
-
-  // if (persistedToken === null) {
+  // if (parsedStorage.token === null) {
   //   return thunkAPI.rejectWithValue();
   // }
-  // token.set(persistedToken);
+  // token.set(parsedStorage.token);
 
   token.set(tempToken);
 
@@ -35,3 +34,5 @@ export const searchProducts = async (type, query) => {
     console.log(error.message);
   }
 };
+
+export default searchProducts;

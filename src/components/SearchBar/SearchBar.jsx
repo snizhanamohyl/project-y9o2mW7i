@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import { SearchTypeSelector } from 'components/SearchTypeSelector/SearchTypeSelector';
 import SearchForm from 'components/SearchForm/SearchForm';
 
-export const SearchBar = () => {
+export default function SearchBar() {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchConfig = Object.fromEntries([...searchParams]);
 
@@ -10,7 +10,7 @@ export const SearchBar = () => {
     e.preventDefault();
     const query = e.target[0].value;
     if (query === '') return console.log('Request cannot be empty');
-    setSearchParams({ ...searchConfig, query: query });
+    setSearchParams({ ...searchConfig, query });
   };
 
   const handleChange = e => {
@@ -26,4 +26,4 @@ export const SearchBar = () => {
       />
     </>
   );
-};
+}
