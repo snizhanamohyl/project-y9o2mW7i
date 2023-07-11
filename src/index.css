@@ -1,28 +1,28 @@
 @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url(./fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+    url(./assets/fonts/Poppins/Poppins-Regular.ttf) format('truetype');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url(./fonts/Poppins/Poppins-Medium.ttf) format('truetype');
+    url(./assets/fonts/Poppins/Poppins-Medium.ttf) format('truetype');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url(./fonts/Poppins/Poppins-SemiBold.ttf) format('truetype');
+    url(./assets/fonts/Poppins/Poppins-SemiBold.ttf) format('truetype');
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url(./fonts/Poppins/Poppins-Bold.ttf) format('truetype');
+    url(./assets/fonts/Poppins/Poppins-Bold.ttf) format('truetype');
   font-weight: bold;
 }
 
@@ -48,7 +48,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 0;padding-top: 18px;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -67,7 +67,14 @@ body {
 }
 
 button {
+  padding-right: 0;
+  padding-left: 0;
   border: none;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 h1,
