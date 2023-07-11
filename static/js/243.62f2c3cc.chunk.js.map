@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/243.62f2c3cc.chunk.js","mappings":"kMAAe,SAASA,IACpB,OAAOC,EAAAA,EAAAA,KAAA,MAAAC,SAAI,kBACf,C","sources":["pages/CategoriesPage/CategoriesPage.jsx"],"sourcesContent":["export default function CategoriesPage() {\n    return <h1>CategoriesPage</h1>\n}"],"names":["CategoriesPage","_jsx","children"],"sourceRoot":""}

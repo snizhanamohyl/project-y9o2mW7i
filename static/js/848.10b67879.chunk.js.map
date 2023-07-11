@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/848.10b67879.chunk.js","mappings":"kMAAe,SAASA,IACpB,OAAOC,EAAAA,EAAAA,KAAA,MAAAC,SAAI,iBACf,C","sources":["pages/MyRecipesPage/MyRecipesPage.jsx"],"sourcesContent":["export default function MyRecipesPage() {\n    return <h1>MyRecipesPage</h1>\n}"],"names":["MyRecipesPage","_jsx","children"],"sourceRoot":""}
