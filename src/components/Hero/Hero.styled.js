@@ -85,7 +85,7 @@ export const Descr = styled.p`
   }
 `;
 
-export const Image = styled.img`
+export const Image = styled.picture`
   margin-bottom: 24px;
 
   @media (min-width: 768px) {
