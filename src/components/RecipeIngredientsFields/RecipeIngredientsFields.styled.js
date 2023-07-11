@@ -3,6 +3,7 @@ import InputNumber from 'components/InputNumber/InputNumber';
 
 export const Section = styled.section`
   margin-bottom: 44px;
+  max-width: 610px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 100px;
@@ -23,16 +24,23 @@ export const Row = styled.div`
 export const Block = styled.div`
   padding: 4px 14px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 14px;
+  width: 92px;
+  max-height: 32px;
 
   border: 1px solid var(--button-border-color);
   border-radius: 18px;
+
+  @media screen and (min-width: 768px) {
+    padding: 4px 15px;
+    width: 110px;
+  }
 `;
 
 export const Controller = styled.button`
   margin: 0;
-  padding: 0;
   display: flex;
   align-items: center;
 
@@ -56,13 +64,27 @@ export const Controller = styled.button`
   }
 `;
 
+export const Value = styled.span`
+  color: var(--text-primary);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 18px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
+
 export const Ingredients = styled.ul`
-  padding: 0;
   display: flex;
   flex-direction: column;
   row-gap: 18px;
-
-  list-style: none;
 `;
 
 export const Item = styled.li`
@@ -100,6 +122,7 @@ export const InputWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     max-width: 398px;
+    height: 59px;
   }
 `;
 
@@ -107,7 +130,7 @@ export const NumericInput = styled(InputNumber)`
   width: 30px;
 
   color: var(--text-primary);
-  font-family: Poppins;
+  font-family: inherit;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -125,7 +148,6 @@ export const NumericInput = styled(InputNumber)`
 
 export const RemoveBtn = styled.button`
   margin-left: auto;
-  padding: 0;
   display: inline-flex;
 
   background-color: transparent;
@@ -136,6 +158,7 @@ export const RemoveBtn = styled.button`
     width: 18px;
     height: 18px;
 
+    stroke: #333333;
     transition: stroke var(--transition-time) var(--transition-function);
   }
 
@@ -143,6 +166,13 @@ export const RemoveBtn = styled.button`
   &:focus {
     svg {
       stroke: var(--accent);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    svg {
+      width: 20px;
+      height: 20px;
     }
   }
 `;

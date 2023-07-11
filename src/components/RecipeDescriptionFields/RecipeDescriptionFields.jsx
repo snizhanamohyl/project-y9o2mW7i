@@ -34,6 +34,13 @@ export default function RecipeDescriptionFields({
     setCategories(categoriesData);
   }, []);
 
+  const handleFileChange = ({ target }) => {
+    const file = target.files[0];
+    if (typeof file === 'object') {
+      setImgUrl(URL.createObjectURL(file));
+    }
+  };
+
   const formattedCategories = useMemo(() => {
     return categories.map(({ name }) => ({
       value: name,
@@ -48,12 +55,7 @@ export default function RecipeDescriptionFields({
           type="file"
           accept="image/*"
           hidden
-          onChange={({ target }) => {
-            const file = target.files[0];
-            if (typeof file === 'object') {
-              setImgUrl(URL.createObjectURL(file));
-            }
-          }}
+          onChange={handleFileChange}
         />
 
         {imgUrl ? (

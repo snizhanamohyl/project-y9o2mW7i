@@ -1,11 +1,10 @@
-import SectionTitle from 'components/SectionTitle/SectionTitle';
-import { Wrapper, Socials, Item } from './FollowUs.styled';
+import { Wrapper, Title, Socials, Item } from './FollowUs.styled';
 import Sprite from 'assets/sprite.svg';
 
-export default function FollowUs() {
+export default function FollowUs({ isFooter }) {
   return (
     <Wrapper>
-      <SectionTitle>Follow us</SectionTitle>
+      {!isFooter && <Title>Follow us</Title>}
       <Socials>
         <Item>
           <a

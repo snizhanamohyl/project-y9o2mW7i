@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import SectionTitle from 'components/SectionTitle/SectionTitle';
 
 export const Wrapper = styled.div`
   display: none;
@@ -9,14 +10,14 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Title = styled(SectionTitle)`
+  margin-bottom: 40px;
+`;
+
 export const Socials = styled.ul`
-  margin-top: 40px;
-  padding: 0;
   display: flex;
   align-items: center;
   column-gap: 20px;
-
-  list-style: none;
 `;
 
 export const Item = styled.li`

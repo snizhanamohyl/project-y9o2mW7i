@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import RecipeDescriptionFields from 'components/RecipeDescriptionFields/RecipeDescriptionFields';
 import RecipeIngredientsFields from 'components/RecipeIngredientsFields/RecipeIngredientsFields';
 import RecipePreparationFields from 'components/RecipePreparationFields/RecipePreparationFields';
+import Button from 'components/Button/Button';
 import { Form } from './AddRecipeForm.styled';
 
 export default function AddRecipeForm() {
@@ -43,13 +44,9 @@ export default function AddRecipeForm() {
         preparation={preparation}
         setFieldValue={setFieldValue}
       />
-      <button
-        type="submit"
-        onClick={handleSubmit}
-        style={{ padding: '10px', color: 'white', backgroundColor: 'black' }}
-      >
+      <Button type="submit" onClick={handleSubmit}>
         Add
-      </button>
+      </Button>
     </Form>
   );
 }

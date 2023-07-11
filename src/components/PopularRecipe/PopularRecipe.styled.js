@@ -4,12 +4,9 @@ export const Section = styled.section``;
 
 export const List = styled.ul`
   margin: 32px 0 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-
-  list-style: none;
 
   @media screen and (min-width: 768px) {
     margin-top: 40px;
@@ -46,7 +43,6 @@ export const Image = styled.img`
 export const RecipeTitle = styled.h3`
   margin-bottom: 3px;
 
-  font-family: Poppins;
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
@@ -57,7 +53,6 @@ export const RecipeTitle = styled.h3`
 export const Description = styled.p`
   color: var(--color-text-secondary);
   text-overflow: ellipsis;
-  font-family: Poppins;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

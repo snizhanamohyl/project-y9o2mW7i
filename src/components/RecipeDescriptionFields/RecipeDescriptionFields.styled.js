@@ -9,6 +9,11 @@ export const Wrapper = styled.section`
     grid-template-columns: 280px 1fr;
     gap: 32px;
   }
+
+  @media screen and (min-width: 1440px) {
+    grid-template-columns: 358px 1fr;
+    gap: 50px;
+  }
 `;
 
 export const FileWrapper = styled.label`
@@ -36,6 +41,10 @@ export const FileWrapper = styled.label`
   @media screen and (min-width: 768px) {
     margin: 0;
   }
+
+  @media screen and (min-width: 1440px) {
+    height: 344px;
+  }
 `;
 
 export const Preview = styled.img`
@@ -51,9 +60,14 @@ export const Container = styled.div`
   height: 40px;
 
   border-bottom: 1px solid var(--border-bottom-color);
+  transition: border-color var(--transition-time) var(--transition-function);
 
   &:not(:last-child) {
     margin-bottom: 24px;
+  }
+
+  &:focus-within {
+    border-color: var(--input-border-color-focus);
   }
 
   @media screen and (min-width: 768px) {
@@ -81,10 +95,11 @@ export const Input = styled.input`
   width: 100%;
 
   color: var(--black);
-  font-family: Poppins;
+  font-family: inherit;
   font-size: 14px;
   line-height: normal;
   letter-spacing: -0.28px;
+  background-color: transparent;
   border: none;
   outline: none;
 
@@ -100,7 +115,6 @@ export const Input = styled.input`
 
 export const Text = styled.span`
   color: var(--black);
-  font-family: Poppins;
   font-size: 14px;
   letter-spacing: -0.28px;
   opacity: 0.5;

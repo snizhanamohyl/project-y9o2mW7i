@@ -15,7 +15,7 @@ export const TextArea = styled.textarea`
   height: 154px;
 
   color: var(--black);
-  font-family: Poppins;
+  font-family: inherit;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -29,6 +29,7 @@ export const TextArea = styled.textarea`
   border: none;
   outline-color: transparent;
   resize: none;
+  outline: 1px solid transparent;
 
   &::placeholder {
     opacity: 0.5;
