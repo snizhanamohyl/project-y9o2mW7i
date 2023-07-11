@@ -1,10 +1,3 @@
-import PreviewCategories from "components/PreviewCategories/PreviewCategories"
-
-
 export default function MainPage() {
-    return (
-        <>
-        <PreviewCategories/>
-        </>
-    )
+    return <h1>MainPage</h1>
 }
