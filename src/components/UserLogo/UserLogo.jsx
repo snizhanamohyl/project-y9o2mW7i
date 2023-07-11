@@ -1,24 +1,43 @@
 import React, { useState } from 'react';
-import { Popover, Typography } from '@mui/material';
+import { Popover } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Avatar, AvatarImg, UserName, UserWrap } from './UserLogo.styled';
+import PopoverMenu from 'components/Popover/PopoverMenu ';
+
+const theme = createTheme({
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          padding: '18px',
+          boxShadow: 'none',
+          borderRadius: '8px',
+          border: '1px solid var(--accent)',
+          backgroundColor: 'var(--bg-color)',
+        },
+      },
+    },
+  },
+});
+
 
 export const UserLogo = () => {
-      const [anchorEl, setAnchorEl] = useState(null);
-
-      const handleClick = event => {
-        setAnchorEl(event.currentTarget);
-      };
-
-      const handleClose = () => {
-        setAnchorEl(null);
-      };
-    
-    const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
-    
   const avatarSize = window.innerWidth < 768 ? '34px' : '44px';
 
-    
+  const [anchorEl, setAnchorEl] = useState(null);
+
+
+        const handleClick = event => {
+          setAnchorEl(event.currentTarget);
+        };
+
+        const handleClose = () => {
+          setAnchorEl(null);
+        };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+  
     return (
       <>
         <UserWrap onClick={handleClick}>
@@ -32,34 +51,26 @@ export const UserLogo = () => {
           </Avatar>
           <UserName>Olena</UserName>
         </UserWrap>
-        <Popover
-          id={id}
-          open={open}
-          anchorEl={anchorEl}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'center',
-          }}
-        >
-          <div style={{ padding: '10px' }}>
-                    <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
-                    <button type='button'>Button</button>
 
-            {/* <Link href="https://example.com">Go to Example</Link>
-            <Button
-              variant="contained"
-              color="primary"
-              style={{ marginLeft: '10px' }}
-            >
-              Submit
-            </Button> */}
-          </div>
-        </Popover>
+        <ThemeProvider theme={theme}>
+          <Popover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+          >
+            <PopoverMenu />
+          </Popover>
+        </ThemeProvider>
+
       </>
     );
 }
