@@ -31,7 +31,7 @@ const searchProducts = async (type, query) => {
     const { data } = await axios.get(`/${requestType}?keyword=${query}`);
     return data;
   } catch (error) {
-    console.log(error.message);
+    // console.log(error.message);
   }
 };
 

@@ -1,7 +1,7 @@
 import { MenuItem } from '@mui/material';
 import { Label, Menu, Wrapper } from './SearchTypeSelector.styled';
 
-export const SearchTypeSelector = ({ onChange, type }) => {
+export default function SearchTypeSelector({ onChange, type }) {
   const menuProps = {
     sx: {
       display: 'flex',
@@ -24,7 +24,6 @@ export const SearchTypeSelector = ({ onChange, type }) => {
     <Wrapper>
       <Label>Search by:</Label>
       <Menu
-        id="searchBy"
         value={type ? type : 'query'}
         onChange={onChange}
         MenuProps={menuProps}
@@ -34,4 +33,4 @@ export const SearchTypeSelector = ({ onChange, type }) => {
       </Menu>
     </Wrapper>
   );
-};
+}

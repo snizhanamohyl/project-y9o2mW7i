@@ -12,7 +12,13 @@ export default function SearchedRecipesList() {
 
   useEffect(() => {
     if (!query || !type) return;
-    SearchProducts(type, query).then(data => setItems(data));
+    SearchProducts(type, query)
+      .then(data => {
+        if (!data) throw new Error('Bad request');
+        if (data.message) throw new Error(data.message);
+        setItems(data);
+      })
+      .catch(err => console.log(err.message));
   }, [query, type]);
 
   return (
