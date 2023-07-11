@@ -1,14 +1,21 @@
+import sprite from '../../assets/sprite.svg'
 import BurgerBtn from "components/BurgerBtn/BurgerBtn";
-import Logo from "components/Logo/Logo";
 import UserLogo from "components/UserLogo/UserLogo";
 import { HeaderWrap, Menu, NavigationMenu } from "./Header.styled";
 import Navigation from "components/Navigation/Navigation";
 import ThemeToggler from "components/ThemeToggler/ThemeToggler";
+import { Link } from 'react-router-dom';
 
 export default function Header() {
+    const logoSize = window.innerWidth < 768 ? 40 : 44;
+
     return <HeaderWrap>
         <NavigationMenu>
-            <Logo />
+            <Link to='/'>
+                <svg width={logoSize} height={logoSize}>
+                    <use href={`${sprite}#icon-logo-withBG`}></use>
+                </svg>
+            </Link>
             <Navigation/>
         </NavigationMenu>
         <Menu>
