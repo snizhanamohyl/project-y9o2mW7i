@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { lazy } from "react";
-import { useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { lazy, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { refreshUser } from "redux/auth/auth-operations";
 
 import PrivateRoute from "components/PrivateRoute/PrivateRoute";
