@@ -15,14 +15,15 @@ export const SectionHero = styled.section`
     position: absolute;
     width: 100%;
     height: 100%;
-    top: -93px;
+    top: 0;
     left: 0;
     z-index: -1;
 
     background-image: url(${background});
-    background-repeat: no-repeat;
-    background-size: 375px;
+    background-position: center;
     background-size: contain;
+    background-color: #e8e8e6;
+    background-repeat: no-repeat;
   }
 `;
 
