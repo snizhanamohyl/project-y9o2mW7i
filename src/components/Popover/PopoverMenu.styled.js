@@ -1,6 +1,6 @@
 const { styled } = require('styled-components');
 
-export const EditLink = styled.a`
+export const EditBtn = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -9,9 +9,15 @@ export const EditLink = styled.a`
   margin-bottom: 28px;
   font-weight: 500;
   line-height: 1.6;
+  transition: color, fill, var(--transition-time) var(--transition-function);
 
   @media screen and (min-width: 768px) {
   gap: 53px;
+  }
+
+  &:hover, &:focus {
+    color: var(--accent);
+    fill: (--dark-accent);
   }
 `;
 
@@ -29,8 +35,7 @@ export const LogOutBtn = styled.a`
   cursor: pointer;
   transition: background-color, var(--transition-time) var(--transition-function);
 
-  &:hover,
-  &:focus {
+  &:hover, &:focus {
     background-color: var(--dark-accent);
   }
 
