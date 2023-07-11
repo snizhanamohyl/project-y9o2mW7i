@@ -25,20 +25,13 @@ export default function UserLogo () {
   const avatarSize = window.innerWidth < 768 ? '34px' : '44px';
 
   const [anchorEl, setAnchorEl] = useState(null);
-
-
-        const handleClick = event => {
-          setAnchorEl(event.currentTarget);
-        };
-
-        const handleClose = () => {
-          setAnchorEl(null);
-        };
+  const handleClick = event => { setAnchorEl(event.currentTarget); };
+  const handleClose = () => {setAnchorEl(null);};
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   
-    return (
+  return (
       <>
         <UserWrap onClick={handleClick}>
           <Avatar>
