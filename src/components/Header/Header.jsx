@@ -6,10 +6,10 @@ import Navigation from "components/Navigation/Navigation";
 import ThemeToggler from "components/ThemeToggler/ThemeToggler";
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({toggleMenu}) {
     const logoSize = window.innerWidth < 768 ? 40 : 44;
 
-    return <HeaderWrap>
+    return <><HeaderWrap>
         <NavigationMenu>
             <Link to='/'>
                 <svg width={logoSize} height={logoSize}>
@@ -20,8 +20,9 @@ export default function Header() {
         </NavigationMenu>
         <Menu>
             <UserLogo />
-            <BurgerBtn />
+            <BurgerBtn toggleMenu={toggleMenu} />
             <ThemeToggler/>
         </Menu>
     </HeaderWrap>
+    </>
 }
