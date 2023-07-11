@@ -18,7 +18,7 @@ import bgSpinachMiniImgDesk from '../../assets/images/desktop/hero-bg-spinach-mi
 import bgSpinachMiniImgDeskRet from '../../assets/images/desktop/hero-bg-spinach-mini-2x.png';
 import bgShapeImgDesk from '../../assets/images/desktop/bg-shape.svg';
 
-import { retina } from 'vars/styles/retina';
+import { retina } from 'vars/styles';
 
 const heroBgMob = `url(${bgSpinachMiniImg}) left 30px no-repeat,
   url(${bgSpinachImg}) left 54px no-repeat,
