@@ -1,13 +1,15 @@
 import React from 'react';
-import RecipeCard from './RecipeCard';
-import Pagination from './Pagination';
+import RecipeCard from '../../components/RecipeCard/RecipeCard';
+import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { FavoritePage } from './FavoritePage.styled.jsx';
 
-const Favorite = () => {
+const FavoritePage = () => {
     const [recipes, setRecipes] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [recipesPerPage] = useState(4);
+
+    const recipesPerPage = 4;
 
     useEffect(() => {
         const fetchRecipes = async () => {
@@ -31,15 +33,15 @@ const Favorite = () => {
     const currentRecipes = recipes.slice(firstRecipeIndex, lastRecipeIndex);
 
     
-    const pagination = pageNumber => setCurrentPage(pageNumber);
-    const nextPage = () => {setCurrentPage( prev => prev + 1)}
-    const prevPage = () => {setCurrentPage( prev => prev - 1)}
+    // const pagination = pageNumber => setCurrentPage(pageNumber);
+    // const nextPage = () => {setCurrentPage( prev => prev + 1)}
+    // const prevPage = () => {setCurrentPage( prev => prev - 1)}
 
 
   return (
 
     <div>
-        <h1>Favorite </h1>
+        <FavoritePage>Favorite </FavoritePage>
         {recipes.length > 0 ? (
             <RecipeCard recipe={currentRecipes}/>
         ):(
@@ -50,13 +52,11 @@ const Favorite = () => {
         <Pagination 
             recipesPerPage={recipesPerPage} 
             totalRecipe={recipes.length} 
-            pagination={pagination}
-            nextPage={nextPage}
-            prevPage={prevPage}
             currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
         />
     </div>
   );
 };
 
-export default Favorite;
+export default FavoritePage;
