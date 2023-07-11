@@ -2,6 +2,9 @@ import styled from '@emotion/styled';
 import { Field } from 'formik';
 import { NavLink } from 'react-router-dom';
 
+import bgMob from '../../assets/images/mobile/bg-mob.png';
+import bgDesk from '../../assets/images/desktop/bg-desk.png';
+
 const Img = styled.img`
   width: 285px;
   height: 250px;
@@ -24,7 +27,7 @@ const Img = styled.img`
 const Section = styled.div`
   height: 490px;
   background-size: cover;
-  background-image: url(images/bg-mob.png);
+  background-image: url(${bgMob});
   position: relative;
   /* @media screen and (min-width: 768px) {
     height: 606px;
@@ -78,25 +81,43 @@ const Input = styled(Field)`
   height: 45px;
   margin-bottom: 12px;
   border-radius: 6px;
-  border: 0.5px solid var(--bg-color);
+  border: 0.5px solid var(--input-grey);
   background-color: transparent;
   color: var(--bg-color);
   padding-left: 45px;
   outline: none;
   ::placeholder,
   ::-webkit-input-placeholder {
-    color: var(--bg-color);
+    color: var(--input-grey);
     padding-left: 7px;
   }
   :-ms-input-placeholder {
-    color: var(--bg-color);
+    color: var(--input-grey);
     padding-left: 7px;
+  }
+  :focus::-webkit-input-placeholder {
+    color: var(--bg-color);
+  }
+  :focus::placeholder {
+    color: var(--bg-color);
+  }
+  :hover::placeholder {
+    color: var(--bg-color);
+  }
+  :hover::-webkit-input-placeholder {
+    color: var(--bg-color);
   }
   @media screen and (min-width: 768px) {
     width: 400px;
     height: 59px;
     font-size: 18px;
     margin-bottom: 24px;
+  }
+  &:hover {
+    border: 1px solid var(--white);
+  }
+  &:focus {
+    border: 1px solid var(--white);
   }
 `;
 
@@ -164,10 +185,22 @@ const Svg = styled.svg`
   }
 `;
 
+const SvgError = styled(Svg)`
+  & path {
+    stroke: var(--error-red);
+  }
+`;
+
 const SvgPass = styled(Svg)`
   top: 174px;
   @media screen and (min-width: 768px) {
     top: 216px;
+  }
+`;
+
+const SvgPassError = styled(SvgPass)`
+  & path {
+    stroke: var(--error-red);
   }
 `;
 
@@ -178,7 +211,7 @@ const Container = styled.div`
     justify-content: center;
     height: 100vh;
     align-items: center;
-    background-image: url(images/bg-desk.png);
+    background-image: url(${bgDesk});
     background-position: 100% 100%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -206,6 +239,28 @@ const ErrorPass = styled(Error)`
   }
 `;
 
+const MailCrossSvg = styled.svg`
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 40px;
+  top: 117px;
+
+  @media screen and (min-width: 768px) {
+    right: 65px;
+    top: 135px;
+  }
+`;
+
+const PassCrossSvg = styled(MailCrossSvg)`
+  right: 40px;
+  top: 175px;
+  @media screen and (min-width: 768px) {
+    right: 65px;
+    top: 220px;
+  }
+`;
+
 export {
   Img,
   Section,
@@ -222,4 +277,8 @@ export {
   ErrorPass,
   ErrorInput,
   ErrorLastInput,
+  SvgError,
+  SvgPassError,
+  MailCrossSvg,
+  PassCrossSvg,
 };

@@ -1,5 +1,5 @@
 import { RegisterForm } from './RegisterForm';
-import registerImg from '../../images/Registration.png';
+import registerImg from '../../assets/images/desktop/registration.png';
 
 import {
   Img,

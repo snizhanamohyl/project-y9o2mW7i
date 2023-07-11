@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import { Field } from 'formik';
 import { NavLink } from 'react-router-dom';
 
-import bgMob from '../../images/bg-mob.png';
+import bgMob from '../../assets/images/mobile/bg-mob.png';
+import bgDesk from '../../assets/images/desktop/bg-desk.png';
 
 const Img = styled.img`
   width: 285px;
@@ -83,19 +84,31 @@ const Input = styled(Field)`
   height: 45px;
   margin-bottom: 12px;
   border-radius: 6px;
-  border: 0.5px solid var(--bg-color);
+  border: 0.5px solid var(--input-grey);
   background-color: transparent;
   color: var(--bg-color);
   padding-left: 45px;
   outline: none;
   ::placeholder,
   ::-webkit-input-placeholder {
-    color: var(--bg-color);
+    color: var(--input-grey);
     padding-left: 7px;
   }
   :-ms-input-placeholder {
-    color: var(--bg-color);
+    color: var(--input-grey);
     padding-left: 7px;
+  }
+  :focus::-webkit-input-placeholder {
+    color: var(--bg-color);
+  }
+  :focus::placeholder {
+    color: var(--bg-color);
+  }
+  :hover::placeholder {
+    color: var(--bg-color);
+  }
+  :hover::-webkit-input-placeholder {
+    color: var(--bg-color);
   }
   @media screen and (min-width: 768px) {
     width: 400px;
@@ -173,16 +186,6 @@ const SvgMan = styled.svg`
     top: 112px;
     left: 67px;
   }
-  &:hover {
-    &path {
-      stroke: var(--white);
-    }
-  }
-  &:focus {
-    &path {
-      stroke: var(--white);
-    }
-  }
 `;
 
 const SvgManError = styled(SvgMan)`
@@ -225,7 +228,7 @@ const Container = styled.div`
     height: 100vh;
     /* padding-top: 170px; */
     align-items: center;
-    background-image: url(images/bg-desk.png);
+    background-image: url(${bgDesk});
     background-position: 100% 100%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -274,6 +277,35 @@ const ErrorPass = styled(Error)`
   }
 `;
 
+const RedCrossSvg = styled.svg`
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 40px;
+  top: 95px;
+  @media screen and (min-width: 768px) {
+    right: 65px;
+    top: 114px;
+  }
+`;
+
+const MailCrossSvg = styled(RedCrossSvg)`
+  right: 40px;
+  top: 152px;
+
+  @media screen and (min-width: 768px) {
+    top: 198px;
+  }
+`;
+
+const PassCrossSvg = styled(RedCrossSvg)`
+  right: 40px;
+  top: 209px;
+  @media screen and (min-width: 768px) {
+    top: 280px;
+  }
+`;
+
 export {
   Img,
   Section,
@@ -295,4 +327,7 @@ export {
   SvgManError,
   SvgEmailError,
   SvgPassError,
+  RedCrossSvg,
+  MailCrossSvg,
+  PassCrossSvg,
 };

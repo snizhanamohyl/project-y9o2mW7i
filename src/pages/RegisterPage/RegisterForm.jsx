@@ -2,6 +2,7 @@ import { Formik, Form, ErrorMessage } from 'formik';
 import { schema } from './schema';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
+import Sprite from 'assets/sprite.svg';
 
 import {
   Input,
@@ -18,6 +19,9 @@ import {
   SvgManError,
   SvgEmailError,
   SvgPassError,
+  RedCrossSvg,
+  PassCrossSvg,
+  MailCrossSvg,
 } from './RegisterPageStyles';
 
 const initialValues = {
@@ -54,32 +58,20 @@ export const RegisterForm = () => {
           )}
 
           {Object.keys(errors).length > 0 ? (
-            <SvgManError
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13 14.25C13 13.2033 13 12.68 12.8708 12.2541C12.58 11.2953 11.8297 10.545 10.8709 10.2542C10.445 10.125 9.92167 10.125 8.875 10.125H5.125C4.07833 10.125 3.55499 10.125 3.12914 10.2542C2.17034 10.545 1.42003 11.2953 1.12918 12.2541C1 12.68 1 13.2033 1 14.25M10.375 4.125C10.375 5.98896 8.86396 7.5 7 7.5C5.13604 7.5 3.625 5.98896 3.625 4.125C3.625 2.26104 5.13604 0.75 7 0.75C8.86396 0.75 10.375 2.26104 10.375 4.125Z"
-                stroke="#FAFAFA"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+            <SvgManError>
+            <use href={Sprite + '#icon-user'}></use>
             </SvgManError>
           ) : (
-            <SvgMan
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13 14.25C13 13.2033 13 12.68 12.8708 12.2541C12.58 11.2953 11.8297 10.545 10.8709 10.2542C10.445 10.125 9.92167 10.125 8.875 10.125H5.125C4.07833 10.125 3.55499 10.125 3.12914 10.2542C2.17034 10.545 1.42003 11.2953 1.12918 12.2541C1 12.68 1 13.2033 1 14.25M10.375 4.125C10.375 5.98896 8.86396 7.5 7 7.5C5.13604 7.5 3.625 5.98896 3.625 4.125C3.625 2.26104 5.13604 0.75 7 0.75C8.86396 0.75 10.375 2.26104 10.375 4.125Z"
-                stroke="#FAFAFA"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+            <SvgMan width={18} height={18}>
+              <use href={Sprite + '#icon-user'}></use>
             </SvgMan>
           )}
+          {Object.keys(errors).length > 0 && (
+            <RedCrossSvg width={20} height={20}>
+              <use href={Sprite + '#icon-red-x-20x20'}></use>
+            </RedCrossSvg>
+          )}
+
           <ErrorMessage component={Error} name="name" />
           {Object.keys(errors).length > 0 ? (
             <ErrorInput name="email" placeholder="Email" />
@@ -117,6 +109,11 @@ export const RegisterForm = () => {
                 />
               </g>
             </SvgEmail>
+          )}
+          {Object.keys(errors).length > 0 && (
+            <MailCrossSvg width={20} height={20}>
+              <use href={Sprite + '#icon-red-x-20x20'}></use>
+            </MailCrossSvg>
           )}
           <ErrorMessage component={ErrorEmail} name="email" />
           {Object.keys(errors).length > 0 ? (
@@ -160,7 +157,11 @@ export const RegisterForm = () => {
               </g>
             </SvgPass>
           )}
-
+          {Object.keys(errors).length > 0 && (
+            <PassCrossSvg width={20} height={20}>
+              <use href={Sprite + '#icon-red-x-20x20'}></use>
+            </PassCrossSvg>
+          )}
           <ErrorMessage component={ErrorPass} name="password" />
           <Button type="submit">Sign up</Button>
         </Form>
@@ -168,3 +169,5 @@ export const RegisterForm = () => {
     </Formik>
   );
 };
+
+
