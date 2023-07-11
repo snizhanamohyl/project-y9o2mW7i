@@ -3,7 +3,7 @@ import RecipeCard from '../../components/RecipeCard/RecipeCard';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FavoritePage } from './FavoritePage.styled.jsx';
+import { FavoritePageTitle } from './FavoritePage.styled.jsx';
 
 const FavoritePage = () => {
     const [recipes, setRecipes] = useState([]);
@@ -41,7 +41,7 @@ const FavoritePage = () => {
   return (
 
     <div>
-        <FavoritePage>Favorite </FavoritePage>
+        <FavoritePageTitle>Favorite </FavoritePageTitle>
         {recipes.length > 0 ? (
             <RecipeCard recipe={currentRecipes}/>
         ):(
