@@ -6,17 +6,12 @@ export const ImgBox = styled.div`
    position:relative;
    width: 344px;
    height: 322px;
-   margin-bottom: 24px;
    background-color: grey;
    border-radius: 8px;
 
    @media (min-width: 768px) {
      width: 336px;
      height: 332px;
-     margin-bottom: 40px;
-    &:nth-child(even) {
-      margin-bottom: 144px;
-    }
 
     @media (min-width: 1440px) {
      width: 300px;

@@ -16,6 +16,8 @@ export const PreviewCategoriesSection = styled.section`
   }
 `; 
 
+
+
 export const OtherBtnIcon = styled.button`
     display: block;
     margin: 0  auto 0 auto;
