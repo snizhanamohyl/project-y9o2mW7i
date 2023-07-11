@@ -89,13 +89,9 @@ ul {
   margin-bottom: 0;
 }
 
-.ul {
+ul {
   list-style: none;
   padding-left: 0px;
-}
-
-.is-hidden {
-  display: none;
 }
 
 a {
