@@ -15,11 +15,7 @@ const theme = createTheme({
           borderRadius: '8px',
           border: '1px solid var(--accent)',
           backgroundColor: 'var(--bg-color)',
-        },
-      },
-    },
-  },
-});
+        },},},},});
 
 export default function UserLogo () {
   const avatarSize = window.innerWidth < 768 ? '34px' : '44px';
