@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { CustomTabPanel } from './CustomTabsPanel';
 import { Title } from './CategoriesPage.style';
@@ -7,7 +8,9 @@ import { CustomTabs, CustomTab, CustomConteiner, CustomBox } from './Tabs.style'
 import categories from '../../categories.json';
 
 export default function CategoriesPage() {
-  const [value, setValue] = useState('');
+  const { categoryName } = useParams();
+
+  const [value, setValue] = useState(categoryName || '');
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -17,12 +20,15 @@ export default function CategoriesPage() {
 
     setData(sortedData);
     if (sortedData.length > 0) {
-      setValue(sortedData[0]._id.$oid);
+      const defaultCategory = categoryName || sortedData[0].name;
+      setValue(defaultCategory);
+      window.history.pushState(null, '', `/project-y9o2mW7i/categories/${defaultCategory}`);
     }
-  }, []);
+  }, [categoryName]);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (e, newValue) => {
     setValue(newValue);
+    window.history.pushState(null, '', `/project-y9o2mW7i/categories/${newValue}`);
   };
 
   return (
@@ -32,12 +38,12 @@ export default function CategoriesPage() {
         <CustomBox>
           <CustomTabs value={value} onChange={handleChange} variant="scrollable" scrollButtons="auto" aria-label="basic tabs example">
             {data.map(item => (
-              <CustomTab key={item._id.$oid} label={item.name} value={item._id.$oid} />
+              <CustomTab key={item._id.$oid} label={item.name} value={item.name} />
             ))}
           </CustomTabs>
         </CustomBox>
         {data.map(item => (
-          <CustomTabPanel key={item._id.$oid} value={value} index={item._id.$oid}>
+          <CustomTabPanel key={item._id.$oid} value={value} index={item.name}>
             {item.name}
           </CustomTabPanel>
         ))}
