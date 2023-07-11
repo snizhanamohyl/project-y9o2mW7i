@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { CustomTabPanel } from './CustomTabsPanel';
 import { Title } from './CategoriesPage.style';
@@ -9,6 +9,7 @@ import categories from '../../categories.json';
 
 export default function CategoriesPage() {
   const { categoryName } = useParams();
+  const navigate = useNavigate();
 
   const [value, setValue] = useState(categoryName || '');
   const [data, setData] = useState([]);
@@ -22,13 +23,13 @@ export default function CategoriesPage() {
     if (sortedData.length > 0) {
       const defaultCategory = categoryName || sortedData[0].name;
       setValue(defaultCategory);
-      window.history.pushState(null, '', `/project-y9o2mW7i/categories/${defaultCategory}`);
+      navigate(`/categories/${defaultCategory}`);
     }
-  }, [categoryName]);
+  }, [categoryName, navigate]);
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
-    window.history.pushState(null, '', `/project-y9o2mW7i/categories/${newValue}`);
+    navigate(`/categories/${newValue}`);
   };
 
   return (
