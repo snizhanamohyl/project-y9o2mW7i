@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-   OtherBtnIcon,
-   PreviewCategoriesSection,
-} from "./PreviewCategories.styled";
-import getAllRecipes from "./getAllRecipes";
+import { PreviewCategoriesSection } from "./PreviewCategories.styled";
+import CategoriesBtn from "../../components/CategoriesBtn/CategoriesBtn";
 import  RecipeList  from "../../components/RecipeList/RecipeList";
-
+import getAllRecipes from "./getAllRecipes";
 
 
 
@@ -94,7 +91,7 @@ export default function PreviewCategories() {
 
    return (<PreviewCategoriesSection>
       <ul>
-         <RecipeList
+      <RecipeList
             breakfastArr={breakfastArr}
             miscellaneousArr={miscellaneousArr}
             chickenArr={chickenArr}
@@ -102,7 +99,7 @@ export default function PreviewCategories() {
             title={categories} />
       </ul>
       <Link to={"#"}>
-         <OtherBtnIcon>Other categories</OtherBtnIcon>
+      <CategoriesBtn/>
       </Link>   
     </PreviewCategoriesSection>);
          

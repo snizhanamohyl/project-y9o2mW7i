@@ -18,16 +18,16 @@ export const PreviewCategoriesSection = styled.section`
 
 
 
-export const OtherBtnIcon = styled.button`
-    display: block;
-    margin: 0  auto 0 auto;
-    width: 240px;
-    height: 60px;
-    border: 2px solid var(--accent);
-    border-radius: 18px 36px;
+// export const OtherBtnIcon = styled.button`
+//     display: block;
+//     margin: 0  auto 0 auto;
+//     width: 240px;
+//     height: 60px;
+//     border: 2px solid var(--accent);
+//     border-radius: 18px 36px;
    
-    font-size: 16px;
-    color: var(--dark-accent);
-`;
+//     font-size: 16px;
+//     color: var(--dark-accent);
+// `;
 
 

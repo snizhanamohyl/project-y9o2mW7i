@@ -15,7 +15,7 @@ export const ImgBox = styled.div`
 
     @media (min-width: 1440px) {
      width: 300px;
-     height: 336px;
+     height: 323px;
   }
   }
 `;
