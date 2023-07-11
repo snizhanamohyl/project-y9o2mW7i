@@ -17,7 +17,7 @@ export const EditBtn = styled.button`
 
   &:hover, &:focus {
     color: var(--accent);
-    fill: (--dark-accent);
+    fill: var(--accent);
   }
 `;
 
