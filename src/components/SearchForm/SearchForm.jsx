@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Form, Input } from './SearchForm.styled';
 import { useLocation } from 'react-router';
+import { Button, Form, Input } from './SearchForm.styled';
 
 export default function SearchForm() {
   const [query, setQuery] = useState('');

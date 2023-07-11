@@ -1,4 +1,4 @@
-import sprite from '../../assets/sprite.svg'
+import sprite from 'assets/sprite.svg'
 import { SeeRecipesLink, Text, TextAccent, Wrap } from './СhooseYourBreakfast.styled';
 
 export default function СhooseYourBreakfast() {

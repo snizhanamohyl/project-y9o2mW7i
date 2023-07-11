@@ -1,11 +1,13 @@
 import SearchForm from 'components/SearchForm/SearchForm';
 import СhooseYourBreakfast from 'components/СhooseYourBreakfast/СhooseYourBreakfast';
-import heroDishImgMob from '../../assets/images/mobile/hero-dish-1x.png'
-import heroDishImgMobRet from '../../assets/images/mobile/hero-dish-2x.png'
-import heroDishImgTab from '../../assets/images/tablet/hero-dish-1x.png'
-import heroDishImgTabRet from '../../assets/images/tablet/hero-dish-2x.png'
-import heroDishImgDesk from '../../assets/images/desktop/hero-dish-1x.png'
-import heroDishImgDeskRet from '../../assets/images/desktop/hero-dish-2x.png'
+
+import heroDishImgMob from 'assets/images/mobile/hero-dish-1x.png'
+import heroDishImgMobRet from 'assets/images/mobile/hero-dish-2x.png'
+import heroDishImgTab from 'assets/images/tablet/hero-dish-1x.png'
+import heroDishImgTabRet from 'assets/images/tablet/hero-dish-2x.png'
+import heroDishImgDesk from 'assets/images/desktop/hero-dish-1x.png'
+import heroDishImgDeskRet from 'assets/images/desktop/hero-dish-2x.png'
+
 import { AccentSpan, Descr, HeroWrap, Image, Title } from './Hero.styled';
 
 const srcsetMob = `${heroDishImgMob} 1x, ${heroDishImgMobRet} 2x`;

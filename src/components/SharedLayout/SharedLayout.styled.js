@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 
-import bgSpinachImg from '../../assets/images/mobile/hero-bg-spinach-1x.png';
-import bgSpinachImgRet from '../../assets/images/mobile/hero-bg-spinach-2x.png';
-import bgSpinachMiniImg from '../../assets/images/mobile/hero-bg-spinach-mini-1x.png';
-import bgSpinachMiniImgRet from '../../assets/images/mobile/hero-bg-spinach-mini-2x.png';
-import bgShapeImg from '../../assets/images/mobile/bg-shape.svg';
+import bgSpinachImg from 'assets/images/mobile/hero-bg-spinach-1x.png';
+import bgSpinachImgRet from 'assets/images/mobile/hero-bg-spinach-2x.png';
+import bgSpinachMiniImg from 'assets/images/mobile/hero-bg-spinach-mini-1x.png';
+import bgSpinachMiniImgRet from 'assets/images/mobile/hero-bg-spinach-mini-2x.png';
+import bgShapeImg from 'assets/images/mobile/bg-shape.svg';
 
-import bgSpinachImgTab from '../../assets/images/tablet/hero-bg-spinach-1x.png';
-import bgSpinachImgTabRet from '../../assets/images/tablet/hero-bg-spinach-2x.png';
-import bgSpinachMiniImgTab from '../../assets/images/tablet/hero-bg-spinach-mini-1x.png';
-import bgSpinachMiniImgTabRet from '../../assets/images/tablet/hero-bg-spinach-mini-2x.png';
-import bgShapeImgTab from '../../assets/images/tablet/bg-shape.svg';
+import bgSpinachImgTab from 'assets/images/tablet/hero-bg-spinach-1x.png';
+import bgSpinachImgTabRet from 'assets/images/tablet/hero-bg-spinach-2x.png';
+import bgSpinachMiniImgTab from 'assets/images/tablet/hero-bg-spinach-mini-1x.png';
+import bgSpinachMiniImgTabRet from 'assets/images/tablet/hero-bg-spinach-mini-2x.png';
+import bgShapeImgTab from 'assets/images/tablet/bg-shape.svg';
 
-import bgSpinachImgDesk from '../../assets/images/desktop/hero-bg-spinach-1x.png';
-import bgSpinachImgDeskRet from '../../assets/images/desktop/hero-bg-spinach-2x.png';
-import bgSpinachMiniImgDesk from '../../assets/images/desktop/hero-bg-spinach-mini-1x.png';
-import bgSpinachMiniImgDeskRet from '../../assets/images/desktop/hero-bg-spinach-mini-2x.png';
-import bgShapeImgDesk from '../../assets/images/desktop/bg-shape.svg';
+import bgSpinachImgDesk from 'assets/images/desktop/hero-bg-spinach-1x.png';
+import bgSpinachImgDeskRet from 'assets/images/desktop/hero-bg-spinach-2x.png';
+import bgSpinachMiniImgDesk from 'assets/images/desktop/hero-bg-spinach-mini-1x.png';
+import bgSpinachMiniImgDeskRet from 'assets/images/desktop/hero-bg-spinach-mini-2x.png';
+import bgShapeImgDesk from 'assets/images/desktop/bg-shape.svg';
 
 import { retina } from 'vars/styles';
 
