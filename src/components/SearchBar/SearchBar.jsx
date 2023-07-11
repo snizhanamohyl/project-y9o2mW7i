@@ -1,10 +1,10 @@
-import { SeacrhForm } from 'components/SeacrhForm/SeacrhForm';
+import SearchForm from 'components/SearchForm/SearchForm';
 import { SearchTypeSelector } from 'components/SearchTypeSelector/SearchTypeSelector';
 
 export const SearchBar = () => {
   return (
     <>
-      <SeacrhForm />
+      <SearchForm />
       <SearchTypeSelector />
     </>
   );

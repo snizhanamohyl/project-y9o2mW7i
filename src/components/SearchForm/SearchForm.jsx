@@ -1,10 +1,14 @@
 import React from 'react';
-import { Button, Form, Input } from './SeacrhForm.styled';
+import { useLocation } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { searchByQuery } from 'redux/search/operations';
+import { Button, Form, Input } from './SearchForm.styled';
 
-export const SeacrhForm = () => {
+export default function SearchForm() {
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
+  const isSearchPage = pathname.includes('/search');
+
   const handleSubmit = e => {
     e.preventDefault();
     const query = e.target[0].value;
@@ -13,9 +17,11 @@ export const SeacrhForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} issearchpage={isSearchPage.toString()}>
       <Input id="search" placeholder="Enter the text" type="text" />
-      <Button type="submit">Search</Button>
+      <Button type="submit" issearchpage={isSearchPage.toString()}>
+        Search
+      </Button>
     </Form>
   );
-};
+}

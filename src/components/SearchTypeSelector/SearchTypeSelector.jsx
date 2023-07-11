@@ -18,6 +18,7 @@ export const SearchTypeSelector = () => {
       justifyContent: 'center',
       alignItems: 'flex-start',
       gap: '8px',
+      backgroundColor: 'var(--input-bg-color)',
       '& div': { boxShadow: 'none' },
       '& li': {
         color: 'var(--black)',
