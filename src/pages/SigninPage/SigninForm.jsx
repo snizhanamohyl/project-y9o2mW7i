@@ -1,7 +1,7 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import { schema } from './schema';
 import { useDispatch } from 'react-redux';
-import { login } from 'redux/auth/authOperations';
+import { login } from 'redux/auth/auth-operations';
 
 import {
   Input,
