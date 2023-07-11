@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MyRecipesPage = styled.h1`
+export const MyRecipePage = styled.h1`
     color: #001833;
     font-family: Poppins;
     font-size: 28px;

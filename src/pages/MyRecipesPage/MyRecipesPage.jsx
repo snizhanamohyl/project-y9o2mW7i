@@ -3,7 +3,7 @@ import RecipeCard from '../../components/RecipeCard/RecipeCard';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { MyRecipesPage } from './MyRecipesPage.styled.jsx';
+import { MyRecipePage } from './MyRecipesPage.styled.jsx';
 
 const MyRecipesPage = () => {
     const [recipes, setRecipes] = useState([]);
@@ -36,7 +36,7 @@ const MyRecipesPage = () => {
     return (
 
         <div>
-            <MyRecipesPage>My recipes</MyRecipesPage>
+            <MyRecipePage>My recipes</MyRecipePage>
             {recipes.length > 0 ? (
                 <RecipeCard recipe={currentRecipes}/>
             ):(
