@@ -21,8 +21,7 @@ const theme = createTheme({
   },
 });
 
-
-export const UserLogo = () => {
+export default function UserLogo () {
   const avatarSize = window.innerWidth < 768 ? '34px' : '44px';
 
   const [anchorEl, setAnchorEl] = useState(null);
