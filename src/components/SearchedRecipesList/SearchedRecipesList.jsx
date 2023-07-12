@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import SearchFailed from 'components/SearchFailed/SearchFailed';
 import SearchProducts from 'services/search-api';
+import SearchFailed from 'components/SearchFailed/SearchFailed';
+import RecipesList from 'components/RecipesList/RecipesList';
 
 export default function SearchedRecipesList() {
   const [items, setItems] = useState([]);
@@ -26,11 +27,7 @@ export default function SearchedRecipesList() {
       {!items || items.length === 0 ? (
         <SearchFailed />
       ) : (
-        <ul>
-          {items.map(({ _id, title }) => (
-            <li key={_id}>{title}</li>
-          ))}
-        </ul>
+        <RecipesList cards={items} />
       )}
     </>
   );
