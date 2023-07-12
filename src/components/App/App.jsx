@@ -35,6 +35,7 @@ export default function App() {
 
     <Route path='/' element={<SharedLayout />} >
       <Route index element={<PrivateRoute component={MainPage} redirectTo='/' />}></Route>
+      <Route path='/categories' element={<PrivateRoute component={CategoriesPage } redirectTo='/categories' />}></Route>
       <Route path='/categories/:categoryName' element={<PrivateRoute component={CategoriesPage } redirectTo='/categories/:categoryName' />}></Route>
       <Route path='/add' element={<PrivateRoute component={AddRecipePage} redirectTo='/add' />}></Route>
       <Route path='/my' element={<PrivateRoute component={MyRecipesPage} redirectTo='/my' />}></Route>
