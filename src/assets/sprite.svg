@@ -39,7 +39,6 @@
                 d="M20.438 9.62c0.433-0.639 1.303-0.806 1.943-0.373s0.806 1.303 0.373 1.943l-7.587 11.191c-0.555 0.819-1.761 0.819-2.316 0l-3.604-5.316c-0.434-0.639-0.267-1.509 0.373-1.943s1.509-0.267 1.943 0.373l2.446 3.608 6.429-9.483z">
             </path>
         </symbol>
-
         <symbol id="icon-clock" viewBox="0 0 32 32" fill="none">
             <path stroke-linejoin="round" stroke-linecap="round" stroke="#23262A" stroke-miterlimit="4"
                 stroke-width="2.9714"
@@ -49,16 +48,16 @@
                 stroke-width="2.9714" d="M16 8v8l5.333 2.667"></path>
         </symbol>
         <symbol id="icon-down" viewBox="0 0 32 32">
-            <path fill="none" stroke="#8baa36" style="stroke: var(--color4, #8baa36)" stroke-linejoin="round"
-                stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.0476"
-                d="M23.619 12.19l-7.619 7.619-7.619-7.619"></path>
+            <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.0476"
+                d="M23.619 12.19l-7.619 7.619-7.619-7.619">
+            </path>
         </symbol>
         <symbol id="icon-down-18x18" viewBox="0 0 32 32">
             <path fill="none" stroke="#8baa36" style="stroke: var(--color4, #8baa36)" stroke-linejoin="round"
                 stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M8 12l8 8 8-8"></path>
         </symbol>
         <symbol id="icon-facebook" viewBox="0 0 32 32">
-            <path fill="#8baa36" style="fill: var(--color4, #8baa36)"
+            <path
                 d="M28.19 14.559c0-7.619-6.141-13.797-13.714-13.797s-13.714 6.178-13.714 13.797c0 6.886 5.014 12.594 11.571 13.63v-9.641h-3.483v-3.99h3.483v-3.040c0-3.457 2.048-5.369 5.18-5.369 1.5 0 3.070 0.27 3.070 0.27v3.396h-1.73c-1.703 0-2.235 1.063-2.235 2.156v2.587h3.803l-0.607 3.99h-3.195v9.642c6.557-1.035 11.572-6.743 11.572-13.631v0z">
             </path>
         </symbol>
@@ -68,10 +67,10 @@
             </path>
         </symbol>
         <symbol id="icon-instagram" viewBox="0 0 32 32">
-            <path fill="#8baa36" style="fill: var(--color4, #8baa36)"
+            <path
                 d="M22.666 2.666c1.767 0.005 3.459 0.709 4.709 1.959s1.953 2.942 1.959 4.709v13.333c-0.005 1.767-0.709 3.459-1.959 4.709s-2.942 1.953-4.709 1.959h-13.333c-1.767-0.005-3.459-0.709-4.709-1.959s-1.953-2.942-1.959-4.709v-13.333c0.005-1.767 0.709-3.459 1.959-4.709s2.942-1.953 4.709-1.959h13.333zM22.666 0h-13.333c-5.134 0-9.334 4.2-9.334 9.334v13.333c0 5.134 4.2 9.334 9.334 9.334h13.333c5.134 0 9.334-4.2 9.334-9.334v-13.333c0-5.134-4.2-9.334-9.334-9.334v0z">
             </path>
-            <path fill="#8baa36" style="fill: var(--color4, #8baa36)"
+            <path
                 d="M24.666 9.337c-0.395 0-0.782-0.117-1.111-0.337s-0.585-0.532-0.737-0.898-0.191-0.768-0.114-1.156c0.077-0.388 0.267-0.744 0.547-1.024s0.636-0.47 1.024-0.547c0.388-0.077 0.79-0.038 1.155 0.114s0.678 0.408 0.898 0.737c0.22 0.329 0.337 0.716 0.337 1.111 0.001 0.263-0.051 0.523-0.151 0.766s-0.248 0.464-0.433 0.649c-0.186 0.186-0.407 0.333-0.649 0.433s-0.503 0.152-0.766 0.151v0zM16 10.67c1.055 0 2.086 0.313 2.963 0.899s1.561 1.419 1.964 2.394c0.404 0.975 0.509 2.047 0.303 3.082s-0.714 1.985-1.46 2.731c-0.746 0.746-1.696 1.254-2.731 1.46s-2.107 0.1-3.082-0.304c-0.975-0.404-1.808-1.087-2.394-1.964s-0.899-1.908-0.899-2.963c0.002-1.414 0.564-2.77 1.564-3.77s2.356-1.562 3.77-1.564v0zM16 8.003c-1.582 0-3.129 0.469-4.445 1.348s-2.341 2.128-2.947 3.59c-0.605 1.462-0.764 3.070-0.455 4.622s1.071 2.977 2.189 4.096c1.119 1.119 2.544 1.881 4.096 2.19s3.16 0.15 4.622-0.455c1.462-0.605 2.711-1.631 3.59-2.946s1.348-2.862 1.348-4.445c0-2.122-0.843-4.157-2.343-5.657s-3.535-2.343-5.657-2.343v0z">
             </path>
         </symbol>
@@ -153,9 +152,10 @@
             <path stroke-linejoin="round" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="4"
                 stroke-width="2.2857" d="M4 16h24M4 8h24M4 24h16"></path>
         </symbol>
-        <symbol id="icon-Minus" viewBox="0 0 32 32">
+        <symbol id="icon-minus" viewBox="0 0 32 32">
             <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286"
-                d="M5 16h22"></path>
+                d="M5 16h22">
+            </path>
         </symbol>
         <symbol id="icon-pencil" viewBox="0 0 32 32">
             <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4471"
@@ -163,10 +163,10 @@
             </path>
         </symbol>
         <symbol id="icon-plus" viewBox="0 0 32 32">
-            <path fill="none" stroke="#fafafa" style="stroke: var(--color1, #fafafa)" stroke-linejoin="round"
-                stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M16 6.667v18.667"></path>
-            <path fill="none" stroke="#fafafa" style="stroke: var(--color1, #fafafa)" stroke-linejoin="round"
-                stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M6.667 16h18.667"></path>
+            <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556"
+                d="M16 6.667v18.667"></path>
+            <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556"
+                d="M6.667 16h18.667"></path>
         </symbol>
         <symbol id="icon-Plus-14x14" viewBox="0 0 32 32">
             <path fill="none" stroke="#8baa36" style="stroke: var(--color4, #8baa36)" stroke-linejoin="round"
@@ -199,7 +199,7 @@
             </path>
         </symbol>
         <symbol id="icon-twitter" viewBox="0 0 32 32">
-            <path fill="#8baa36" style="fill: var(--color4, #8baa36)"
+            <path
                 d="M28.8 5.854c-1.080 0.456-2.223 0.757-3.393 0.893 1.229-0.7 2.154-1.812 2.6-3.127-1.162 0.661-2.432 1.124-3.754 1.371-0.557-0.567-1.226-1.019-1.968-1.326s-1.54-0.466-2.347-0.464c-3.265 0-5.908 2.532-5.908 5.652-0.002 0.434 0.049 0.867 0.152 1.289-2.341-0.107-4.634-0.687-6.731-1.705s-3.953-2.449-5.449-4.204c-0.525 0.86-0.802 1.841-0.803 2.841 0 1.96 1.052 3.692 2.64 4.707-0.941-0.022-1.863-0.264-2.687-0.706v0.070c0 2.742 2.040 5.022 4.74 5.542-0.508 0.132-1.031 0.198-1.556 0.198-0.373 0.001-0.745-0.035-1.111-0.105 0.751 2.246 2.935 3.879 5.523 3.926-2.103 1.576-4.684 2.427-7.339 2.421-0.471-0.001-0.942-0.028-1.41-0.082 2.701 1.677 5.84 2.564 9.044 2.555 10.882 0 16.826-8.616 16.826-16.088 0-0.245-0.007-0.49-0.019-0.729 1.154-0.798 2.152-1.79 2.948-2.928v0z">
             </path>
         </symbol>
@@ -236,7 +236,8 @@
         </symbol>
         <symbol id="icon-X-14x14" viewBox="0 0 32 32">
             <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286"
-                d="M25 7l-18 18"></path>
+                d="M25 7l-18 18">
+            </path>
             <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286"
                 d="M25 25l-18-18"></path>
         </symbol>
@@ -255,7 +256,7 @@
             </path>
         </symbol>
         <symbol id="icon-youtube" viewBox="0 0 32 32">
-            <path fill="#8baa36" style="fill: var(--color4, #8baa36)"
+            <path
                 d="M30.205 8.946c0-2.625-1.966-4.737-4.394-4.737-3.29-0.151-6.645-0.209-10.074-0.209h-1.069c-3.42 0-6.782 0.058-10.071 0.21-2.423 0-4.388 2.123-4.388 4.748-0.148 2.076-0.211 4.153-0.208 6.229-0.006 2.077 0.061 4.155 0.202 6.236 0 2.625 1.966 4.754 4.388 4.754 3.456 0.158 7.001 0.228 10.606 0.222 3.61 0.012 7.146-0.062 10.606-0.222 2.429 0 4.394-2.129 4.394-4.754 0.143-2.082 0.208-4.159 0.202-6.241 0.013-2.077-0.051-4.155-0.194-6.236zM12.293 20.91v-11.462l8.61 5.728-8.611 5.734z">
             </path>
         </symbol>
