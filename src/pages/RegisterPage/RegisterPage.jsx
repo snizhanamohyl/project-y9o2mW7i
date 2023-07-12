@@ -1,4 +1,4 @@
-import { RegisterForm } from './RegisterForm';
+import { RegisterForm } from '../../components/RegisterForm/RegisterForm';
 import registerImg from '../../assets/images/desktop/registration.png';
 
 import {
@@ -8,7 +8,7 @@ import {
   Title,
   Link,
   Container,
-} from './RegisterPageStyles';
+} from './RegisterPage.styled';
 
 export default function RegisterPage() {
   return (

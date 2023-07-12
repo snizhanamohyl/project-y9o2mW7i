@@ -1,4 +1,4 @@
-import { SigninForm } from './SigninForm';
+import { SigninForm } from '../../components/SigninForm/SigninForm';
 import registerImg from '../../assets/images/desktop/registration.png';
 
 import {
@@ -8,7 +8,7 @@ import {
   Title,
   Link,
   Container,
-} from './SigninPageStyles';
+} from './SigninPage.styled';
 
 export default function SigninPage() {
   return (

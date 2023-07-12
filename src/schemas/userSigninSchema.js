@@ -1,10 +1,6 @@
 import * as yup from 'yup';
 
-export const schema = yup.object().shape({
-  name: yup
-    .string()
-    .required('Name is required')
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets are allowed for this field '),
+export const userSigninSchema = yup.object().shape({
   email: yup
     .string()
     .email('Please enter a valid email')

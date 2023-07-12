@@ -1,106 +1,77 @@
 import { Formik, Form, ErrorMessage } from 'formik';
-import { schema } from './schema';
+import { userSigninSchema } from 'schemas/userSigninSchema';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/auth-operations';
+import { login } from 'redux/auth/auth-operations';
 import Sprite from 'assets/sprite.svg';
 
 import {
   Input,
   LastInput,
   Button,
-  SvgMan,
-  SvgEmail,
+  Svg,
   SvgPass,
   Error,
-  ErrorEmail,
   ErrorPass,
   ErrorInput,
   ErrorLastInput,
-  RedCrossSvg,
-  PassCrossSvg,
   MailCrossSvg,
+  PassCrossSvg,
   SvgDiv,
   SvgDivError,
-} from './RegisterPageStyles';
+} from '../../pages/SigninPage/SigninPage.styled';
 
 const initialValues = {
-  name: '',
   email: '',
   password: '',
 };
 
-export const RegisterForm = () => {
+export const SigninForm = () => {
   const dispatch = useDispatch();
 
   const handlesubmit = (values, actions) => {
     console.log(values);
     console.log(actions);
+
     actions.resetForm();
 
-    dispatch(register(values));
+    dispatch(login(values));
   };
-
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={schema}
+      validationSchema={userSigninSchema}
       onSubmit={handlesubmit}
       validateOnChange={false}
       validateOnBlur={false}
     >
       {({ errors, touched }) => (
         <Form autoComplete="off">
-          {Object.keys(errors).length > 0 ? (
-            <ErrorInput type="text" name="name" placeholder="Name" />
-          ) : (
-            <Input type="text" name="name" placeholder="Name" />
-          )}
-          {Object.keys(errors).length > 0 ? (
-            <SvgDivError>
-              <SvgMan>
-                <use href={Sprite + '#icon-user'}></use>
-              </SvgMan>
-            </SvgDivError>
-          ) : (
-            <SvgDiv>
-              <SvgMan>
-                <use href={Sprite + '#icon-user'}></use>
-              </SvgMan>
-            </SvgDiv>
-          )}
-          {Object.keys(errors).length > 0 && (
-            <RedCrossSvg width={20} height={20}>
-              <use href={Sprite + '#icon-red-x-20x20'}></use>
-            </RedCrossSvg>
-          )}
-
-          <ErrorMessage component={Error} name="name" />
-          {Object.keys(errors).length > 0 ? (
+          {errors.email && touched.email ? (
             <ErrorInput name="email" placeholder="Email" />
           ) : (
             <Input name="email" placeholder="Email" />
           )}
 
-          {Object.keys(errors).length > 0 ? (
+          {errors.email && touched.email ? (
             <SvgDivError>
-              <SvgEmail>
+              <Svg>
                 <use href={Sprite + '#icon-letter'}></use>
-              </SvgEmail>
+              </Svg>
             </SvgDivError>
           ) : (
             <SvgDiv>
-              <SvgEmail>
+              <Svg>
                 <use href={Sprite + '#icon-letter'}></use>
-              </SvgEmail>
+              </Svg>
             </SvgDiv>
           )}
-          {Object.keys(errors).length > 0 && (
+          {errors.email && touched.email && (
             <MailCrossSvg width={20} height={20}>
               <use href={Sprite + '#icon-red-x-20x20'}></use>
             </MailCrossSvg>
           )}
-          <ErrorMessage component={ErrorEmail} name="email" />
-          {Object.keys(errors).length > 0 ? (
+          <ErrorMessage component={Error} name="email" />
+          {errors.password && touched.password ? (
             <ErrorLastInput
               type="password"
               name="password"
@@ -109,27 +80,26 @@ export const RegisterForm = () => {
           ) : (
             <LastInput type="password" name="password" placeholder="Password" />
           )}
-
-          {Object.keys(errors).length > 0 ? (
+          {errors.password && touched.password ? (
             <SvgDivError>
-              <SvgPass>
+              <SvgPass width={20} height={20}>
                 <use href={Sprite + '#icon-lock'}></use>
               </SvgPass>
             </SvgDivError>
           ) : (
             <SvgDiv>
-              <SvgPass>
+              <SvgPass width={20} height={20}>
                 <use href={Sprite + '#icon-lock'}></use>
               </SvgPass>
             </SvgDiv>
           )}
-          {Object.keys(errors).length > 0 && (
+          {errors.password && touched.password && (
             <PassCrossSvg width={20} height={20}>
               <use href={Sprite + '#icon-red-x-20x20'}></use>
             </PassCrossSvg>
           )}
           <ErrorMessage component={ErrorPass} name="password" />
-          <Button type="submit">Sign up</Button>
+          <Button type="submit">Sign in</Button>
         </Form>
       )}
     </Formik>

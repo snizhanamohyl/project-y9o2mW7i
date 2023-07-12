@@ -1,6 +1,10 @@
 import * as yup from 'yup';
 
-export const schema = yup.object().shape({
+export const userRegisterSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required('Name is required')
+    .matches(/^[aA-zZ\s]+$/, 'Only alphabets are allowed for this field '),
   email: yup
     .string()
     .email('Please enter a valid email')
@@ -11,5 +15,3 @@ export const schema = yup.object().shape({
     .max(16, 'Password must contain 16 characters at most')
     .required('Password is required'),
 });
-
-

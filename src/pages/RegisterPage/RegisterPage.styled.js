@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { Field } from 'formik';
 import { NavLink } from 'react-router-dom';
 
-import bgMob from '../../assets/images/mobile/bg-mob.png';
-import bgDesk from '../../assets/images/desktop/bg-desk.png';
+import bgMob from '../../assets/images/mobile/bg-register-mob.png';
+import bgDesk from '../../assets/images/desktop/bg-register-desk.png';
 
 const Img = styled.img`
   width: 285px;
@@ -40,7 +40,7 @@ const Section = styled.div`
 const Wrapper = styled.div`
   box-sizing: border-box;
   width: 335px;
-  height: 315px;
+  height: 350px;
   margin: auto;
   background-color: #2a2c36;
   border-radius: 30px;
@@ -53,9 +53,12 @@ const Wrapper = styled.div`
   bottom: 30px;
   @media screen and (min-width: 768px) {
     width: 500px;
-    height: 419px;
+    height: 481px;
     padding-top: 44px;
     padding-left: 50px;
+  }
+  @media screen and (min-width: 768px) {
+    height: 484px;
   }
   @media screen and (min-width: 1440px) {
     position: static;
@@ -67,7 +70,7 @@ const Title = styled.h1`
   color: var(--bg-color);
   font-size: 24;
   line-height: 1.17;
-  margin-bottom: 40px;
+  margin-bottom: 18px;
   @media screen and (min-width: 768px) {
     font-size: 28px;
   }
@@ -125,6 +128,10 @@ const ErrorInput = styled(Input)`
   border: 1px solid var(--error-red);
 `;
 
+const CorrectInput = styled(Input)`
+  border: 1px solid var(--correct-green);
+`;
+
 const LastInput = styled(Input)`
   margin-bottom: 28px;
   @media screen and (min-width: 768px) {
@@ -171,26 +178,35 @@ const Link = styled(NavLink)`
   }
 `;
 
-const Svg = styled.svg`
-  width: 18px;
-  height: 18px;
+const SvgMan = styled.svg`
+  width: 20px;
+  height: 20px;
   position: absolute;
-  top: 118px;
+  top: 97px;
   left: 40px;
   @media screen and (min-width: 768px) {
     width: 24px;
     height: 24px;
-    top: 133px;
-    left: 65px;
+    top: 112px;
+    left: 67px;
   }
 `;
 
-const SvgPass = styled(Svg)`
+const SvgEmail = styled(SvgMan)`
+  width: 18px;
+  height: 18px;
+  top: 153px;
+  @media screen and (min-width: 768px) {
+    top: 195px;
+  }
+`;
+
+const SvgPass = styled(SvgMan)`
   width: 20px;
   height: 20px;
-  top: 174px;
+  top: 210px;
   @media screen and (min-width: 768px) {
-    top: 216px;
+    top: 277px;
   }
 `;
 
@@ -200,6 +216,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     height: 100vh;
+    /* padding-top: 170px; */
     align-items: center;
     background-image: url(${bgDesk});
     background-position: 100% 100%;
@@ -210,44 +227,77 @@ const Container = styled.div`
 
 const Error = styled.div`
   font-size: 10px;
-  color: var(--error-red);
+  color: #e74a3b;
   position: absolute;
-  top: 149px;
+  top: 127px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 175px;
+    top: 154px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 155px;
+  }
+`;
+
+const ErrorEmail = styled(Error)`
+  top: 184px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 236px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 237px;
   }
 `;
 
 const ErrorPass = styled(Error)`
-  top: 206px;
+  top: 241px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 257px;
+    top: 319px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 320px;
   }
 `;
 
-const MailCrossSvg = styled.svg`
+const RedCrossSvg = styled.svg`
   width: 20px;
   height: 20px;
   position: absolute;
   right: 40px;
-  top: 117px;
-
+  top: 95px;
   @media screen and (min-width: 768px) {
     right: 65px;
-    top: 135px;
+    top: 114px;
   }
 `;
 
-const PassCrossSvg = styled(MailCrossSvg)`
+const TickSvg = styled(RedCrossSvg)`
+  width: 20px;
+  height: 20px;
+`;
+
+const MailCrossSvg = styled(RedCrossSvg)`
   right: 40px;
-  top: 175px;
+  top: 152px;
+
   @media screen and (min-width: 768px) {
-    right: 65px;
-    top: 220px;
+    top: 198px;
+  }
+`;
+
+const PassCrossSvg = styled(RedCrossSvg)`
+  right: 40px;
+  top: 209px;
+  @media screen and (min-width: 768px) {
+    top: 280px;
   }
 `;
 
@@ -261,6 +311,11 @@ const SvgDivError = styled.div`
   background-color: var(--error-red);
 `;
 
+const SvgDivCorrect = styled.div`
+  color: var(--correct-green);
+  background-color: var(--correct-green);
+`;
+
 export {
   Img,
   Section,
@@ -270,15 +325,21 @@ export {
   LastInput,
   Button,
   Link,
-  Svg,
+  SvgMan,
+  SvgEmail,
   SvgPass,
   Container,
   Error,
+  ErrorEmail,
   ErrorPass,
   ErrorInput,
   ErrorLastInput,
+  RedCrossSvg,
   MailCrossSvg,
   PassCrossSvg,
   SvgDiv,
   SvgDivError,
+  CorrectInput,
+  SvgDivCorrect,
+  TickSvg,
 };
