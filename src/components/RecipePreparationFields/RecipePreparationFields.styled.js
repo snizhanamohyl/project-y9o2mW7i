@@ -32,6 +32,7 @@ export const TextArea = styled.textarea`
   outline: 1px solid transparent;
 
   &::placeholder {
+    color: inherit;
     opacity: 0.5;
   }
 
@@ -40,6 +41,10 @@ export const TextArea = styled.textarea`
     width: 505px;
 
     font-size: 18px;
+  }
+
+  &:hover {
+    outline-color: var(--input-border-color-focus);
   }
 
   &:focus {

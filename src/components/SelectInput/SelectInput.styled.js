@@ -36,6 +36,11 @@ export const InputFiled = styled.input`
   border: none;
   outline: none;
 
+  &::placeholder {
+    color: inherit;
+    opacity: 0.5;
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }

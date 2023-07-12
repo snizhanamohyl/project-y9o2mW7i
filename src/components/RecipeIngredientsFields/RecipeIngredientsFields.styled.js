@@ -153,20 +153,17 @@ export const RemoveBtn = styled.button`
   background-color: transparent;
   border: none;
   outline: none;
+  transition: color var(--transition-time) var(--transition-function);
+
+  &:hover,
+  &:focus {
+    color: var(--accent);
+  }
 
   svg {
     width: 18px;
     height: 18px;
-
     stroke: #333333;
-    transition: stroke var(--transition-time) var(--transition-function);
-  }
-
-  &:hover,
-  &:focus {
-    svg {
-      stroke: var(--accent);
-    }
   }
 
   @media screen and (min-width: 768px) {

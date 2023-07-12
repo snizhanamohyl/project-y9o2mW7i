@@ -39,7 +39,7 @@ export default function RecipeIngredientsFields() {
       <Ingredients>
         <Item>
           <InputWrapper>
-            <SelectInput placeholder="Enter ingredient" />
+            <SelectInput inputProps={{ placeholder: 'Enter ingredient' }} />
           </InputWrapper>
           <InputWrapper>
             <NumericInput maxLength={3} />

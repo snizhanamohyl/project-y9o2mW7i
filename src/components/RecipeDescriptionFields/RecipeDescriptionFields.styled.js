@@ -66,6 +66,7 @@ export const Container = styled.div`
     margin-bottom: 24px;
   }
 
+  &:hover,
   &:focus-within {
     border-color: var(--input-border-color-focus);
   }

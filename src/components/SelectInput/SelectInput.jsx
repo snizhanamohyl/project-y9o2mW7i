@@ -13,7 +13,12 @@ import {
 import Sprite from 'assets/sprite.svg';
 import 'simplebar-react/dist/simplebar.min.css';
 
-export default function SelectInput({ options, currentOption, onSelect }) {
+export default function SelectInput({
+  options,
+  currentOption,
+  onSelect,
+  inputProps,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -38,7 +43,7 @@ export default function SelectInput({ options, currentOption, onSelect }) {
   return (
     <Wrapper>
       <Label type="button" onClick={() => setIsOpen(state => !state)}>
-        <InputFiled type="text" />
+        <InputFiled type="text" {...inputProps} />
         <svg width={20} height={20}>
           <use href={Sprite + '#icon-down'}></use>
         </svg>
