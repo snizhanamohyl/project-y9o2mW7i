@@ -82,6 +82,7 @@ export const Container = styled.div`
 export const Label = styled.label`
   display: flex;
   align-items: flex-start;
+  width: 100%;
 `;
 
 export const Row = styled.div`
@@ -118,6 +119,8 @@ export const Text = styled.span`
   font-size: 14px;
   letter-spacing: -0.28px;
   opacity: 0.5;
+
+  cursor: default;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;

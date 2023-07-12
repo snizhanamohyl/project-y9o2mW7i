@@ -11,13 +11,13 @@ export default function AddRecipeForm() {
     initialValues: {
       description: {
         title: '',
-        img: 'file',
+        img: null,
         about: '',
         category: '',
         cookingTime: 0,
       },
       ingredients: [{ title: '', unit: 'g', amount: 1 }],
-      preparation: '',
+      preparation: [],
     },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));

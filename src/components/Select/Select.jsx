@@ -61,7 +61,7 @@ export default function Select({ options, currentOption, onSelect }) {
 
 Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.object),
-  currentOption: PropTypes.string,
+  currentOption: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onSelect: PropTypes.func,
 };
 

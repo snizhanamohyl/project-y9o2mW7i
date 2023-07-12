@@ -7,21 +7,12 @@ import {
   RecipeTitle,
   Description,
 } from './PopularRecipe.styled';
+import useWindowWidth from 'hooks/useWindowWidth';
 
 import recipesData from 'data/recipes.json';
-import { useEffect, useState } from 'react';
 
 export default function PopularRecipe() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  useEffect(() => {
-    const updateWindowWidth = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', updateWindowWidth);
-
-    return () => {
-      window.removeEventListener('resize', updateWindowWidth);
-    };
-  }, []);
+  const windowWidth = useWindowWidth();
 
   const itemsCount = windowWidth >= 768 && windowWidth < 1440 ? 2 : 4;
 

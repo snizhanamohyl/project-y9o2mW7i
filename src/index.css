@@ -47,7 +47,10 @@
   --white: #ffffff;
   --scroll-bar-color: #e7e5e5;
   --hover-dark: #1e1f28;
-
+  --error-red: #e74a3b;
+  --input-grey: #919196;
+  --icon-grey: #c4c4c4;
+  --correct-green: #3cbc81;
   --transition-time: 250ms;
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -90,8 +93,12 @@ h5,
 h6,
 p,
 ul {
+  padding: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+li {
+  list-style: none;
 }
 
 ul {

@@ -26,8 +26,6 @@ export default function RecipeDescriptionFields({
   setFieldValue,
 }) {
   const [categories, setCategories] = useState([]);
-  const [currentCategory, setCurrentCategory] = useState('');
-  const [cookingTime, setCookingTime] = useState('');
   const [imgUrl, setImgUrl] = useState('');
 
   useEffect(() => {
@@ -36,7 +34,9 @@ export default function RecipeDescriptionFields({
 
   const handleFileChange = ({ target }) => {
     const file = target.files[0];
+
     if (typeof file === 'object') {
+      setFieldValue('description.img', file);
       setImgUrl(URL.createObjectURL(file));
     }
   };
@@ -47,6 +47,8 @@ export default function RecipeDescriptionFields({
       label: name,
     }));
   }, [categories]);
+
+  const { title, about, category, cookingTime } = description;
 
   return (
     <Wrapper>
@@ -70,12 +72,26 @@ export default function RecipeDescriptionFields({
       <div>
         <Container>
           <Label>
-            <Input type="text" placeholder="Enter item title" />
+            <Input
+              type="text"
+              placeholder="Enter item title"
+              value={title}
+              onChange={({ target }) =>
+                setFieldValue('description.title', target.value)
+              }
+            />
           </Label>
         </Container>
         <Container>
           <Label>
-            <Input type="text" placeholder="Enter about recipe" />
+            <Input
+              type="text"
+              placeholder="Enter about recipe"
+              value={about}
+              onChange={({ target }) =>
+                setFieldValue('description.about', target.value)
+              }
+            />
           </Label>
         </Container>
 
@@ -84,8 +100,8 @@ export default function RecipeDescriptionFields({
             <Text>Category</Text>
             <Select
               options={formattedCategories}
-              currentOption={currentCategory}
-              onSelect={setCurrentCategory}
+              currentOption={category}
+              onSelect={value => setFieldValue('description.category', value)}
             />
           </Row>
         </Container>
@@ -95,7 +111,9 @@ export default function RecipeDescriptionFields({
             <Select
               options={periods}
               currentOption={cookingTime}
-              onSelect={setCookingTime}
+              onSelect={value =>
+                setFieldValue('description.cookingTime', value)
+              }
             />
           </Row>
         </Container>
