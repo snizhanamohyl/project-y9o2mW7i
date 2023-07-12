@@ -20,6 +20,10 @@ export const ContainerCard = styled.div`
     @media screen and (min-width: 1439px){
         padding: 40px;
     }
+
+    &:last-child{
+        gap: 40px;
+    }
 `
 
 
@@ -93,7 +97,14 @@ export const TextCard = styled.p`
     font-weight: 400;
     line-height: 10px;
     letter-spacing: -0.16px;
-    /* white-space: nowrap; */
+
+    @media (min-width: 375px) and (max-width: 1439px){
+        display: -webkit-box;
+        -webkit-line-clamp: 4; 
+        -webkit-box-orient: vertical;
+        line-clamp: 4; 
+    }
+
 
     max-width: 153px;
 
