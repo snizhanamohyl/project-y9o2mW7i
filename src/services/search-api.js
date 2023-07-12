@@ -16,8 +16,7 @@ const searchProducts = async (type, query) => {
   // const parsedStorage = JSON.parse(storage);
 
   const tempToken =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQyM2M5MzEzZGZhMDhhZjc4MjRkYyIsImlhdCI6MTY4OTA2ODQ4OSwiZXhwIjoxNjg5MTQ3Njg5fQ.XapGFI6xC-6_S1ZVbCyaeEFpL3Mut3bAnCJm0qYPfRE';
-
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQyM2M5MzEzZGZhMDhhZjc4MjRkYyIsImlhdCI6MTY4OTE1NzAxNCwiZXhwIjoxNjg5MjQzNDE0fQ.OqcQP8tgDh-BG_AI2YRY8NTn-T8xJNwQXxOoDVVNGE0';
   const requestType = type === 'query' ? 'search' : 'ingredients';
 
   // if (parsedStorage.token === null) {

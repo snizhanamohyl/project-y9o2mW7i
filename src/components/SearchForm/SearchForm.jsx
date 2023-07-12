@@ -9,7 +9,10 @@ export default function SearchForm({ onSubmit, query }) {
 
   const submitFromMain = e => {
     e.preventDefault();
-    navigate(`/search?type=query&query=${e.target[0].value}`);
+    const request = e.target[0].value;
+    if (!request || request === '')
+      return console.log('Request cannot be emtpy');
+    navigate(`/search?type=query&query=${request}`);
   };
 
   return (

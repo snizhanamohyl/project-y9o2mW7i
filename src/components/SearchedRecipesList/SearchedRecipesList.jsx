@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import SearchFailed from 'components/SearchFailed/SearchFailed';
 import SearchProducts from 'services/search-api';
+import SearchFailed from 'components/SearchFailed/SearchFailed';
+import RecipesList from 'components/RecipesList/RecipesList';
 
 export default function SearchedRecipesList() {
   const [items, setItems] = useState([]);
@@ -14,8 +15,10 @@ export default function SearchedRecipesList() {
     if (!query || !type) return;
     SearchProducts(type, query)
       .then(data => {
-        if (!data) throw new Error('Bad request');
-        if (data.message) throw new Error(data.message);
+        if (!Array.isArray(data)) {
+          setItems([]);
+          throw new Error(data.message);
+        }
         setItems(data);
       })
       .catch(err => console.log(err.message));
@@ -26,11 +29,7 @@ export default function SearchedRecipesList() {
       {!items || items.length === 0 ? (
         <SearchFailed />
       ) : (
-        <ul>
-          {items.map(({ _id, title }) => (
-            <li key={_id}>{title}</li>
-          ))}
-        </ul>
+        <RecipesList cards={items} />
       )}
     </>
   );
