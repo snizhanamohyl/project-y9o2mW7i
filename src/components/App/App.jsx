@@ -56,11 +56,26 @@ export default function App() {
           element={<PrivateRoute component={MainPage} redirectTo="/" />}
         ></Route>
         <Route
+          path="/categories"
+          element={
+            <PrivateRoute component={CategoriesPage} redirectTo="/categories" />
+          }
+        ></Route>
+        <Route
           path="/categories/:categoryName"
           element={
             <PrivateRoute
               component={CategoriesPage}
               redirectTo="/categories/:categoryName"
+            />
+          }
+        ></Route>
+        <Route
+          path="/recipe/:recipeId"
+          element={
+            <PrivateRoute
+              component={RecipePage}
+              redirectTo="/recipe/:recipeId"
             />
           }
         ></Route>
@@ -71,15 +86,6 @@ export default function App() {
         <Route
           path="/my"
           element={<PrivateRoute component={MyRecipesPage} redirectTo="/my" />}
-        ></Route>
-        <Route
-          path="/recipe/:recipeId"
-          element={
-            <PrivateRoute
-              component={RecipePage}
-              redirectTo="/recipe/:recipeId"
-            />
-          }
         ></Route>
         <Route
           path="/favorite"
