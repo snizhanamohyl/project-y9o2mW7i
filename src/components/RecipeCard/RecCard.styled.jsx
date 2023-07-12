@@ -13,8 +13,6 @@ export const ContainerCard = styled.div`
     margin-bottom: 18px;
     padding: 14px 9px;
 
-    position: relative;
-
     @media screen and (min-width: 767px){
         padding: 28px 24px;
     }
@@ -64,31 +62,25 @@ export const TitleCard = styled.h2`
 `
 
 export const BtnDel = styled.button`
-    width: 24px;
-    height: 24px;
     border-radius: 4px;
     border: none;
     background: #EBF3D4;
 
-    position: absolute;
-    top: 14px;
-    right: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px;
 
     @media screen and (min-width: 767px){
-        width: 38px;
-        height: 38px;
-
-        top: 28px;
-        right: 24px;
+        padding: 8px;
     }
 
     @media screen and (min-width: 1439px){
-        width: 44px;
-        height: 44px;
-
-        top: 40px;
-        right: 40px;
+        padding: 10px;
     }
+
+    background: ${props => props.isfavorites ? "#EBF3D4" : "#8BAA36"};
 `
 
 export const TextCard = styled.p`
@@ -141,6 +133,12 @@ export const ContainerContent = styled.div`
     flex: 1 1 auto;
 `
 
+export const ContainerHeaderRecipe = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+`
+
 export const ContainerBtnRecipe = styled.div`
     display: flex;
     align-items: flex-end;
@@ -183,5 +181,20 @@ export const BtnRecipeSee = styled(Link)`
     @media screen and (min-width: 1439px){
         font-size: 16px;
         padding: 14px 38px 22px 38px
+    }
+`
+
+export const SvgDel = styled.svg`
+    width: 14px;
+    height: 14px;
+
+    @media screen and (min-width: 767px){
+        width: 22px;
+        height: 22px;
+    }
+
+    @media screen and (min-width: 1439px){
+        width: 24px;
+        height: 24px;
     }
 `

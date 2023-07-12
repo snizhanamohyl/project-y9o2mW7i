@@ -38,7 +38,7 @@ const MyRecipesPage = () => {
         <div>
             <MyRecipePage>My recipes</MyRecipePage>
             {recipes.length > 0 ? (
-                <RecCard recipe={currentRecipes}/>
+                <RecCard isFavorites={false} recipe={currentRecipes}/>
             ):(
                 <p>Улюблених рецептів немає</p>
             )}

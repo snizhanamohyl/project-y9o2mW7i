@@ -43,7 +43,7 @@ const FavoritePage = () => {
     <div>
         <FavoritePageTitle>Favorite </FavoritePageTitle>
         {recipes.length > 0 ? (
-            <RecCard recipe={currentRecipes}/>
+            <RecCard isFavorites={true} recipe={currentRecipes}/>
         ):(
             <p>Улюблених рецептів немає</p>
         )}
