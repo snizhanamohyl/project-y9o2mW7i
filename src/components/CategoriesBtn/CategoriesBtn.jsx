@@ -1,4 +1,5 @@
-import { BtnCategories } from "./CategoriesBtn.styled"
+import { BtnCategories } from "./CategoriesBtn.styled";
+
 
 export default function CategoriesBtn() {
  

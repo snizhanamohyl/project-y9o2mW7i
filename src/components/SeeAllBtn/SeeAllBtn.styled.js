@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
 
 
-export const SeeAllLink = styled.p`
+export const SeeAllLink = styled(NavLink)`
     text-align: center;
     margin-left: auto;
     width: 94px;

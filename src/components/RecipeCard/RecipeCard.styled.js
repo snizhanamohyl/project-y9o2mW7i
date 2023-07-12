@@ -25,7 +25,7 @@ export const RecipeImg = styled.img`
     height: 322px;
 `;
 
-export const Recip = styled.p`
+export const Recipe = styled.p`
     position: absolute;
     bottom: 26px;
     left: 18px;

@@ -4,8 +4,7 @@ import PreviewCards from "../PreviewCards/PreviewCards";
 import { RecipeItem } from "./RecipeList.styled";
 
 export default function ReceiptList({ title, breakfastArr,miscellaneousArr, chickenArr, dessertsArr}) {   
-    console.log(breakfastArr);
-    
+  
    
     return (
         <> 
