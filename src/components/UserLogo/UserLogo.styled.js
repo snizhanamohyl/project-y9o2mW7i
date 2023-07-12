@@ -32,4 +32,8 @@ export const UserWrap = styled.button`
   @media (min-width: 768px) {
     margin-right: 50px;
   }
+
+  &:hover p {
+    color: var(--accent);
+  }
 `;

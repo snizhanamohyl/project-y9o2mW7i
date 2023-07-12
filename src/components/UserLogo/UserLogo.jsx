@@ -3,6 +3,7 @@ import { Popover } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Avatar, AvatarImg, UserName, UserWrap } from './UserLogo.styled';
 import PopoverMenu from 'components/Popover/PopoverMenu ';
+import useWindowWidth from "hooks/useWindowWidth";
 
 const theme = createTheme({
   components: {
@@ -18,7 +19,8 @@ const theme = createTheme({
         },},},},});
 
 export default function UserLogo () {
-  const avatarSize = window.innerWidth < 768 ? '34px' : '44px';
+  const width = useWindowWidth();
+  const avatarSize = width < 768 ? '34px' : '44px';
 
   const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = event => { setAnchorEl(event.currentTarget); };
