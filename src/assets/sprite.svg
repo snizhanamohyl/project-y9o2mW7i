@@ -31,13 +31,17 @@
                 stroke-linecap="round" stroke-linejoin="round" />
         </symbol>
         <symbol id="icon-checkbox" viewBox="0 0 32 32">
+
+            <path fill="#8baa36" style="fill: var(--color4, #8baa36)"
+                d="M20.438 9.62c0.433-0.639 1.303-0.806 1.943-0.373s0.806 1.303 0.373 1.943l-7.587 11.191c-0.555 0.819-1.761 0.819-2.316 0l-3.604-5.316c-0.434-0.639-0.267-1.509 0.373-1.943s1.509-0.267 1.943 0.373l2.446 3.608 6.429-9.483z">
+            </path>
+        </symbol>
+        <symbol id="icon-checkbox2" viewBox="0 0 32 32">
             <path fill="none" stroke="#7e7e7e" style="stroke: var(--color3, #7e7e7e)" stroke-linejoin="miter"
                 stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.6"
                 d="M8 1.6h16c3.535 0 6.4 2.865 6.4 6.4v16c0 3.535-2.865 6.4-6.4 6.4h-16c-3.535 0-6.4-2.865-6.4-6.4v-16c0-3.535 2.865-6.4 6.4-6.4z">
             </path>
-            <path fill="#8baa36" style="fill: var(--color4, #8baa36)"
-                d="M20.438 9.62c0.433-0.639 1.303-0.806 1.943-0.373s0.806 1.303 0.373 1.943l-7.587 11.191c-0.555 0.819-1.761 0.819-2.316 0l-3.604-5.316c-0.434-0.639-0.267-1.509 0.373-1.943s1.509-0.267 1.943 0.373l2.446 3.608 6.429-9.483z">
-            </path>
+
         </symbol>
         <symbol id="icon-clock" viewBox="0 0 32 32" fill="none">
             <path stroke-linejoin="round" stroke-linecap="round" stroke="#23262A" stroke-miterlimit="4"
