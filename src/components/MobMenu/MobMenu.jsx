@@ -20,7 +20,7 @@ export default function MobMenu({ toggleMenu, isOpen }) {
 
     return <MobMenuWrap $isOpen={isOpen}>
         <MobHeaderWrap>
-            <Link to='/'>
+            <Link to='/' onClick={toggleMenu}>
                 <svg width={logoSize} height={logoSize}>
                     <use href={`${sprite}#icon-logo-withBG`}></use>
                 </svg>
