@@ -1,29 +1,27 @@
 import styled from 'styled-components';
-import background from '../../assets/images/hero-2x.png';
+import checkbox from '../../assets/images/mobile/checkbox.svg';
+import checkboxTab from '../../assets/images/mobile/checkboxTab.svg';
+import bg from '../../assets/images/mobile/bg-hero-recipe.jpg';
 
 export const SectionHero = styled.section`
-  width: 375px;
-  height: 391px;
-  padding: 80px 38px 90px 38px;
-  text-align: center;
-
+  height: 455px;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
+  padding: 144px 20px 90px 20px;
+  text-align: center;
+  background-image: url(${bg});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 
-    background-image: url(${background});
-    background-position: center;
-    background-size: contain;
-    background-color: #e8e8e6;
-    background-repeat: no-repeat;
+  background-color: #e7e7e5;
+  @media (min-width: 768px) {
+    padding: 73px 100px 32px 100px;
   }
 `;
 
@@ -36,6 +34,13 @@ export const MainTitle = styled.h2`
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.48px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 24px;
+
+    font-size: 44px;
+    letter-spacing: -0.88px;
+  }
 `;
 
 export const RecipeDescription = styled.p`
@@ -46,6 +51,12 @@ export const RecipeDescription = styled.p`
   font-weight: 400;
   line-height: 1.33;
   letter-spacing: -0.24px;
+  @media (min-width: 768px) {
+    margin-bottom: 24px;
+
+    font-size: 18px;
+    letter-spacing: -0.36px;
+  }
 `;
 
 export const BtnAddFavorite = styled.button`
@@ -60,23 +71,45 @@ export const BtnAddFavorite = styled.button`
 
   font-size: 10px;
   line-height: normal;
+
+  @media (min-width: 768px) {
+    margin-bottom: 60px;
+    width: 278px;
+    height: 59px;
+    font-size: 18px;
+    letter-spacing: -0.36px;
+    font-size: 16px;
+  }
 `;
 export const ContainerTimePrepare = styled.div`
   display: flex;
   gap: 4px;
   align-items: center;
   justify-content: center;
-  flex-direction: ;
-  font-size: 10px;
 
+  font-size: 10px;
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: -0.24px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+  svg {
+    @media (min-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
 
 export const IngredientsListHead = styled.section`
-  padding: 32px 0 50px 0;
+  padding: 420px 0 50px 0;
   background-color: var(--bg-color);
+
+  @media (min-width: 768px) {
+    padding: 50px 16px 96px 16px;
+  }
 `;
 export const NameColumn = styled.div`
   display: flex;
@@ -90,6 +123,11 @@ export const NameColumn = styled.div`
   line-height: normal;
   letter-spacing: 0.3px;
   border-radius: 8px;
+  @media (min-width: 768px) {
+    margin-bottom: 24px;
+
+    padding: 21px 32px;
+  }
 `;
 
 export const Ingredients = styled.h3`
@@ -100,6 +138,11 @@ export const Ingredients = styled.h3`
   line-height: normal;
   letter-spacing: 0.3px;
   margin-right: 122px;
+  @media (min-width: 768px) {
+    margin-right: 312px;
+    font-size: 18px;
+    letter-spacing: 0.54;
+  }
 `;
 export const Quantity = styled.h3`
   font-size: 10px;
@@ -107,6 +150,11 @@ export const Quantity = styled.h3`
   line-height: normal;
   letter-spacing: 0.3px;
   margin-right: 18px;
+  @media (min-width: 768px) {
+    margin-right: 38px;
+    font-size: 18px;
+    letter-spacing: 0.54;
+  }
 `;
 
 export const CheckBox = styled.h3`
@@ -114,6 +162,10 @@ export const CheckBox = styled.h3`
   font-weight: 600;
   line-height: normal;
   letter-spacing: 0.3px;
+  @media (min-width: 768px) {
+    font-size: 18px;
+    letter-spacing: 0.54;
+  }
 `;
 
 export const IngredientsList = styled.ul`
@@ -124,18 +176,112 @@ export const ListItem = styled.li`
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 343px;
+  width: 100%;
   height: 86px;
-  margin-bottom: 16px;
+
   align-items: center;
   justify-content: space-around;
   background-color: var(--light-green-bg);
   border-radius: 8px;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 178px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+    @media (min-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+`;
+
+export const ImageIngredient = styled.img`
+  width: 57px;
+  height: 57px;
+  border: none;
+  @media (min-width: 768px) {
+    width: 112px;
+    height: 112px;
+  }
+`;
+
+export const IngredientName = styled.span`
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: -0.24px;
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.24px;
+  }
+`;
+export const QuantityIngredient = styled.span`
+  padding: 4px 4px;
+  color: var(--bg-color);
+  text-align: right;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 4px;
+  background: var(--accent);
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+`;
+export const Label = styled.label`
+  cursor: pointer;
+  display: flex;
+
+  &::before {
+    content: '';
+    border-radius: 4px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background-color: var(--light-green-bg);
+    border: 1px solid rgba(126, 126, 126, 0.5);
+    @media (min-width: 768px) {
+      width: 35px;
+      height: 35px;
+    }
+  }
+`;
+export const CheckBoxInput = styled.input`
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  &:checked {
+    & + Label::before {
+      content: '';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--accent);
+      width: 18px;
+      height: 18px;
+      background-image: url(${checkbox});
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media (min-width: 768px) {
+        width: 35px;
+        height: 35px;
+        background-image: url(${checkboxTab});
+      }
+    }
+  }
 `;
 
 export const RecipeInstruction = styled.section`
   padding-bottom: 100px;
   background-color: var(--bg-color);
+
+  @media (min-width: 768px) {
+    padding: 0 16px 50px 16px;
+  }
 `;
 
 export const Title = styled.h3`
@@ -145,6 +291,11 @@ export const Title = styled.h3`
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.48px;
+
+  @media (min-width: 768px) {
+    letter-spacing: -0.24px;
+    margin-bottom: 34px;
+  }
 `;
 
 export const Instruction = styled.ol`
@@ -161,8 +312,18 @@ export const InstructionItem = styled.li`
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.17;
   letter-spacing: -0.24px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.28px;
+  }
+
   &:not(:last-child) {
     margin-bottom: 17px;
+    @media (min-width: 768px) {
+      margin-bottom: 20px;
+    }
   }
   &:before {
     counter-increment: myCounter;
@@ -174,18 +335,42 @@ export const InstructionItem = styled.li`
     margin-right: 14px;
     color: var(--white);
     font-size: 12px;
-
     font-weight: 600;
-
     text-align: center;
     line-height: normal;
 
     border-radius: 100px;
     background: var(--accent);
+    @media (min-width: 768px) {
+      padding: 0.5px 7px 0.5px 7px;
+      font-size: 14px;
+    }
   }
 `;
 
 export const Container = styled.div`
-  overflow: hidden;
-  border-radius: 8px;
+  max-width: 343px;
+  min-height: 250px;
+  @media (min-width: 768px) {
+    max-width: 433px;
+    min-height: 332px;
+  }
+
+  div {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+
+    border-radius: 8px;
+  }
+  iframe {
+    display: block;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+  }
 `;

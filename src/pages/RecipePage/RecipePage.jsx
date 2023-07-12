@@ -8,6 +8,7 @@ import {
   IngredientsListHead,
   Instruction,
   ListItem,
+  Label,
   MainTitle,
   NameColumn,
   Quantity,
@@ -18,6 +19,11 @@ import {
   InstructionItem,
   Container,
 } from './RecipePage.styled';
+import sprite from '../../assets/sprite.svg';
+import { IngredientName } from './RecipePage.styled';
+import { QuantityIngredient } from './RecipePage.styled';
+import { ImageIngredient } from './RecipePage.styled';
+import { CheckBoxInput } from './RecipePage.styled';
 
 export default function RecipePage({ recipeId }) {
   const text =
@@ -35,34 +41,8 @@ export default function RecipePage({ recipeId }) {
         </RecipeDescription>
         <BtnAddFavorite type="button">Add to favorite recipes</BtnAddFavorite>
         <ContainerTimePrepare>
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_264_738)">
-              <path
-                d="M9.99996 18.3334C14.6023 18.3334 18.3333 14.6024 18.3333 10C18.3333 5.39765 14.6023 1.66669 9.99996 1.66669C5.39759 1.66669 1.66663 5.39765 1.66663 10C1.66663 14.6024 5.39759 18.3334 9.99996 18.3334Z"
-                stroke="#23262A"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M10 5V10L13.3333 11.6667"
-                stroke="#23262A"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_264_738">
-                <rect width="20" height="20" fill="white" />
-              </clipPath>
-            </defs>
+          <svg width={14} height={14}>
+            <use href={`${sprite}#icon-clock`}></use>
           </svg>
           <span>20 min</span>
         </ContainerTimePrepare>
@@ -76,16 +56,18 @@ export default function RecipePage({ recipeId }) {
         </NameColumn>
         <IngredientsList>
           <ListItem>
-            <image alt="photo ingredients" />
-            <p>Avocado</p>
-            <p>400 g</p>
-            <input type="checkbox" />
+            <ImageIngredient alt="photo ingredients" />
+            <IngredientName>Avocado</IngredientName>
+            <QuantityIngredient>400 g</QuantityIngredient>
+            <CheckBoxInput type="checkbox" id="checkbox" />
+            <Label for="checkbox"></Label>
           </ListItem>
           <ListItem>
-            <image alt="photo ingredients" />
-            <p>Avocado</p>
-            <p>400 g</p>
-            <input type="checkbox" />
+            <ImageIngredient alt="photo ingredients" />
+            <IngredientName>Avocado</IngredientName>
+            <QuantityIngredient>400 g</QuantityIngredient>
+            <CheckBoxInput type="checkbox" id="checkbox2" />
+            <Label for="checkbox2"></Label>
           </ListItem>
         </IngredientsList>
       </IngredientsListHead>
@@ -97,16 +79,17 @@ export default function RecipePage({ recipeId }) {
             <InstructionItem key={nanoid}>{structureText}</InstructionItem>
           ))}
         </Instruction>
+
         <Container>
-          <iframe
-            width="343"
-            height="250"
-            src="https://www.youtube.com/embed/e52IL8zYmaE"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+          <div>
+            <iframe
+              src="https://www.youtube.com/embed/e52IL8zYmaE"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
         </Container>
       </RecipeInstruction>
     </>
