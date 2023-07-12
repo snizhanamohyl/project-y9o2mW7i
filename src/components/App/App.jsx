@@ -30,6 +30,7 @@ export default function App() {
   }, [dispatch]);
 
   return <Routes>
+    <Route index element={<WelcomePage />} />
     <Route path='/signin' element={<RestrictedRoute component={SigninPage} redirectTo='/signin'/>}></Route>
     <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/register' />}></Route>
 
