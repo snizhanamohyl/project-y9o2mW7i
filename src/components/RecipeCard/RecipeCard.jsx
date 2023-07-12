@@ -1,12 +1,10 @@
-import { ImgBox, RecipeImg, Recip} from "./RecipeCard.styled";
+import { ImgBox, RecipeImg, Recipe} from "./RecipeCard.styled";
 
-
-export default function RecipeCard({img, dish}) {
-    console.log(dish);
+export default function RecipeCard({ recipe: { preview, title }}) {
     return (
         <ImgBox>
-        <RecipeImg src={img} alt={"img"}/>
-        <Recip>{dish}</Recip>
+            <RecipeImg src={preview} alt={title}/>
+            <Recipe>{title}</Recipe>
         </ImgBox>
     )  
 };
