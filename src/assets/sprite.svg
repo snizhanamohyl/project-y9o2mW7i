@@ -118,8 +118,8 @@
 <path fill="#a9a9a9" style="fill: var(--color7, #a9a9a9)" opacity="0.73" d="M8.225 2.255c-0.24 0.246-0.431 0.538-0.561 0.859s-0.197 0.666-0.197 1.014c0 0.348 0.067 0.693 0.197 1.014s0.321 0.614 0.561 0.859l10.056 10.311-10.056 10.311c-0.485 0.497-0.757 1.171-0.757 1.873s0.272 1.377 0.757 1.873c0.485 0.497 1.142 0.776 1.827 0.776s1.343-0.279 1.827-0.776l11.896-12.198c0.24-0.246 0.431-0.538 0.561-0.859s0.197-0.666 0.197-1.014c0-0.348-0.067-0.693-0.197-1.014s-0.321-0.614-0.561-0.859l-11.896-12.198c-0.985-1.010-2.644-1.010-3.654 0.027z"></path>
 </symbol>
 <symbol id="icon-X" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M25 7l-18 18"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M25 25l-18-18"></path>
+<path stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M25 7l-18 18"></path>
+<path stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M25 25l-18-18"></path>
 </symbol>
 <symbol id="icon-X-14x14" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M25 7l-18 18"></path>
@@ -129,7 +129,7 @@
 <path fill="none" stroke="#fafafa" style="stroke: var(--color1, #fafafa)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M22.667 9.333l-13.333 13.333M9.334 9.333l13.333 13.333"></path>
 </symbol>
 <symbol id="icon-x-3232" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M22.667 9.333l-13.333 13.333M9.334 9.333l13.333 13.333"></path>
+<path stroke="currentColor" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M22.667 9.333l-13.333 13.333M9.334 9.333l13.333 13.333"></path>
 </symbol>
 <symbol id="icon-yellow" viewBox="0 0 32 32">
 <path fill="#f6c23e" style="fill: var(--color8, #f6c23e)" d="M16 0c-8.838 0-16 7.162-16 16s7.162 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM14.5 9.5c0-0.825 0.675-1.5 1.5-1.5s1.5 0.672 1.5 1.5v8c0 0.828-0.672 1.5-1.5 1.5s-1.5-0.669-1.5-1.5v-8zM16 25c-1.085 0-1.965-0.88-1.965-1.965s0.879-1.965 1.965-1.965c1.086 0 1.965 0.88 1.965 1.965-0.002 1.084-0.877 1.965-1.965 1.965z"></path>

@@ -1,21 +1,11 @@
-import Hero from 'components/Hero/Hero';
-import { logout } from 'redux/auth/auth-operations';
-import { useDispatch } from 'react-redux';
+import PreviewCategories from "../../components/PreviewCategories/PreviewCategories";
+import Hero from "../../components/Hero/Hero";
 
 export default function MainPage() {
-  const dispatch = useDispatch();
 
-  return (
-    <>
-      <Hero />
-      <button
-        type="button"
-        onClick={() => {
-          dispatch(logout());
-        }}
-      >
-        Logout
-      </button>
-    </>
-  );
+
+    return (<>
+      <Hero/>  
+      <PreviewCategories/>
+    </>)
 }
