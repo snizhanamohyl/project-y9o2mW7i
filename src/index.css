@@ -45,6 +45,7 @@
   --white: #ffffff;
   --error-red: #E74A3B;
   --input-grey: #919196;
+  --icon-grey: #c4c4c4;
 
   --transition-time: 250ms;
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1);

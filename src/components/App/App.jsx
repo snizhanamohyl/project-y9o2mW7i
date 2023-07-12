@@ -29,8 +29,8 @@ export default function App() {
   }, [dispatch]);
 
   return <Routes>
-    <Route path='/signin' element={<RestrictedRoute component={SigninPage} redirectTo='/signin'/>}></Route>
-    <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/register' />}></Route>
+    <Route path='/signin' element={<RestrictedRoute component={SigninPage} redirectTo='/'/>}></Route>
+    <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/' />}></Route>
 
     <Route path='/' element={<SharedLayout />} >
       <Route index element={<PrivateRoute component={MainPage} redirectTo='/signin' />}></Route>

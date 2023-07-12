@@ -175,8 +175,8 @@ const Link = styled(NavLink)`
 `;
 
 const SvgMan = styled.svg`
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   position: absolute;
   top: 97px;
   left: 40px;
@@ -188,35 +188,21 @@ const SvgMan = styled.svg`
   }
 `;
 
-const SvgManError = styled(SvgMan)`
-  & path {
-    stroke: var(--error-red);
-  }
-`;
-
 const SvgEmail = styled(SvgMan)`
+  width: 18px;
+  height: 18px;
   top: 153px;
   @media screen and (min-width: 768px) {
     top: 195px;
   }
 `;
 
-const SvgEmailError = styled(SvgEmail)`
-  & path {
-    stroke: var(--error-red);
-  }
-`;
-
 const SvgPass = styled(SvgMan)`
+  width: 20px;
+  height: 20px;
   top: 210px;
   @media screen and (min-width: 768px) {
     top: 277px;
-  }
-`;
-
-const SvgPassError = styled(SvgPass)`
-  & path {
-    stroke: var(--error-red);
   }
 `;
 
@@ -306,6 +292,16 @@ const PassCrossSvg = styled(RedCrossSvg)`
   }
 `;
 
+const SvgDiv = styled.div`
+  color: var(--icon-grey);
+  background-color: var(--icon-grey);
+`;
+
+const SvgDivError = styled.div`
+  color: var(--error-red);
+  background-color: var(--error-red);
+`;
+
 export {
   Img,
   Section,
@@ -324,10 +320,9 @@ export {
   ErrorPass,
   ErrorInput,
   ErrorLastInput,
-  SvgManError,
-  SvgEmailError,
-  SvgPassError,
   RedCrossSvg,
   MailCrossSvg,
   PassCrossSvg,
+  SvgDiv,
+  SvgDivError,
 };

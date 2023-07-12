@@ -185,22 +185,12 @@ const Svg = styled.svg`
   }
 `;
 
-const SvgError = styled(Svg)`
-  & path {
-    stroke: var(--error-red);
-  }
-`;
-
 const SvgPass = styled(Svg)`
+  width: 20px;
+  height: 20px;
   top: 174px;
   @media screen and (min-width: 768px) {
     top: 216px;
-  }
-`;
-
-const SvgPassError = styled(SvgPass)`
-  & path {
-    stroke: var(--error-red);
   }
 `;
 
@@ -261,6 +251,16 @@ const PassCrossSvg = styled(MailCrossSvg)`
   }
 `;
 
+const SvgDiv = styled.div`
+  color: var(--icon-grey);
+  background-color: var(--icon-grey);
+`;
+
+const SvgDivError = styled.div`
+  color: var(--error-red);
+  background-color: var(--error-red);
+`;
+
 export {
   Img,
   Section,
@@ -277,8 +277,8 @@ export {
   ErrorPass,
   ErrorInput,
   ErrorLastInput,
-  SvgError,
-  SvgPassError,
   MailCrossSvg,
   PassCrossSvg,
+  SvgDiv,
+  SvgDivError,
 };
