@@ -18,7 +18,7 @@ import {
   PassCrossSvg,
   SvgDiv,
   SvgDivError,
-} from '../../pages/SigninPage/SigninPage.styled';
+} from 'pages/SigninPage/SigninPage.styled';
 
 const initialValues = {
   email: '',

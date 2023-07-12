@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { Field } from 'formik';
 import { NavLink } from 'react-router-dom';
 
-import bgMob from '../../assets/images/mobile/bg-register-mob.png';
-import bgDesk from '../../assets/images/desktop/bg-register-desk.png';
+import bgMob from 'assets/images/mobile/bg-register-mob.png';
+import bgDesk from 'assets/images/desktop/bg-register-desk.png';
 
 const Img = styled.img`
   width: 285px;
