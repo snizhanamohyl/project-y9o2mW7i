@@ -35,7 +35,7 @@ const RecCard = ({ recipe }) => {
                         </ContainerContent>              
                         <ContainerBtnRecipe>
                                 <TimeCard>{rec.time} min</TimeCard>
-                                <BtnRecipeSee to='/my'>See recipe</BtnRecipeSee>
+                                <BtnRecipeSee to='/add'>See recipe</BtnRecipeSee>
                         </ContainerBtnRecipe>
                     </Container>
                 </ContainerCard>
