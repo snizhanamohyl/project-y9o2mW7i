@@ -6,6 +6,7 @@ import {
   ShoppingListTitle,
 } from './ShoppingListPage.styled';
 import ProductListItem from 'components/ShoppingListItem/ShoppingListItem';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function ShoppingListPage() {
@@ -20,6 +21,20 @@ export default function ShoppingListPage() {
   //   const onDeleteClick = id => {
   //     dispatch(...(id));
   //  }
+
+
+
+//   const [items, setItems] = useState([])
+
+//   useEffect(() => {
+
+//   })
+
+//   onDeleteClick = (id) => {
+//     setState(prevState => ({
+//       items: prevState.items.filter(item => item.id !== id),
+//     }))
+// }
 
   return (
     <div>
