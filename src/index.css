@@ -1,28 +1,28 @@
-@font-face {
+ @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url(./fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+    url(./assets/fonts/Poppins/Poppins-Regular.ttf) format('truetype');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url(./fonts/Poppins/Poppins-Medium.ttf) format('truetype');
+    url(./assets/fonts/Poppins/Poppins-Medium.ttf) format('truetype');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url(./fonts/Poppins/Poppins-SemiBold.ttf) format('truetype');
+    url(./assets/fonts/Poppins/Poppins-SemiBold.ttf) format('truetype');
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Poppins';
   src: local('Poppins'),
-    url(./fonts/Poppins/Poppins-Bold.ttf) format('truetype');
+    url(./assets/fonts/Poppins/Poppins-Bold.ttf) format('truetype');
   font-weight: bold;
 }
 
@@ -36,12 +36,17 @@
   --light-green-bg: #ebf3d4;
   --placeholder-color: #bdbdbd;
   --border-bottom-color: #e0e0e0;
+  --input-border-color: #f0f0f0;
   --line-color: #707070;
   --input-bg-color: #d9d9d9;
   --checkbox-color: rgba(126, 126, 126, 0.5);
   --pagination-color: #656565;
   --black: #000000;
   --white: #ffffff;
+  --error-red: #E74A3B;
+  --input-grey: #919196;
+  --icon-grey: #c4c4c4;
+  --correct-green: #3CBC81;
 
   --bcg-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 46.3%, rgba(0, 0, 0, 0.35) 72.75%, rgba(0, 0, 0, 0) 100%);
 
@@ -50,7 +55,7 @@
 }
 
 body {
-  margin: 0;padding-top: 18px;
+  margin: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -87,17 +92,17 @@ h5,
 h6,
 p,
 ul {
+  padding: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-
-.ul {
+li {
   list-style: none;
-  padding-left: 0px;
 }
 
-.is-hidden {
-  display: none;
+ul {
+  list-style: none;
+  padding-left: 0px;
 }
 
 a {
@@ -108,6 +113,12 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+
+svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 code {
