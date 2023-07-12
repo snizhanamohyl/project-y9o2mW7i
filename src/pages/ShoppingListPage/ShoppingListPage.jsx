@@ -6,21 +6,20 @@ import {
   ShoppingListTitle,
 } from './ShoppingListPage.styled';
 import ProductListItem from 'pages/ShoppingListPage/ShoppingListItem';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function ShoppingListPage() {
-
   // const dispatch = useDispatch();
 
   // const items = useSelector();
 
-//   useEffect(() => {
-//     dispatch(...);
-//   },[dispatch])
+  //   useEffect(() => {
+  //     dispatch(...);
+  //   },[dispatch])
 
-//   const onDeleteClick = id => {
-//     dispatch(...(id));
-//  }
+  //   const onDeleteClick = id => {
+  //     dispatch(...(id));
+  //  }
 
   return (
     <div>
@@ -33,7 +32,7 @@ export default function ShoppingListPage() {
         </OptionNameContainer>
       </ShoppingListHeader>
       <ShoppingList>
-        {items &&
+        {/* {items &&
           items.map(item => {
             return (
               <ShoppingListItem key={item.id}>
@@ -46,25 +45,20 @@ export default function ShoppingListPage() {
                 </ProductListItem>
               </ShoppingListItem>
             );
-          })}
+          })} */}
+        <ShoppingListItem>
+          <ProductListItem name="Cucumber" number="5"></ProductListItem>
+        </ShoppingListItem>
+        <ShoppingListItem>
+          <ProductListItem name="Cucumber" number="5"></ProductListItem>
+        </ShoppingListItem>
+        <ShoppingListItem>
+          <ProductListItem name="Cucumber" number="5"></ProductListItem>
+        </ShoppingListItem>
+        <ShoppingListItem>
+          <ProductListItem name="Cucumber" number="5"></ProductListItem>
+        </ShoppingListItem>
       </ShoppingList>
     </div>
   );
 }
-
-/* <ShoppingListItem>
-<ProductListItem name="Cucumber" number="5">
-</ProductListItem>
-</ShoppingListItem>
-<ShoppingListItem>
-<ProductListItem name="Cucumber" number="5">
-</ProductListItem>
-</ShoppingListItem>
-<ShoppingListItem>
-<ProductListItem name="Cucumber" number="5">
-</ProductListItem>
-</ShoppingListItem>
-<ShoppingListItem>
-<ProductListItem name="Cucumber" number="5">
-</ProductListItem>
-</ShoppingListItem> */
