@@ -4,10 +4,19 @@ import { MobHeaderWrap, MobMenuWrap, NavItem, NavList, StyledLink } from "./MobM
 import ThemeToggler from "components/ThemeToggler/ThemeToggler";
 import { navOptions } from "vars/navOptions";
 import useWindowWidth from "hooks/useWindowWidth";
+import { useEffect } from "react";
 
 export default function MobMenu({ toggleMenu, isOpen }) {
     const width = useWindowWidth();
     const logoSize = width < 768 ? 40 : 44;
+
+    useEffect(() => {
+        const html = document.querySelector("html");
+        
+        if (html) {
+            html.style.overflow = isOpen ? "hidden" : "auto";
+        }
+    }, [isOpen]);
 
     return <MobMenuWrap $isOpen={isOpen}>
         <MobHeaderWrap>
