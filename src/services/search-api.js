@@ -17,7 +17,6 @@ const searchProducts = async (type, query) => {
 
   const tempToken =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YWQyM2M5MzEzZGZhMDhhZjc4MjRkYyIsImlhdCI6MTY4OTE1NzAxNCwiZXhwIjoxNjg5MjQzNDE0fQ.OqcQP8tgDh-BG_AI2YRY8NTn-T8xJNwQXxOoDVVNGE0';
-  const requestType = type === 'query' ? 'search' : 'ingredients';
 
   // if (parsedStorage.token === null) {
   //   return thunkAPI.rejectWithValue();
@@ -27,10 +26,12 @@ const searchProducts = async (type, query) => {
   token.set(tempToken);
 
   try {
+    const requestType = type === 'query' ? 'search' : 'search/ingredients';
     const { data } = await axios.get(`/${requestType}?keyword=${query}`);
-    return data;
+    const responseType = type === 'query' ? data : data.recipes;
+    return responseType;
   } catch (error) {
-    // console.log(error.message);
+    console.log(error.message);
   }
 };
 

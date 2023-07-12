@@ -15,10 +15,7 @@ export default function SearchedRecipesList() {
     if (!query || !type) return;
     SearchProducts(type, query)
       .then(data => {
-        if (!Array.isArray(data)) {
-          setItems([]);
-          throw new Error(data.message);
-        }
+        if (!Array.isArray(data)) return setItems([]);
         setItems(data);
       })
       .catch(err => console.log(err.message));
