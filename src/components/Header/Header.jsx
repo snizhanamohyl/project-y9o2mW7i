@@ -5,9 +5,11 @@ import { HeaderWrap, Menu, NavigationMenu } from "./Header.styled";
 import Navigation from "components/Navigation/Navigation";
 import ThemeToggler from "components/ThemeToggler/ThemeToggler";
 import { Link } from 'react-router-dom';
+import useResize from 'hooks/useWindowWidth';
 
-export default function Header({toggleMenu}) {
-    const logoSize = window.innerWidth < 768 ? 40 : 44;
+export default function Header({ toggleMenu }) {
+    const width = useResize();
+    const logoSize = width < 768 ? 40 : 44;
 
     return <><HeaderWrap>
         <NavigationMenu>
@@ -21,7 +23,7 @@ export default function Header({toggleMenu}) {
         <Menu>
             <UserLogo />
             <BurgerBtn toggleMenu={toggleMenu} />
-            <ThemeToggler/>
+           { (width > 1439) && <ThemeToggler/> }
         </Menu>
     </HeaderWrap>
     </>

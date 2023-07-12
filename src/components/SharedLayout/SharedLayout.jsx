@@ -24,6 +24,6 @@ export default function SharedLayout() {
         </Suspense>
         <Footer />
     </Layout>
-    {isMobMenuOpen && <MobMenu toggleMenu={toggleMenu} />}
+    <MobMenu toggleMenu={toggleMenu} isOpen={isMobMenuOpen} />
   </>)
 }

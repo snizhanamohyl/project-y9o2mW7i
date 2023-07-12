@@ -1,7 +1,10 @@
+import useWindowWidth from "hooks/useWindowWidth";
 import { Avatar, AvatarImg, UserName, UserWrap } from "./UserLogo.styled";
 
 export default function UserLogo() {
-    const avatarSize = window.innerWidth < 768 ? '34px' : '44px';
+    const width = useWindowWidth();
+    
+    const avatarSize = width < 768 ? '34px' : '44px';
 
     return <UserWrap>
         <Avatar>

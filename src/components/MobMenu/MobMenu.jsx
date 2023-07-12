@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import sprite from 'assets/sprite.svg'
-import { MobHeaderWrap, MobMenuWrap, NavItem, NavList, StyledLink, ThemeTogglerMob } from "./MobMenu.styled";
+import { MobHeaderWrap, MobMenuWrap, NavItem, NavList, StyledLink } from "./MobMenu.styled";
 import ThemeToggler from "components/ThemeToggler/ThemeToggler";
+import { navOptions } from "vars/navOptions";
+import useWindowWidth from "hooks/useWindowWidth";
 
-export default function MobMenu({toggleMenu}) {
-    const logoSize = window.innerWidth < 768 ? 40 : 44;
+export default function MobMenu({ toggleMenu, isOpen }) {
+    const width = useWindowWidth();
+    const logoSize = width < 768 ? 40 : 44;
 
-    return <MobMenuWrap>
+    return <MobMenuWrap $isOpen={isOpen}>
         <MobHeaderWrap>
             <Link to='/'>
                 <svg width={logoSize} height={logoSize}>
@@ -20,20 +23,18 @@ export default function MobMenu({toggleMenu}) {
             </button>
         </MobHeaderWrap>
         <NavList>
-            <NavItem><StyledLink to='/categories'>Categories</StyledLink></NavItem>
-            <NavItem><StyledLink to='/add'>Add recipes</StyledLink></NavItem> 
-            <NavItem><StyledLink to='/my'>My recipes</StyledLink></NavItem>
-            <NavItem><StyledLink to='/favorite'>Favorites</StyledLink></NavItem>
-            <NavItem><StyledLink to='/shopping-list'>Shopping list</StyledLink></NavItem>
-            <NavItem><StyledLink to='/search'>
-                <svg width="24" height="24">
-                    <use href={`${sprite}#icon-search`}></use>
-                </svg>
-                Search
-            </StyledLink></NavItem>
+            {navOptions.map((option) => <NavItem>
+                <StyledLink to={option.route} onClick={toggleMenu}>
+                    {option.route === '/search'
+                        ? <svg width="24" height="24">
+                            <use href={`${sprite}#icon-search`}></use>
+                        </svg>
+                        : ''}
+                    {option.name}
+                </StyledLink>
+            </NavItem>
+            )}
         </NavList>
-        {/* <ThemeToggler/> */}
-        <ThemeTogglerMob/>
-        <ThemeTogglerMob>ThemeToggler</ThemeTogglerMob>
+        <ThemeToggler customerStyles={`position: absolute; bottom: 18px; left: 16px; @media (min-width: 768px) {left: 32px; bottom: 32px;}`}/>
     </MobMenuWrap>
 }

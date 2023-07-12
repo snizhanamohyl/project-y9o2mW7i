@@ -1,12 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import { styled } from 'styled-components';
+import { retina } from 'vars/styles';
 
 import bgSpinachImg from 'assets/images/mobile/mob-menu-spinach-bg-1x.png';
 import bgSpinachRet from 'assets/images/mobile/mob-menu-spinach-bg-2x.png';
 import bgSpinachImgTab from 'assets/images/tablet/mob-menu-spinach-bg-1x.png';
 import bgSpinachRetTabRet from 'assets/images/tablet/mob-menu-spinach-bg-2x.png';
-import { retina } from 'vars/styles';
-import ThemeToggler from 'components/ThemeToggler/ThemeToggler';
 
 const BgMob = `url(${bgSpinachImg}) right bottom no-repeat, var(--light-green-bg);`;
 const BgMobRet = `url(${bgSpinachRet}) right bottom / 321px 343px no-repeat, var(--light-green-bg);`;
@@ -22,17 +21,25 @@ export const MobMenuWrap = styled.div`
   left: 0;
   z-index: 100;
   background: ${BgMob};
+  transform: ${({ $isOpen }) =>
+    $isOpen ? `translateY(0)` : `translateY(-200%)`};
+  transition: transform 500ms var(--transition-function);
 
   @media ${retina} {
     background: ${BgMobRet};
   }
 
   @media (min-width: 768px) {
+    padding: 18px 32px;
     background: ${BgTab};
 
     @media ${retina} {
       background: ${BgTabRet};
     }
+  }
+
+  @media (min-width: 1440px) {
+    display: none;
   }
 `;
 
@@ -48,7 +55,7 @@ export const NavItem = styled.li`
   }
 `;
 
-export const MobHeaderWrap = styled.li`
+export const MobHeaderWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,23 +87,3 @@ export const StyledLink = styled(NavLink)`
     color: var(--accent);
   }
 `;
-
-export const ThemeTogglerMob = styled(ThemeToggler)`
-  position: absolute;
-  bottom: 100px;
-  left: 100px;
-  z-index: 1000;
-
-  & button {
-    @media (max-width: 1439px) {
-      display: block;
-    }
-  }
-`;
-
-// export const ThemeTogglerMob = styled.p`
-//   position: absolute;
-//   bottom: 18px;
-//   left: 16px;
-//   z-index: 1000;
-// `;
