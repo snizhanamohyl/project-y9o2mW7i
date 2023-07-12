@@ -43,6 +43,10 @@
   --pagination-color: #656565;
   --black: #000000;
   --white: #ffffff;
+  --error-red: #E74A3B;
+  --input-grey: #919196;
+  --icon-grey: #c4c4c4;
+  --correct-green: #3CBC81;
 
   --transition-time: 250ms;
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
