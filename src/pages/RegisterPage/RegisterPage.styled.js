@@ -29,9 +29,9 @@ const Section = styled.div`
   background-size: cover;
   background-image: url(${bgMob});
   position: relative;
-  /* @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     height: 606px;
-  } */
+  }
   @media screen and (min-width: 1440px) {
     background-image: none;
   }
