@@ -1,6 +1,6 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import { userSigninSchema } from 'schemas/userSigninSchema';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/auth/auth-operations';
 import Sprite from 'assets/sprite.svg';
 
@@ -18,6 +18,7 @@ import {
   PassCrossSvg,
   SvgDiv,
   SvgDivError,
+  ServerError,
 } from 'pages/SigninPage/SigninPage.styled';
 
 const initialValues = {
@@ -28,14 +29,14 @@ const initialValues = {
 export const SigninForm = () => {
   const dispatch = useDispatch();
 
+  const serverError = useSelector(state => state.auth.serverError);
+
   const handlesubmit = (values, actions) => {
-    console.log(values);
-    console.log(actions);
+    dispatch(login(values));
 
     actions.resetForm();
-
-    dispatch(login(values));
   };
+
   return (
     <Formik
       initialValues={initialValues}
@@ -46,13 +47,13 @@ export const SigninForm = () => {
     >
       {({ errors, touched }) => (
         <Form autoComplete="off">
-          {errors.email && touched.email ? (
+          {(errors.email && touched.email) || serverError ? (
             <ErrorInput name="email" placeholder="Email" />
           ) : (
             <Input name="email" placeholder="Email" />
           )}
 
-          {errors.email && touched.email ? (
+          {(errors.email && touched.email) || serverError ? (
             <SvgDivError>
               <Svg>
                 <use href={Sprite + '#icon-letter'}></use>
@@ -65,13 +66,15 @@ export const SigninForm = () => {
               </Svg>
             </SvgDiv>
           )}
-          {errors.email && touched.email && (
+          {((errors.email && touched.email) || serverError) && (
             <MailCrossSvg width={20} height={20}>
               <use href={Sprite + '#icon-red-x-20x20'}></use>
             </MailCrossSvg>
           )}
           <ErrorMessage component={Error} name="email" />
-          {errors.password && touched.password ? (
+          {serverError && <ServerError>{serverError}</ServerError>}
+
+          {(errors.password && touched.password) || serverError ? (
             <ErrorLastInput
               type="password"
               name="password"
@@ -80,7 +83,7 @@ export const SigninForm = () => {
           ) : (
             <LastInput type="password" name="password" placeholder="Password" />
           )}
-          {errors.password && touched.password ? (
+          {(errors.password && touched.password) || serverError ? (
             <SvgDivError>
               <SvgPass width={20} height={20}>
                 <use href={Sprite + '#icon-lock'}></use>
@@ -93,7 +96,7 @@ export const SigninForm = () => {
               </SvgPass>
             </SvgDiv>
           )}
-          {errors.password && touched.password && (
+          {((errors.password && touched.password) || serverError) && (
             <PassCrossSvg width={20} height={20}>
               <use href={Sprite + '#icon-red-x-20x20'}></use>
             </PassCrossSvg>

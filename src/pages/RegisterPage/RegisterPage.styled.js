@@ -241,6 +241,10 @@ const Error = styled.div`
   }
 `;
 
+const ServerError = styled(Error)`
+  font-size: 10px;
+`;
+
 const ErrorEmail = styled(Error)`
   top: 184px;
 
@@ -342,4 +346,5 @@ export {
   CorrectInput,
   SvgDivCorrect,
   TickSvg,
+  ServerError,
 };
