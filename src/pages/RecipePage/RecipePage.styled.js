@@ -119,10 +119,10 @@ export const IngredientsListHead = styled.section`
   background-color: var(--bg-color);
 
   @media (min-width: 768px) {
-    padding: 50px 16px 96px 16px;
+    padding: 50px 0 96px 0;
   }
   @media (min-width: 1440px) {
-    padding: 0 70px 100px 70px;
+    padding: 0 0 100px 0;
   }
 `;
 export const NameColumn = styled.div`
@@ -158,12 +158,14 @@ export const Ingredients = styled.h3`
   letter-spacing: 0.3px;
   margin-right: 122px;
   @media (min-width: 768px) {
+    width: 115px;
     margin-right: 312px;
     font-size: 18px;
     letter-spacing: 0.54;
   }
   @media (min-width: 1440px) {
-    margin-right: 655px;
+    width: 115px;
+    margin-right: 761px;
   }
 `;
 export const Quantity = styled.h3`
@@ -213,12 +215,12 @@ export const ListItem = styled.li`
   @media (min-width: 768px) {
     width: 100%;
     height: 178px;
-    padding: 71px 58px 72px 24px;
+    padding: 71px 58px 72px 41px;
   }
   @media (min-width: 1440px) {
     width: 100%;
     height: 182px;
-    padding: 77px 58px 70px 32px;
+    padding: 77px 70px 70px 58px;
   }
 
   &:not(:last-child) {
@@ -259,7 +261,7 @@ export const IngredientName = styled.span`
     letter-spacing: -0.24px;
   }
   @media (min-width: 1440px) {
-    margin-right: 450px;
+    margin-right: 572px;
   }
 `;
 export const QuantityIngredient = styled.span`
@@ -273,7 +275,7 @@ export const QuantityIngredient = styled.span`
   background: var(--accent);
   margin-right: 28px;
   @media (min-width: 768px) {
-    margin-right: 58px;
+    margin-right: 78px;
     font-size: 18px;
     padding: 4px 8px;
   }
@@ -330,15 +332,15 @@ export const RecipeInstruction = styled.section`
   background-color: var(--bg-color);
 
   @media (min-width: 768px) {
-    padding: 0 16px 50px 16px;
+    padding: 0 0 50px 0;
   }
   @media (min-width: 1440px) {
-    padding: 0 70px 262px 70px;
+    padding: 0 0 262px 0;
 
     display: flex;
     gap: 50px;
     div {
-      max-width: 600px;
+      max-width: 757px;
     }
   }
 `;

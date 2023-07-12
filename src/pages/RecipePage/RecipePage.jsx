@@ -20,6 +20,7 @@ import {
   Container,
 } from './RecipePage.styled';
 import sprite from '../../assets/sprite.svg';
+import img from '../../assets/images/ingr.png';
 import { IngredientName } from './RecipePage.styled';
 import { QuantityIngredient } from './RecipePage.styled';
 import { ImageIngredient } from './RecipePage.styled';
@@ -60,14 +61,14 @@ export default function RecipePage({ recipeId }) {
         </NameColumn>
         <IngredientsList>
           <ListItem>
-            <ImageIngredient alt="photo ingredients" />
+            <ImageIngredient alt="photo ingredients" src={img} />
             <IngredientName>Avocado</IngredientName>
             <QuantityIngredient>400 g</QuantityIngredient>
             <CheckBoxInput type="checkbox" id="checkbox" />
             <Label for="checkbox"></Label>
           </ListItem>
           <ListItem>
-            <ImageIngredient alt="photo ingredients" />
+            <ImageIngredient alt="photo ingredients" src={img} />
             <IngredientName>Avocado</IngredientName>
             <QuantityIngredient>400 g</QuantityIngredient>
             <CheckBoxInput type="checkbox" id="checkbox2" />
