@@ -21,7 +21,7 @@ import {
   MailCrossSvg,
   SvgDiv,
   SvgDivError,
-} from '../../pages/RegisterPage/RegisterPage.styled';
+} from 'pages/RegisterPage/RegisterPage.styled';
 
 const initialValues = {
   name: '',
@@ -33,11 +33,9 @@ export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handlesubmit = (values, actions) => {
-    console.log(values);
-    console.log(actions);
-    actions.resetForm();
 
-    dispatch(register(values));
+  dispatch(register(values));
+   actions.resetForm();
   };
 
   return (
