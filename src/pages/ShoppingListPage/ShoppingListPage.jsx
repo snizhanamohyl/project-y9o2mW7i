@@ -5,7 +5,7 @@ import {
   ShoppingList,
   ShoppingListTitle,
 } from './ShoppingListPage.styled';
-import ProductListItem from 'pages/ShoppingListPage/ShoppingListItem';
+import ProductListItem from 'components/ShoppingListItem/ShoppingListItem';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function ShoppingListPage() {
