@@ -1,6 +1,6 @@
 import {
   WelcomeWrapper,
-  Logo,
+
   StyledTitle,
   StyledText,
 
@@ -10,10 +10,10 @@ import AuthNav from '../AuthNav/AuthNav';
 export default function Greeting() { 
   return (
     <WelcomeWrapper>
-      <Logo
+      {/* <Logo
         src={require('../../images/welcomePage/logo.svg').default}
         alt="logo"
-      />
+      /> */}
       <StyledTitle>Welcome to the app!</StyledTitle>
       <StyledText>
         This app offers more than just a collection of recipes - it is designed
