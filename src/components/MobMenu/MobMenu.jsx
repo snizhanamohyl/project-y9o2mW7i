@@ -32,7 +32,7 @@ export default function MobMenu({ toggleMenu, isOpen }) {
             </button>
         </MobHeaderWrap>
         <NavList>
-            {navOptions.map((option) => <NavItem>
+            {navOptions.map((option) => <NavItem key={option.route}>
                 <StyledLink to={option.route} onClick={toggleMenu}>
                     {option.route === '/search'
                         ? <svg width="24" height="24">

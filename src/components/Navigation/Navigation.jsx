@@ -4,7 +4,7 @@ import { NavItem, NavList, StyledLink } from "./Navigation.styled";
 
 export default function Navigation() {
     return <NavList>
-        {navOptions.map((option) => <NavItem>
+        {navOptions.map((option) => <NavItem key={option.route}>
             <StyledLink to={option.route}>
                 {option.route !== '/search'
                     ? option.name
