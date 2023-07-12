@@ -73,13 +73,14 @@ export default function RecipePage({ recipeId }) {
       </IngredientsListHead>
 
       <RecipeInstruction>
-        <Title>Recipe Preparation</Title>
-        <Instruction>
-          {structureTexts.map(structureText => (
-            <InstructionItem key={nanoid}>{structureText}</InstructionItem>
-          ))}
-        </Instruction>
-
+        <div>
+          <Title>Recipe Preparation</Title>
+          <Instruction>
+            {structureTexts.map(structureText => (
+              <InstructionItem key={nanoid}>{structureText}</InstructionItem>
+            ))}
+          </Instruction>
+        </div>
         <Container>
           <div>
             <iframe

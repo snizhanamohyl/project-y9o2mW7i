@@ -11,8 +11,9 @@ export const SectionHero = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 32px;
 
-  padding: 144px 20px 90px 20px;
+  padding: 86px 20px 90px 20px;
   text-align: center;
   background-image: url(${bg});
   background-repeat: no-repeat;
@@ -21,7 +22,11 @@ export const SectionHero = styled.section`
 
   background-color: #e7e7e5;
   @media (min-width: 768px) {
+    margin-bottom: 50px;
     padding: 73px 100px 32px 100px;
+  }
+  @media (min-width: 1440px) {
+    padding: 113px 300px 32px 300px;
   }
 `;
 
@@ -57,6 +62,9 @@ export const RecipeDescription = styled.p`
     font-size: 18px;
     letter-spacing: -0.36px;
   }
+  @media (min-width: 1440px) {
+    margin-bottom: 30px;
+  }
 `;
 
 export const BtnAddFavorite = styled.button`
@@ -76,9 +84,12 @@ export const BtnAddFavorite = styled.button`
     margin-bottom: 60px;
     width: 278px;
     height: 59px;
-    font-size: 18px;
+
     letter-spacing: -0.36px;
     font-size: 16px;
+  }
+  @media (min-width: 1440px) {
+    margin-bottom: 48px;
   }
 `;
 export const ContainerTimePrepare = styled.div`
@@ -104,11 +115,14 @@ export const ContainerTimePrepare = styled.div`
 `;
 
 export const IngredientsListHead = styled.section`
-  padding: 420px 0 50px 0;
+  padding: 0px 0 50px 0;
   background-color: var(--bg-color);
 
   @media (min-width: 768px) {
     padding: 50px 16px 96px 16px;
+  }
+  @media (min-width: 1440px) {
+    padding: 0 70px 100px 70px;
   }
 `;
 export const NameColumn = styled.div`
@@ -128,6 +142,11 @@ export const NameColumn = styled.div`
 
     padding: 21px 32px;
   }
+  @media (min-width: 1440px) {
+    margin-bottom: 50px;
+    height: 60px;
+    padding: 21px 40px;
+  }
 `;
 
 export const Ingredients = styled.h3`
@@ -143,6 +162,9 @@ export const Ingredients = styled.h3`
     font-size: 18px;
     letter-spacing: 0.54;
   }
+  @media (min-width: 1440px) {
+    margin-right: 655px;
+  }
 `;
 export const Quantity = styled.h3`
   font-size: 10px;
@@ -154,6 +176,9 @@ export const Quantity = styled.h3`
     margin-right: 38px;
     font-size: 18px;
     letter-spacing: 0.54;
+  }
+  @media (min-width: 1440px) {
+    margin-right: 109px;
   }
 `;
 
@@ -178,15 +203,22 @@ export const ListItem = styled.li`
   margin-right: auto;
   width: 100%;
   height: 86px;
+  padding: 34px 29px 34px 29px;
 
   align-items: center;
-  justify-content: space-around;
+
   background-color: var(--light-green-bg);
   border-radius: 8px;
 
   @media (min-width: 768px) {
     width: 100%;
     height: 178px;
+    padding: 71px 58px 72px 24px;
+  }
+  @media (min-width: 1440px) {
+    width: 100%;
+    height: 182px;
+    padding: 77px 58px 70px 32px;
   }
 
   &:not(:last-child) {
@@ -201,9 +233,16 @@ export const ImageIngredient = styled.img`
   width: 57px;
   height: 57px;
   border: none;
+  margin-right: 12px;
   @media (min-width: 768px) {
     width: 112px;
     height: 112px;
+    margin-right: 24px;
+  }
+  @media (min-width: 1440px) {
+    margin-right: 40px;
+    width: 128px;
+    height: 128px;
   }
 `;
 
@@ -212,10 +251,15 @@ export const IngredientName = styled.span`
   font-weight: 500;
   line-height: 1.17;
   letter-spacing: -0.24px;
+  margin-right: 74px;
   @media (min-width: 768px) {
+    margin-right: 181px;
     font-size: 24px;
     line-height: 1;
     letter-spacing: -0.24px;
+  }
+  @media (min-width: 1440px) {
+    margin-right: 450px;
   }
 `;
 export const QuantityIngredient = styled.span`
@@ -227,8 +271,14 @@ export const QuantityIngredient = styled.span`
   line-height: normal;
   border-radius: 4px;
   background: var(--accent);
+  margin-right: 28px;
   @media (min-width: 768px) {
+    margin-right: 58px;
     font-size: 18px;
+    padding: 4px 8px;
+  }
+  @media (min-width: 1440px) {
+    margin-right: 151px;
   }
 `;
 export const Label = styled.label`
@@ -282,6 +332,15 @@ export const RecipeInstruction = styled.section`
   @media (min-width: 768px) {
     padding: 0 16px 50px 16px;
   }
+  @media (min-width: 1440px) {
+    padding: 0 70px 262px 70px;
+
+    display: flex;
+    gap: 50px;
+    div {
+      max-width: 600px;
+    }
+  }
 `;
 
 export const Title = styled.h3`
@@ -324,6 +383,9 @@ export const InstructionItem = styled.li`
     @media (min-width: 768px) {
       margin-bottom: 20px;
     }
+    @media (min-width: 1440px) {
+      margin-bottom: 21px;
+    }
   }
   &:before {
     counter-increment: myCounter;
@@ -342,7 +404,7 @@ export const InstructionItem = styled.li`
     border-radius: 100px;
     background: var(--accent);
     @media (min-width: 768px) {
-      padding: 0.5px 7px 0.5px 7px;
+      padding: 0.5px 7px 2.5px 7px;
       font-size: 14px;
     }
   }
@@ -352,8 +414,12 @@ export const Container = styled.div`
   max-width: 343px;
   min-height: 250px;
   @media (min-width: 768px) {
-    max-width: 433px;
-    min-height: 332px;
+    width: 433px;
+    height: 332px;
+  }
+  @media (min-width: 1440px) {
+    width: 433px;
+    height: 332px;
   }
 
   div {
