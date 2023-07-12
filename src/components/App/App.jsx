@@ -22,7 +22,6 @@ const FavoritePage = lazy(() => import('pages/FavoritePage/FavoritePage'));
 const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 export default function App() {  
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,11 +29,11 @@ export default function App() {
   }, [dispatch]);
 
   return <Routes>
-    <Route path='/signin' element={<RestrictedRoute component={SigninPage} redirectTo='/signin'/>}></Route>
-    <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/register' />}></Route>
+    <Route path='/signin' element={<RestrictedRoute component={SigninPage} redirectTo='/'/>}></Route>
+    <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/' />}></Route>
 
     <Route path='/' element={<SharedLayout />} >
-      <Route index element={<PrivateRoute component={MainPage} redirectTo='/' />}></Route>
+      <Route index element={<PrivateRoute component={MainPage} redirectTo='/signin' />}></Route>
       <Route path='/categories' element={<PrivateRoute component={CategoriesPage } redirectTo='/categories' />}></Route>
       <Route path='/categories/:categoryName' element={<PrivateRoute component={CategoriesPage } redirectTo='/categories/:categoryName' />}></Route>
       <Route path='/add' element={<PrivateRoute component={AddRecipePage} redirectTo='/add' />}></Route>
