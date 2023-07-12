@@ -1,5 +1,5 @@
 import React from 'react';
-import RecipeCard from '../../components/RecipeCard/RecipeCard';
+import RecCard from '../../components/RecipeCard/RecCard';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -43,7 +43,7 @@ const FavoritePage = () => {
     <div>
         <FavoritePageTitle>Favorite </FavoritePageTitle>
         {recipes.length > 0 ? (
-            <RecipeCard recipe={currentRecipes}/>
+            <RecCard recipe={currentRecipes}/>
         ):(
             <p>Улюблених рецептів немає</p>
         )}
