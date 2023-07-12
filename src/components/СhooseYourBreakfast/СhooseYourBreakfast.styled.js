@@ -6,6 +6,7 @@ export const Wrap = styled.div`
   position: absolute;
   bottom: 250px;
   right: 18px;
+  z-index: 6;
   width: 225px;
   padding: 8px;
   background-color: var(--bg-color);
