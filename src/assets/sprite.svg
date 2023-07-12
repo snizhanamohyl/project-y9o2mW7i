@@ -39,12 +39,13 @@
                 d="M20.438 9.62c0.433-0.639 1.303-0.806 1.943-0.373s0.806 1.303 0.373 1.943l-7.587 11.191c-0.555 0.819-1.761 0.819-2.316 0l-3.604-5.316c-0.434-0.639-0.267-1.509 0.373-1.943s1.509-0.267 1.943 0.373l2.446 3.608 6.429-9.483z">
             </path>
         </symbol>
-        <symbol id="icon-clock" viewBox="0 0 32 32">
-            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9714"
+        <symbol id="icon-clock" viewBox="0 0 32 32" fill="none">
+            <path stroke-linejoin="round" stroke="#23262A" stroke-linecap="round" stroke-miterlimit="4"
+                stroke-width="2.9714"
                 d="M15.998 29.334c7.364 0 13.333-5.97 13.333-13.333s-5.97-13.333-13.333-13.333-13.333 5.97-13.333 13.333c0 7.364 5.97 13.333 13.333 13.333z">
             </path>
-            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.9714"
-                d="M16 8v8l5.333 2.667"></path>
+            <path stroke-linejoin="round" stroke="#23262A" stroke-linecap="round" stroke-miterlimit="4"
+                stroke-width="2.9714" d="M16 8v8l5.333 2.667"></path>
         </symbol>
         <symbol id="icon-down" viewBox="0 0 32 32">
             <path fill="none" stroke="#8baa36" style="stroke: var(--color4, #8baa36)" stroke-linejoin="round"
