@@ -8,9 +8,7 @@ export const SwitchBody = styled.button`
   background-color: #efefef;
   box-shadow: 0px 6px 8px 3px rgba(0, 0, 0, 0.1) inset;
 
-  @media (max-width: 1439px) {
-    display: none;
-  }
+  ${({ $customerStyles }) => $customerStyles}
 `;
 
 export const Switch = styled.div`

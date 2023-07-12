@@ -8,7 +8,8 @@ export default function СhooseYourBreakfast() {
         <TextAccent>Delicious and healthy</TextAccent> way to enjoy a variety of fresh ingredients in one
         satisfying meal
       </Text>
-      <SeeRecipesLink to="/categories/breakfast">See recipes
+      <SeeRecipesLink to="/categories/breakfast">
+        See recipes
         <svg width="18" height="18">
           <use href={`${sprite}#icon-arrow-narrow-right`}></use>
         </svg>
