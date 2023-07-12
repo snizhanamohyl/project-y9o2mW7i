@@ -21,6 +21,8 @@ const Paginations = ({setCurrentPage, recipesPerPage, totalRecipe, currentPage})
                         '& ul': {
                             paddingTop: '14px',
                             paddingBottom: '14px',
+                            paddingLeft: '24px',
+                            paddingRight: '24px',
                         },
                         },
                     }}/>
