@@ -57,7 +57,8 @@ export const Layout = styled.div`
     ismainpage === 'true' ? heroBgMob : 'var(--bg-color)'};
 
   @media ${retina} {
-    background: ${heroBgMobRet};
+    background: ${({ ismainpage }) =>
+      ismainpage === 'true' ? heroBgMobRet : 'var(--bg-color)'};
   }
 
   @media (min-width: 768px) {
@@ -69,7 +70,8 @@ export const Layout = styled.div`
       ismainpage === 'true' ? heroBgTab : 'var(--bg-color)'};
 
     @media ${retina} {
-      background: ${heroBgTabRet};
+      background: ${({ ismainpage }) =>
+        ismainpage === 'true' ? heroBgTabRet : 'var(--bg-color)'};
     }
   }
 
@@ -82,7 +84,8 @@ export const Layout = styled.div`
       ismainpage === 'true' ? heroBgDesk : 'var(--bg-color)'};
 
     @media ${retina} {
-      background: ${heroBgDeskRet};
+      background: ${({ ismainpage }) =>
+        ismainpage === 'true' ? heroBgDeskRet : 'var(--bg-color)'};
     }
   }
 `;
