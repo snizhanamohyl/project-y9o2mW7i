@@ -1,34 +1,28 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
-
-
+import { Link } from 'react-router-dom';
 
 export const LogoFooterLink = styled(Link)`
-    display:flex;
-    align-items: center;
-    justify-content: center;
-   
-    margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    @media (min-width: 768px) {
-        justify-content: flex-start;
-        margin-bottom: 24px;
-        align-items: end;
-     }
+  margin-bottom: 32px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
 `;
 
-
-
-
 export const LogoText = styled.p`
-   margin-left: 10px;
-   color: var(--bg-color);
-   font-size: 18px;
-   font-weight: 700;
-   line-height: 18px;
+  color: var(--bg-color);
+  margin-left: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
 
-     @media (min-width: 768px) {
-        margin-bottom: 12px;
-        font-size: 28px;
-     }
+  @media (min-width: 768px) {
+    margin-left: 12px;
+    font-size: 28px;
+  }
 `;

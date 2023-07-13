@@ -8,7 +8,7 @@ export default function LogoFooter() {
 
     return (<LogoFooterLink to="/">
        <svg width={logoSize} height={logoSize}>
-            <use href={`${sprite}#icon-logo-withBG`}></use>    
+            <use href={`${sprite}#icon-footer-logo`}></use>    
         </svg>
         <LogoText>So Yummy</LogoText>
     </LogoFooterLink>)

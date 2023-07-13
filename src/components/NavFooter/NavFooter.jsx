@@ -6,23 +6,23 @@ export default function NavFooter() {
   
   return (<NavFooterList>
       <NavFooterItem>
-        <NavLink to="/">Ingredients</NavLink>      
+        <NavLink to="/search/ingredients">Ingredients</NavLink>      
       </NavFooterItem>
     
       <NavFooterItem>
-        <NavLink to="/">Add recipes</NavLink>      
+        <NavLink to="/add">Add recipes</NavLink>      
       </NavFooterItem>
     
       <NavFooterItem>
-        <NavLink to="/">My recipes</NavLink>      
+        <NavLink to="/my">My recipes</NavLink>      
       </NavFooterItem>
     
       <NavFooterItem>
-        <NavLink to="/">Favorite</NavLink>      
+        <NavLink to="/favorite">Favorite</NavLink>      
       </NavFooterItem>
     
       <NavFooterItem>
-        <NavLink to="/">Shopping list</NavLink>      
+        <NavLink to="/shopping-list">Shopping list</NavLink>      
       </NavFooterItem> 
     </NavFooterList>);
 };
