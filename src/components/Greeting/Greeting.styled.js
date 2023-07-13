@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import bgDesk from '../../assets/images/desktop/welcomebg-1x.jpg';
-import bgDeskRetina from '../../assets/images/desktop/welcomebg-2x.jpg';
-import bgTab from '../../assets/images/tablet/welcomebg-1x.jpg';
-import bgTabRetina from '../../assets/images/tablet/welcomebg-2x.jpg';
-import bgMob from '../../assets/images/mobile/welcomebg-1x.jpg';
-import bgMobRetina from '../../assets/images/mobile/welcomebg-2x.jpg';
+import bgDesk from 'assets/images/desktop/welcomebg-1x.jpg';
+import bgDeskRetina from 'assets/images/desktop/welcomebg-2x.jpg';
+import bgTab from 'assets/images/tablet/welcomebg-1x.jpg';
+import bgTabRetina from 'assets/images/tablet/welcomebg-2x.jpg';
+import bgMob from 'assets/images/mobile/welcomebg-1x.jpg';
+import bgMobRetina from 'assets/images/mobile/welcomebg-2x.jpg';
 import { retina } from 'vars/styles';
 
 export const WelcomeWrapper = styled.section`
@@ -40,7 +40,7 @@ export const WelcomeWrapper = styled.section`
   }
 `;
 
-export const Logo = styled.img`
+export const Logo = styled.svg`
   width: 54px;
   height: 54px;
   margin-bottom: 44px;

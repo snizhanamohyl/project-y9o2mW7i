@@ -11,8 +11,9 @@ export const BtnWrapper = styled.div`
 `;
 
 export const SignUpBtn = styled(NavLink)`
-  line-height: 1.5;
-  display: block;
+  line-height: normal;
+  display: flex;
+  align-items: center;
   padding: 12px 24px;
   border-radius: 24px 44px;
   border: none;

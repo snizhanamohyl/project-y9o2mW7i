@@ -1,19 +1,13 @@
-import {
-  WelcomeWrapper,
-
-  StyledTitle,
-  StyledText,
-
-} from './Greeting.styled';
+import sprite from 'assets/sprite.svg';
+import {WelcomeWrapper, Logo, StyledTitle,StyledText} from './Greeting.styled';
 import AuthNav from '../AuthNav/AuthNav';
 
 export default function Greeting() { 
   return (
     <WelcomeWrapper>
-      {/* <Logo
-        src={require('../../images/welcomePage/logo.svg').default}
-        alt="logo"
-      /> */}
+      <Logo width="68" height="68">
+        <use href={`${sprite}#icon-logo-44x44BG`}></use>
+      </Logo>
       <StyledTitle>Welcome to the app!</StyledTitle>
       <StyledText>
         This app offers more than just a collection of recipes - it is designed
@@ -21,7 +15,7 @@ export default function Greeting() {
         your own recipes at any time.
       </StyledText>
 
-      <AuthNav/>
+      <AuthNav />
     </WelcomeWrapper>
   );
 }
