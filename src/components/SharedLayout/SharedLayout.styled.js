@@ -28,69 +28,63 @@ import { retina } from 'vars/styles';
 
 const heroBgMob = `url(${bgSpinachMiniImg}) left 30px no-repeat,
   url(${bgSpinachImg}) right 54px no-repeat,
-  url(${bgShapeImg}) right 154px no-repeat, 
-  url(${bgSpinachSharedImg}) left bottom no-repeat, 
-  var(--bg-color);`;
+  url(${bgShapeImg}) right 154px no-repeat,`;
 
 const heroBgMobRet = `url(${bgSpinachMiniImgRet}) left 30px / 48px 202px no-repeat,
   url(${bgSpinachImgRet}) left 54px / 375px 814px no-repeat,
-  url(${bgShapeImg}) right 154px no-repeat, 
-  url(${bgSpinachSharedImgRet}) left bottom / 207px 248px no-repeat, 
-  var(--bg-color);`;
+  url(${bgShapeImg}) right 154px no-repeat,`;
 
 const heroBgTab = `url(${bgSpinachMiniImgTab}) left 0 no-repeat,
   url(${bgSpinachImgTab}) right 0 no-repeat,
-  url(${bgShapeImgTab}) right top no-repeat,
-  url(${bgSpinachSharedImgTab}) left bottom no-repeat,
-  var(--bg-color);`;
+  url(${bgShapeImgTab}) right top no-repeat,`;
 
 const heroBgTabRet = `url(${bgSpinachMiniImgTabRet}) left 0 / 67px 323px no-repeat,
   url(${bgSpinachImgTabRet}) right 0 / 583px 640px no-repeat,
-  url(${bgShapeImgTab}) right top no-repeat, 
-  url(${bgSpinachSharedImgTabRet}) left bottom / 266px 305px no-repeat,
-  var(--bg-color);`;
+  url(${bgShapeImgTab}) right top no-repeat,`;
 
 const heroBgDesk = `url(${bgSpinachMiniImgDesk}) left 0 no-repeat,
   url(${bgSpinachImgDesk}) right 0 no-repeat,
-  url(${bgShapeImgDesk}) right top no-repeat, 
-  url(${bgSpinachSharedImgDesk}) left bottom no-repeat,
-  var(--bg-color);`;
+  url(${bgShapeImgDesk}) right top no-repeat,`;
 
 const heroBgDeskRet = `url(${bgSpinachMiniImgDeskRet}) left 0 / 116px 398px no-repeat,
   url(${bgSpinachImgDeskRet}) right 0 / 913px 800px no-repeat,
-  url(${bgShapeImgDesk}) right top no-repeat, 
-  url(${bgSpinachSharedImgDeskRet}) left bottom / 400px 301px no-repeat,
-  var(--bg-color);`;
+  url(${bgShapeImgDesk}) right top no-repeat,`;
 
 export const Layout = styled.div`
   position: relative;
   width: 100vw;
 
-  background: ${({ ismainpage }) =>
-    ismainpage === 'true' ? heroBgMob : 'var(--bg-color)'};
+  background: ${({ $isMainPage }) => `${$isMainPage ? heroBgMob : ''} 
+  url(${bgSpinachSharedImg}) left bottom no-repeat, var(--bg-color)`};
 
   @media ${retina} {
-    background: ${({ ismainpage }) =>
-      ismainpage === 'true' ? heroBgMobRet : 'var(--bg-color)'};
+    background: ${({ $isMainPage }) =>
+      `${
+        $isMainPage ? heroBgMobRet : ''
+      } url(${bgSpinachSharedImgRet}) left bottom / 168px 129px no-repeat, var(--bg-color)`};
   }
 
   @media (min-width: 768px) {
-    background: ${({ ismainpage }) =>
-      ismainpage === 'true' ? heroBgTab : 'var(--bg-color)'};
+    background: ${({ $isMainPage }) => `${$isMainPage ? heroBgTab : ''} 
+      url(${bgSpinachSharedImgTab}) left bottom no-repeat, var(--bg-color)`};
 
     @media ${retina} {
-      background: ${({ ismainpage }) =>
-        ismainpage === 'true' ? heroBgTabRet : 'var(--bg-color)'};
+      background: ${({ $isMainPage }) =>
+        `${
+          $isMainPage ? heroBgTabRet : ''
+        } url(${bgSpinachSharedImgTabRet}) left bottom / 266px 305px no-repeat, var(--bg-color)`};
     }
   }
 
   @media (min-width: 1440px) {
-    background: ${({ ismainpage }) =>
-      ismainpage === 'true' ? heroBgDesk : 'var(--bg-color)'};
+    background: ${({ $isMainPage }) => `${$isMainPage ? heroBgDesk : ''} 
+      url(${bgSpinachSharedImgDesk}) left bottom no-repeat, var(--bg-color)`};
 
     @media ${retina} {
-      background: ${({ ismainpage }) =>
-        ismainpage === 'true' ? heroBgDeskRet : 'var(--bg-color)'};
+      background: ${({ $isMainPage }) =>
+        `${
+          $isMainPage ? heroBgDeskRet : ''
+        } url(${bgSpinachSharedImgDeskRet}) left bottom / 400px 301px no-repeat, var(--bg-color)`};
     }
   }
 `;

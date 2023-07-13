@@ -1,5 +1,5 @@
 import { Wrapper } from "./SharedContainer.styled";
 
-export default function SharedContainer({children}) {
-    return <Wrapper>{children}</Wrapper>
+export default function SharedContainer({children, isBg}) {
+    return <Wrapper $isBg={isBg}>{children}</Wrapper>
 }

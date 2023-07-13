@@ -7,7 +7,7 @@ import SharedContainer from 'components/SharedContainer/SharedContainer.jsx';
 
 export default function AddRecipePage() {
   return (
-    <SharedContainer>
+    <SharedContainer isBg>
       <Wrapper>
         <MainTitle>Add recipe</MainTitle>
         <Grid>

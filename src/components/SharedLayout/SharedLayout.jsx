@@ -17,11 +17,11 @@ export default function SharedLayout() {
   }
   
   return (<>
-    <Layout ismainpage={ isMainPage ? 'true' : 'false' }>
-      <Header toggleMenu={toggleMenu} />  
+    <Layout $isMainPage={isMainPage}>
+        <Header toggleMenu={toggleMenu} />  
         <Suspense fallback={null}>
           <Outlet />
-      </Suspense>
+        </Suspense>
     </Layout>
     <Footer />
     
