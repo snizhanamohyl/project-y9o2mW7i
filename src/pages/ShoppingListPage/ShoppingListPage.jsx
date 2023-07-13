@@ -1,3 +1,7 @@
+import SharedContainer from "components/SharedContainer/SharedContainer";
+
 export default function ShoppingListPage() {
-    return <h1>ShoppingListPage</h1>
+    return <SharedContainer>
+        ShoppingListPage
+    </SharedContainer>
 }

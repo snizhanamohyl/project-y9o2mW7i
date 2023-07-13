@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3030/api';
+axios.defaults.baseURL = 'https://so-yummy-backend-hg4e.onrender.com/api';
 
 const token = {
   set(token) {
@@ -22,15 +22,23 @@ export const register = createAsyncThunk('auth/register', async credentials => {
   }
 });
 
-export const login = createAsyncThunk('auth/login', async credentials => {
-  try {
-    const { data } = await axios.post('/users/login', credentials);
-    token.set(data.token);
-    return data;
-  } catch (error) {
-    console.log(error);
+export const login = createAsyncThunk(
+  'auth/login',
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/users/login', credentials);
+      token.set(data.token);
+      return data;
+    } catch (error) {
+      if (error.response) {
+        const message = error.response.data.message;
+        return rejectWithValue(message);
+      } else {
+        throw new Error('An unexpected error occurred.');
+      }
+    }
   }
-});
+);
 
 export const logout = createAsyncThunk('auth/logout', async () => {
   try {
@@ -61,4 +69,3 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
-

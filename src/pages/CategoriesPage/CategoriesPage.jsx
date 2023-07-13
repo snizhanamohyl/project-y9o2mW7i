@@ -1,12 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-
-import { CustomTabPanel } from './CustomTabsPanel';
-import { Title } from './CategoriesPage.style';
-import { CustomTabs, CustomTab, CustomConteiner, CustomBox } from './Tabs.style';
-
-import categories from '../../categories.json';
-
 export default function CategoriesPage() {
   const { categoryName } = useParams();
   const navigate = useNavigate();
