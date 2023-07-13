@@ -4,6 +4,7 @@ import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FavoritePageTitle, ContainerMarg, ContainerPad } from './FavoritePage.styled.jsx';
+import SharedContainer from "components/SharedContainer/SharedContainer";
 
 const FavoritePage = () => {
     const [recipes, setRecipes] = useState([]);
@@ -40,7 +41,7 @@ const FavoritePage = () => {
 
   return (
 
-    <div>
+    <SharedContainer>
         <FavoritePageTitle>Favorite </FavoritePageTitle>
         {recipes.length > 0 ? (
             <>            
@@ -59,8 +60,9 @@ const FavoritePage = () => {
             setCurrentPage={setCurrentPage}
         />
         <ContainerPad></ContainerPad>
-    </div>
+    </SharedContainer>
   );
 };
 
 export default FavoritePage;
+

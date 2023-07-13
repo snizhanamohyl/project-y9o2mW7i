@@ -1,38 +1,35 @@
 import RecipeTitle from "components/RecipeTitle/RecipeTitle";
 import SeeAllBtn from "components/SeeAllBtn/SeeAllBtn";
-import PreviewCards from "../PreviewCards/PreviewCards";
-import { RecipeItem } from "./RecipeList.styled";
+import { RecipeItem } from "./PreviewRecipesList.styled";
+import RecipesList from "../RecipesList/RecipesList";
 
-export default function ReceiptList({ title, breakfastArr,miscellaneousArr, chickenArr, dessertsArr}) {   
-    console.log(breakfastArr);
-    
-   
+export default function PreviewRecipesList({ title, breakfastArr,miscellaneousArr, chickenArr, dessertsArr}) {  
     return (
         <> 
         <RecipeItem>
         <RecipeTitle name={title[0]}/>
-        <PreviewCards elem={breakfastArr}/>            
+        <RecipesList recipes={breakfastArr}/>            
         <SeeAllBtn/>        
         </RecipeItem>
 
             
         <RecipeItem>
         <RecipeTitle name={title[1]}/>
-        <PreviewCards elem={miscellaneousArr}/>            
+        <RecipesList recipes={miscellaneousArr}/>            
         <SeeAllBtn/>         
         </RecipeItem>
 
 
         <RecipeItem>
         <RecipeTitle name={title[2]}/>
-        <PreviewCards elem={chickenArr}/>            
+        <RecipesList recipes={chickenArr}/>            
         <SeeAllBtn/>         
         </RecipeItem>
 
             
         <RecipeItem>
         <RecipeTitle name={title[3]}/>
-        <PreviewCards elem={dessertsArr}/>            
+        <RecipesList recipes={dessertsArr}/>            
         <SeeAllBtn/>         
         </RecipeItem>
          </>

@@ -4,6 +4,7 @@ import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { MyRecipePage, ContainerMarg, ContainerPad } from './MyRecipesPage.styled.jsx';
+import SharedContainer from "components/SharedContainer/SharedContainer";
 
 const MyRecipesPage = () => {
     const [recipes, setRecipes] = useState([]);
@@ -35,7 +36,7 @@ const MyRecipesPage = () => {
 
     return (
 
-        <div>
+        <SharedContainer>
             <MyRecipePage>My recipes</MyRecipePage>
             {recipes.length > 0 ? (
                 <>
@@ -54,8 +55,9 @@ const MyRecipesPage = () => {
                 setCurrentPage={setCurrentPage}
             />
             <ContainerPad></ContainerPad>
-        </div>
+        </SharedContainer>
       );
     };
     
     export default MyRecipesPage;
+
