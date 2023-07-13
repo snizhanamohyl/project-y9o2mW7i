@@ -23,18 +23,18 @@ export const theme = createTheme({
             paddingBottom: '12px',
             paddingLeft: '28px',
             paddingRight: '28px',
-            fontSize: '12px',
-            fontFamily: 'Poppins',
-            fontStyle: 'normal',
-            fontWeight: '500',
-            lineHeight: 'normal',
           },
         },
       },
       MuiPaginationItem: {
         styleOverrides: {
             root: {
-              
+              color: '#656565',
+              fontSize: '12px',
+              fontFamily: 'Poppins',
+              fontStyle: 'normal',
+              fontWeight: '500',
+              lineHeight: 'normal',
             },
         },
       },

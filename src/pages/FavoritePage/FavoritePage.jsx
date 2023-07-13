@@ -3,7 +3,7 @@ import RecCard from '../../components/RecipeCard/RecCard';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FavoritePageTitle } from './FavoritePage.styled.jsx';
+import { FavoritePageTitle, ContainerMarg, ContainerPad } from './FavoritePage.styled.jsx';
 
 const FavoritePage = () => {
     const [recipes, setRecipes] = useState([]);
@@ -43,7 +43,10 @@ const FavoritePage = () => {
     <div>
         <FavoritePageTitle>Favorite </FavoritePageTitle>
         {recipes.length > 0 ? (
-            <RecCard isFavorites={true} recipe={currentRecipes}/>
+            <>            
+                <RecCard isFavorites={true} recipe={currentRecipes}/>
+                <ContainerMarg></ContainerMarg>
+            </>
         ):(
             <p>Улюблених рецептів немає</p>
         )}
@@ -55,6 +58,7 @@ const FavoritePage = () => {
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
         />
+        <ContainerPad></ContainerPad>
     </div>
   );
 };

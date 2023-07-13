@@ -15,13 +15,11 @@ export const ContainerCard = styled.div`
 
     @media screen and (min-width: 767px){
         padding: 28px 24px;
+        gap: 24px;
     }
 
     @media screen and (min-width: 1439px){
         padding: 40px;
-    }
-
-    &:last-child{
         gap: 40px;
     }
 `
@@ -52,7 +50,7 @@ export const TitleCard = styled.h2`
     letter-spacing: -0.24px;
 
     margin-bottom: 14px;
-    color: #3E4462;
+    color: var(--pre-title-color);
 
     @media screen and (min-width: 767px){
         font-size: 24px;
@@ -68,7 +66,7 @@ export const TitleCard = styled.h2`
 export const BtnDel = styled.button`
     border-radius: 4px;
     border: none;
-    background: #EBF3D4;
+    background: var(--light-green-bg);
 
     display: flex;
     align-items: center;
@@ -84,12 +82,12 @@ export const BtnDel = styled.button`
         padding: 10px;
     }
 
-    background: ${props => props.isfavorites ? "#EBF3D4" : "#8BAA36"};
+    background: ${props => props.isfavorites ? "var(--light-green-bg)" : "var(--accent)"};
 `
 
 export const TextCard = styled.p`
     overflow: hidden;
-    color: #23262A;
+    color: var(--text-primary);
     text-overflow: ellipsis;
     font-family: Poppins;
     font-size: 8px;
@@ -112,8 +110,7 @@ export const TextCard = styled.p`
         font-size: 14px;
         line-height: 18px;
         letter-spacing: -0.28px;
-        /* max-width: 298px; */
-        max-width: 100%;
+        max-width: 298px;
         margin-bottom: 0px;
     }
 
@@ -121,7 +118,7 @@ export const TextCard = styled.p`
         font-size: 18px;
         line-height: 24px;
         letter-spacing: -0.36px;
-        /* max-width: 100%; */
+        max-width: 679px;
     }
 `
 
@@ -170,11 +167,11 @@ export const TimeCard = styled.span`
     }
 `
 export const BtnRecipeSee = styled(Link)`
-    background-color: #22252A;
+    background-color: var(--dark-accent);
     border-radius: 24px 44px;
-    border: 1px solid #22252A;
+    border: 1px solid var(--dark-accent);
 
-    color: #FAFAFA;
+    color: var(--bg-color);
     font-family: Poppins;
     font-size: 10px;
     font-style: normal;

@@ -23,7 +23,7 @@ export const BtnRecipeSee = styled(Link)`
 
     @media screen and (min-width: 1439px){
         font-size: 16px;
-        padding: 14px 38px 22px 38px
+        padding: 14px 38px;
     }
 
     background: ${props => props.isFavorites ? "#22252A" : "#8BAA36"};

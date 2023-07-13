@@ -26,3 +26,23 @@ export const MyRecipePage = styled.h1`
         letter-spacing: -0.88px;
     }
 `
+
+export const ContainerMarg = styled.div`
+    padding-bottom: 22px;
+
+    @media screen and (min-width: 767px){
+        padding-bottom: 32px;
+    }
+`
+
+export const ContainerPad = styled.div`
+    padding-bottom: 100px;
+
+    @media screen and (min-width: 767px){
+        padding-bottom: 200px;
+    }
+
+    @media screen and (min-width: 1439px){
+        padding-bottom: 100px;
+    }
+`
