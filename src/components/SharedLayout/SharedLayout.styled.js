@@ -52,6 +52,7 @@ const heroBgDeskRet = `url(${bgSpinachMiniImgDeskRet}) left 0 / 116px 398px no-r
 
 export const Layout = styled.div`
   position: relative;
+  padding-top: 18px;
   width: 100vw;
 
   background: ${({ $isMainPage }) => `${$isMainPage ? heroBgMob : ''} 
@@ -77,6 +78,7 @@ export const Layout = styled.div`
   }
 
   @media (min-width: 1440px) {
+    padding-top: 14px;
     background: ${({ $isMainPage }) => `${$isMainPage ? heroBgDesk : ''} 
       url(${bgSpinachSharedImgDesk}) left bottom no-repeat, var(--bg-color)`};
 
