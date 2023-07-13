@@ -31,7 +31,7 @@ const heroBgMob = `url(${bgSpinachMiniImg}) left 30px no-repeat,
   url(${bgShapeImg}) right 154px no-repeat,`;
 
 const heroBgMobRet = `url(${bgSpinachMiniImgRet}) left 30px / 48px 202px no-repeat,
-  url(${bgSpinachImgRet}) left 54px / 375px 814px no-repeat,
+  url(${bgSpinachImgRet}) right 54px / 375px 814px no-repeat,
   url(${bgShapeImg}) right 154px no-repeat,`;
 
 const heroBgTab = `url(${bgSpinachMiniImgTab}) left 0 no-repeat,
@@ -77,6 +77,7 @@ export const Layout = styled.div`
   }
 
   @media (min-width: 1440px) {
+    padding-top: 14px;
     background: ${({ $isMainPage }) => `${$isMainPage ? heroBgDesk : ''} 
       url(${bgSpinachSharedImgDesk}) left bottom no-repeat, var(--bg-color)`};
 
@@ -87,4 +88,8 @@ export const Layout = styled.div`
         } url(${bgSpinachSharedImgDeskRet}) left bottom / 400px 301px no-repeat, var(--bg-color)`};
     }
   }
+`;
+
+export const Wrap = styled.div`
+  padding-top: 64px;
 `;

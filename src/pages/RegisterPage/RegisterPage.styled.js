@@ -25,14 +25,23 @@ const Img = styled.img`
 `;
 
 const Section = styled.div`
-  height: 490px;
-  background-size: cover;
-  background-image: url(${bgMob});
-  position: relative;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 1199px) {
+    height: 490px;
+    background-size: cover;
+    background-image: url(${bgMob});
+    position: relative;
+  }
+
+  @media screen and (max-width: 1200px) {
     height: 606px;
+    background-size: cover;
+    background-image: url(${bgMob});
+    position: relative;
   }
   @media screen and (min-width: 1440px) {
+    background-size: cover;
+    background-image: url(${bgMob});
+    position: relative;
     background-image: none;
   }
 `;
@@ -241,6 +250,10 @@ const Error = styled.div`
   }
 `;
 
+const ServerError = styled(Error)`
+  font-size: 10px;
+`;
+
 const ErrorEmail = styled(Error)`
   top: 184px;
 
@@ -342,4 +355,5 @@ export {
   CorrectInput,
   SvgDivCorrect,
   TickSvg,
+  ServerError,
 };
