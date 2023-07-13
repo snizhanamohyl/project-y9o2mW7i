@@ -66,6 +66,7 @@ export const SigninForm = () => {
               </Svg>
             </SvgDiv>
           )}
+
           {((errors.email && touched.email) || serverError) && (
             <MailCrossSvg width={20} height={20}>
               <use href={Sprite + '#icon-red-x-20x20'}></use>
