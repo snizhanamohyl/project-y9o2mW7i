@@ -1,13 +1,16 @@
+import SharedContainer from 'components/SharedContainer/SharedContainer';
 import SearchBar from 'components/SearchBar/SearchBar';
 import SearchedRecipesList from 'components/SearchedRecipesList/SearchedRecipesList';
-import { Container, MainPageTitle } from './SearchPage.styled';
+import { Section, MainPageTitle } from './SearchPage.styled';
 
 export default function SearchPage() {
   return (
-    <Container>
-      <MainPageTitle>Search</MainPageTitle>
-      <SearchBar />
-      <SearchedRecipesList />
-    </Container>
+    <SharedContainer>
+      <Section>
+        <MainPageTitle>Search</MainPageTitle>
+        <SearchBar />
+        <SearchedRecipesList />
+      </Section>
+    </SharedContainer>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchProducts from 'services/search-api';
-import SearchFailed from 'components/SearchFailed/SearchFailed';
+import EmptyPage from 'components/EmptyPage/EmptyPage';
 import RecipesList from 'components/RecipesList/RecipesList';
 
 export default function SearchedRecipesList() {
@@ -24,9 +24,9 @@ export default function SearchedRecipesList() {
   return (
     <>
       {!items || items.length === 0 ? (
-        <SearchFailed />
+        <EmptyPage description={'Try looking for something else..'} />
       ) : (
-        <RecipesList cards={items} />
+        <RecipesList recipes={items} />
       )}
     </>
   );

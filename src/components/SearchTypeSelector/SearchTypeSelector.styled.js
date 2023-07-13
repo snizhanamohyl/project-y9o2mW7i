@@ -5,14 +5,16 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 26px auto 0 auto;
+  margin: 26px auto 42px auto;
   width: 223px;
   height: 34px;
   @media (min-width: 768px) {
+    margin-bottom: 40px;
     width: 265px;
     height: 41px;
   }
   @media (min-width: 1440px) {
+    margin-bottom: 90px;
     width: 310px;
     height: 49px;
   }

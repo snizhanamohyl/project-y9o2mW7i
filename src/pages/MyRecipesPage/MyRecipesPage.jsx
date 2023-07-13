@@ -1,3 +1,7 @@
+import SharedContainer from "components/SharedContainer/SharedContainer";
+
 export default function MyRecipesPage() {
-    return <h1>MyRecipesPage</h1>
+    return <SharedContainer>
+        MyRecipesPage
+    </SharedContainer>
 }
