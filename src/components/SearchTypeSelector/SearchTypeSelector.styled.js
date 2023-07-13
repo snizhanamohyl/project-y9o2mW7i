@@ -1,20 +1,53 @@
 import styled from 'styled-components';
-import { Select } from '@mui/material';
 
 export const Wrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 26px auto 0 auto;
+  margin: 26px auto 42px auto;
   width: 223px;
   height: 34px;
   @media (min-width: 768px) {
+    margin-bottom: 40px;
     width: 265px;
     height: 41px;
   }
   @media (min-width: 1440px) {
+    margin-bottom: 90px;
     width: 310px;
     height: 49px;
+  }
+
+  & > div {
+    position: static;
+    display: flex;
+    align-items: center;
+    width: 146px;
+    height: 34px;
+    padding: 14px;
+    border-radius: 6px;
+    background-color: var(--input-bg-color);
+    @media (min-width: 768px) {
+      width: 175px;
+      height: 41px;
+    }
+    @media (min-width: 1440px) {
+      width: 198px;
+      height: 49px;
+    }
+    & > div {
+      width: inherit;
+    }
+    & > button {
+      width: 100%;
+      justify-content: space-between;
+      & > span {
+        font-size: 14px;
+        color: var(--black);
+        opacity: 0.5;
+      }
+    }
   }
 `;
 
@@ -29,23 +62,5 @@ export const Label = styled.p`
   }
   @media (min-width: 1440px) {
     font-size: 18px;
-  }
-`;
-
-export const Menu = styled(Select)`
-  width: 146px;
-  height: 34px;
-  font-family: Poppins !important;
-  letter-spacing: -0.28px;
-  background-color: var(--input-bg-color);
-  color: var(--black);
-  opacity: 0.5;
-  @media (min-width: 768px) {
-    width: 175px;
-    height: 41px;
-  }
-  @media (min-width: 1440px) {
-    width: 198px;
-    height: 49px;
   }
 `;

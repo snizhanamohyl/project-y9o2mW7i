@@ -15,7 +15,7 @@ export default function SearchBar() {
   };
 
   const handleChange = e => {
-    setSearchParams({ query, type: e.target.value });
+    setSearchParams({ query: query ? query : '', type: e });
   };
 
   return (

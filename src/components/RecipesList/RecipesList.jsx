@@ -1,17 +1,12 @@
 import RecipeCard from 'components/RecipeCard/RecipeCard';
-import React from 'react';
-import { List } from './RecipesList.styled';
+import { CardsList } from './RecipesList.styled';
 
-const RecipesList = ({ cards }) => {
-  console.log('cards:', cards);
-
+export default function RecipesList({ recipes }) {
   return (
-    <List>
-      {cards.map(({ _id, title, preview }) => (
-        <RecipeCard key={_id} dish={title} img={preview}></RecipeCard>
+    <CardsList>
+      {recipes?.map(recipe => (
+        <RecipeCard key={recipe._id} recipe={recipe} />
       ))}
-    </List>
+    </CardsList>
   );
-};
-
-export default RecipesList;
+}

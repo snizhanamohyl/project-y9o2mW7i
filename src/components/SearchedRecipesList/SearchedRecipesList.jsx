@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import SearchProducts from 'services/search-api';
-import SearchFailed from 'components/SearchFailed/SearchFailed';
+import EmptyPage from 'components/EmptyPage/EmptyPage';
 import RecipesList from 'components/RecipesList/RecipesList';
 
 export default function SearchedRecipesList() {
@@ -15,10 +15,7 @@ export default function SearchedRecipesList() {
     if (!query || !type) return;
     SearchProducts(type, query)
       .then(data => {
-        if (!Array.isArray(data)) {
-          setItems([]);
-          throw new Error(data.message);
-        }
+        if (!Array.isArray(data)) return setItems([]);
         setItems(data);
       })
       .catch(err => console.log(err.message));
@@ -27,9 +24,9 @@ export default function SearchedRecipesList() {
   return (
     <>
       {!items || items.length === 0 ? (
-        <SearchFailed />
+        <EmptyPage description={'Try looking for something else..'} />
       ) : (
-        <RecipesList cards={items} />
+        <RecipesList recipes={items} />
       )}
     </>
   );

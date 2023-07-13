@@ -1,3 +1,7 @@
+import SharedContainer from "components/SharedContainer/SharedContainer";
+
 export default function CategoriesPage() {
-    return <h1>CategoriesPage</h1>
+    return <SharedContainer>
+        CategoriesPage
+    </SharedContainer>
 }
