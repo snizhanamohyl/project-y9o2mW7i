@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/project-y9o2mW7i/static/css/main.ec801527.css",
-    "main.js": "/project-y9o2mW7i/static/js/main.edcdb6d8.js",
+    "main.css": "/project-y9o2mW7i/static/css/main.27d45c44.css",
+    "main.js": "/project-y9o2mW7i/static/js/main.fda166ec.js",
     "static/js/192.0727bd95.chunk.js": "/project-y9o2mW7i/static/js/192.0727bd95.chunk.js",
     "static/js/243.2f93a1c4.chunk.js": "/project-y9o2mW7i/static/js/243.2f93a1c4.chunk.js",
     "static/js/848.a4734d72.chunk.js": "/project-y9o2mW7i/static/js/848.a4734d72.chunk.js",
@@ -14,11 +14,13 @@
     "static/js/175.df69c7c6.chunk.js": "/project-y9o2mW7i/static/js/175.df69c7c6.chunk.js",
     "static/media/hero-bg-spinach-2x.png": "/project-y9o2mW7i/static/media/hero-bg-spinach-2x.8317127cbf5fedc12b1d.png",
     "static/media/hero-dish-2x.png": "/project-y9o2mW7i/static/media/hero-dish-2x.bb205abf4a797570f1ef.png",
+    "static/media/welcomebg-2x.jpg": "/project-y9o2mW7i/static/media/welcomebg-2x.dae1f7ad957a41d9bd98.jpg",
     "static/media/hero-dish-1x.png": "/project-y9o2mW7i/static/media/hero-dish-1x.68662c8f1c68a847ec01.png",
     "static/media/mob-menu-spinach-bg-2x.png": "/project-y9o2mW7i/static/media/mob-menu-spinach-bg-2x.69e854b311d239a40f3b.png",
     "static/media/hero-bg-spinach-1x.png": "/project-y9o2mW7i/static/media/hero-bg-spinach-1x.bab681d4d3c03c87746d.png",
     "static/media/bg-spinach-shared-2x.png": "/project-y9o2mW7i/static/media/bg-spinach-shared-2x.8bd042744e1a88346f6d.png",
     "static/media/registration.png": "/project-y9o2mW7i/static/media/registration.88128fce96de8857dd5a.png",
+    "static/media/welcomebg-1x.jpg": "/project-y9o2mW7i/static/media/welcomebg-1x.b2804150b23de5a4a304.jpg",
     "static/media/hero-bg-spinach-mini-2x.png": "/project-y9o2mW7i/static/media/hero-bg-spinach-mini-2x.7c64ffb7c154ac3674e0.png",
     "static/media/Poppins-Regular.ttf": "/project-y9o2mW7i/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/project-y9o2mW7i/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
@@ -28,14 +30,14 @@
     "static/media/bg-spinach-shared-1x.png": "/project-y9o2mW7i/static/media/bg-spinach-shared-1x.203c059bbc90dc780082.png",
     "static/media/hero-bg-spinach-mini-1x.png": "/project-y9o2mW7i/static/media/hero-bg-spinach-mini-1x.692a6e2bbe6eba45f5fe.png",
     "static/media/bg-register-desk.png": "/project-y9o2mW7i/static/media/bg-register-desk.8107508b3727900c917f.png",
-    "static/media/sprite.svg": "/project-y9o2mW7i/static/media/sprite.93e2d5901aa3455ef65ef128020972d1.svg",
+    "static/media/sprite.svg": "/project-y9o2mW7i/static/media/sprite.9983149b87a2212d94d8e08b569c9277.svg",
     "static/media/bg-register-mob.png": "/project-y9o2mW7i/static/media/bg-register-mob.7f13fd635043e707290a.png",
     "static/media/hero-arrow.svg": "/project-y9o2mW7i/static/media/hero-arrow.8071b2b04df70d3242bb96a6b046203d.svg",
     "index.html": "/project-y9o2mW7i/index.html",
     "static/media/bg-shape.svg": "/project-y9o2mW7i/static/media/bg-shape.091fd12b87a953a3cfdcc7c0e246296b.svg",
     "static/media/green-spot.svg": "/project-y9o2mW7i/static/media/green-spot.78dfd9103aff0c065efb1b97bcd23a18.svg",
-    "main.ec801527.css.map": "/project-y9o2mW7i/static/css/main.ec801527.css.map",
-    "main.edcdb6d8.js.map": "/project-y9o2mW7i/static/js/main.edcdb6d8.js.map",
+    "main.27d45c44.css.map": "/project-y9o2mW7i/static/css/main.27d45c44.css.map",
+    "main.fda166ec.js.map": "/project-y9o2mW7i/static/js/main.fda166ec.js.map",
     "192.0727bd95.chunk.js.map": "/project-y9o2mW7i/static/js/192.0727bd95.chunk.js.map",
     "243.2f93a1c4.chunk.js.map": "/project-y9o2mW7i/static/js/243.2f93a1c4.chunk.js.map",
     "848.a4734d72.chunk.js.map": "/project-y9o2mW7i/static/js/848.a4734d72.chunk.js.map",
@@ -48,7 +50,7 @@
     "175.df69c7c6.chunk.js.map": "/project-y9o2mW7i/static/js/175.df69c7c6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec801527.css",
-    "static/js/main.edcdb6d8.js"
+    "static/css/main.27d45c44.css",
+    "static/js/main.fda166ec.js"
   ]
 }
