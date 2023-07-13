@@ -11,38 +11,25 @@ import {
     FooterBoxDesk,
     Container,
 } from "./Footer.styled";
-import FollowUs from "components/FollowUs/FollowUs";
-
-
 
 export default function Footer() {
- 
-
     return (<>
-<FooterSection>
-        <Container>
-        <FooterBoxDesk>
-        <FooterBoxTab>
-        <ElementBoxTab>
-                            
-                <LogoFooter />
-                <ExplanationTextFooter />
-                            
-        </ElementBoxTab>
-                        
-                <NavFooter />
-
-        </FooterBoxTab>
-                    
-                <SubscribeBlock />
-                    
-        </FooterBoxDesk>
-                
+        <FooterSection>
+            <Container>
+                <FooterBoxDesk>
+                    <FooterBoxTab>
+                        <ElementBoxTab>
+                            <LogoFooter />
+                            <ExplanationTextFooter />
+                        </ElementBoxTab> 
+                        <NavFooter />
+                    </FooterBoxTab>
+                    <SubscribeBlock />           
+                </FooterBoxDesk>
                <SocialNetworkFooter/>    
-        </Container>            
-</FooterSection>
-    
-    <BottomBlock/>
+            </Container>            
+        </FooterSection> 
+        <BottomBlock/>
     </>     
     )
 };

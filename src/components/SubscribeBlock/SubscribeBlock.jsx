@@ -28,8 +28,6 @@ export default function SubscribeBlock() {
     logoHeight = 28;
   }
 
-
-  
   const onInputChange = (e) => {
     const { value } = e.currentTarget;
     setEmail(value);
@@ -39,28 +37,27 @@ export default function SubscribeBlock() {
     setEmail("");
   };
   
-
   return (<ButtonsFooterContainer>
-    
+
     <SubscribeMainText>Subscribe to our Newsletter</SubscribeMainText>  
     <SubscribeText>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</SubscribeText>
 
     <EmailInputBox>
-    <IconLetter width={logoWidth} height={logoHeight}>
-    <use href={`${sprite}#icon-letter`}></use>    
-    </IconLetter>      
-    <EmailInput
-      onChange={onInputChange}
-      name="email"
-      value={email}
-      type="email"
-      placeholder="Enter your email address"
-      />     
-    </EmailInputBox>
+      <IconLetter width={logoWidth} height={logoHeight}>
+        <use href={`${sprite}#icon-letter`}></use>    
+      </IconLetter>      
+      <EmailInput
+        onChange={onInputChange}
+        name="email"
+        value={email}
+        type="email"
+        placeholder="Enter your email address"
+        />     
+      </EmailInputBox>
 
-    <SubscribeBtn onClick={onSendEmail}>
-      Subscribe
-    </SubscribeBtn>
+      <SubscribeBtn onClick={onSendEmail}>
+        Subscribe
+      </SubscribeBtn>
     </ButtonsFooterContainer>);
 };
 
