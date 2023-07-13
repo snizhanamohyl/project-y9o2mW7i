@@ -10,6 +10,7 @@ import {
 
 import img from '../../../assets/images/ingr.png';
 import { useState } from 'react';
+import CheckboxLabels from './Checkbox';
 
 export default function RecipePageIngredientsItem() {
   const [isChecked, setIsChecked] = useState(false);
@@ -20,27 +21,15 @@ export default function RecipePageIngredientsItem() {
         <IngredientName>Avocado</IngredientName>
         <QuantityIngredient>400 g</QuantityIngredient>
         <CheckBoxInput type="checkbox" id="checkbox" />
-        <Label for="checkbox"></Label>
+
+        <CheckboxLabels />
       </ListItem>
       <ListItem>
         <ImageIngredient alt="photo ingredients" src={img} />
         <IngredientName>Avocado</IngredientName>
         <QuantityIngredient>400 g</QuantityIngredient>
 
-        <Label for="checkbox2">
-          <CheckBoxInput
-            type="checkbox"
-            id="checkbox2"
-            onChange={() => {
-              setIsChecked(!isChecked);
-            }}
-          />
-          <div>
-            <svg width={18} height={18}>
-              <use href={`${sprite}#icon-checkbox2`}></use>
-            </svg>
-          </div>
-        </Label>
+        <CheckboxLabels />
       </ListItem>
     </>
   );

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import bg from '../../../assets/images/mobile/bg-hero-recipe.jpg';
 
 export const SectionHero = styled.section`
+  width: 100%;
   height: 455px;
   display: flex;
   margin-left: auto;
@@ -11,7 +12,7 @@ export const SectionHero = styled.section`
   align-items: center;
   margin-bottom: 32px;
 
-  padding: 86px 20px 90px 20px;
+  padding: 86px 22px 90px 22px;
   text-align: center;
   background-image: url(${bg});
   background-repeat: no-repeat;
