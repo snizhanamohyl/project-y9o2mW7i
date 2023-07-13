@@ -31,19 +31,21 @@ export default function MobMenu({ toggleMenu, isOpen }) {
                 </svg>
             </button>
         </MobHeaderWrap>
-        <NavList>
-            {navOptions.map((option) => <NavItem key={option.route}>
-                <StyledLink to={option.route} onClick={toggleMenu}>
-                    {option.route === '/search'
-                        ? <svg width="24" height="24">
-                            <use href={`${sprite}#icon-search`}></use>
-                        </svg>
-                        : ''}
-                    {option.name}
-                </StyledLink>
-            </NavItem>
+        <nav>
+            <NavList>
+                {navOptions.map((option) => <NavItem key={option.route}>
+                    <StyledLink to={option.route} onClick={toggleMenu}>
+                        {option.route === '/search'
+                            ? <svg width="24" height="24">
+                                <use href={`${sprite}#icon-search`}></use>
+                            </svg>
+                            : ''}
+                        {option.name}
+                    </StyledLink>
+                </NavItem>
             )}
-        </NavList>
+            </NavList>
+        </nav>
         <ThemeToggler customerStyles={`position: absolute; bottom: 18px; left: 16px; @media (min-width: 768px) {left: 32px; bottom: 32px;}`}/>
     </MobMenuWrap>
 }

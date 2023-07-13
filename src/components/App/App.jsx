@@ -9,15 +9,16 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import SigninPage from 'pages/SigninPage/SigninPage';
+import WelcomePage from 'pages/WelcomePage/WelcomePage';
 
-const MainPage = lazy(() => import('pages/MainPage/MainPage'));
-
+// const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
 // const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 // const SigninPage = lazy(() => import('pages/SigninPage/SigninPage'));
+
+const MainPage = lazy(() => import('pages/MainPage/MainPage'));
 const CategoriesPage = lazy(() =>
   import('pages/CategoriesPage/CategoriesPage')
 );
-
 const MyRecipesPage = lazy(() => import('pages/MyRecipesPage/MyRecipesPage'));
 const RecipePage = lazy(() => import('pages/RecipePage/RecipePage'));
 const AddRecipePage = lazy(() => import('pages/AddRecipePage/AddRecipePage'));
@@ -38,16 +39,16 @@ export default function App() {
   return (
     <Routes>
       <Route
+        path="/welcome"
+        element={<RestrictedRoute component={WelcomePage} redirectTo="/" />}
+      ></Route>
+      <Route
         path="/signin"
-        element={
-          <RestrictedRoute component={SigninPage} redirectTo="/signin" />
-        }
+        element={<RestrictedRoute component={SigninPage} redirectTo="/" />}
       ></Route>
       <Route
         path="/register"
-        element={
-          <RestrictedRoute component={RegisterPage} redirectTo="/register" />
-        }
+        element={<RestrictedRoute component={RegisterPage} redirectTo="/" />}
       ></Route>
 
       <Route path="/" element={<SharedLayout />}>
