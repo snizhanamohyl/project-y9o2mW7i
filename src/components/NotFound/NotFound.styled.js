@@ -15,15 +15,17 @@ export const ErrorWrapper = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 138px 0 204px 0;
+    padding-top: 138px;
   }
 `;
 
 export const ErrorPicThumb = styled.div`
+  width: 259px;
   height: 170px;
   margin-bottom: 14px;
 
   @media screen and (min-width: 768px) {
+    width: 498px;
     height: 327px;
     margin-bottom: 32px;
   }
