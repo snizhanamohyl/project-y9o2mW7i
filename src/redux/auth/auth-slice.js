@@ -16,6 +16,9 @@ export const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
+    [login.rejected](state, action) {
+      state.serverError = action.payload || 'An unexpected error occured.';
+    },
     [logout.fulfilled](state, action) {
       state.user = { name: null, email: null };
       state.token = null;

@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import heroArrowTab from 'assets/images/tablet/hero-arrow.svg';
 import heroArrowDesk from 'assets/images/desktop/hero-arrow.svg';
 
-export const HeroWrap = styled.div`
+export const HeroWrap = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
