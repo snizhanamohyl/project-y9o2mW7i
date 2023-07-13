@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  ${issearchpage =>
+  ${({ issearchpage }) =>
     issearchpage === 'true'
-      ? `  margin-right: auto;
-           margin-left: auto;`
+      ? `   margin: 50px auto 0 auto;
+`
       : ''};
   width: 295px;
   height: 52px;
@@ -47,6 +47,13 @@ export const Input = styled.input`
   &::placeholder {
     color: var(--placeholder-color);
   }
+  /*   
+  &:-internal-autofill-selected {
+    appearance: none;
+    background-image: none !important;
+    background-color: inherit !important;
+    color: inherit !important;
+  } */
 
   @media (min-width: 768px) {
     font-size: 16px;
@@ -64,14 +71,14 @@ export const Button = styled.button`
   font-size: 14px;
   line-height: normal;
   color: var(--bg-color);
-  background-color: ${issearchpage =>
+  background-color: ${({ issearchpage }) =>
     issearchpage === 'true' ? 'var(--accent)' : 'var(--dark-accent)'};
   border-radius: 54px 104px 54px 104px;
   transition: background-color var(--transition-time) var(--transition-function);
 
   &:hover,
   &:focus {
-    background-color: ${issearchpage =>
+    background-color: ${({ issearchpage }) =>
       issearchpage === 'true' ? 'var(--dark-accent)' : 'var(--accent)'};
   }
 

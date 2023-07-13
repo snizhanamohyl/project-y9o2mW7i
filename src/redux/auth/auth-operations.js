@@ -31,7 +31,7 @@ export const login = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.response) {
-        const message  = error.response.data.message;
+        const message = error.response.data.message;
         return rejectWithValue(message);
       } else {
         throw new Error('An unexpected error occurred.');
