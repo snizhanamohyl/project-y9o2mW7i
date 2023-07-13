@@ -1,9 +1,16 @@
 import styled from 'styled-components';
-import bg from '../../../assets/images/mobile/bg-hero-recipe.jpg';
+import bgMob from '../../../assets/images/mobile/recipePage-hero-bg-1x.jpg';
+import bgMobRetina from '../../../assets/images/mobile/recipePage-hero-bg-2x.jpg';
+import bgTab from '../../../assets/images/tablet/RecipePage-hero-bg-1x.jpg';
+import bgTabRetina from '../../../assets/images/tablet/RecipePage-hero-bg-2x.jpg';
+import bgDesk from '../../../assets/images/desktop/recipePage-hero-bg-1x.jpg';
+import bgDeskRetina from '../../../assets/images/desktop/recipePage-hero-bg-2x.jpg';
+
+import { retina } from 'vars/styles';
 
 export const SectionHero = styled.section`
   width: 100%;
-  height: 455px;
+
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -12,20 +19,30 @@ export const SectionHero = styled.section`
   align-items: center;
   margin-bottom: 32px;
 
-  padding: 86px 22px 90px 22px;
+  padding: 86px 0 90px 0;
   text-align: center;
-  background-image: url(${bg});
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: bottom center;
+  background-image: url(${bgMob});
+  @media ${retina} {
+    background-image: url(${bgMobRetina});
+  }
 
-  background-color: #e7e7e5;
   @media (min-width: 768px) {
     margin-bottom: 50px;
-    padding: 73px 100px 32px 100px;
+    padding: 73px 0 32px 0;
+    background-image: url(${bgTab});
+    @media ${retina} {
+      background-image: url(${bgTabRetina});
+    }
   }
   @media (min-width: 1440px) {
-    padding: 113px 300px 32px 300px;
+    padding: 113px 0 32px 0;
+    background-image: url(${bgDesk});
+    @media ${retina} {
+      background-image: url(${bgDeskRetina});
+    }
   }
 `;
 
@@ -48,6 +65,7 @@ export const MainTitle = styled.h2`
 `;
 
 export const RecipeDescription = styled.p`
+  max-width: 506px;
   margin-bottom: 24px;
   margin-right: 0;
 
@@ -56,12 +74,14 @@ export const RecipeDescription = styled.p`
   line-height: 1.33;
   letter-spacing: -0.24px;
   @media (min-width: 768px) {
+    max-width: 656px;
     margin-bottom: 24px;
-
     font-size: 18px;
     letter-spacing: -0.36px;
   }
   @media (min-width: 1440px) {
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
   }
 `;
