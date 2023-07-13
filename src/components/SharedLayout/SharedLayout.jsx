@@ -2,7 +2,7 @@ import { Suspense, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "components/Footer/Footer";
 import Header from "components/Header/Header";
-import { Layout } from "./SharedLayout.styled";
+import { Layout, Wrap } from "./SharedLayout.styled";
 import MobMenu from "components/MobMenu/MobMenu";
 
 export default function SharedLayout() {
@@ -18,10 +18,12 @@ export default function SharedLayout() {
   
   return (<>
     <Layout $isMainPage={isMainPage}>
+      <Wrap>
         <Header toggleMenu={toggleMenu} />  
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>
+      </Wrap>
     </Layout>
     <Footer />
     

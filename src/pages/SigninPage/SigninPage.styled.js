@@ -221,11 +221,19 @@ const Error = styled.div`
 `;
 
 const ErrorPass = styled(Error)`
-  top: 206px;
+  top: 208px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
     top: 257px;
+  }
+`;
+
+const ServerError = styled(ErrorPass)`
+  font-size: 10px;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 260px;
   }
 `;
 
@@ -281,4 +289,5 @@ export {
   PassCrossSvg,
   SvgDiv,
   SvgDivError,
+  ServerError,
 };
