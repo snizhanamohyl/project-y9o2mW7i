@@ -21,6 +21,7 @@ export const ImgBox = styled.li`
 export const RecipeImg = styled.img`
   width: 344px;
   height: 322px;
+  border-radius: 8px;
 `;
 
 export const Recipe = styled.p`
