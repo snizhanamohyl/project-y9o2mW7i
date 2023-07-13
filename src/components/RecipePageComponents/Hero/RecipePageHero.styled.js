@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import bgMob from '../../../assets/images/mobile/recipePage-hero-bg-1x.jpg';
-import bgMobRetina from '../../../assets/images/mobile/recipePage-hero-bg-2x.jpg';
-import bgTab from '../../../assets/images/tablet/RecipePage-hero-bg-1x.jpg';
-import bgTabRetina from '../../../assets/images/tablet/RecipePage-hero-bg-2x.jpg';
-import bgDesk from '../../../assets/images/desktop/recipePage-hero-bg-1x.jpg';
-import bgDeskRetina from '../../../assets/images/desktop/recipePage-hero-bg-2x.jpg';
+import bgMob from 'assets/images/mobile/recipePage-hero-bg-1x.jpg';
+import bgMobRetina from 'assets/images/mobile/recipePage-hero-bg-2x.jpg';
+import bgTab from 'assets/images/tablet/RecipePage-hero-bg-1x.jpg';
+import bgTabRetina from 'assets/images/tablet/RecipePage-hero-bg-2x.jpg';
+import bgDesk from 'assets/images/desktop/recipePage-hero-bg-1x.jpg';
+import bgDeskRetina from 'assets/images/desktop/recipePage-hero-bg-2x.jpg';
 
 import { retina } from 'vars/styles';
 
@@ -24,18 +24,20 @@ export const SectionHero = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
+
   background-image: url(${bgMob});
   @media ${retina} {
     background-image: url(${bgMobRetina});
   }
-
-  @media (min-width: 768px) {
-    margin-bottom: 50px;
-    padding: 73px 0 32px 0;
+  @media (min-width: 400px) {
     background-image: url(${bgTab});
     @media ${retina} {
       background-image: url(${bgTabRetina});
     }
+  }
+  @media (min-width: 768px) {
+    margin-bottom: 50px;
+    padding: 73px 0 32px 0;
   }
   @media (min-width: 1440px) {
     padding: 113px 0 32px 0;
@@ -46,7 +48,7 @@ export const SectionHero = styled.section`
   }
 `;
 
-export const MainTitle = styled.h2`
+export const MainTitle = styled.h1`
   margin-bottom: 18px;
 
   color: var(--accent);

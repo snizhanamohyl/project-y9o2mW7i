@@ -1,23 +1,6 @@
-import { useState } from 'react';
 import { styled } from 'styled-components';
-const Checkbox = ({ label }) => {
-  const [isChecked, setIsChecked] = useState(false);
-  return (
-    <CheckBoxWraper>
-      <label>
-        <input
-          type="checkbox"
-          checked={isChecked}
-          onChange={() => setIsChecked(prev => !prev)}
-        />
-        <span>{label}</span>
-      </label>
-    </CheckBoxWraper>
-  );
-};
-export default Checkbox;
 
-const CheckBoxWraper = styled.div`
+export const CheckBoxWraper = styled.div`
   input {
     -webkit-appearance: none;
     appearance: none;

@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 export const RecipeInstruction = styled.section`
-  padding-bottom: 100px;
-  background-color: var(--bg-color);
+  max-width: 375px;
+  padding: 0 0 100px 0;
+
+  margin: 0 auto;
 
   @media (min-width: 768px) {
+    max-width: 768px;
     padding: 0 0 50px 0;
   }
   @media (min-width: 1440px) {
+    max-width: 1440px;
     padding: 0 0 262px 0;
 
     display: flex;
@@ -17,7 +21,7 @@ export const RecipeInstruction = styled.section`
   }
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   margin-bottom: 32px;
   color: var(--pre-title-color);
   font-size: 24px;
@@ -64,21 +68,22 @@ export const InstructionItem = styled.li`
   &:before {
     counter-increment: myCounter;
     content: counter(myCounter);
-    display: block;
+    display: flex;
     align-items: center;
-
-    padding: 2px 7px 1px 7px;
+    justify-content: center;
+    width: 7px;
+    height: 21px;
+    padding: 2px 10.5px 2px 10.5px;
     margin-right: 14px;
     color: var(--white);
     font-size: 12px;
     font-weight: 600;
     text-align: center;
     line-height: normal;
-
-    border-radius: 100px;
+    border-radius: 50%;
     background: var(--accent);
+
     @media (min-width: 768px) {
-      padding: 0.5px 7px 2.5px 7px;
       font-size: 14px;
     }
   }

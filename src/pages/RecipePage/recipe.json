@@ -1,0 +1,125 @@
+{
+  "_id": "6462a8f74c3d0ddd28897fbe",
+  "title": "Spaghetti Bolognese",
+  "category": "Beef",
+  "area": "Italian",
+  "instructions": "Put the onion and oil in a large pan and fry over a fairly high heat for 3-4 mins. Add the garlic and mince and fry until they both brown. Add the mushrooms and herbs, and cook for another couple of mins.\r\n\r\nStir in the tomatoes, beef stock, tomato ketchup or purée, Worcestershire sauce and seasoning. Bring to the boil, then reduce the heat, cover and simmer, stirring occasionally, for 30 mins.\r\n\r\nMeanwhile, cook the spaghetti in a large pan of boiling, salted water, according to packet instructions. Drain well, run hot water through it, put it back in the pan and add a dash of olive oil, if you like, then stir in the meat sauce. Serve in hot bowls and hand round Parmesan cheese, for sprinkling on top.",
+  "description": "An Italian pasta dish made with spaghetti and a meat-based sauce, typically containing beef, tomatoes, onions, garlic, and herbs.",
+  "thumb": "https://www.themealdb.com/images/media/meals/sutysw1468247559.jpg",
+  "preview": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560401/huqdxgwkvbhsfjqtexsm.jpg",
+  "time": "45",
+  "youtube": "https://www.youtube.com/watch?v=-gF8d-fitkU",
+  "tags": ["Pasta", "Meat"],
+  "ingredients": [
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e372e",
+        "name": "Onions",
+        "desc": "A bulb vegetable with layers of flesh covered by a paper-like skin, used in cooking for its flavor and texture.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564854/v68e3x3qklciznrsbjij.png"
+      },
+      "measure": "2"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e372c",
+        "name": "Olive Oil",
+        "desc": "A type of oil made from pressing whole olives, commonly used in cooking and as a salad dressing.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564854/hzcfvlja7hmbp84z7f3q.png"
+      },
+      "measure": "1tbsp"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e36e3",
+        "name": "Garlic",
+        "desc": "A bulbous plant related to onions, chives, and shallots, known for its pungent flavor and aroma. It is used in many cuisines around the world and is a staple ingredient in Mediterranean and Asian cooking.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564798/q4gnbvysfhkjv5husoxx.png"
+      },
+      "measure": "1 clove"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e370f",
+        "name": "Lean Minced Beef",
+        "desc": "Also known as ground beef, lean minced beef is made by grinding beef meat and has a lower fat content than regular ground beef. It can be used in a variety of dishes, including meatballs, burgers, and chili.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564856/dperv2hqr1c3uxwzludl.png"
+      },
+      "measure": "500g"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e3726",
+        "name": "Mushrooms",
+        "desc": "Fungi that are used in cooking and have a wide variety of shapes, sizes, and flavors, ranging from delicate and earthy to meaty and umami.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564855/ydwyzkmct8oaykrfjrbv.png"
+      },
+      "measure": "90g"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e36c4",
+        "name": "Dried Oregano",
+        "desc": "A dried herb that is commonly used in Mediterranean and Mexican cuisine. It has a pungent, slightly bitter flavor that pairs well with tomato-based sauces, meats, and vegetables.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564743/wdgwr1lwcyh2tfxsltns.png"
+      },
+      "measure": "1tsp"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e377f",
+        "name": "Tomatoes",
+        "desc": "A juicy and flavorful fruit that comes in a variety of colors and sizes, commonly used in many cuisines around the world, particularly in Mediterranean and Latin American cuisines.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564915/ffdbunsbgbsqysaezexw.png"
+      },
+      "measure": "400g can"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e36ff",
+        "name": "Hot Beef Stock",
+        "desc": "Hot beef stock is a flavorful liquid made by simmering beef bones and vegetables in water. It is commonly used as a base for soups, stews, and sauces to add richness and depth of flavor.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564855/vc9iccdi2arqdpopici5.png"
+      },
+      "measure": "300ml"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e377e",
+        "name": "Tomato Puree",
+        "desc": "A thick, concentrated paste made from cooked and strained tomatoes, used as a base for sauces, soups, and stews.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564915/h4rdnf9unpjvlsiexzvx.png"
+      },
+      "measure": "1tbsp"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e3798",
+        "name": "Worcestershire Sauce",
+        "desc": "A fermented liquid condiment made from a blend of spices, vinegar, and anchovies, commonly used as a seasoning for meats, vegetables, and soups.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564914/tg9ml6cwphdrlhkz9u7o.png"
+      },
+      "measure": "1tbsp"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e376e",
+        "name": "Spaghetti",
+        "desc": "A type of pasta that is long, thin, and cylindrical in shape. It is commonly used in Italian cuisine and is often served with tomato sauce, meatballs, or other sauces and toppings.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564909/ltnxeqjr2grcio9r81hd.png"
+      },
+      "measure": "350g"
+    },
+    {
+      "id": {
+        "_id": "640c2dd963a319ea671e3735",
+        "name": "Parmesan",
+        "desc": "A hard, granular cheese made from cow's milk, commonly used in Italian cooking for its sharp, nutty flavor.",
+        "img": "https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678564854/h2gvlqxzvvinbfv3ssbq.png"
+      },
+      "measure": "Topping"
+    }
+  ],
+  "updatedAt": "2023-07-12T13:37:11.167Z",
+  "popularity": 0
+}
