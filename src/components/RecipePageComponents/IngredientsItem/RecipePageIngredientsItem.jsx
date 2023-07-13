@@ -17,19 +17,24 @@ export default function RecipePageIngredientsItem() {
   return (
     <>
       <ListItem>
-        <ImageIngredient alt="photo ingredients" src={img} />
-        <IngredientName>Avocado</IngredientName>
-        <QuantityIngredient>400 g</QuantityIngredient>
-        <CheckBoxInput type="checkbox" id="checkbox" />
-
-        <CheckboxLabels />
+        <div>
+          <ImageIngredient alt="photo ingredients" src={img} />
+          <IngredientName>Salmon</IngredientName>
+        </div>
+        <div>
+          <QuantityIngredient>400 g</QuantityIngredient>
+          <CheckboxLabels />
+        </div>
       </ListItem>
       <ListItem>
-        <ImageIngredient alt="photo ingredients" src={img} />
-        <IngredientName>Avocado</IngredientName>
-        <QuantityIngredient>400 g</QuantityIngredient>
-
-        <CheckboxLabels />
+        <div>
+          <ImageIngredient alt="photo ingredients" src={img} />
+          <IngredientName>Avocado</IngredientName>
+        </div>
+        <div>
+          <QuantityIngredient>400 g</QuantityIngredient>
+          <CheckboxLabels />
+        </div>
       </ListItem>
     </>
   );

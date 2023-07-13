@@ -6,13 +6,13 @@ import sprite from '../../../assets/sprite.svg';
 
 export const ListItem = styled.li`
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+
   width: 100%;
   height: 86px;
   padding: 34px 29px 34px 29px;
 
   align-items: center;
+  justify-content: space-between;
 
   background-color: var(--light-green-bg);
   border-radius: 8px;
@@ -33,6 +33,11 @@ export const ListItem = styled.li`
     @media (min-width: 768px) {
       margin-bottom: 24px;
     }
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -58,15 +63,11 @@ export const IngredientName = styled.span`
   font-weight: 500;
   line-height: 1.17;
   letter-spacing: -0.24px;
-  margin-right: 74px;
+
   @media (min-width: 768px) {
-    margin-right: 181px;
     font-size: 24px;
     line-height: 1;
     letter-spacing: -0.24px;
-  }
-  @media (min-width: 1440px) {
-    margin-right: 572px;
   }
 `;
 export const QuantityIngredient = styled.span`
