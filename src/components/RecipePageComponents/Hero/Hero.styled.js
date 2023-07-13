@@ -29,7 +29,7 @@ export const SectionHero = styled.section`
   @media ${retina} {
     background-image: url(${bgMobRetina});
   }
-  @media (min-width: 450px) {
+  @media (min-width: 500px) {
     background-image: url(${bgTab});
     @media ${retina} {
       background-image: url(${bgTabRetina});
