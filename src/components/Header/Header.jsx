@@ -11,13 +11,13 @@ import SharedContainer from 'components/SharedContainer/SharedContainer';
 export default function Header({ toggleMenu }) {
     const width = useResize();
     const logoSize = width < 768 ? 40 : 44;
-
+    
     return <SharedContainer>
         <HeaderWrap>
             <NavigationMenu>
                 <Link to='/'>
                     <svg width={logoSize} height={logoSize}>
-                        <use href={`${sprite}#icon-logo-withBG`}></use>
+                        <use href={`${sprite}#icon-logo-44x44BG`}></use>
                     </svg>
                 </Link>
                 <Navigation/>
