@@ -1,3 +1,7 @@
+import SharedContainer from "components/SharedContainer/SharedContainer";
+
 export default function FavoritePage() {
-    return <h1>FavoritePage</h1>
+    return <SharedContainer>
+        FavoritePage
+    </SharedContainer>
 }
