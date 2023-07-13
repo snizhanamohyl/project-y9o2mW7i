@@ -8,33 +8,34 @@ import {
     FooterSection,
     FooterBoxTab,
     ElementBoxTab,
-    FooterBoxDesk
+    FooterBoxDesk,
+    Container,
 } from "./Footer.styled";
 
 
 
 export default function Footer() {
     
-    return (
-    <footer>
+    return (<>
     <FooterSection>
+    <Container>
                 
     <FooterBoxDesk>  
-    <FooterBoxTab> 
-                    
+    <FooterBoxTab>                 
     <ElementBoxTab>
     <LogoFooter />
     <ExplanationTextFooter />
     </ElementBoxTab> 
-
-    <NavFooter />
-    </FooterBoxTab>  
-                    
+    <NavFooter/>
+    </FooterBoxTab>                
     <ButtonsFooter />
-    </FooterBoxDesk>                 
-    <SocialNetworkFooter/>        
+    </FooterBoxDesk>        
+    <SocialNetworkFooter />
+                
+    </Container>            
     </FooterSection>
-    <BottomBlock/>      
-    </footer>               
+   
+    <BottomBlock/>
+    </>     
     )
 };

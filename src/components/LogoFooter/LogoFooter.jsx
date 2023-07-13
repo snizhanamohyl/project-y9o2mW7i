@@ -1,9 +1,10 @@
 import sprite from '../../assets/sprite.svg';
 import { LogoFooterLink,LogoText } from "./LogoFooter.styled";
-
+import useWindowWidth from 'hooks/useWindowWidth';
 
 export default function LogoFooter() {
-    const logoSize = window.innerWidth < 768 ? 32 : 44;
+    const width = useWindowWidth();
+    const logoSize = width < 768 ? 32 : 44;
 
     return (<LogoFooterLink to="/">
        <svg width={logoSize} height={logoSize}>

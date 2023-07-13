@@ -14,36 +14,35 @@ export default function PreviewCategories() {
    let dessertsArr = [];
    const categories = ['Breakfast', 'Miscellaneous', 'Chicken', 'Desserts'];
    
-
+  
    useEffect(() => {
       getAllRecipes().then(resp => setRecipes(resp));
    }, []);
   
-     function updateWindowWidth() {
-        const width = window.innerWidth;
+    
        
-        if (width >= 0 && width <= 767) {
+   if (width >= 0 && width <= 767) {
            
-      breakfastArr = recipes.filter(el => {     
-            return (el.title === "Breakfast")
-         }).slice(0, 1);
+      breakfastArr = recipes.filter(el => {
+         return (el.title === "Breakfast")
+      }).slice(0, 1);
            
-      miscellaneousArr = recipes.filter(el => {     
-            return (el.title === "Miscellaneous")
-         }).slice(0, 1);
+      miscellaneousArr = recipes.filter(el => {
+         return (el.title === "Miscellaneous")
+      }).slice(0, 1);
            
-      chickenArr = recipes.filter(el => {     
-            return (el.title === "Breakfast")
-         }).slice(0, 1);
+      chickenArr = recipes.filter(el => {
+         return (el.title === "Breakfast")
+      }).slice(0, 1);
            
-      dessertsArr = recipes.filter(el => {     
-            return (el.title === "Miscellaneous")
-         }).slice(0, 1);
+      dessertsArr = recipes.filter(el => {
+         return (el.title === "Miscellaneous")
+      }).slice(0, 1);
+           
+   }     
            
            
-           
-           
-        } else if (width >= 768 && width <= 1439) {
+   if (width >= 768 && width <= 1439) {
       
        breakfastArr = recipes.filter(el => {     
             return (el.title === "Breakfast")
@@ -60,11 +59,12 @@ export default function PreviewCategories() {
       dessertsArr = recipes.filter(el => {     
             return (el.title === "Miscellaneous")
          }).slice(0, 2);
-                
-               
-      } else if (width >= 1440) {
+                          
+   }
+    
+   if (width >= 1440) {
            
-           breakfastArr = recipes.filter(el => {     
+         breakfastArr = recipes.filter(el => {     
             return (el.title === "Breakfast")
          }).slice(0, 4);
            
@@ -80,26 +80,24 @@ export default function PreviewCategories() {
             return (el.title === "Miscellaneous")
          }).slice(0, 4);
          
-         }
    }
    
+  
   
 
    return (<PreviewCategoriesSection>
       <ul>
-      <RecipeList
+      <PreviewRecipesList
             breakfastArr={breakfastArr}
             miscellaneousArr={miscellaneousArr}
             chickenArr={chickenArr}
             dessertsArr={dessertsArr}
             title={categories} />
       </ul>
-      <Link to={"#"}>
-      <CategoriesBtn/>
-      </Link>   
+      <CategoriesBtn/>   
     </PreviewCategoriesSection>);
          
-};
+}
 
 
 

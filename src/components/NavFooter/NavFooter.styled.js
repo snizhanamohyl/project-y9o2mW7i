@@ -10,8 +10,8 @@ export const  NavFooterList = styled.ul`
    }   
     @media (min-width: 1440px) {
       margin-bottom: 95px;
-      margin-left:160px;
-     margin-right: 100px;
+      margin-left: 205px;
+      margin-right: 100px;
    }   
 
 `;

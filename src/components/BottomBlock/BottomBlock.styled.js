@@ -22,11 +22,11 @@ export const Block = styled.div`
 
 export const ReservedText = styled.p`
     margin-right:14px;
-
-    color: #22252A;
+  
+    color: var(--dark-accent);
     font-size: 10px;
     font-weight: 500;
-    line-height: 10px;
+    opacity: 0.5;
 
     @media (min-width: 768px) {
        margin-right:28px;
@@ -40,11 +40,11 @@ export const ReservedText = styled.p`
 `;
 
 export const ServiceText = styled.p`
-   color: #22252A;
+   color: var(--dark-accent);
    font-size: 10px;
    font-style: normal;
    font-weight: 400;
-   line-height: 10px;
+   opacity: 0.5;
    
    
    @media (min-width: 768px) {
