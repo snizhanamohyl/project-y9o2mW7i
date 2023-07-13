@@ -16,7 +16,16 @@ import {
 import Sprite from 'assets/sprite.svg';
 import units from 'data/units.json';
 
-export default function RecipeIngredientsFields() {
+export default function RecipeIngredientsFields({ formik }) {
+  const {
+    setFieldValue,
+    handleChange,
+    handleBlur,
+    touched,
+    errors,
+    values: { ingredients },
+  } = formik;
+
   return (
     <Section>
       <Row>
@@ -27,7 +36,7 @@ export default function RecipeIngredientsFields() {
               <use href={Sprite + '#icon-minus'}></use>
             </svg>
           </Controller>
-          <Value>0</Value>
+          <Value>{ingredients.length}</Value>
           <Controller type="button">
             <svg stroke="var(--accent)">
               <use href={Sprite + '#icon-plus'}></use>
@@ -37,20 +46,24 @@ export default function RecipeIngredientsFields() {
       </Row>
 
       <Ingredients>
-        <Item>
-          <InputWrapper>
-            <SelectInput inputProps={{ placeholder: 'Enter ingredient' }} />
-          </InputWrapper>
-          <InputWrapper>
-            <NumericInput maxLength={3} />
-            <Select options={units} />
-          </InputWrapper>
-          <RemoveBtn type="button">
-            <svg>
-              <use href={Sprite + '#icon-X'}></use>
-            </svg>
-          </RemoveBtn>
-        </Item>
+        {ingredients.map(({ title, measure }) => (
+          <Item>
+            <InputWrapper>
+              <SelectInput
+                inputProps={{ placeholder: 'Enter ingredient', value: title }}
+              />
+            </InputWrapper>
+            <InputWrapper>
+              <NumericInput maxLength={3} />
+              <Select options={units} currentOption={'tbs'} />
+            </InputWrapper>
+            <RemoveBtn type="button">
+              <svg>
+                <use href={Sprite + '#icon-X'}></use>
+              </svg>
+            </RemoveBtn>
+          </Item>
+        ))}
       </Ingredients>
     </Section>
   );
