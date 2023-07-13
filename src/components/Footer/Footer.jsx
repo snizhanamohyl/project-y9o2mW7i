@@ -1,8 +1,8 @@
 import LogoFooter from "components/LogoFooter/LogoFooter";
 import ExplanationTextFooter from "../ExplanationTextFooter/ExplanationTextFooter";
 import NavFooter from "../NavFooter/NavFooter";
-import ButtonsFooter from "components/ButtonsFooter/ButtonsFooter";
-import SocialNetworkFooter from "../SocialNetworkFooter/SocialNetworkFooter";
+import SubscribeBlock from "components/SubscribeBlock/SubscribeBlock";
+import SocialNetworkFooter from "components/SocialNetworkFooter/SocialNetworkFooter"
 import BottomBlock from "components/BottomBlock/BottomBlock";
 import {
     FooterSection,
@@ -11,31 +11,39 @@ import {
     FooterBoxDesk,
     Container,
 } from "./Footer.styled";
+import FollowUs from "components/FollowUs/FollowUs";
 
 
 
 export default function Footer() {
-    
+ 
+
     return (<>
-    <FooterSection>
-    <Container>
+<FooterSection>
+        <Container>
+        <FooterBoxDesk>
+        <FooterBoxTab>
+        <ElementBoxTab>
+                            
+                <LogoFooter />
+                <ExplanationTextFooter />
+                            
+        </ElementBoxTab>
+                        
+                <NavFooter />
+
+        </FooterBoxTab>
+                    
+                <SubscribeBlock />
+                    
+        </FooterBoxDesk>
                 
-    <FooterBoxDesk>  
-    <FooterBoxTab>                 
-    <ElementBoxTab>
-    <LogoFooter />
-    <ExplanationTextFooter />
-    </ElementBoxTab> 
-    <NavFooter/>
-    </FooterBoxTab>                
-    <ButtonsFooter />
-    </FooterBoxDesk>        
-    <SocialNetworkFooter />
-                
-    </Container>            
-    </FooterSection>
-   
+               <SocialNetworkFooter/>    
+        </Container>            
+</FooterSection>
+    
     <BottomBlock/>
     </>     
     )
 };
+

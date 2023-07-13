@@ -7,7 +7,7 @@ export const LogoFooterLink = styled(Link)`
     display:flex;
     align-items: center;
     justify-content: center;
-
+   
     margin-bottom: 32px;
 
     @media (min-width: 768px) {
@@ -29,5 +29,6 @@ export const LogoText = styled.p`
 
      @media (min-width: 768px) {
         margin-bottom: 12px;
+        font-size: 28px;
      }
 `;

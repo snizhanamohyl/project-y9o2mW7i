@@ -27,4 +27,14 @@ export const SocialNetworkItem = styled.li`
 
 export const SocialNetworIcon = styled.svg`
    fill: var(--accent);
+   transition: var(--transition-time) var(--transition-function);
+
+   &:hover {
+     fill: var(--white);
+   }
+
+   &:focus {
+    fill: var(--white);
+   }
+
 `;

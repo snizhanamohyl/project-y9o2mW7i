@@ -1,23 +1,35 @@
-import { useState, version } from "react";
+import { useState } from "react";
 import {
     ButtonsFooterContainer,
     EmailInput,
     EmailInputBox,
-    IconLatter,
+    IconLetter,
     SubscribeBtn,
     SubscribeMainText,
     SubscribeText
-} from "./ButtonsFooter.styled";
+} from "./SubscribeBlock.styled";
 import sprite from '../../assets/sprite.svg';
 import useWindowWidth from "../../hooks/useWindowWidth";
 
 
-export default function ButtonsFooter() {
+export default function SubscribeBlock() {
   const [email, setEmail] = useState("");
   const width = useWindowWidth();
-  const logoWidth = width < 768 ? 16: 20;
-  const logoHeight = width < 768 ? 12: 16;
- 
+  let logoHeight = 16;
+  let logoWidth = 12;
+
+  if (width > 768) {
+   logoHeight = 24;
+   logoWidth = 18;
+  }
+
+  if (width > 1450) {
+    logoWidth = 24;
+    logoHeight = 28;
+  }
+
+
+  
   const onInputChange = (e) => {
     const { value } = e.currentTarget;
     setEmail(value);
@@ -34,9 +46,9 @@ export default function ButtonsFooter() {
     <SubscribeText>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</SubscribeText>
 
     <EmailInputBox>
-    <IconLatter width={logoWidth} height={logoHeight}>
+    <IconLetter width={logoWidth} height={logoHeight}>
     <use href={`${sprite}#icon-letter`}></use>    
-    </IconLatter>      
+    </IconLetter>      
     <EmailInput
       onChange={onInputChange}
       name="email"

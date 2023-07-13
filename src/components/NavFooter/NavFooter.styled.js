@@ -23,6 +23,17 @@ export const NavFooterItem = styled.li`
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
+    transition: var(--transition-time) var(--transition-function);
+    
+
+   &:hover {
+     color: var(--accent);
+   }
+
+   &:focus {
+     color: var(--accent);
+   }
+
 
     &:last-child {
     margin-bottom: 0px;

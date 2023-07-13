@@ -58,7 +58,8 @@ export const EmailInputBox = styled.div`
      margin: 0 auto 12px auto;
      width: 204px;
      height: 38px;
-
+     
+     
      @media (min-width: 768px) {
         width: 260px;
         height: 50px;       
@@ -72,19 +73,19 @@ export const EmailInputBox = styled.div`
      }
 `;
 
-export const IconLatter = styled.svg`
+export const IconLetter = styled.svg`
      position: absolute;
      color: var(--bg-color);
-     top:  12px;
-     left: 14px;
+     top:  10px;
+     left: 16px;
 
    @media (min-width: 768px) {
-      top:  15px;
-      left: 15px;
+      top:  12px;
+      left: 18px;
      }
 
    @media (min-width: 1450px) {
-      top:  20px;
+      top:  16px;
       left: 15px;
      }  
 `;
@@ -98,9 +99,19 @@ export const EmailInput = styled.input`
     border: 1px solid grey;
     color: var(--bg-color);
     font-size: 10px;
+    outline: none;
+    transition: var(--transition-time) var(--transition-function);
     
 
-   &::placeholder {
+   &:hover {
+     border: 1px solid var(--bg-color);
+   }
+
+   &:focus {
+     border: 1px solid var(--bg-color);
+   }
+
+   &::placeholder { 
     color: var(--bg-color);
     font-size: 10px;
   }
@@ -116,7 +127,7 @@ export const EmailInput = styled.input`
         font-size: 14px;
 
        &::placeholder {
-      font-size: 14px;
+       font-size: 14px;
       } 
 
      }
