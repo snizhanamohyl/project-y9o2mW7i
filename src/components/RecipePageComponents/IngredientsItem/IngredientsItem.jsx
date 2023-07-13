@@ -8,6 +8,7 @@ import {
 import CheckboxLabels from './Checkbox/Checkbox';
 
 export default function RecipePageIngredientsItem({
+  key,
   ingredient: { id, measure },
 }) {
   return (
@@ -19,7 +20,7 @@ export default function RecipePageIngredientsItem({
         </div>
         <div>
           <QuantityIngredient>{measure}</QuantityIngredient>
-          <CheckboxLabels />
+          <CheckboxLabels key={key} />
         </div>
       </ListItem>
     </>
