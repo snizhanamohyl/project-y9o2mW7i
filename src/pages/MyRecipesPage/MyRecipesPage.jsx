@@ -1,6 +1,6 @@
 import React from 'react';
-import MyRecipes from 'components/MyRecipes/MyRecipes';
-import SharedContainer from '../../components/SharedContainer';
+import MyRecipes from '../../components/MyRecipes/MyRecipes';
+import SharedContainer from '../../components/SharedContainer/SharedContainer';
 
 
 const MyRecipesPage = () => {
