@@ -71,9 +71,10 @@ export const IngredientName = styled.span`
   }
 `;
 export const QuantityIngredient = styled.span`
+  min-width: 47px;
   padding: 4px 4px;
   color: var(--bg-color);
-  text-align: right;
+  text-align: center;
   font-size: 10px;
   font-weight: 600;
   line-height: normal;
@@ -81,6 +82,7 @@ export const QuantityIngredient = styled.span`
   background: var(--accent);
   margin-right: 28px;
   @media (min-width: 768px) {
+    min-width: 68px;
     margin-right: 78px;
     font-size: 18px;
     padding: 4px 8px;
