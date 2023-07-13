@@ -1,13 +1,18 @@
-import SearchIcon from "iconsComponents/SearchIcon/SearchIcon";
-import { NavWrap, StyledLink } from "./Navigation.styled";
+import { navOptions } from 'vars/navOptions';
+import sprite from '../../assets/sprite.svg'
+import { NavItem, NavList, StyledLink } from "./Navigation.styled";
 
 export default function Navigation() {
-    return <NavWrap>
-        <StyledLink to='/categories'>Categories</StyledLink>
-        <StyledLink to='/add'>Add recipes</StyledLink>
-        <StyledLink to='/my'>My recipes</StyledLink>
-        <StyledLink to='/favorite'>Favorites</StyledLink>
-        <StyledLink to='/shopping-list'>Shopping list</StyledLink>
-        <StyledLink to='/search'><SearchIcon/></StyledLink>
-    </NavWrap>
+    return <NavList>
+        {navOptions.map((option) => <NavItem key={option.route}>
+            <StyledLink to={option.route}>
+                {option.route !== '/search'
+                    ? option.name
+                    : <svg width="24" height="24">
+                        <use href={`${sprite}#icon-search`}></use>
+                </svg>}
+            </StyledLink>
+        </NavItem>)
+        }
+    </NavList>
 }

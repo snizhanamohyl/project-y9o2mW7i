@@ -1,12 +1,10 @@
-import Footer from "components/Footer/Footer";
-import Header from "components/Header/Header"
-import NotFound from "components/NotFound/NotFound"
+import SharedContainer from "components/SharedContainer/SharedContainer";
+import NotFound from 'components/NotFound/NotFound';
+
 export default function NotFoundPage() {
     return (
-      <>
-        <Header />
-            <NotFound />
-        <Footer/>
-      </>
+      <SharedContainer>
+        <NotFound />
+      </SharedContainer>
     );
 }
