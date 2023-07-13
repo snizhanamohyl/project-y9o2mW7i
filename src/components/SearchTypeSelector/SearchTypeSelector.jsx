@@ -1,36 +1,21 @@
-import { MenuItem } from '@mui/material';
-import { Label, Menu, Wrapper } from './SearchTypeSelector.styled';
+import Select from 'components/Select/Select';
+import { Wrapper, Label } from './SearchTypeSelector.styled';
 
 export default function SearchTypeSelector({ onChange, type }) {
-  const menuProps = {
-    sx: {
-      display: 'flex',
-      width: '198px',
-      padding: '14px',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'flex-start',
-      gap: '8px',
-      backgroundColor: 'var(--input-bg-color)',
-      '& div': { boxShadow: 'none' },
-      '& li': {
-        color: 'var(--black)',
-        opacity: '0.5',
-      },
-    },
-  };
+  const options = [
+    { id: 1, label: 'Title', value: 'query' },
+    { id: 2, label: 'Ingredients', value: 'ingredient' },
+  ];
+  const currentType = options.find(({ value }) => value === type);
 
   return (
     <Wrapper>
       <Label>Search by:</Label>
-      <Menu
-        value={type ? type : 'query'}
-        onChange={onChange}
-        MenuProps={menuProps}
-      >
-        <MenuItem value="query">Title</MenuItem>
-        <MenuItem value="ingredient">Ingredients</MenuItem>
-      </Menu>
+      <Select
+        options={options}
+        currentOption={currentType?.label ?? 'Title'}
+        onSelect={onChange}
+      />
     </Wrapper>
   );
 }
