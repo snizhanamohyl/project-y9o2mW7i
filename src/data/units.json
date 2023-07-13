@@ -1,0 +1,22 @@
+[
+	{
+		"id": 1,
+		"label": "tbs",
+		"value": "tbs"
+	},
+	{
+		"id": 2,
+		"label": "tsp",
+		"value": "tsp"
+	},
+	{
+		"id": 3,
+		"label": "kg",
+		"value": "kg"
+	},
+	{
+		"id": 4,
+		"label": "g",
+		"value": "g"
+	}
+]

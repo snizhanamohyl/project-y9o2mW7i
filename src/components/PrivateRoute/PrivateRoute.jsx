@@ -4,7 +4,7 @@
 
 export default function PrivateRoute({
   component: Component,
-  redirectTo = '/',
+  // redirectTo = '/',
 }) {
   // const isLogggedIn = useSelector(state => state.auth.isLoggedIn);
   // const isRefreshing = useSelector(state => state.auth.isRefreshing);
