@@ -33,9 +33,8 @@ export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handlesubmit = (values, actions) => {
-
-  dispatch(register(values));
-   actions.resetForm();
+    dispatch(register(values));
+    actions.resetForm();
   };
 
   return (

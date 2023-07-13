@@ -32,7 +32,7 @@ export default function App() {
   }, [dispatch]);
 
   return <Routes>
-    <Route path='/welcome' element={<RestrictedRoute component={WelcomePage} redirectTo='/'/>}></Route>
+    <Route index element={<RestrictedRoute component={WelcomePage} redirectTo='/'/>}></Route>
     <Route path='/signin' element={<RestrictedRoute component={SigninPage} redirectTo='/'/>}></Route>
     <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/' />}></Route>
 
