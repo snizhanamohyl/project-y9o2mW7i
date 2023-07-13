@@ -2,11 +2,11 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
 export const BtnRecipeSee = styled(Link)`
-    background-color: #22252A;
+    background-color: var(--text-primary);
     border-radius: 24px 44px;
-    border: 1px solid #22252A;
+    border: 1px solid var(--text-primary);
 
-    color: #FAFAFA;
+    color: var(--bg-color);
     font-family: Poppins;
     font-size: 10px;
     font-style: normal;
@@ -14,6 +14,10 @@ export const BtnRecipeSee = styled(Link)`
     line-height: normal;
 
     padding: 6px 14px;
+
+    transition: color var(--transition-time) var(--transition-function), 
+                background-color var(--transition-time) var(--transition-function), 
+                border var(--transition-time) var(--transition-function);
 
 
     @media screen and (min-width: 767px){
@@ -26,6 +30,12 @@ export const BtnRecipeSee = styled(Link)`
         padding: 14px 38px;
     }
 
-    background: ${props => props.isFavorites ? "#22252A" : "#8BAA36"};
-    border: ${props => props.isFavorites ? "1px solid #22252A" : "1px solid #8BAA36"};
+    background: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--accent)"};
+    border: ${props => props.isFavorites ? "1px solid var(--dark-accent)" : "1px solid var(--accent)"};
+
+    &:hover{
+        background-color: ${props => props.isFavorites ? "var(--light-green-bg);" : "var(--dark-accent)"};
+        border: ${props => props.isFavorites ? "1px solid var(--light-green-bg);" : "1px solid var(--dark-accent)"};
+        color: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--bg-color)"};;
+    }
 `

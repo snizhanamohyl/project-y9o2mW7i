@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const ContainerCard = styled.div`
     border-radius: 8px;
-    background: #fff;
+    background: var(--white);
 
     display: flex;
     align-items: flex-start;

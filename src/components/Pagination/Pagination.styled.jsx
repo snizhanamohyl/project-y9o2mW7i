@@ -7,6 +7,18 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding-top: 22px;
+    margin-bottom: 100px;
+
+    @media screen and (min-width: 767px){
+      padding-top: 32px;
+      margin-bottom: 200px;
+    }
+
+    @media screen and (min-width: 1439px){
+        margin-bottom: 100px;
+    }
 `
 
 export const theme = createTheme({
@@ -14,9 +26,9 @@ export const theme = createTheme({
       MuiPagination: {
         styleOverrides: {
           root: {
-            backgroundColor: '#FAFAFA',
+            backgroundColor: 'var(--bg-color)',
             borderRadius: '26px',
-            boxShadow: '0px 4px 4px 0px rgba(135, 135, 135, 0.20)',
+            boxShadow: '0px 4px 4px 0px var(--pagination-shadow)',
           },
           ul: {
             paddingTop: '12px',
@@ -29,7 +41,7 @@ export const theme = createTheme({
       MuiPaginationItem: {
         styleOverrides: {
             root: {
-              color: '#656565',
+              color: 'var(--pagination-color)',
               fontSize: '12px',
               fontFamily: 'Poppins',
               fontStyle: 'normal',
@@ -42,14 +54,14 @@ export const theme = createTheme({
         styleOverrides: {
             root: {
               '&.MuiPaginationItem-root.Mui-selected': {
-                backgroundColor: '#EBF3D4', 
-                color: '#22252A',
+                backgroundColor: 'var(--light-green-bg)', 
+                color: 'var(--dark-accent)',
               },
               '&.MuiPaginationItem-root:hover': {
-                backgroundColor: '#EBF3D4',
+                backgroundColor: 'var(--light-green-bg)',
               },
               '&.MuiPaginationItem-root.Mui-selected:hover': {
-                backgroundColor: '#EBF3D4',
+                backgroundColor: 'var(--light-green-bg)',
               }
             }
         }

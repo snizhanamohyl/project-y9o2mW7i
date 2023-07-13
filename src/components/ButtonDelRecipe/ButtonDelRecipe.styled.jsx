@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 export const BtnDel = styled.button`
     border-radius: 4px;
     border: none;
-    background: #EBF3D4;
+    background-color: var(--light-green-bg);
 
     display: flex;
     align-items: center;
@@ -19,7 +19,7 @@ export const BtnDel = styled.button`
         padding: 10px;
     }
 
-    background: ${props => props.isFavorites ? "#EBF3D4" : "#8BAA36"};
+    background: ${props => props.isFavorites ? "var(--light-green-bg)" : "var(--accent)"};
 `
 
 export const SvgDel = styled.svg`

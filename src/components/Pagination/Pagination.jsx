@@ -24,7 +24,7 @@ const Paginations = ({setCurrentPage, recipesPerPage, totalRecipe, currentPage})
                             paddingLeft: '24px',
                             paddingRight: '24px',
                         },
-                        },
+                    }
                     }}/>
             </ThemeProvider>
         </Container>
