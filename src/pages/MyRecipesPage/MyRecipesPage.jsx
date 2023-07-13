@@ -1,5 +1,7 @@
 import React from 'react';
 import MyRecipes from 'components/MyRecipes/MyRecipes';
+import SharedContainer from '../../components/SharedContainer';
+
 
 const MyRecipesPage = () => {
   return (
@@ -10,3 +12,6 @@ const MyRecipesPage = () => {
 };
 
 export default MyRecipesPage;
+
+
+

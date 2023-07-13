@@ -1,5 +1,7 @@
+import SharedContainer from "components/SharedContainer/SharedContainer";
+
 export default function NotFoundPage() {
-    return <h1>NotFoundPage</h1>
+    return <SharedContainer>NotFoundPage</SharedContainer>
 }
 
 
