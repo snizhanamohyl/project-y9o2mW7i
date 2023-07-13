@@ -15,7 +15,7 @@ export default function Header({ toggleMenu }) {
         <NavigationMenu>
             <Link to='/'>
                 <svg width={logoSize} height={logoSize}>
-                    <use href={`${sprite}#icon-logo-withBG`}></use>
+                    <use href={`${sprite}#icon-logo-44x44BG`}></use>
                 </svg>
             </Link>
             <Navigation/>
