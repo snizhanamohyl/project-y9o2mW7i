@@ -4,26 +4,23 @@ import {
   ContainerTimePrepare,
   RecipeDescription,
   SectionHero,
-} from './RecipePageHero.styled';
+} from './Hero.styled';
 import sprite from '../../../assets/sprite.svg';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
 
-export default function RecipePageHero() {
+export default function RecipePageHero({ recipe }) {
+  const { title, description, time } = recipe;
   return (
     <SectionHero>
       <SharedContainer>
-        <MainTitle>Salmon avocado salad</MainTitle>
-        <RecipeDescription>
-          Is a healthy salad recipe that’s big on nutrients and flavor. A moist,
-          pan seared salmon is layered on top of spinach, avocado, tomatoes, and
-          red onions. Then drizzled with a homemade lemon vinaigrette.
-        </RecipeDescription>
+        <MainTitle>{title}</MainTitle>
+        <RecipeDescription>{description}</RecipeDescription>
         <BtnAddFavorite type="button">Add to favorite recipes</BtnAddFavorite>
         <ContainerTimePrepare>
           <svg width={14} height={14}>
             <use href={`${sprite}#icon-clock`}></use>
           </svg>
-          <span>20 min</span>
+          <span>{time} min</span>
         </ContainerTimePrepare>
       </SharedContainer>
     </SectionHero>

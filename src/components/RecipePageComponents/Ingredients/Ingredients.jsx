@@ -1,13 +1,13 @@
-import RecipePageIngredientsList from '../IngredientsList/RecipePageIngredientsList';
+import RecipePageIngredientsList from '../IngredientsList/IngredientsList';
 import {
   CheckBox,
   Ingredients,
   IngredientsListHead,
   NameColumn,
   Quantity,
-} from './RecipePageIngredients.styled';
+} from './Ingredients.styled';
 
-export default function RecipePageIngredients() {
+export default function RecipePageIngredients({ ingredients }) {
   return (
     <IngredientsListHead>
       <NameColumn>
@@ -15,7 +15,7 @@ export default function RecipePageIngredients() {
         <Quantity>Number</Quantity>
         <CheckBox>Add to list</CheckBox>
       </NameColumn>
-      <RecipePageIngredientsList />
+      <RecipePageIngredientsList ingredients={ingredients} />
     </IngredientsListHead>
   );
 }

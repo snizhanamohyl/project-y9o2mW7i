@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3030/api';
+axios.defaults.baseURL = 'https://so-yummy-backend-hg4e.onrender.com/api/';
 
 const token = {
   set(token) {
@@ -61,4 +61,3 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
-
