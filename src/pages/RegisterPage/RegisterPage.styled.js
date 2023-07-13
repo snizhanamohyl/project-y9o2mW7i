@@ -91,7 +91,7 @@ const Input = styled(Field)`
   font-size: 14px;
   width: 279px;
   height: 45px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   border-radius: 6px;
   border: 0.5px solid var(--input-grey);
   background-color: transparent;
@@ -168,6 +168,10 @@ const Button = styled.button`
     width: 400px;
     height: 56px;
   }
+    &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `;
 
 const Link = styled(NavLink)`
@@ -191,7 +195,7 @@ const SvgMan = styled.svg`
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 97px;
+  top: 95px;
   left: 40px;
   @media screen and (min-width: 768px) {
     width: 24px;
@@ -204,7 +208,7 @@ const SvgMan = styled.svg`
 const SvgEmail = styled(SvgMan)`
   width: 18px;
   height: 18px;
-  top: 153px;
+  top: 157px;
   @media screen and (min-width: 768px) {
     top: 195px;
   }
@@ -213,7 +217,7 @@ const SvgEmail = styled(SvgMan)`
 const SvgPass = styled(SvgMan)`
   width: 20px;
   height: 20px;
-  top: 210px;
+  top: 216px;
   @media screen and (min-width: 768px) {
     top: 277px;
   }
@@ -238,11 +242,11 @@ const Error = styled.div`
   font-size: 10px;
   color: #e74a3b;
   position: absolute;
-  top: 127px;
+  top: 130px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 154px;
+    top: 156px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -255,11 +259,11 @@ const ServerError = styled(Error)`
 `;
 
 const ErrorEmail = styled(Error)`
-  top: 184px;
+  top: 190px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 236px;
+    top: 238px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -268,15 +272,15 @@ const ErrorEmail = styled(Error)`
 `;
 
 const ErrorPass = styled(Error)`
-  top: 241px;
+  top: 252px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 319px;
+    top: 322px;
   }
 
   @media screen and (min-width: 1440px) {
-    top: 320px;
+    top: 322px;
   }
 `;
 
@@ -299,7 +303,7 @@ const TickSvg = styled(RedCrossSvg)`
 
 const MailCrossSvg = styled(RedCrossSvg)`
   right: 40px;
-  top: 152px;
+  top: 155px;
 
   @media screen and (min-width: 768px) {
     top: 198px;
@@ -308,7 +312,7 @@ const MailCrossSvg = styled(RedCrossSvg)`
 
 const PassCrossSvg = styled(RedCrossSvg)`
   right: 40px;
-  top: 209px;
+  top: 216px;
   @media screen and (min-width: 768px) {
     top: 280px;
   }
@@ -327,6 +331,23 @@ const SvgDivError = styled.div`
 const SvgDivCorrect = styled.div`
   color: var(--correct-green);
   background-color: var(--correct-green);
+`;
+
+const Loader = styled.div`
+  position: absolute;
+  z-index: 10;
+  bottom: 45px;
+  right: 110px;
+
+  @media screen and (min-width: 768px) {
+    bottom: 68px;
+    right: 180px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    bottom: 107px;
+    right: 180px;
+  }
 `;
 
 export {
@@ -356,4 +377,5 @@ export {
   SvgDivCorrect,
   TickSvg,
   ServerError,
+  Loader,
 };

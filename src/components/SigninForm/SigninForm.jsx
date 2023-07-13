@@ -1,7 +1,9 @@
 import { Formik, Form, ErrorMessage } from 'formik';
+import { Oval } from 'react-loader-spinner';
 import { userSigninSchema } from 'schemas/userSigninSchema';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/auth/auth-operations';
+import { useNavigate } from 'react-router-dom';
 import Sprite from 'assets/sprite.svg';
 
 import {
@@ -19,17 +21,27 @@ import {
   SvgDiv,
   SvgDivError,
   ServerError,
+  Loader,
 } from 'pages/SigninPage/SigninPage.styled';
+import useWindowWidth from 'hooks/useWindowWidth';
 
 const initialValues = {
   email: '',
   password: '',
 };
 
+// const message = "but something went wrong, please try again later";
+
 export const SigninForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const width = useWindowWidth();
+  const spinnerSize = width < 768 ? 20 : 30;
 
   const serverError = useSelector(state => state.auth.serverError);
+  const isLoading = useSelector(state => state.auth.isLoading);
+  const serverErrorStatus = useSelector(state => state.auth.serverErrorStatus);
 
   const handlesubmit = (values, actions) => {
     dispatch(login(values));
@@ -73,7 +85,14 @@ export const SigninForm = () => {
             </MailCrossSvg>
           )}
           <ErrorMessage component={Error} name="email" />
-          {serverError && <ServerError>{serverError}</ServerError>}
+          {serverError && serverErrorStatus === 401 && (
+            <ServerError>{serverError}</ServerError>
+          )}
+          {/* {serverError &&
+            serverErrorStatus !== 401 &&
+            navigate(`/error?message=${message}`)} */}
+
+          {serverError && serverErrorStatus !== 401 && navigate('/error')}
 
           {(errors.password && touched.password) || serverError ? (
             <ErrorLastInput
@@ -103,7 +122,28 @@ export const SigninForm = () => {
             </PassCrossSvg>
           )}
           <ErrorMessage component={ErrorPass} name="password" />
-          <Button type="submit">Sign in</Button>
+
+          {isLoading ? (
+            <>
+              <Button type="submit" disabled>
+                Sign in
+              </Button>
+              <Loader>
+                <Oval
+                  height={spinnerSize}
+                  width={spinnerSize}
+                  color="#fafafa"
+                  visible={true}
+                  ariaLabel="oval-loading"
+                  secondaryColor="#fffff"
+                  strokeWidth={8}
+                  strokeWidthSecondary={8}
+                />
+              </Loader>
+            </>
+          ) : (
+            <Button type="submit">Sign in</Button>
+          )}
         </Form>
       )}
     </Formik>

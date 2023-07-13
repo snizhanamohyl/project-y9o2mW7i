@@ -1,7 +1,10 @@
 import { Formik, Form, ErrorMessage } from 'formik';
+import { Oval } from 'react-loader-spinner';
 import { userRegisterSchema } from 'schemas/userRegisterSchema';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { register } from 'redux/auth/auth-operations';
+import useWindowWidth from 'hooks/useWindowWidth';
 import Sprite from 'assets/sprite.svg';
 
 import {
@@ -21,6 +24,7 @@ import {
   MailCrossSvg,
   SvgDiv,
   SvgDivError,
+  Loader,
 } from 'pages/RegisterPage/RegisterPage.styled';
 
 const initialValues = {
@@ -31,6 +35,13 @@ const initialValues = {
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const width = useWindowWidth();
+  const spinnerSize = width < 768 ? 20 : 30;
+
+  const serverError = useSelector(state => state.auth.serverError);
+  const isLoading = useSelector(state => state.auth.isLoading);
 
   const handlesubmit = (values, actions) => {
     dispatch(register(values));
@@ -71,6 +82,9 @@ export const RegisterForm = () => {
             </RedCrossSvg>
           )}
           <ErrorMessage component={Error} name="name" />
+
+          {serverError && navigate('/error')}
+
           {errors.email && touched.email ? (
             <ErrorInput name="email" placeholder="Email" />
           ) : (
@@ -125,7 +139,27 @@ export const RegisterForm = () => {
             </PassCrossSvg>
           )}
           <ErrorMessage component={ErrorPass} name="password" />
-          <Button type="submit">Sign up</Button>
+          {isLoading ? (
+            <>
+              <Button type="submit" disabled>
+                Sign in
+              </Button>
+              <Loader>
+                <Oval
+                  height={spinnerSize}
+                  width={spinnerSize}
+                  color="#fafafa"
+                  visible={true}
+                  ariaLabel="oval-loading"
+                  secondaryColor="#fffff"
+                  strokeWidth={8}
+                  strokeWidthSecondary={8}
+                />
+              </Loader>
+            </>
+          ) : (
+            <Button type="submit">Sign in</Button>
+          )}
         </Form>
       )}
     </Formik>
