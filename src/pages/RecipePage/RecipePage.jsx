@@ -7,7 +7,6 @@ import RecipePageInstruction from 'components/RecipePageComponents/Instruction/R
 export default function RecipePage() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState([]);
-  const [ingredients, setIngredients] = useState([]);
 
   return (
     <>

@@ -29,6 +29,9 @@ const CheckBoxWraper = styled.div`
     border: 1px solid rgba(126, 126, 126, 0.5);
     outline: none;
     cursor: pointer;
+    &:hover {
+      border: 1.5px solid var(--accent);
+    }
     @media (min-width: 768px) {
       width: 35px;
       height: 35px;
