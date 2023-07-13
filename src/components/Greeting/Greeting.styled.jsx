@@ -5,10 +5,7 @@ import bgTab from '../../assets/images/tablet/welcomebg-1x.jpg';
 import bgTabRetina from '../../assets/images/tablet/welcomebg-2x.jpg';
 import bgMob from '../../assets/images/mobile/welcomebg-1x.jpg';
 import bgMobRetina from '../../assets/images/mobile/welcomebg-2x.jpg';
-
-const retinaDisplay = `(min-device-pixel-ratio: 2),(min-resolution: 192dpi), (min-resolution: 2dppx)`;
-
-
+import { retina } from 'vars/styles';
 
 export const WelcomeWrapper = styled.section`
   display: flex;
@@ -22,14 +19,14 @@ export const WelcomeWrapper = styled.section`
   background-size: cover;
   background-position: center;
 
-  @media ${retinaDisplay} {
+  @media ${retina} {
     background-image: var(--bcg-gradient), url('${bgMobRetina}');
   }
 
   @media screen and (min-width: 768px) {
     background-image: var(--bcg-gradient), url('${bgTab}');
 
-    @media ${retinaDisplay} {
+    @media ${retina} {
       background-image: var(--bcg-gradient), url('${bgTabRetina}');
     }
   }
@@ -37,7 +34,7 @@ export const WelcomeWrapper = styled.section`
   @media screen and (min-width: 1440px) {
     background-image: var(--bcg-gradient), url('${bgDesk}');
 
-    @media ${retinaDisplay} {
+    @media ${retina} {
       background-image: var(--bcg-gradient), url('${bgDeskRetina}');
     }
   }
