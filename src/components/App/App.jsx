@@ -51,27 +51,11 @@ export default function App() {
         element={<RestrictedRoute component={RegisterPage} redirectTo="/" />}
       ></Route>
 
-      <Route path="/" element={<SharedLayout />}>
-        <Route
-          index
-          element={<PrivateRoute component={MainPage} redirectTo="/" />}
-        ></Route>
-        <Route
-          path="/categories"
-          element={
-            <PrivateRoute component={CategoriesPage} redirectTo="/categories" />
-          }
-        ></Route>
-        <Route
-          path="/categories/:categoryName"
-          element={
-            <PrivateRoute
-              component={CategoriesPage}
-              redirectTo="/categories/:categoryName"
-            />
-          }
-        ></Route>
-        <Route
+    <Route path='/' element={<SharedLayout />} >
+      <Route index element={<PrivateRoute component={MainPage} redirectTo='/welcome' />}></Route>
+      <Route path='/categories' element={<PrivateRoute component={CategoriesPage } redirectTo='/categories' />}></Route>
+      <Route path='/categories/:categoryName' element={<PrivateRoute component={CategoriesPage } redirectTo='/categories/:categoryName' />}></Route>
+      <Route
           path="/recipe/:recipeId"
           element={
             <PrivateRoute
@@ -80,35 +64,12 @@ export default function App() {
             />
           }
         ></Route>
-        <Route
-          path="/add"
-          element={<PrivateRoute component={AddRecipePage} redirectTo="/add" />}
-        ></Route>
-        <Route
-          path="/my"
-          element={<PrivateRoute component={MyRecipesPage} redirectTo="/my" />}
-        ></Route>
-        <Route
-          path="/favorite"
-          element={
-            <PrivateRoute component={FavoritePage} redirectTo="/favorite" />
-          }
-        ></Route>
-        <Route
-          path="/shopping-list"
-          element={
-            <PrivateRoute
-              component={ShoppingListPage}
-              redirectTo="/shopping-list"
-            />
-          }
-        ></Route>
-        <Route
-          path="/search"
-          element={<PrivateRoute component={SearchPage} redirectTo="/search" />}
-        ></Route>
-        <Route path="*" element={<NotFoundPage />}></Route>
-      </Route>
-    </Routes>
-  );
-}
+      <Route path='/add' element={<PrivateRoute component={AddRecipePage} redirectTo='/add' />}></Route>
+      <Route path='/my' element={<PrivateRoute component={MyRecipesPage} redirectTo='/my' />}></Route>
+      <Route path='/favorite' element={<PrivateRoute component={FavoritePage} redirectTo='/favorite' />}></Route>
+      <Route path='/shopping-list' element={<PrivateRoute component={ShoppingListPage} redirectTo='/shopping-list' />}></Route>
+      <Route path='/search' element={<PrivateRoute component={SearchPage} redirectTo='/search' />}></Route>
+      <Route path='*' element={<NotFoundPage />}></Route>
+    </Route>    
+  </Routes>
+};

@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { selectIsRefreshing, selectToken } from 'redux/selectors';
+// import { selectIsRefreshing, selectToken } from 'redux/selectors';
 
 export default function PrivateRoute({
   component: Component,
