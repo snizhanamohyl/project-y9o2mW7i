@@ -1,24 +1,16 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
-export const RecipeItem = styled.li``;
-
-export const RecipeLink = styled(NavLink)``;
 
 export const ImgBox = styled.div`
   position: relative;
   width: 344px;
   background-color: grey;
   border-radius: 8px;
-  margin-bottom: 28px;
 
   @media (min-width: 768px) {
     width: 336px;
-    margin-bottom: 40px;
 
     @media (min-width: 1440px) {
       width: 300px;
-      margin-bottom: 50px;
     }
   }
 `;

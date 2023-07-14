@@ -15,17 +15,8 @@ export const Conteiner = styled.div`
   padding-top: 32px;
   padding-bottom: 100px;
 
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-
   @media (min-width: 768px) {
     padding-top: 50px;
     padding-bottom: 200px;
-    gap: 32px;
-
-    @media (min-width: 1440px) {
-      gap: 100px 13.33px;
-    }
   }
 `;

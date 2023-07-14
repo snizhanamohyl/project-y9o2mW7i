@@ -1,5 +1,5 @@
 export const navOptions = [
-  { route: '/categories', name: 'Categories' },
+  { route: '/categories/beef', name: 'Categories' },
   { route: '/add', name: 'Add recipes' },
   { route: '/my', name: 'My recipes' },
   { route: '/favorite', name: 'Favorites' },

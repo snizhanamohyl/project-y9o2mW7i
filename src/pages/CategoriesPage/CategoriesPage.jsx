@@ -14,14 +14,18 @@ import {
   fetchRecipesByCategory,
   fetchCategoriesList,
 } from 'services/categories-api';
-import RecipeCard from '../../components/RecipeCard/RecipeCard';
+
+import RecipesList from 'components/RecipesList/RecipesList';
 
 export default function CategoriesPage() {
   const navigate = useNavigate();
   const { categoryName } = useParams();
+  console.log('categoryName: ', categoryName);
   const [categories, setCategories] = useState([]);
   const [value, setValue] = useState(categoryName || '');
+  console.log('value: ', value);
   const [recipeList, setRecipeList] = useState([]);
+  console.log('recipeList: ', recipeList);
 
   useEffect(() => {
     fetchCategoriesList()
@@ -35,12 +39,12 @@ export default function CategoriesPage() {
   }, []);
 
   useEffect(() => {
-    fetchRecipesByCategory(value)
+    fetchRecipesByCategory(categoryName)
       .then(data => {
         setRecipeList(data);
       })
       .catch(err => console.log(err.message));
-  }, [value]);
+  }, [categoryName]);
 
   useEffect(() => {
     if (categories.length > 0) {
@@ -69,25 +73,25 @@ export default function CategoriesPage() {
                 scrollButtons="auto"
                 aria-label="basic tabs example"
               >
-                {categories.map(item => (
-                  <CustomTab
-                    key={item._id.$oid}
-                    label={item.name}
-                    value={item.name}
-                  />
-                ))}
+                {categories.map(item => {
+                  return (
+                    <CustomTab
+                      key={item._id}
+                      label={item.name}
+                      value={item.name.toLowerCase()}
+                    />
+                  );
+                })}
               </CustomTabs>
             </CustomBox>
             {categories.map(item => (
               <CustomTabPanel
-                key={item._id.$oid}
+                key={item._id}
                 value={value}
-                index={item.name}
+                index={item.name.toLowerCase()}
               >
                 <Conteiner>
-                  {recipeList.map(recipe => (
-                    <RecipeCard recipe={recipe} />
-                  ))}
+                  <RecipesList recipe={recipeList} />
                 </Conteiner>
               </CustomTabPanel>
             ))}
@@ -99,15 +103,3 @@ export default function CategoriesPage() {
     </SharedContainer>
   );
 }
-
-// useEffect(() => {
-//   const fetchRecipes = async () => {
-//     try {
-//       const data = await fetchRecipesByCategory(value);
-//       setRecipeList(data);
-//     } catch (err) {
-//       console.log(err.message);
-//     }
-//   };
-//   fetchRecipes();
-// }, [value]);
