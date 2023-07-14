@@ -255,10 +255,6 @@ const Error = styled.div`
   }
 `;
 
-const ServerError = styled(Error)`
-  font-size: 10px;
-`;
-
 const ErrorEmail = styled(Error)`
   top: 190px;
 
@@ -269,6 +265,14 @@ const ErrorEmail = styled(Error)`
 
   @media screen and (min-width: 1440px) {
     top: 237px;
+  }
+`;
+
+const ServerError = styled(ErrorEmail)`
+  font-size: 10px;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 238px;
   }
 `;
 

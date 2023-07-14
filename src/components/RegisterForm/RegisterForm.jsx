@@ -25,6 +25,7 @@ import {
   SvgDiv,
   SvgDivError,
   Loader,
+  ServerError,
 } from 'pages/RegisterPage/RegisterPage.styled';
 
 const initialValues = {
@@ -42,6 +43,7 @@ export const RegisterForm = () => {
 
   const serverError = useSelector(state => state.auth.serverError);
   const isLoading = useSelector(state => state.auth.isLoading);
+  const serverErrorStatus = useSelector(state => state.auth.serverErrorStatus);
 
   const handlesubmit = (values, actions) => {
     dispatch(register(values));
@@ -83,15 +85,21 @@ export const RegisterForm = () => {
           )}
           <ErrorMessage component={Error} name="name" />
 
-          {serverError && navigate('/error')}
+          {serverError && serverErrorStatus !== 409 && navigate('/error')}
 
-          {errors.email && touched.email ? (
+          {serverError && serverErrorStatus === 409 && (
+            <ServerError>{serverError}</ServerError>
+          )}
+
+          {(errors.email && touched.email) ||
+          (serverError && serverErrorStatus === 409) ? (
             <ErrorInput name="email" placeholder="Email" />
           ) : (
             <Input name="email" placeholder="Email" />
           )}
 
-          {errors.email && touched.email ? (
+          {(errors.email && touched.email) ||
+          (serverError && serverErrorStatus === 409) ? (
             <SvgDivError>
               <SvgEmail>
                 <use href={Sprite + '#icon-letter'}></use>
@@ -104,7 +112,8 @@ export const RegisterForm = () => {
               </SvgEmail>
             </SvgDiv>
           )}
-          {errors.email && touched.email && (
+          {((errors.email && touched.email) ||
+            (serverError && serverErrorStatus === 409)) && (
             <MailCrossSvg width={20} height={20}>
               <use href={Sprite + '#icon-red-x-20x20'}></use>
             </MailCrossSvg>

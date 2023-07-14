@@ -13,7 +13,9 @@ import {
 } from './NotFound.styled';
 // import { useLocation } from 'react-router-dom';
 
-export default function NotFound({message}) {
+export default function NotFound({
+  message = 'but the page you were looking for can’t be found..',
+}) {
   // const location = useLocation();
   // const searchParams = new URLSearchParams(location.search);
   // const message = searchParams.get('message') || null;
@@ -39,12 +41,9 @@ export default function NotFound({message}) {
         </picture>
       </ErrorPicThumb>
       <ErrorTitle>We are sorry,</ErrorTitle>
-      <ErrorText>
-        {message}
-      </ErrorText>
+      <ErrorText>{message}</ErrorText>
     </ErrorWrapper>
     // </ErrorSection>
   );
 }
 
-// || 'but the page you were looking for can’t be found..'

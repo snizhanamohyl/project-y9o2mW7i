@@ -17,7 +17,8 @@ export const authSlice = createSlice({
     },
      [register.rejected](state, action) {
       state.serverError = action.payload.data.message || 'An unexpected error occured.';
-      state.isLoading = false;
+       state.isLoading = false;
+       state.serverErrorStatus = action.payload.status;
     },
     [login.pending](state, action) {
       state.isLoading = true;
