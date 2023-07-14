@@ -5,6 +5,14 @@ import { initialState } from './initial-state';
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    setIsLoading(state, action) {
+      if (action.payload === true) state.isLoading = true;
+      else {
+        state.isLoading = false;
+      }
+    },
+  },
   extraReducers: {
     [register.pending](state, action) {
       state.isLoading = true;
@@ -18,10 +26,11 @@ export const authSlice = createSlice({
       state.serverError = '';
       state.serverErrorStatus = null;
     },
-     [register.rejected](state, action) {
-      state.serverError = action.payload.data.message || 'An unexpected error occured.';
-       state.isLoading = false;
-       state.serverErrorStatus = action.payload.status;
+    [register.rejected](state, action) {
+      state.serverError =
+        action.payload.data.message || 'An unexpected error occured.';
+      state.isLoading = false;
+      state.serverErrorStatus = action.payload.status;
     },
     [login.pending](state, action) {
       state.isLoading = true;
@@ -36,7 +45,8 @@ export const authSlice = createSlice({
       state.serverErrorStatus = null;
     },
     [login.rejected](state, action) {
-      state.serverError = action.payload.data.message || 'An unexpected error occured.';
+      state.serverError =
+        action.payload.data.message || 'An unexpected error occured.';
       state.serverErrorStatus = action.payload.status;
       state.isLoading = false;
     },
@@ -59,4 +69,5 @@ export const authSlice = createSlice({
   },
 });
 
+export const { setIsLoading } = authSlice.actions;
 export const authReducer = authSlice.reducer;

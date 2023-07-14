@@ -66,6 +66,7 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+  position: relative;
   height: calc(100% + 2px);
   padding: 16px 32px;
   font-size: 14px;
@@ -80,6 +81,15 @@ export const Button = styled.button`
   &:focus {
     background-color: ${({ issearchpage }) =>
       issearchpage === 'true' ? 'var(--dark-accent)' : 'var(--accent)'};
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  & div {
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 
   @media (min-width: 768px) {
