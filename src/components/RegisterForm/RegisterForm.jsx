@@ -2,8 +2,9 @@ import { Formik, Form, ErrorMessage } from 'formik';
 import { Oval } from 'react-loader-spinner';
 import { userRegisterSchema } from 'schemas/userRegisterSchema';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { register } from 'redux/auth/auth-operations';
+import { getServerError, getIsLoading, getServerErrorStatus, getResetForm } from 'redux/auth/selectors';
 import useWindowWidth from 'hooks/useWindowWidth';
 import Sprite from 'assets/sprite.svg';
 
@@ -36,18 +37,24 @@ const initialValues = {
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const width = useWindowWidth();
-  const spinnerSize = width < 768 ? 20 : 30;
+  const spinnerSize = width < 768 ? 15 : 30;
 
-  const serverError = useSelector(state => state.auth.serverError);
-  const isLoading = useSelector(state => state.auth.isLoading);
-  const serverErrorStatus = useSelector(state => state.auth.serverErrorStatus);
+  const serverError = useSelector(getServerError);
+  const isLoading = useSelector(getIsLoading);
+  const serverErrorStatus = useSelector(getServerErrorStatus);
+  const resetForm = useSelector(getResetForm);
 
   const handlesubmit = (values, actions) => {
-    dispatch(register(values));
-    actions.resetForm();
+    dispatch(register(values))
+      .then(() => {
+        resetForm && actions.resetForm();
+      })
+      .catch(error => {
+        // Handle login error
+      });
   };
 
   return (
@@ -85,7 +92,9 @@ export const RegisterForm = () => {
           )}
           <ErrorMessage component={Error} name="name" />
 
-          {serverError && serverErrorStatus !== 409 && navigate('/error')}
+          {serverError &&
+            serverErrorStatus !== 409 &&
+            window.alert('Oops, something went wrong, please try again later')}
 
           {serverError && serverErrorStatus === 409 && (
             <ServerError>{serverError}</ServerError>

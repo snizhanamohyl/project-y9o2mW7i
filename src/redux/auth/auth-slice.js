@@ -14,6 +14,7 @@ export const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isLoading = false;
+      state.resetForm = true;
     },
      [register.rejected](state, action) {
       state.serverError = action.payload.data.message || 'An unexpected error occured.';
@@ -28,6 +29,7 @@ export const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isLoading = false;
+      state.resetForm = true;
     },
     [login.rejected](state, action) {
       state.serverError = action.payload.data.message || 'An unexpected error occured.';

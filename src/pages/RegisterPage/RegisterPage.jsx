@@ -1,11 +1,11 @@
 import { RegisterForm } from '../../components/RegisterForm/RegisterForm';
 
-import registerMob from 'assets/images/mobile/registerMob.png';
-import registerMobRet from 'assets/images/mobile/registerMobRet.png';
-import registerTab from 'assets/images/tablet/registerTab.png';
-import registerTabRet from 'assets/images/tablet/registerTabRet.png';
-import registerDesk from 'assets/images/desktop/registerDesk.png';
-import registerDeskRet from 'assets/images/desktop/registerDeskRet.png';
+import registerMob from 'assets/images/mobile/register-1x.png';
+import registerMobRet from 'assets/images/mobile/register-2x.png';
+import registerTab from 'assets/images/tablet/register-1x.png';
+import registerTabRet from 'assets/images/tablet/register-2x.png';
+import registerDesk from 'assets/images/desktop/register-1x.png';
+import registerDeskRet from 'assets/images/desktop/register-2x.png';
 
 import {
   Img,

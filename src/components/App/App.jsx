@@ -10,7 +10,7 @@ import SharedLayout from "components/SharedLayout/SharedLayout";
 import RegisterPage from "pages/RegisterPage/RegisterPage";
 import SigninPage from "pages/SigninPage/SigninPage";
 import WelcomePage from "pages/WelcomePage/WelcomePage";
-import NotFound from "components/NotFound/NotFound";
+// import NotFound from "components/NotFound/NotFound";
 
 // const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
 // const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
@@ -46,7 +46,7 @@ export default function App() {
       <Route path='/favorite' element={<PrivateRoute component={FavoritePage} redirectTo='/favorite' />}></Route>
       <Route path='/shopping-list' element={<PrivateRoute component={ShoppingListPage} redirectTo='/shopping-list' />}></Route>
       <Route path='/search' element={<PrivateRoute component={SearchPage} redirectTo='/search' />}></Route>
-      <Route path='/error' element={<NotFound message=" something went wrong, please try again later :("/>}></Route>
+      {/* <Route path='/error' element={<NotFound message=" something went wrong, please try again later :("/>}></Route> */}
       <Route path='*' element={<NotFoundPage />}></Route>
     </Route>    
   </Routes>

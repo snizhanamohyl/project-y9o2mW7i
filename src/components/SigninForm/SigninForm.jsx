@@ -3,7 +3,8 @@ import { Oval } from 'react-loader-spinner';
 import { userSigninSchema } from 'schemas/userSigninSchema';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/auth/auth-operations';
-import { useNavigate } from 'react-router-dom';
+import { getServerError, getIsLoading, getServerErrorStatus, getResetForm } from 'redux/auth/selectors';
+// import { useNavigate } from 'react-router-dom';
 import Sprite from 'assets/sprite.svg';
 
 import {
@@ -34,19 +35,24 @@ const initialValues = {
 
 export const SigninForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const width = useWindowWidth();
-  const spinnerSize = width < 768 ? 20 : 30;
+  const spinnerSize = width < 768 ? 15 : 30;
 
-  const serverError = useSelector(state => state.auth.serverError);
-  const isLoading = useSelector(state => state.auth.isLoading);
-  const serverErrorStatus = useSelector(state => state.auth.serverErrorStatus);
+  const serverError = useSelector(getServerError);
+  const isLoading = useSelector(getIsLoading);
+  const serverErrorStatus = useSelector(getServerErrorStatus);
+  const resetForm = useSelector(getResetForm);
 
   const handlesubmit = (values, actions) => {
-    dispatch(login(values));
-
-    actions.resetForm();
+    dispatch(login(values))
+      .then(() => {
+        resetForm && actions.resetForm();
+      })
+      .catch(error => {
+        // Handle login error
+      });
   };
 
   return (
@@ -92,7 +98,9 @@ export const SigninForm = () => {
             serverErrorStatus !== 401 &&
             navigate(`/error?message=${message}`)} */}
 
-          {serverError && serverErrorStatus !== 401 && navigate('/error')}
+          {serverError &&
+            serverErrorStatus !== 401 &&
+            window.alert('Oops, something went wrong, please try again later')}
 
           {(errors.password && touched.password) || serverError ? (
             <ErrorLastInput

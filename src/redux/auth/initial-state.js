@@ -6,4 +6,5 @@ export const initialState = {
   isLoading: false,
   serverError: '',
   serverErrorStatus: null,
+  resetForm: false,
 };
