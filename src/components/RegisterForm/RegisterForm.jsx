@@ -176,7 +176,7 @@ export const RegisterForm = () => {
               </Loader>
             </>
           ) : (
-            <Button type="submit">Sign in</Button>
+            <Button type="submit">Sign up</Button>
           )}
         </Form>
       )}
