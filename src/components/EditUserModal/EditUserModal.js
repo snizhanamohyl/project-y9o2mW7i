@@ -1,5 +1,7 @@
 import { EditModal } from './EditUserModal.styled';
-export default function EditUserModal() {
+
+
+export default function EditUserModal(handleCloseModal) {
     return (
       <EditModal>
         <button className="close-btn" onClick={handleCloseModal}>

@@ -1,14 +1,20 @@
-import { EditBtn, LogOutBtn } from './PopoverMenu.styled';
-import sprite from 'assets/sprite.svg';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import sprite from 'assets/sprite.svg';
+import { EditBtn, LogOutBtn } from './PopoverMenu.styled';
 import { logout } from 'redux/auth/auth-operations';
+import EditUserModal from 'components/EditUserModal/EditUserModal';
 
 export default function PopoverMenu() {
   const dispatch = useDispatch();
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+  const handleOpenModal= () => {setIsEditModalOpen(true);};
+  const handleCloseModal = () => {setIsEditModalOpen(false);};
 
   return (
     <>
-      <EditBtn type="button">
+      <EditBtn type="button" onClick={handleOpenModal}>
         Edit profile
         <svg width="14" height="14">
           <use href={`${sprite}#icon-pencil`}></use>
@@ -25,6 +31,8 @@ export default function PopoverMenu() {
           <use href={`${sprite}#icon-arrow-right`}></use>
         </svg>
       </LogOutBtn>
+      
+      {isEditModalOpen && <EditUserModal onClose={handleCloseModal} />}
     </>
   );
 }
