@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 
 export default function PrivateRoute({
   component: Component,
-  redirectTo = '/',
+  redirectTo = '/welcome',
 }) {
   const isLogggedIn = useSelector(state => state.auth.isLoggedIn);
   const isRefreshing = useSelector(state => state.auth.isRefreshing);
