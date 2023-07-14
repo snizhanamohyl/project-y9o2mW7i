@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
 
 
 
-export const BtnCategories = styled.p`
+export const BtnCategories = styled(NavLink)`
     transition: var(--transition-time) var(--transition-function); 
 
     display: block;

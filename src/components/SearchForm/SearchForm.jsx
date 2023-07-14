@@ -1,31 +1,33 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router';
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router';
 import { Button, Form, Input } from './SearchForm.styled';
 
-export default function SearchForm() {
-  const [query, setQuery] = useState('');
-
+export default function SearchForm({ onSubmit, query }) {
+  const navigate = useNavigate();
   const { pathname } = useLocation();
   const isSearchPage = pathname.includes('/search');
 
-  const handleChangeQueue = e => setQuery(e.target.value);
-  
-  const handleSubmit = e => {
+  const submitFromMain = e => {
     e.preventDefault();
-    console.log('submitted');
+    const request = e.target[0].value;
+    if (!request || request === '')
+      return console.log('Request cannot be emtpy');
+    navigate(`/search?type=query&query=${request}`);
   };
 
   return (
-    <Form onSubmit={handleSubmit} issearchpage={isSearchPage.toString()}>
+    <Form
+      onSubmit={isSearchPage ? onSubmit : submitFromMain}
+      issearchpage={isSearchPage.toString()}
+    >
       <Input
-        id="search"
-        name="search"
         placeholder="Enter the text"
         type="text"
-        onChange={handleChangeQueue}
-        value={query}
+        defaultValue={query ? query : ''}
       />
-      <Button type="submit" issearchpage={isSearchPage.toString()}>Search</Button>
+      <Button type="submit" issearchpage={isSearchPage.toString()}>
+        Search
+      </Button>
     </Form>
   );
-};
+}

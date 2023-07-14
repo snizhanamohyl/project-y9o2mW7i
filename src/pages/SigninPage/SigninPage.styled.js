@@ -5,12 +5,13 @@ import { NavLink } from 'react-router-dom';
 import bgMob from 'assets/images/mobile/bg-register-mob.png';
 import bgDesk from 'assets/images/desktop/bg-register-desk.png';
 
-const Img = styled.img`
+const Img = styled.picture`
   width: 285px;
   height: 250px;
   margin-top: 87px;
   margin-left: auto;
   margin-right: auto;
+  display:block;
   @media screen and (min-width: 768px) {
     margin-top: 96px;
     width: 409px;
@@ -79,7 +80,7 @@ const Input = styled(Field)`
   font-size: 14px;
   width: 279px;
   height: 45px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   border-radius: 6px;
   border: 0.5px solid var(--input-grey);
   background-color: transparent;
@@ -152,6 +153,10 @@ const Button = styled.button`
     width: 400px;
     height: 56px;
   }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `;
 
 const Link = styled(NavLink)`
@@ -188,7 +193,7 @@ const Svg = styled.svg`
 const SvgPass = styled(Svg)`
   width: 20px;
   height: 20px;
-  top: 174px;
+  top: 178px;
   @media screen and (min-width: 768px) {
     top: 216px;
   }
@@ -212,20 +217,28 @@ const Error = styled.div`
   font-size: 10px;
   color: var(--error-red);
   position: absolute;
-  top: 149px;
+  top: 151px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 175px;
+    top: 177px;
   }
 `;
 
 const ErrorPass = styled(Error)`
-  top: 206px;
+  top: 213px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 257px;
+    top: 260px;
+  }
+`;
+
+const ServerError = styled(ErrorPass)`
+  font-size: 10px;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 260px;
   }
 `;
 
@@ -244,7 +257,7 @@ const MailCrossSvg = styled.svg`
 
 const PassCrossSvg = styled(MailCrossSvg)`
   right: 40px;
-  top: 175px;
+  top: 178px;
   @media screen and (min-width: 768px) {
     right: 65px;
     top: 220px;
@@ -259,6 +272,23 @@ const SvgDiv = styled.div`
 const SvgDivError = styled.div`
   color: var(--error-red);
   background-color: var(--error-red);
+`;
+
+const Loader = styled.div`
+  position: absolute;
+  z-index: 10;
+  bottom: 41px;
+  right: 110px;
+
+  @media screen and (min-width: 768px) {
+    bottom: 69px;
+    right: 180px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    bottom: 141px;
+    right: 180px;
+  }
 `;
 
 export {
@@ -281,4 +311,6 @@ export {
   PassCrossSvg,
   SvgDiv,
   SvgDivError,
+  ServerError,
+  Loader,
 };

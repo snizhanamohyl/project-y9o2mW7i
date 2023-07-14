@@ -37,6 +37,7 @@ export default function ShoppingListPage() {
 // }
 
   return (
+    <SharedContainer>
     <div>
       <ShoppingListTitle>Shopping list</ShoppingListTitle>
       <ShoppingListHeader>
@@ -75,5 +76,6 @@ export default function ShoppingListPage() {
         </ShoppingListItem>
       </ShoppingList>
     </div>
+    </SharedContainer>
   );
 }

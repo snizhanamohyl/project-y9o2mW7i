@@ -1,7 +1,16 @@
 import { Formik, Form, ErrorMessage } from 'formik';
+import { Oval } from 'react-loader-spinner';
 import { userRegisterSchema } from 'schemas/userRegisterSchema';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+// import { useNavigate } from 'react-router-dom';
 import { register } from 'redux/auth/auth-operations';
+import {
+  getServerError,
+  getIsLoading,
+  getServerErrorStatus,
+  getResetForm,
+} from 'redux/auth/selectors';
+import useWindowWidth from 'hooks/useWindowWidth';
 import Sprite from 'assets/sprite.svg';
 
 import {
@@ -21,6 +30,8 @@ import {
   MailCrossSvg,
   SvgDiv,
   SvgDivError,
+  Loader,
+  ServerError,
 } from 'pages/RegisterPage/RegisterPage.styled';
 
 const initialValues = {
@@ -31,11 +42,24 @@ const initialValues = {
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
+  // const navigate = useNavigate();
+
+  const width = useWindowWidth();
+  const spinnerSize = width < 768 ? 18 : 20;
+
+  const serverError = useSelector(getServerError);
+  const isLoading = useSelector(getIsLoading);
+  const serverErrorStatus = useSelector(getServerErrorStatus);
+  const resetForm = useSelector(getResetForm);
 
   const handlesubmit = (values, actions) => {
-
-  dispatch(register(values));
-   actions.resetForm();
+    dispatch(register(values))
+      .then(() => {
+        resetForm && actions.resetForm();
+      })
+      .catch(error => {
+        // Handle login error
+      });
   };
 
   return (
@@ -72,13 +96,22 @@ export const RegisterForm = () => {
             </RedCrossSvg>
           )}
           <ErrorMessage component={Error} name="name" />
-          {errors.email && touched.email ? (
+
+          {serverError && serverErrorStatus !== 409 && console.log(serverError)}
+
+          {serverError && serverErrorStatus === 409 && (
+            <ServerError>{serverError}</ServerError>
+          )}
+
+          {(errors.email && touched.email) ||
+          (serverError && serverErrorStatus === 409) ? (
             <ErrorInput name="email" placeholder="Email" />
           ) : (
             <Input name="email" placeholder="Email" />
           )}
 
-          {errors.email && touched.email ? (
+          {(errors.email && touched.email) ||
+          (serverError && serverErrorStatus === 409) ? (
             <SvgDivError>
               <SvgEmail>
                 <use href={Sprite + '#icon-letter'}></use>
@@ -91,7 +124,8 @@ export const RegisterForm = () => {
               </SvgEmail>
             </SvgDiv>
           )}
-          {errors.email && touched.email && (
+          {((errors.email && touched.email) ||
+            (serverError && serverErrorStatus === 409)) && (
             <MailCrossSvg width={20} height={20}>
               <use href={Sprite + '#icon-red-x-20x20'}></use>
             </MailCrossSvg>
@@ -126,7 +160,27 @@ export const RegisterForm = () => {
             </PassCrossSvg>
           )}
           <ErrorMessage component={ErrorPass} name="password" />
-          <Button type="submit">Sign up</Button>
+          {isLoading ? (
+            <>
+              <Button type="submit" disabled>
+                Sign in
+                <Loader>
+                  <Oval
+                    height={spinnerSize}
+                    width={spinnerSize}
+                    color="#fafafa"
+                    visible={true}
+                    ariaLabel="oval-loading"
+                    secondaryColor="#fffff"
+                    strokeWidth={8}
+                    strokeWidthSecondary={8}
+                  />
+                </Loader>
+              </Button>
+            </>
+          ) : (
+            <Button type="submit">Sign up</Button>
+          )}
         </Form>
       )}
     </Formik>

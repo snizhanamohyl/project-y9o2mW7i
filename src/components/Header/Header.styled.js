@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 
-export const HeaderWrap = styled.div`
+export const HeaderBox = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3px 0;
-
-  @media (min-width: 768px) {
-    padding: 0;
-  }
 `;
 
 export const Menu = styled.div`
@@ -21,4 +16,24 @@ export const NavigationMenu = styled.div`
   display: flex;
   align-items: center;
   gap: 187px;
+`;
+
+export const HeaderWrapper = styled.div`
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  padding-top: 21px;
+  padding-bottom: 3px;
+  z-index: 100;
+
+  @media (min-width: 768px) {
+    padding-top: 19px;
+    padding-bottom: 1px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 14px;
+    padding-bottom: 0;
+  }
 `;

@@ -5,12 +5,13 @@ import { NavLink } from 'react-router-dom';
 import bgMob from 'assets/images/mobile/bg-register-mob.png';
 import bgDesk from 'assets/images/desktop/bg-register-desk.png';
 
-const Img = styled.img`
+const Img = styled.picture`
   width: 285px;
   height: 250px;
   margin-top: 87px;
   margin-left: auto;
   margin-right: auto;
+  display:block;
   @media screen and (min-width: 768px) {
     margin-top: 96px;
     width: 409px;
@@ -25,14 +26,23 @@ const Img = styled.img`
 `;
 
 const Section = styled.div`
-  height: 490px;
-  background-size: cover;
-  background-image: url(${bgMob});
-  position: relative;
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 1199px) {
+    height: 490px;
+    background-size: cover;
+    background-image: url(${bgMob});
+    position: relative;
+  }
+
+  @media screen and (max-width: 1200px) {
     height: 606px;
+    background-size: cover;
+    background-image: url(${bgMob});
+    position: relative;
   }
   @media screen and (min-width: 1440px) {
+    background-size: cover;
+    background-image: url(${bgMob});
+    position: relative;
     background-image: none;
   }
 `;
@@ -82,7 +92,7 @@ const Input = styled(Field)`
   font-size: 14px;
   width: 279px;
   height: 45px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   border-radius: 6px;
   border: 0.5px solid var(--input-grey);
   background-color: transparent;
@@ -159,6 +169,10 @@ const Button = styled.button`
     width: 400px;
     height: 56px;
   }
+    &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `;
 
 const Link = styled(NavLink)`
@@ -182,7 +196,7 @@ const SvgMan = styled.svg`
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 97px;
+  top: 95px;
   left: 40px;
   @media screen and (min-width: 768px) {
     width: 24px;
@@ -195,7 +209,7 @@ const SvgMan = styled.svg`
 const SvgEmail = styled(SvgMan)`
   width: 18px;
   height: 18px;
-  top: 153px;
+  top: 157px;
   @media screen and (min-width: 768px) {
     top: 195px;
   }
@@ -204,7 +218,7 @@ const SvgEmail = styled(SvgMan)`
 const SvgPass = styled(SvgMan)`
   width: 20px;
   height: 20px;
-  top: 210px;
+  top: 216px;
   @media screen and (min-width: 768px) {
     top: 277px;
   }
@@ -229,11 +243,11 @@ const Error = styled.div`
   font-size: 10px;
   color: #e74a3b;
   position: absolute;
-  top: 127px;
+  top: 130px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 154px;
+    top: 156px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -242,11 +256,11 @@ const Error = styled.div`
 `;
 
 const ErrorEmail = styled(Error)`
-  top: 184px;
+  top: 190px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 236px;
+    top: 238px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -254,16 +268,24 @@ const ErrorEmail = styled(Error)`
   }
 `;
 
+const ServerError = styled(ErrorEmail)`
+  font-size: 10px;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    top: 238px;
+  }
+`;
+
 const ErrorPass = styled(Error)`
-  top: 241px;
+  top: 252px;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-    top: 319px;
+    top: 322px;
   }
 
   @media screen and (min-width: 1440px) {
-    top: 320px;
+    top: 322px;
   }
 `;
 
@@ -286,7 +308,7 @@ const TickSvg = styled(RedCrossSvg)`
 
 const MailCrossSvg = styled(RedCrossSvg)`
   right: 40px;
-  top: 152px;
+  top: 155px;
 
   @media screen and (min-width: 768px) {
     top: 198px;
@@ -295,7 +317,7 @@ const MailCrossSvg = styled(RedCrossSvg)`
 
 const PassCrossSvg = styled(RedCrossSvg)`
   right: 40px;
-  top: 209px;
+  top: 216px;
   @media screen and (min-width: 768px) {
     top: 280px;
   }
@@ -314,6 +336,23 @@ const SvgDivError = styled.div`
 const SvgDivCorrect = styled.div`
   color: var(--correct-green);
   background-color: var(--correct-green);
+`;
+
+const Loader = styled.div`
+  position: absolute;
+  z-index: 10;
+  bottom: 38px;
+  right: 110px;
+
+  @media screen and (min-width: 768px) {
+    bottom: 73px;
+    right: 180px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    bottom: 113px;
+    right: 180px;
+  }
 `;
 
 export {
@@ -342,4 +381,6 @@ export {
   CorrectInput,
   SvgDivCorrect,
   TickSvg,
+  ServerError,
+  Loader,
 };

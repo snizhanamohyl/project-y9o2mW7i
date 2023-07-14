@@ -2,6 +2,8 @@ import { Wrapper, Title, Socials, Item } from './FollowUs.styled';
 import Sprite from 'assets/sprite.svg';
 
 export default function FollowUs({ isFooter }) {
+    
+    
   return (
     <Wrapper>
       {!isFooter && <Title>Follow us</Title>}
@@ -14,7 +16,7 @@ export default function FollowUs({ isFooter }) {
           >
             <svg width={26} height={26}>
               <use href={Sprite + '#icon-facebook'}></use>
-            </svg>
+            </svg> 
           </a>
         </Item>
         <Item>
