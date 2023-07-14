@@ -13,12 +13,12 @@ export default function PreviewCategories() {
    let chickenArr = [];
    let dessertsArr = [];
    const categories = ['Breakfast', 'Miscellaneous', 'Chicken', 'Desserts'];
-   const {recipes} = data;
+ 
   
    useEffect(() => {
       
       if (width >= 0 && width <= 767) { 
-            getAllRecipes(1)
+         getAllRecipes(1)
          .then(resp => setData(resp));   
       }
 
