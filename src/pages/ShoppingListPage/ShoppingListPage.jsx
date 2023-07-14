@@ -8,6 +8,7 @@ import {
 import ProductListItem from 'components/ShoppingListItem/ShoppingListItem';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import SharedContainer from 'components/SharedContainer/SharedContainer';
 
 export default function ShoppingListPage() {
   // const dispatch = useDispatch();
