@@ -6,18 +6,39 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
+    [register.pending](state, action) {
+      state.isLoading = true;
+    },
     [register.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
+      state.isLoading = false;
+      state.resetForm = true;
+      state.serverError = '';
+      state.serverErrorStatus = null;
+    },
+     [register.rejected](state, action) {
+      state.serverError = action.payload.data.message || 'An unexpected error occured.';
+       state.isLoading = false;
+       state.serverErrorStatus = action.payload.status;
+    },
+    [login.pending](state, action) {
+      state.isLoading = true;
     },
     [login.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
+      state.isLoading = false;
+      state.resetForm = true;
+      state.serverError = '';
+      state.serverErrorStatus = null;
     },
     [login.rejected](state, action) {
-      state.serverError = action.payload || 'An unexpected error occured.';
+      state.serverError = action.payload.data.message || 'An unexpected error occured.';
+      state.serverErrorStatus = action.payload.status;
+      state.isLoading = false;
     },
     [logout.fulfilled](state, action) {
       state.user = { name: null, email: null };

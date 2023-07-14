@@ -7,10 +7,14 @@ export default function LogoFooter() {
     const logoSize = width < 768 ? 32 : 44;
 
     const onClick = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth"}) 
+    }
+  
+    const onClick = () => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     };
 
-    return (<LogoFooterLink to="/" onClick={onClick}>
+    return (<LogoFooterLink to="/" onClick={ onClick } onClick={onClick}>
        <svg  width={logoSize} height={logoSize}>
             <use href={`${sprite}#icon-footer-logo`}></use>    
         </svg>
