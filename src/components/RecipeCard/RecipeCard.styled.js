@@ -6,14 +6,17 @@ export const ImgBox = styled.li`
   height: 322px;
   background-color: grey;
   border-radius: 8px;
+  margin-bottom: 28px; 
 
   @media (min-width: 768px) {
     width: 336px;
     height: 332px;
+    margin-bottom: 40px;
 
     @media (min-width: 1440px) {
       width: 300px;
       height: 323px;
+      margin-bottom: 50px;
     }
   }
 `;

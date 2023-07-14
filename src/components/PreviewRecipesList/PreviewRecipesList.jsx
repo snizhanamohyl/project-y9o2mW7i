@@ -3,7 +3,8 @@ import SeeAllBtn from "components/SeeAllBtn/SeeAllBtn";
 import { RecipeItem } from "./PreviewRecipesList.styled";
 import RecipesList from "../RecipesList/RecipesList";
 
-export default function PreviewRecipesList({ title, breakfastArr,miscellaneousArr, chickenArr, dessertsArr}) {  
+export default function PreviewRecipesList({ title, breakfastArr, miscellaneousArr,chickenArr, dessertsArr }) { 
+   
     return (
         <> 
         <RecipeItem>
