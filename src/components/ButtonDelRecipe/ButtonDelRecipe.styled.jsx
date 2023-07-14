@@ -24,6 +24,7 @@ export const BtnDel = styled.button`
     }
 
     background: ${props => props.isFavorites ? "var(--light-green-bg)" : "var(--accent)"};
+    color: var(--bg-color);
 
     &:hover{
         background-color: ${props => props.isFavorites ? "var(--text-primary);" : "var(--dark-accent)"};
