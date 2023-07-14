@@ -1,7 +1,8 @@
 export const shopingList = state => state.shopingList;
-const checkedIngredientsList = state => {
+export const ingredientsList = state => state.ingredientsList;
+export const checkedIngredientsList = state => {
   const checkedIngredientsList = state.ingradients.filter(
-    ingredient => ingredient.cheed
+    ingredient => ingredient.checked
   );
   return checkedIngredientsList;
 };

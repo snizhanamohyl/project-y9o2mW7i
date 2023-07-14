@@ -9,10 +9,9 @@ import Video from '../Video/Video';
 
 export default function RecipePageInstruction({ recipe }) {
   const { instructions, thumb, youtube } = recipe;
-  console.log(instructions);
+
   const structureTexts = instructions?.split(/\r\n\r\n|\r\n|\n/g);
   const link = youtube?.slice(32);
-  console.log(link);
 
   return (
     <RecipeInstruction>
