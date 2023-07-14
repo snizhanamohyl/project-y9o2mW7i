@@ -3,7 +3,7 @@ import sprite from '../../assets/sprite.svg';
 
 const ButtonDelRicepe = ({ isFavorites, onClick }) => {
     return(
-        <BtnDel isfavorites={isFavorites} onClick={onClick}>
+        <BtnDel isFavorites={isFavorites} onClick={onClick}>
             <SvgDel width="14" height="14">
                 <use href={`${sprite}#card-delete-${isFavorites ? 'black' : 'white'}`}></use> 
             </SvgDel>

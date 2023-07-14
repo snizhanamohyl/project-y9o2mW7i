@@ -30,7 +30,7 @@ const MyRecipes = () => {
             <MyRecipesTitle>My recipes</MyRecipesTitle>
             {recipes.length > 0 ? (
                 <>
-                    <MyRecipesItem isfavorites={false} recipe={currentRecipes}/>
+                    <MyRecipesItem isFavorites={false} recipe={currentRecipes}/>
                 </>
             ):(
                 <Container>

@@ -31,19 +31,13 @@ const MyRecipesItem = ({ recipe, isFavorites, onClick }) => {
                         <ContainerContent>
                             <ContainerHeaderRecipe>
                                 <TitleCard>{title}</TitleCard>
-                                    <ButtonDelRicepe isfavorites={isFavorites} onClick={onClick}/>
-                                {/* <BtnDel isfavorites='true' onClick={handleRemoveFromFavorites}>
-                                    <SvgDel width="14" height="14">
-                                        <use href={`${sprite}#card-delete`}></use>
-                                    </SvgDel>
-                                </BtnDel> */}
+                                    <ButtonDelRicepe isFavorites={isFavorites} onClick={onClick}/>
                             </ContainerHeaderRecipe>
                             <TextCard>{description}</TextCard>
                         </ContainerContent>              
                         <ContainerBtnRecipe>
                                 <TimeCard>{time} min</TimeCard>
-                                <ButtonRecipeSee isfavorites={isFavorites} path={`/recipe/${$oid}`}/>
-                                {/* <BtnRecipeSee to='/add'>See recipe</BtnRecipeSee> */}
+                                <ButtonRecipeSee isFavorites={isFavorites} path={`/recipe/${$oid}`}/>
                         </ContainerBtnRecipe>
                     </Container>
                 </ContainerCard>
