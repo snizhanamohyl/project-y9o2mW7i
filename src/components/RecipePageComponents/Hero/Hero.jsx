@@ -7,9 +7,13 @@ import {
 } from './Hero.styled';
 import sprite from '../../../assets/sprite.svg';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
+import { useState } from 'react';
 
 export default function RecipePageHero({ recipe }) {
+  const [addedToFavorite, setAddedToFavorite] = useState('');
   const { title, description, time } = recipe;
+
+  const onClick = e => {};
   return (
     <SectionHero>
       <SharedContainer>

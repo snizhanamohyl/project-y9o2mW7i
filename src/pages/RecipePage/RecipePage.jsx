@@ -9,7 +9,7 @@ import getRecipeById from 'services/getRecipeById';
 export default function RecipePage() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState('');
-  // const recipeId = '6462a8f74c3d0ddd28897fbe';
+
   useEffect(() => {
     getRecipeById(recipeId)
       .then(data => {
