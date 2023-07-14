@@ -10,6 +10,7 @@ import SharedLayout from "components/SharedLayout/SharedLayout";
 import RegisterPage from "pages/RegisterPage/RegisterPage";
 import SigninPage from "pages/SigninPage/SigninPage";
 import WelcomePage from "pages/WelcomePage/WelcomePage";
+// import NotFound from "components/NotFound/NotFound";
 
 // const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
 // const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
