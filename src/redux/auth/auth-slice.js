@@ -15,6 +15,8 @@ export const authSlice = createSlice({
       state.isLoggedIn = true;
       state.isLoading = false;
       state.resetForm = true;
+      state.serverError = '';
+      state.serverErrorStatus = null;
     },
      [register.rejected](state, action) {
       state.serverError = action.payload.data.message || 'An unexpected error occured.';
@@ -30,6 +32,8 @@ export const authSlice = createSlice({
       state.isLoggedIn = true;
       state.isLoading = false;
       state.resetForm = true;
+      state.serverError = '';
+      state.serverErrorStatus = null;
     },
     [login.rejected](state, action) {
       state.serverError = action.payload.data.message || 'An unexpected error occured.';
