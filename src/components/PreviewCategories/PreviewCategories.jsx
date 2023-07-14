@@ -13,6 +13,7 @@ export default function PreviewCategories() {
    let chickenArr = [];
    let dessertsArr = [];
    const categories = ['Breakfast', 'Miscellaneous', 'Chicken', 'Desserts'];
+   const {recipes} = data;
   
    useEffect(() => {
       
@@ -32,7 +33,8 @@ export default function PreviewCategories() {
       }
    }, [width]);
    
-   
+  
+        
    breakfastArr = data.recipes?.filter(el => {
          return el.title === "Breakfast";
       })
@@ -50,7 +52,6 @@ export default function PreviewCategories() {
       })
      
 
- 
 
    return (<PreviewCategoriesSection>
       <ul>
