@@ -9,9 +9,10 @@ export default function LogoFooter() {
     const onClick = () => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth"}) 
     }
-  
+
+
     return (<LogoFooterLink to="/" onClick={ onClick }>
-       <svg width={logoSize} height={logoSize}>
+       <svg  width={logoSize} height={logoSize}>
             <use href={`${sprite}#icon-footer-logo`}></use>    
         </svg>
         <LogoText>So Yummy</LogoText>
