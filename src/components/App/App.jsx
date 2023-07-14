@@ -37,15 +37,15 @@ export default function App() {
     <Route path='/register' element={<RestrictedRoute component={RegisterPage} redirectTo='/' />}></Route>
 
     <Route path='/' element={<SharedLayout />} >
-      <Route index element={<PrivateRoute component={MainPage} redirectTo='/welcome' />}></Route>
-      <Route path='/categories' element={<PrivateRoute component={CategoriesPage } redirectTo='/categories' />}></Route>
-      <Route path='/categories/:categoryName' element={<PrivateRoute component={CategoriesPage } redirectTo='/categories/:categoryName' />}></Route>
-      <Route path='/add' element={<PrivateRoute component={AddRecipePage} redirectTo='/add' />}></Route>
-      <Route path='/my' element={<PrivateRoute component={MyRecipesPage} redirectTo='/my' />}></Route>
-      <Route path='/favorite' element={<PrivateRoute component={FavoritePage} redirectTo='/favorite' />}></Route>
-      <Route path='/shopping-list' element={<PrivateRoute component={ShoppingListPage} redirectTo='/shopping-list' />}></Route>
-      <Route path='/search' element={<PrivateRoute component={SearchPage} redirectTo='/search' />}></Route>
-      <Route path='*' element={<NotFoundPage />}></Route>
+      <Route index element={<PrivateRoute component={MainPage}/>}></Route>
+      <Route path='/categories' element={<PrivateRoute component={CategoriesPage}/>}></Route>
+      <Route path='/categories/:categoryName' element={<PrivateRoute component={CategoriesPage }/>}></Route>
+      <Route path='/add' element={<PrivateRoute component={AddRecipePage}/>}></Route>
+      <Route path='/my' element={<PrivateRoute component={MyRecipesPage}/>}></Route>
+      <Route path='/favorite' element={<PrivateRoute component={FavoritePage}/>}></Route>
+      <Route path='/shopping-list' element={<PrivateRoute component={ShoppingListPage}/>}></Route>
+      <Route path='/search' element={<PrivateRoute component={SearchPage}/>}></Route>
+      <Route path='*' element={<PrivateRoute component={NotFoundPage}/>}></Route>
     </Route>    
   </Routes>
 };
