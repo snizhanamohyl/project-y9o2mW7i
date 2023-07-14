@@ -1,1 +1,1 @@
-console.log('selectors');
+export const selectToken = state => state.auth.token;
