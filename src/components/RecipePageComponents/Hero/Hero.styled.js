@@ -19,11 +19,11 @@ export const SectionHero = styled.section`
   align-items: center;
   margin-bottom: 32px;
 
-  padding: 86px 0 90px 0;
+  padding: 150px 0 90px 0;
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom center;
+  background-position: bottom;
 
   background-image: url(${bgMob});
   @media ${retina} {
@@ -37,10 +37,10 @@ export const SectionHero = styled.section`
   }
   @media (min-width: 768px) {
     margin-bottom: 50px;
-    padding: 73px 0 32px 0;
+    padding: 137px 0 32px 0;
   }
   @media (min-width: 1440px) {
-    padding: 113px 0 32px 0;
+    padding: 164px 0 32px 0;
     background-image: url(${bgDesk});
     @media ${retina} {
       background-image: url(${bgDeskRetina});
