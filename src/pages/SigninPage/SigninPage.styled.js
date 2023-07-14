@@ -277,7 +277,7 @@ const SvgDivError = styled.div`
 const Loader = styled.div`
   position: absolute;
   z-index: 10;
-  bottom: 43px;
+  bottom: 41px;
   right: 110px;
 
   @media screen and (min-width: 768px) {

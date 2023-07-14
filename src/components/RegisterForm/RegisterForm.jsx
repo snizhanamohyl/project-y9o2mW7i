@@ -4,7 +4,12 @@ import { userRegisterSchema } from 'schemas/userRegisterSchema';
 import { useDispatch, useSelector } from 'react-redux';
 // import { useNavigate } from 'react-router-dom';
 import { register } from 'redux/auth/auth-operations';
-import { getServerError, getIsLoading, getServerErrorStatus, getResetForm } from 'redux/auth/selectors';
+import {
+  getServerError,
+  getIsLoading,
+  getServerErrorStatus,
+  getResetForm,
+} from 'redux/auth/selectors';
 import useWindowWidth from 'hooks/useWindowWidth';
 import Sprite from 'assets/sprite.svg';
 
@@ -40,7 +45,7 @@ export const RegisterForm = () => {
   // const navigate = useNavigate();
 
   const width = useWindowWidth();
-  const spinnerSize = width < 768 ? 15 : 30;
+  const spinnerSize = width < 768 ? 18 : 20;
 
   const serverError = useSelector(getServerError);
   const isLoading = useSelector(getIsLoading);
@@ -92,9 +97,7 @@ export const RegisterForm = () => {
           )}
           <ErrorMessage component={Error} name="name" />
 
-          {serverError &&
-            serverErrorStatus !== 409 &&
-            window.alert('Oops, something went wrong, please try again later')}
+          {serverError && serverErrorStatus !== 409 && console.log(serverError)}
 
           {serverError && serverErrorStatus === 409 && (
             <ServerError>{serverError}</ServerError>
@@ -161,19 +164,19 @@ export const RegisterForm = () => {
             <>
               <Button type="submit" disabled>
                 Sign in
+                <Loader>
+                  <Oval
+                    height={spinnerSize}
+                    width={spinnerSize}
+                    color="#fafafa"
+                    visible={true}
+                    ariaLabel="oval-loading"
+                    secondaryColor="#fffff"
+                    strokeWidth={8}
+                    strokeWidthSecondary={8}
+                  />
+                </Loader>
               </Button>
-              <Loader>
-                <Oval
-                  height={spinnerSize}
-                  width={spinnerSize}
-                  color="#fafafa"
-                  visible={true}
-                  ariaLabel="oval-loading"
-                  secondaryColor="#fffff"
-                  strokeWidth={8}
-                  strokeWidthSecondary={8}
-                />
-              </Loader>
             </>
           ) : (
             <Button type="submit">Sign up</Button>
