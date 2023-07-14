@@ -28,3 +28,21 @@ export const fetchRecipesByCategory = async categoryName => {
     console.log(error);
   }
 };
+
+export const fetchCategoriesList = async () => {
+  const storage = localStorage.getItem('persist:auth');
+  const parsedStorage = JSON.parse(storage);
+  const persistToken = parsedStorage.token.replace(/"/g, '');
+
+  if (parsedStorage.token === null) {
+    return console.log('No token');
+  }
+  token.set(persistToken);
+
+  try {
+    const { data } = await axios.get('recipes/category-list');
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
