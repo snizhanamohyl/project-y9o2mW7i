@@ -5,12 +5,13 @@ import { NavLink } from 'react-router-dom';
 import bgMob from 'assets/images/mobile/bg-register-mob.png';
 import bgDesk from 'assets/images/desktop/bg-register-desk.png';
 
-const Img = styled.img`
+const Img = styled.picture`
   width: 285px;
   height: 250px;
   margin-top: 87px;
   margin-left: auto;
   margin-right: auto;
+  display:block;
   @media screen and (min-width: 768px) {
     margin-top: 96px;
     width: 409px;
