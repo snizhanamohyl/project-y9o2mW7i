@@ -1,7 +1,17 @@
-import SharedContainer from "components/SharedContainer/SharedContainer";
+import React from 'react';
+import MyRecipes from '../../components/MyRecipes/MyRecipes';
+import SharedContainer from '../../components/SharedContainer/SharedContainer';
 
-export default function MyRecipesPage() {
-    return <SharedContainer>
-        MyRecipesPage
-    </SharedContainer>
-}
+
+const MyRecipesPage = () => {
+  return (
+            <SharedContainer>
+                <MyRecipes />
+            </SharedContainer>
+  );
+};
+
+export default MyRecipesPage;
+
+
+
