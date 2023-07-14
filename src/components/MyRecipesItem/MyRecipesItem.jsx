@@ -3,25 +3,36 @@ import {
     ContainerCard,
     ImgCard,
     TitleCard,
-    // BtnDel,
     TextCard,
     ContainerContent,
     ContainerBtnRecipe,
     TimeCard,
-    // BtnRecipeSee,
     Container,
     ContainerHeaderRecipe,
-    // SvgDel,
         } from './MyRecipesItem.styled.jsx';
-
-// import sprite from '../../assets/sprite.svg';
 import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel.jsx';
 import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee.jsx';
+import axios from 'axios';
+import { useState } from 'react';
 
 
-const MyRecipesItem = ({ recipe, isFavorites, onClick }) => {
+const MyRecipesItem = ({ recipe, isFavorites }) => {
+    const [isDeleting, setIsDeleting] = useState(false);
 
-  return (
+    const deleteRecipe = (id) => {
+        setIsDeleting(true);
+
+        axios.delete(`https://64a8b750dca581464b85f54e.mockapi.io/recipes/${id}`)
+            .then(res => console.log('Видалено'))
+            .catch(error => {
+                console.error('Помилка:', error);
+              })
+              .finally(() => {
+                setIsDeleting(false);
+              });
+    }
+
+    return (
         <>
         
             {recipe.map(({preview, title, _id:{$oid}, description, time}) => (
@@ -31,7 +42,7 @@ const MyRecipesItem = ({ recipe, isFavorites, onClick }) => {
                         <ContainerContent>
                             <ContainerHeaderRecipe>
                                 <TitleCard>{title}</TitleCard>
-                                    <ButtonDelRicepe isFavorites={isFavorites} onClick={onClick}/>
+                                    <ButtonDelRicepe isFavorites={isFavorites} onClick={() => deleteRecipe($oid)} disabled={isDeleting}/>
                             </ContainerHeaderRecipe>
                             <TextCard>{description}</TextCard>
                         </ContainerContent>              
