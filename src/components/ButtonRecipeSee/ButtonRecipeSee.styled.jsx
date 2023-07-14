@@ -7,7 +7,6 @@ export const BtnRecipeSee = styled.div`
     border: 1px solid var(--text-primary);
 
     color: var(--bg-color);
-    font-family: Poppins;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
@@ -30,6 +29,12 @@ export const BtnRecipeSee = styled.div`
     border: ${props => props.isFavorites ? "1px solid var(--dark-accent)" : "1px solid var(--accent)"};
 
     &:hover{
+        background-color: ${props => props.isFavorites ? "var(--light-green-bg);" : "var(--dark-accent)"};
+        border: ${props => props.isFavorites ? "1px solid var(--light-green-bg);" : "1px solid var(--dark-accent)"};
+        color: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--bg-color)"};
+    }
+
+    &:focus{
         background-color: ${props => props.isFavorites ? "var(--light-green-bg);" : "var(--dark-accent)"};
         border: ${props => props.isFavorites ? "1px solid var(--light-green-bg);" : "1px solid var(--dark-accent)"};
         color: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--bg-color)"};

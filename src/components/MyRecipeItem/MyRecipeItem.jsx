@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
     ContainerCard,
     ImgCard,
@@ -9,40 +9,23 @@ import {
     TimeCard,
     Container,
     ContainerHeaderRecipe,
-        } from './MyRecipesItem.styled.jsx';
+        } from '../MyRecipeItem/MyRecipesItem.styled.jsx';
 import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel.jsx';
 import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee.jsx';
-import axios from 'axios';
-import { useState } from 'react';
 
 
-const MyRecipesItem = ({ recipe, isFavorites }) => {
-    const [isDeleting, setIsDeleting] = useState(false);
+const MyRecipeItem = ({recipe, isFavorites}) => {
 
-    const deleteRecipe = (id) => {
-        setIsDeleting(true);
+    const {preview, title, _id:{$oid}, description, time} = recipe;
 
-        axios.delete(`https://64a8b750dca581464b85f54e.mockapi.io/recipes/${id}`)
-            .then(res => console.log('Видалено'))
-            .catch(error => {
-                console.error('Помилка:', error);
-              })
-              .finally(() => {
-                setIsDeleting(false);
-              });
-    }
-
-    return (
-        <>
-        
-            {recipe.map(({preview, title, _id:{$oid}, description, time}) => (
+    return(
                 <ContainerCard key={$oid}> 
                     <ImgCard src={preview} alt={title} />
                     <Container>
                         <ContainerContent>
                             <ContainerHeaderRecipe>
                                 <TitleCard>{title}</TitleCard>
-                                    <ButtonDelRicepe isFavorites={isFavorites} onClick={() => deleteRecipe($oid)} disabled={isDeleting}/>
+                                    <ButtonDelRicepe isFavorites={isFavorites}/>
                             </ContainerHeaderRecipe>
                             <TextCard>{description}</TextCard>
                         </ContainerContent>              
@@ -52,9 +35,7 @@ const MyRecipesItem = ({ recipe, isFavorites }) => {
                         </ContainerBtnRecipe>
                     </Container>
                 </ContainerCard>
-            ))}
-        </>
-    );
-};
+    )
+}
 
-export default MyRecipesItem;
+export default MyRecipeItem

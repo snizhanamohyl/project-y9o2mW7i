@@ -42,7 +42,6 @@ export const ImgCard = styled.img`
 `
 
 export const TitleCard = styled.h2`
-    font-family: Poppins;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -89,7 +88,6 @@ export const TextCard = styled.p`
     overflow: hidden;
     color: var(--text-primary);
     text-overflow: ellipsis;
-    font-family: Poppins;
     font-size: 8px;
     font-style: normal;
     font-weight: 400;
@@ -154,7 +152,6 @@ export const ContainerBtnRecipe = styled.div`
 `
 
 export const TimeCard = styled.span`
-    font-family: Poppins;
     font-size: 10px;
     font-style: normal;
     font-weight: 500;
@@ -172,7 +169,6 @@ export const BtnRecipeSee = styled(Link)`
     border: 1px solid var(--dark-accent);
 
     color: var(--bg-color);
-    font-family: Poppins;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;

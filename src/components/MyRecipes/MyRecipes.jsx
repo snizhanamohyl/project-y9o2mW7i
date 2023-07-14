@@ -1,5 +1,5 @@
 import React from 'react';
-import MyRecipesItem from '../../components/MyRecipesItem/MyRecipesItem';
+import MyRecipesList from '../MyRecipesItem/MyRecipesList';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import fetchMyRecipes from '../../services/fetchMyRecipes';
@@ -30,11 +30,11 @@ const MyRecipes = () => {
             <MyRecipesTitle>My recipes</MyRecipesTitle>
             {recipes.length > 0 ? (
                 <>
-                    <MyRecipesItem isFavorites={false} recipe={currentRecipes}/>
+                    <MyRecipesList isFavorites={false} recipe={currentRecipes}/>
                 </>
             ):(
                 <Container>
-                    <EmptyPage description={"Улюблених рецептів немає"}/>
+                    <EmptyPage description={"you haven't added your recipes yet"}/>
                 </Container>
             )}
     

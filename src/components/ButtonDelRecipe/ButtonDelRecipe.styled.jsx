@@ -11,6 +11,10 @@ export const BtnDel = styled.button`
 
     padding: 5px;
 
+    transition: color var(--transition-time) var(--transition-function), 
+                background-color var(--transition-time) var(--transition-function), 
+                border var(--transition-time) var(--transition-function);
+
     @media screen and (min-width: 767px){
         padding: 8px;
     }
@@ -20,6 +24,16 @@ export const BtnDel = styled.button`
     }
 
     background: ${props => props.isFavorites ? "var(--light-green-bg)" : "var(--accent)"};
+
+    &:hover{
+        background-color: ${props => props.isFavorites ? "var(--text-primary);" : "var(--dark-accent)"};
+        color: ${props => props.isFavorites ? "var(--light-green-bg)" : "var(--bg-color)"};
+    }
+
+    &:focus{
+        background-color: ${props => props.isFavorites ? "var(--light-green-bg);" : "var(--dark-accent)"};
+        color: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--bg-color)"};
+    }
 `
 
 export const SvgDel = styled.svg`

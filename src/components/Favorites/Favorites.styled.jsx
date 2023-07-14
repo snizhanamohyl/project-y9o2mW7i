@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const FavoritePageTitle = styled.h1`
     color: var(--title-color);
-    font-family: Poppins;
     font-size: 28px;
     font-style: normal;
     font-weight: 600;

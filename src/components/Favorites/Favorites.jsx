@@ -1,5 +1,5 @@
 import React from 'react';
-import MyRecipesItem from '../../components/MyRecipesItem/MyRecipesItem';
+import MyRecipesList from '../MyRecipesItem/MyRecipesList';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import { FavoritePageTitle, Container } from './Favorites.styled.jsx';
@@ -30,7 +30,7 @@ const Favorites = () => {
             <FavoritePageTitle>Favorite </FavoritePageTitle>
             {recipes.length > 0 ? (
                 <>            
-                    <MyRecipesItem isFavorites={true} recipe={currentRecipes}/>
+                    <MyRecipesList isFavorites={true} recipe={currentRecipes}/>
                 </>
             ):(
                 <Container>
