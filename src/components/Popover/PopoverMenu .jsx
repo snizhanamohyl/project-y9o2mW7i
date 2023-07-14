@@ -31,8 +31,10 @@ export default function PopoverMenu() {
           <use href={`${sprite}#icon-arrow-right`}></use>
         </svg>
       </LogOutBtn>
-      
-      {isEditModalOpen && <EditUserModal onClose={handleCloseModal} />}
+
+      {isEditModalOpen && (
+        <EditUserModal isOpen={isEditModalOpen} onClose={handleCloseModal} />
+      )}
     </>
   );
 }
