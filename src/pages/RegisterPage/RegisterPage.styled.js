@@ -345,12 +345,12 @@ const Loader = styled.div`
   right: 110px;
 
   @media screen and (min-width: 768px) {
-    bottom: 68px;
+    bottom: 73px;
     right: 180px;
   }
 
   @media screen and (min-width: 1440px) {
-    bottom: 107px;
+    bottom: 113px;
     right: 180px;
   }
 `;

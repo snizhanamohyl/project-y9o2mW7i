@@ -281,12 +281,12 @@ const Loader = styled.div`
   right: 110px;
 
   @media screen and (min-width: 768px) {
-    bottom: 64px;
+    bottom: 69px;
     right: 180px;
   }
 
   @media screen and (min-width: 1440px) {
-    bottom: 135px;
+    bottom: 141px;
     right: 180px;
   }
 `;

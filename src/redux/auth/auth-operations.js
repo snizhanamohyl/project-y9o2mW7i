@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://so-yummy-backend-hg4e.onrender.com/api';
+axios.defaults.baseURL = 'https://so-yummy-backend-hg4e.onrender.com/ap';
 
 const token = {
   set(token) {
