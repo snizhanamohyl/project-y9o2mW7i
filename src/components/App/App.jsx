@@ -73,12 +73,7 @@ export default function App() {
         ></Route>
         <Route
           path="/recipe/:recipeId"
-          element={
-            <PrivateRoute
-              component={RecipePage}
-              redirectTo="/recipe/:recipeId"
-            />
-          }
+          element={<PrivateRoute component={RecipePage} />}
         ></Route>
         <Route
           path="/add"
