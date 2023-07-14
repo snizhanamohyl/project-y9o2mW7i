@@ -4,7 +4,7 @@ const BASE_URL = 'https://so-yummy-backend-hg4e.onrender.com/api/recipes/main-pa
 const storage = JSON.parse(localStorage.getItem('persist:auth'));
 const { token } = storage;
 
-async function getAllRecipes(limit = 1) {
+async function getAllRecipes(limit) {
   try {
     const response = await axios.get(`${BASE_URL}?limit=${limit}&page=1`, {
       headers: {

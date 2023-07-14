@@ -12,10 +12,21 @@ export default function PreviewRecipesList() {
    const width = useWindowWidth();
 
    useEffect(() => {
-      const pageLimit = width < 767 ? 1 : (width > 1439) ? 4 : 2;
-      
-      getAllRecipes(pageLimit)
-      .then(resp => setData(resp));   
+    
+
+    if (width > 0 && width <= 767) {
+        
+           getAllRecipes(1).then(resp => setData(resp));
+           
+    } else if (width >= 768 && width <= 1439) {
+           
+           getAllRecipes(2).then(resp => setData(resp));
+           
+    } else if (width >= 1440) {
+           getAllRecipes(4).then(resp => setData(resp));
+        
+    };
+
      
    }, [width]);
    
