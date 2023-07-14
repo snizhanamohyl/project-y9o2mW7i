@@ -27,3 +27,13 @@ export const FavoritePageTitle = styled.h1`
         letter-spacing: -0.88px;
     }
 `
+
+export const Container = styled.div`
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @media screen and (min-width: 1439px){
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+`

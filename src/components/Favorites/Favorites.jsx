@@ -2,8 +2,9 @@ import React from 'react';
 import MyRecipesItem from '../../components/MyRecipesItem/MyRecipesItem';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
-import { FavoritePageTitle } from './Favorites.styled.jsx';
+import { FavoritePageTitle, Container } from './Favorites.styled.jsx';
 import fetchFavorites from '../../services/fetchFavorites';
+import EmptyPage from '../EmptyPage/EmptyPage';
 
 const Favorites = () => {
     const [recipes, setRecipes] = useState([]);
@@ -32,16 +33,19 @@ const Favorites = () => {
                     <MyRecipesItem isFavorites={true} recipe={currentRecipes}/>
                 </>
             ):(
-                <p>Улюблених рецептів немає</p>
+                <Container>
+                    <EmptyPage description={"Улюблених рецептів немає"}/>
+                </Container>
             )}
 
-            {/* Pagination */}
-            <Pagination 
-                recipesPerPage={recipesPerPage} 
-                totalRecipe={recipes.length} 
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-            /> 
+            {recipes.length > 0 ? (
+                <Pagination 
+                    recipesPerPage={recipesPerPage} 
+                    totalRecipe={recipes.length} 
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                /> 
+            ):(null)}
         </>
     )
 }
