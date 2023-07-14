@@ -17,7 +17,7 @@ export default function RecipePage() {
       })
       .catch(err => console.log(err.message));
   }, [recipeId]);
-  console.log(recipe);
+
   return (
     <>
       <RecipePageHero recipe={recipe} />
