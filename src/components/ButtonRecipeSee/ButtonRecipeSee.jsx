@@ -1,9 +1,9 @@
 import { BtnRecipeSee } from './ButtonRecipeSee.styled.jsx';
 
-const ButtonRecipeSee = ({ isFavorites }) => {
+const ButtonRecipeSee = ({ isFavorites, path }) => {
     return(
         <>
-            <BtnRecipeSee isFavorites={isFavorites} to='/add'>See recipe</BtnRecipeSee>
+            <BtnRecipeSee isfavorites={isFavorites} to={path}>See recipe</BtnRecipeSee>
         </>
     )
 }

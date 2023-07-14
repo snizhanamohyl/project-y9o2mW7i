@@ -31,7 +31,7 @@ const MyRecipesItem = ({ recipe, isFavorites, onClick }) => {
                         <ContainerContent>
                             <ContainerHeaderRecipe>
                                 <TitleCard>{title}</TitleCard>
-                                    <ButtonDelRicepe isFavorites={isFavorites} onClick={onClick}/>
+                                    <ButtonDelRicepe isfavorites={isFavorites} onClick={onClick}/>
                                 {/* <BtnDel isfavorites='true' onClick={handleRemoveFromFavorites}>
                                     <SvgDel width="14" height="14">
                                         <use href={`${sprite}#card-delete`}></use>
@@ -42,7 +42,7 @@ const MyRecipesItem = ({ recipe, isFavorites, onClick }) => {
                         </ContainerContent>              
                         <ContainerBtnRecipe>
                                 <TimeCard>{time} min</TimeCard>
-                                <ButtonRecipeSee isFavorites={isFavorites} />
+                                <ButtonRecipeSee isfavorites={isFavorites} path={`/recipe/${$oid}`}/>
                                 {/* <BtnRecipeSee to='/add'>See recipe</BtnRecipeSee> */}
                         </ContainerBtnRecipe>
                     </Container>

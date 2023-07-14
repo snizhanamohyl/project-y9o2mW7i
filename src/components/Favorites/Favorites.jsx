@@ -2,8 +2,8 @@ import React from 'react';
 import MyRecipesItem from '../../components/MyRecipesItem/MyRecipesItem';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { FavoritePageTitle } from './Favorites.styled.jsx';
+import fetchFavorites from '../../services/fetchFavorites';
 
 const Favorites = () => {
     const [recipes, setRecipes] = useState([]);
@@ -11,17 +11,9 @@ const Favorites = () => {
 
     const recipesPerPage = 4;
 
-    useEffect(() => {
-        const fetchRecipes = async () => {
-        try {
-            const response = await axios.get('https://64a8b750dca581464b85f54e.mockapi.io/recipes');
-            setRecipes(response.data);
-        } catch (error) {
-            console.error('Error fetching recipes:', error);
-        }
-    };
 
-    fetchRecipes();
+    useEffect(() => {
+        fetchFavorites().then(data => setRecipes(data))  
     }, []);
 
 

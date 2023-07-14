@@ -30,12 +30,12 @@ export const BtnRecipeSee = styled(Link)`
         padding: 14px 38px;
     }
 
-    background: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--accent)"};
-    border: ${props => props.isFavorites ? "1px solid var(--dark-accent)" : "1px solid var(--accent)"};
+    background: ${props => props.isfavorites ? "var(--dark-accent)" : "var(--accent)"};
+    border: ${props => props.isfavorites ? "1px solid var(--dark-accent)" : "1px solid var(--accent)"};
 
     &:hover{
-        background-color: ${props => props.isFavorites ? "var(--light-green-bg);" : "var(--dark-accent)"};
-        border: ${props => props.isFavorites ? "1px solid var(--light-green-bg);" : "1px solid var(--dark-accent)"};
-        color: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--bg-color)"};;
+        background-color: ${props => props.isfavorites ? "var(--light-green-bg);" : "var(--dark-accent)"};
+        border: ${props => props.isfavorites ? "1px solid var(--light-green-bg);" : "1px solid var(--dark-accent)"};
+        color: ${props => props.isfavorites ? "var(--dark-accent)" : "var(--bg-color)"};;
     }
 `
