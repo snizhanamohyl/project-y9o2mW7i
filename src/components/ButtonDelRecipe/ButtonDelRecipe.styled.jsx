@@ -24,15 +24,16 @@ export const BtnDel = styled.button`
     }
 
     background: ${props => props.isFavorites ? "var(--light-green-bg)" : "var(--accent)"};
-    color: var(--bg-color);
+    color: ${props => props.isFavorites ? "var(--text-primary)" : "var(--bg-color)"};
+    
 
     &:hover{
-        background-color: ${props => props.isFavorites ? "var(--text-primary);" : "var(--dark-accent)"};
+        background-color: ${props => props.isFavorites ? "var(--text-primary)" : "var(--dark-accent)"};
         color: ${props => props.isFavorites ? "var(--light-green-bg)" : "var(--bg-color)"};
     }
 
     &:focus{
-        background-color: ${props => props.isFavorites ? "var(--light-green-bg);" : "var(--dark-accent)"};
+        background-color: ${props => props.isFavorites ? "var(--light-green-bg)" : "var(--dark-accent)"};
         color: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--bg-color)"};
     }
 `
