@@ -14,7 +14,7 @@ export default function RecipePageIngredientsItem({
     <>
       <ListItem>
         <div>
-          <ImageIngredient alt="photo ingredients" src={id.img} />
+          <ImageIngredient alt={id.name} src={id.img} />
           <IngredientName>{id.name}</IngredientName>
         </div>
         <div>

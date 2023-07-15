@@ -12,8 +12,8 @@ export const SectionHero = styled.section`
   width: 100%;
 
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
