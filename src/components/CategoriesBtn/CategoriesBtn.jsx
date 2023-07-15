@@ -1,6 +1,5 @@
-import { BtnCategories } from "./CategoriesBtn.styled"
+import { BtnCategories } from './CategoriesBtn.styled';
 
 export default function CategoriesBtn() {
- 
-    return (<BtnCategories>Other categories</BtnCategories>);
-};
+  return <BtnCategories to="/categories">Other categories</BtnCategories>;
+}

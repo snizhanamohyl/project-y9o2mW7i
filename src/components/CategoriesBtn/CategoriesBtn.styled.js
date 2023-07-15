@@ -1,13 +1,15 @@
 import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
 
 
 
-export const BtnCategories = styled.p`
+export const BtnCategories = styled(NavLink)`
     transition: var(--transition-time) var(--transition-function); 
 
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0  auto 0 auto;
-    padding-top: 20px;
     width: 240px;
     height: 60px;
     border: 2px solid var(--accent);

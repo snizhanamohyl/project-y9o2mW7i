@@ -1,10 +1,5 @@
-import { Link } from "react-router-dom";
-import { SeeAllLink } from "./SeeAllBtn.styled";
+import { SeeAllLink } from './SeeAllBtn.styled';
 
-
-export default function SeeAllBtn() {
-   
-    return (<Link to={"#"}>
-        <SeeAllLink>See all</SeeAllLink>
-    </Link>)
-};
+export default function SeeAllBtn({ category }) {
+  return <SeeAllLink to={`/categories/${category}`}>See all</SeeAllLink>;
+}
