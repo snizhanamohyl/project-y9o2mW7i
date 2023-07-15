@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import { ModalContent, } from './EditUserModal.styled';
 import {
   CloseButton,
-  CloseIcon, Form,
+  CloseIcon, UploadInput, Form,
   InputWrapper,
   UserIcon,
   PencilIcon,
@@ -27,10 +27,18 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
         </CloseButton>
 
         <Form name="user-edit">
+          <label htmlFor="iserAvatar">
+            <CloseIcon width="40px" height="40px">
+              <use href={`${sprite}#icon-plus-avatar`}></use>
+            </CloseIcon>
+          </label>
+          <UploadInput type="file" name="userAvatar" />
+
           <InputWrapper>
             <NameEditInput
               type="text"
               value={'Olena'}
+              name="userName"
               // onChange={handleUserNameChange}
             />
           </InputWrapper>

@@ -19,6 +19,16 @@ export const CloseIcon = styled.svg`
   }
 `;
 
+export const UploadWrap = styled.label`
+   border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;`;
+
+export const UploadInput = styled.input`
+display: none;
+`;
+
 export const Form = styled.form`
     display: block;
     width: 100%;
