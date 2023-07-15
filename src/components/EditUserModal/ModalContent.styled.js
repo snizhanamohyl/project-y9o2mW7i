@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Form } from 'formik';
+import { Form, Field} from 'formik';
 
 export const CloseButton = styled.button`
   position: absolute;
@@ -69,33 +69,11 @@ export const CloseIcon = styled.svg`
 //     width: 100%;
 // `
 
-// export const NameEditInput = styled.input`
-//   width: 100%;
-//   height: 48px;
-//   border: 1px solid grey;
-//   border-radius: 6px;
-//   outline: none;
-//   padding-left: 40px;
-//   display: flex;
-//   justify-content: center;
-//   transition: color var(--transition-time) var(--transition-function);
-//   color: var(--dark-accent);
-//   line-height: normal;
-//   letter-spacing: -0.28px;
-//   opacity: 0.800000011920929;
 
-//   &:hover,
-//   &:focus {
-//     border: 1px solid var(--accent);
-//   }
 
-//   @media screen and (min-width: 768px) {
-//     height: 58px;
-//     font-size: 18px;
-//     letter-spacing: -0.36px;
-//     padding-left: 51px;
-//   }
-// `;
+
+
+
 
 // export const UserIcon = styled.svg`
 //   position: absolute;
@@ -299,7 +277,7 @@ export const UserImgWrapper = styled.div`
 `;
   
 
- /* export const InputButtonWrapper = styled.div`
+ export const InputButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -313,6 +291,7 @@ export const UserImgWrapper = styled.div`
 export const NameLabel = styled.label`
   width: 100%;
   position: relative;
+  cursor: pointer;
 `;
 
 export const NameInput = styled(Field)`
@@ -321,22 +300,28 @@ export const NameInput = styled(Field)`
   padding: 14px;
   padding-left: 40px;
 
-  font-size: 14px;
-  letter-spacing: ${p => p.theme.letterSpacings.content};
-  line-height: ${p => p.theme.lineHeights.searchSelect};
-  color: ${p => p.theme.colors.mainDark};
+  letter-spacing: -0.28px;
+  line-height: normal;
+  color: var(--dark-accent);
   opacity: 0.8;
 
   outline: none;
-  border: ${p => p.border};
+  border: 1px solid grey;
 
-  border-radius: ${p => p.theme.radii.btnStandart};
+  border-radius: 6px;
   background-color: transparent;
+  transition: color var(--transition-time) var(--transition-function);
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--accent);
+  }
 
   @media screen and (min-width: 768px) {
     width: 400px;
     height: 58px;
     font-size: 18px;
+    letter-spacing: -0.36px;
     padding: 18px;
     padding-left: 51px;
   }
@@ -346,13 +331,13 @@ export const NameInput = styled(Field)`
     padding-right: 18px;
     padding-bottom: 16px;
   }
-`;
+`; 
 
-export const UserIconStyled = styled(UserIcon)`
+export const UserIconStyled = styled.svg`
   position: absolute;
   width: 18px;
   height: 18px;
-  stroke: ${p => p.stroke};
+  stroke: #23262A;
   top: 50%;
   left: 16.5px;
   transform: translateY(-50%);
@@ -374,25 +359,24 @@ export const EditBtn = styled.button`
   background-color: transparent;
   padding: 0;
   border: none;
-  transition: ${p => p.theme.transitions.main};
+
 
   @media screen and (min-width: 768px) {
     right: 18px;
-  }
+  }`
 
-  & svg {
-    stroke: ${p => p.theme.colors.mainDark};
-    width: 17px;
-    height: 17px;
+export const EditIcon = styled.svg`
+  stroke: #23262a;
+  width: 17px;
+  height: 17px;
 
-    @media screen and (min-width: 768px) {
-      width: 19px;
-      height: 19px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 19px;
+    height: 19px;
   }
 `;
 
-export const SubmitBtn = styled.button`
+/* export const SubmitBtn = styled.button`
   width: 282px;
   height: 49px;
   padding: 14px 84px;
@@ -424,7 +408,7 @@ export const SubmitBtn = styled.button`
   &:hover,
   &:focus {
     color: ${p => p.theme.colors.btnHoverBg};
-  } */
+  } */ 
 
   export const ErrorMessage = styled.p`
     position: absolute;

@@ -22,11 +22,12 @@ import {
   FormStyled,
   UserAvatarWrapper,
   UserImgWrapper,
-  // InputButtonWrapper,
-  // NameLabel,
-  // NameInput,
-  // UserIconStyled,
-  // EditBtn,
+  InputButtonWrapper,
+  NameLabel,
+  NameInput,
+  UserIconStyled,
+  EditBtn,
+  EditIcon,
   // SubmitBtn,
   ErrorMessage,
 } from './ModalContent.styled';
@@ -127,7 +128,8 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                     {props.errors.avatar}
                   </ErrorMessage>
                 )}
-                {/* <InputButtonWrapper>
+
+                <InputButtonWrapper>
                   <NameLabel htmlFor="name" id="labelName">
                     <NameInput
                       type="text"
@@ -139,9 +141,7 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                           ? '1px solid #E74A3B'
                           : props.touched.name && props.isValid
                           ? '1px solid #3CBC81'
-                          : theme === 'light'
-                          ? '1px solid #23262a'
-                          : '1px solid #FAFAFA'
+                          : '1px solid #23262a'
                       }
                       onBlur={() => {
                         props.setTouched({
@@ -155,29 +155,28 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                         props.setFieldValue('name', event.target.value);
                       }}
                     />
-                    <UserIconStyled
-                      stroke={
-                        props.touched.name && props.errors.name
-                          ? '#E74A3B'
-                          : props.touched.name && props.isValid
-                          ? '#3CBC81'
-                          : theme === 'light'
-                          ? '#23262a'
-                          : '#FAFAFA' */}
-                } />
-                {/* {props.values.name && (
+
+                    <UserIconStyled width="18" height="18">
+                      <use href={`${sprite}#icon-user`}></use>
+                    </UserIconStyled>
+
+                    {props.values.name && (
                       <EditBtn
                         type="button"
                         onClick={() => props.setFieldValue('name', '')}
                       >
-                        <EditIcon />
+                        <EditIcon width="17" height="17">
+                             <use href={`${sprite}#icon-pencil`}></use>
+                        </EditIcon>
                       </EditBtn>
-                    )} */}
-                {/* </NameLabel>
+                    )}
+                  </NameLabel>
                   {props.errors.name ? (
                     <ErrorMessage>{props.errors.name}</ErrorMessage>
                   ) : null}
-                  <SubmitBtn
+
+                  
+                  {/* <SubmitBtn
                     type="submit"
                     disabled={
                       !(
@@ -190,9 +189,10 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                       )
                     }
                   >
-                    {'editUser.saveBtn'} */}
-                {/* </SubmitBtn> */}
-                {/* </InputButtonWrapper> */}
+                    {'editUser.saveBtn'} */}{' '}
+                  */}
+                  {/* </SubmitBtn> */}
+                </InputButtonWrapper>
               </FormStyled>
             )}
           </Formik>
