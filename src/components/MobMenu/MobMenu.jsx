@@ -5,6 +5,7 @@ import ThemeToggler from "components/ThemeToggler/ThemeToggler";
 import { navOptions } from "vars/navOptions";
 import useWindowWidth from "hooks/useWindowWidth";
 import { useEffect } from "react";
+import Logo from "components/Logo/Logo";
 
 export default function MobMenu({ toggleMenu, isOpen }) {
     const width = useWindowWidth();
@@ -21,9 +22,7 @@ export default function MobMenu({ toggleMenu, isOpen }) {
     return <MobMenuWrap $isOpen={isOpen}>
         <MobHeaderWrap>
             <Link to='/' onClick={toggleMenu}>
-                <svg width={logoSize} height={logoSize}>
-                    <use href={`${sprite}#icon-logo-withBG`}></use>
-                </svg>
+                <Logo size={logoSize}/>
             </Link>
             <button onClick={toggleMenu}>
                 <svg width={32} height={32}>
