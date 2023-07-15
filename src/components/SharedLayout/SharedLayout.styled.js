@@ -52,6 +52,7 @@ const heroBgDeskRet = `url(${bgSpinachMiniImgDeskRet}) left 0 / 116px 398px no-r
 
 export const Layout = styled.div`
   position: relative;
+  padding-top: ${({ $isRecipePage }) => ($isRecipePage ? 0 : '64px')};
   width: 100vw;
 
   background: ${({ $isMainPage }) => `${$isMainPage ? heroBgMob : ''} 
@@ -87,8 +88,4 @@ export const Layout = styled.div`
         } url(${bgSpinachSharedImgDeskRet}) left bottom / 400px 301px no-repeat, var(--bg-color)`};
     }
   }
-`;
-
-export const Wrap = styled.div`
-  padding-top: ${({ $isRecipePage }) => ($isRecipePage ? 0 : '64px')};
 `;
