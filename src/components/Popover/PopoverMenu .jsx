@@ -34,7 +34,11 @@ export default function PopoverMenu() {
       </LogOutBtn>
 
       {isEditModalOpen && (
-        <EditUserModal isOpen={isEditModalOpen} onClose={handleCloseModal} />
+        <EditUserModal
+          handleOpenModal={handleOpenModal}
+          isOpen={isEditModalOpen}
+          handleCloseModal={handleCloseModal}
+        />
       )}
     </>
   );
