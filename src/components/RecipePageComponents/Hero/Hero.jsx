@@ -7,7 +7,6 @@ import {
 } from './Hero.styled';
 import sprite from '../../../assets/sprite.svg';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
-import { useState } from 'react';
 
 export default function RecipePageHero({ recipe }) {
   const { title, description, time } = recipe;

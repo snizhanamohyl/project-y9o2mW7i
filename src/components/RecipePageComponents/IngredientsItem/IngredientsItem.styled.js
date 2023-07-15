@@ -1,8 +1,4 @@
 import styled from 'styled-components';
-import checkbox from '../../../assets/images/mobile/checkbox.svg';
-import checkboxTab from '../../../assets/images/mobile/checkboxTab.svg';
-
-import sprite from '../../../assets/sprite.svg';
 
 export const ListItem = styled.li`
   display: flex;
