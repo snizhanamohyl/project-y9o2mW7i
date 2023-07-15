@@ -19,7 +19,7 @@ export default function RecipePageInstruction({ recipe }) {
         <Title>Recipe Preparation</Title>
         <Instruction>
           {structureTexts?.map(structureText => (
-            <InstructionItem key={nanoid}>{structureText}</InstructionItem>
+            <InstructionItem key={nanoid()}>{structureText}</InstructionItem>
           ))}
         </Instruction>
       </div>

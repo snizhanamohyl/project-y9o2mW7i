@@ -5,7 +5,7 @@ import {
   QuantityIngredient,
 } from './IngredientsItem.styled';
 
-import CheckboxLabels from './Checkbox/Checkbox';
+import CheckboxLabels from '../Checkbox/Checkbox';
 
 export default function RecipePageIngredientsItem({
   ingredient: { id, measure },
