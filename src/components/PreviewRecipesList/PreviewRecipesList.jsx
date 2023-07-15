@@ -17,7 +17,6 @@ export default function PreviewRecipesList() {
 
   const recipes = processData(data?.recipes);
 
-  console.log(recipes);
   return (
     <ul>
       {recipes.map(el => (
