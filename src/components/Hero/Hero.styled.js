@@ -3,7 +3,6 @@ import heroArrowTab from 'assets/images/tablet/hero-arrow.svg';
 import heroArrowDesk from 'assets/images/desktop/hero-arrow.svg';
 
 export const HeroWrap = styled.section`
-  min-width: 375px;
   position: relative;
   display: flex;
   flex-direction: column;
