@@ -5,6 +5,7 @@ import { EditBtn, LogOutBtn } from './PopoverMenu.styled';
 import { logout } from 'redux/auth/auth-operations';
 import EditUserModal from 'components/EditUserModal/EditUserModal';
 
+
 export default function PopoverMenu() {
   const dispatch = useDispatch();
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);

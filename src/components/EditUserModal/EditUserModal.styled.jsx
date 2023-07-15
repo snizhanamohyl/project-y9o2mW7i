@@ -1,18 +1,37 @@
-const { styled } = require('styled-components');
+import { styled } from '@mui/system';
+import { IconButton } from '@mui/material';
 
-export const EditModal = styled.div`
-display: flex;
-justify-content: center;
-align-items:center;
-
-border: 2px solid green;
-  position: fixed;
-  inset: 0; /* inset sets all 4 values (top right bottom left) much like how we set padding, margin etc., */
-  background-color: rgba(0, 0, 0, 0.6);
+export const ModalContent = styled('div')`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
   flex-direction: column;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-  z-index: 999;
-  padding: 40px 20px 20px;
-}
+  align-items: center;
+  justify-content: center;
+  width: 330px;
+  height: 327px;
+  padding: 32px 24px;
+  border-radius: 24px;
+  background: #fafafa;
+  box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
+
+  @media screen and (min-width: 768px) {
+    width: 480px;
+    height: 402px;
+    padding: 50px 40px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 500px;
+    height: 425px;
+    padding: 50px 50px;
+  }
+`;
+
+export const CloseButton = styled(IconButton)`
+  position: relative;
+  top: 10px;
+  right: 10px;
 `;
