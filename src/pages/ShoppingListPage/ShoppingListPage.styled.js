@@ -71,14 +71,14 @@ export const OptionNameContainer = styled.div`
 `;
 
 export const ShoppingList = styled.ul`
-  padding: 0 8px;
+  padding: 0 8px 100px 0;
 
   @media screen and (min-width: 768px) {
-    padding: 0;
+    padding: 0 0 200px 0;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 0 40px;
+    padding: 0 40px 195px 0;
   }
 `;
 

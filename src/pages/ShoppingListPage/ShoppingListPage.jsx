@@ -6,77 +6,77 @@ import {
   ShoppingListTitle,
 } from './ShoppingListPage.styled';
 import ProductListItem from 'components/ShoppingListItem/ShoppingListItem';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
+import * as shoppingListOperations from 'redux/ShopingList/operations';
+import { getShoppingList } from 'redux/ShopingList/selectors';
+import fetchShoppingList from 'services/fetchShoppingList';
 
 export default function ShoppingListPage() {
-  // const dispatch = useDispatch();
+  const [products, setProducts] = useState();
 
-  // const items = useSelector();
+  const dispatch = useDispatch();
 
-  //   useEffect(() => {
-  //     dispatch(...);
-  //   },[dispatch])
+  const ingredients = useSelector(getShoppingList);
 
-  //   const onDeleteClick = id => {
-  //     dispatch(...(id));
-  //  }
+  useEffect(() => {
+    if (ingredients !== []) {
+      dispatch(shoppingListOperations.getAllShoppingList());
+      setProducts(ingredients)
+    }
+    fetchShoppingList()
+      .then((data) => {
+        setProducts(data);
+      })
+      .catch(error => console.log(error.message));
+  }, [ingredients, dispatch]);
 
-
-
-//   const [items, setItems] = useState([])
-
-//   useEffect(() => {
-
-//   })
-
-//   onDeleteClick = (id) => {
-//     setState(prevState => ({
-//       items: prevState.items.filter(item => item.id !== id),
-//     }))
-// }
+  const onDeleteClick = id => {
+    dispatch(shoppingListOperations.deleteIngredient(id));
+  };
 
   return (
     <SharedContainer>
-    <div>
-      <ShoppingListTitle>Shopping list</ShoppingListTitle>
-      <ShoppingListHeader>
-        <p>Products</p>
-        <OptionNameContainer>
-          <span>Number</span>
-          <span>Remove</span>
-        </OptionNameContainer>
-      </ShoppingListHeader>
-      <ShoppingList>
-        {/* {items &&
-          items.map(item => {
+      <div>
+        <ShoppingListTitle>Shopping list</ShoppingListTitle>
+        <ShoppingListHeader>
+          <p>Products</p>
+          <OptionNameContainer>
+            <span>Number</span>
+            <span>Remove</span>
+          </OptionNameContainer>
+        </ShoppingListHeader>
+        <ShoppingList>
+          {products &&
+          products.map(product => {
             return (
-              <ShoppingListItem key={item.id}>
+              <ShoppingListItem key={product.id}>
                 <ProductListItem
-                  name={item.name}
-                  number={item.measure}
-                  id={item.id}
+                  name={product.name}
+                  number={product.measure}
+                  id={product.id}
                   onDeleteClick={onDeleteClick}
+                  url={product.img}
                 >
                 </ProductListItem>
               </ShoppingListItem>
             );
-          })} */}
-        <ShoppingListItem>
-          <ProductListItem name="Cucumber" number="5"></ProductListItem>
-        </ShoppingListItem>
-        <ShoppingListItem>
-          <ProductListItem name="Cucumber" number="5"></ProductListItem>
-        </ShoppingListItem>
-        <ShoppingListItem>
-          <ProductListItem name="Cucumber" number="5"></ProductListItem>
-        </ShoppingListItem>
-        <ShoppingListItem>
-          <ProductListItem name="Cucumber" number="5"></ProductListItem>
-        </ShoppingListItem>
-      </ShoppingList>
-    </div>
+          })}
+          {/* <ShoppingListItem>
+            <ProductListItem name="Cucumber" number="5" onDeleteClick={onDeleteClick}></ProductListItem>
+          </ShoppingListItem>
+          <ShoppingListItem>
+            <ProductListItem name="Cucumber" number="5" onDeleteClick={onDeleteClick}></ProductListItem>
+          </ShoppingListItem>
+          <ShoppingListItem>
+            <ProductListItem name="Cucumber" number="5" onDeleteClick={onDeleteClick}></ProductListItem>
+          </ShoppingListItem>
+          <ShoppingListItem>
+            <ProductListItem name="Cucumber" number="5" onDeleteClick={onDeleteClick}></ProductListItem>
+          </ShoppingListItem> */}
+        </ShoppingList>
+      </div>
     </SharedContainer>
   );
 }
