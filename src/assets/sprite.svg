@@ -287,7 +287,5 @@
 <path fill="none" stroke="#c4c4c4" style="stroke: var(--color1, #c4c4c4)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.7234" d="M26.667 28v-2.667c0-1.414-0.562-2.771-1.562-3.771s-2.357-1.562-3.771-1.562h-10.667c-1.414 0-2.771 0.562-3.771 1.562s-1.562 2.357-1.562 3.771v2.667"></path>
 <path fill="none" stroke="#c4c4c4" style="stroke: var(--color1, #c4c4c4)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.7234" d="M16 14.667c2.946 0 5.333-2.388 5.333-5.333s-2.388-5.333-5.333-5.333c-2.945 0-5.333 2.388-5.333 5.333s2.388 5.333 5.333 5.333z"></path>
 </symbol>
-</defs>
-    </defs>
-    
+</defs>   
 </svg>
