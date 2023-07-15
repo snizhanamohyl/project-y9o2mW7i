@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import {updateUserInfo} from 'services/auth-api'
 
 axios.defaults.baseURL = 'https://so-yummy-backend-hg4e.onrender.com/api';
 
