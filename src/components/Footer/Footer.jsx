@@ -2,7 +2,6 @@ import LogoFooter from "components/LogoFooter/LogoFooter";
 import ExplanationTextFooter from "../ExplanationTextFooter/ExplanationTextFooter";
 import NavFooter from "../NavFooter/NavFooter";
 import SubscribeBlock from "components/SubscribeBlock/SubscribeBlock";
-import SocialNetworkFooter from "components/SocialNetworkFooter/SocialNetworkFooter"
 import BottomBlock from "components/BottomBlock/BottomBlock";
 import {
     FooterSection,
@@ -11,6 +10,7 @@ import {
     FooterBoxDesk,
     Container,
 } from "./Footer.styled";
+import FollowUs from "components/FollowUs/FollowUs";
 
 export default function Footer() {
     return (<>
@@ -26,7 +26,7 @@ export default function Footer() {
                     </FooterBoxTab>
                     <SubscribeBlock />           
                 </FooterBoxDesk>
-               <SocialNetworkFooter/>    
+                <FollowUs isFooter/>
             </Container>            
         </FooterSection> 
         <BottomBlock/>

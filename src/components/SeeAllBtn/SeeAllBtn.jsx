@@ -1,7 +1,5 @@
-import { SeeAllLink } from "./SeeAllBtn.styled";
+import { SeeAllLink } from './SeeAllBtn.styled';
 
-
-export default function SeeAllBtn() {
-   
-    return (<SeeAllLink>See all</SeeAllLink>)
-};
+export default function SeeAllBtn({ category }) {
+  return <SeeAllLink to={`/categories/${category}`}>See all</SeeAllLink>;
+}
