@@ -1,4 +1,6 @@
 import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
+// import { useDispatch } from 'react-redux';
 import { Modal } from '@mui/material';
 import sprite from 'assets/sprite.svg';
 import { ModalContent, } from './EditUserModal.styled';
@@ -8,7 +10,31 @@ import {CloseButton, CloseIcon, UploadWindow, UploadLabel, UploadInput,Form, Plu
 const portal = document.getElementById('modal-root');
 
 export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModal }) {
+  const [userName, setUserName] = useState('');
+  const [userAvatar, setUserAvatar] = useState('');
+  
+  const handleFileUpload = e => {
+    const file = e.target.files[0];
+    if (file) {
+      const avatarUrl = URL.createObjectURL(file);
+      setUserAvatar(avatarUrl);
+    }
+  };
+
+  const handleUserNameChange = e => {
+    setUserName(e.target.value);
+  };
+
+  const handleSaveChanges = (e) => {
+    e.preventDefault();
+    // Perform save changes logic here
+    console.log('User Name:', userName);
+    console.log('Photo URL:', userAvatar);
+  };
+
+
   if (!isOpen) return null;
+
 
   return ReactDOM.createPortal(
     <Modal open={handleOpenModal} onClose={handleCloseModal}>
@@ -32,10 +58,10 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
               <use href={`${sprite}#icon-plus-avatar`}></use>
             </PlusIcon>
 
-            <UploadInput type="file" name="userAvatar" />
+            <UploadInput type="file" name="userAvatar" onChange={handleFileUpload}/>
           </UploadLabel>
 
-          <NameEditInput type="text" value={'Olena'} name="userName"/>
+          <NameEditInput type="text" value={userName} name="userName" onChange={handleUserNameChange}/>
           <UserIcon width="18" height="18">
             <use href={`${sprite}#icon-user`}></use>
           </UserIcon>
@@ -44,7 +70,7 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
             <use href={`${sprite}#icon-pencil`}></use>
           </PencilIcon>
 
-          <SaveButton type="submit">Save changes</SaveButton>
+          <SaveButton type="submit" onClick={handleSaveChanges}>Save changes</SaveButton>
         </Form>
       </ModalContent>
 
