@@ -15,7 +15,10 @@ export const Menu = styled.div`
 export const NavigationMenu = styled.div`
   display: flex;
   align-items: center;
-  gap: 187px;
+
+  @media (min-width: 1440px) {
+    gap: 187px;
+  }
 `;
 
 export const HeaderWrapper = styled.div`

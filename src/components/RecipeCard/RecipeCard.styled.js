@@ -1,19 +1,16 @@
 import styled from 'styled-components';
 
-export const ImgBox = styled.li`
+export const ImgBox = styled.div`
   position: relative;
   width: 344px;
-  height: 322px;
   background-color: grey;
   border-radius: 8px;
 
   @media (min-width: 768px) {
     width: 336px;
-    height: 332px;
 
     @media (min-width: 1440px) {
       width: 300px;
-      height: 323px;
     }
   }
 `;
@@ -21,6 +18,7 @@ export const ImgBox = styled.li`
 export const RecipeImg = styled.img`
   width: 344px;
   height: 322px;
+  border-radius: 8px;
 `;
 
 export const Recipe = styled.p`
@@ -29,7 +27,7 @@ export const Recipe = styled.p`
   left: 18px;
 
   width: 306px;
-  height: 52px;
+  min-height: 52px;
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 16px;
