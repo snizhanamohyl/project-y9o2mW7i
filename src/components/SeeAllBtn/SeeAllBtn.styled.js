@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 
 
 export const SeeAllLink = styled(NavLink)`
+    transition: var(--transition-time) var(--transition-function); 
+    display: block;
     text-align: center;
     margin-left: auto;
     width: 94px;
@@ -11,11 +13,22 @@ export const SeeAllLink = styled(NavLink)`
     background-color: var(--accent);
     border-radius: 6px;
     color: var(--bg-color);
+  
 
+    
+  &:hover {
+    background-color: var(--dark-accent);
+   }
+
+   &:focus { 
+    background-color: var(--dark-accent);
+  }
 
    @media (min-width: 1440px) {
     font-size: 14px;
    }
  }
+
+
    
 `;

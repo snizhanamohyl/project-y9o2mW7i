@@ -8,10 +8,16 @@ const Paginations = ({setCurrentPage, recipesPerPage, totalRecipe, currentPage})
     
     const totalPageRecipe = Math.ceil(totalRecipe / recipesPerPage)
 
-    const widthViewport = useWindowWidth();        
+    const widthViewport = useWindowWidth();     
+
+    const onClick = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth"}) 
+    }
 
     const handlePageChange = (event, page) => {
         setCurrentPage(page);
+
+        onClick();
     };
 
     return (
