@@ -1,7 +1,5 @@
 import { styled } from '@mui/system';
-
 import { IconButton } from '@mui/material';
-
 
 export const ModalContent = styled('div')`
   position: absolute;
