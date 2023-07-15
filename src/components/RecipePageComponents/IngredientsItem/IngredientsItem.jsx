@@ -20,11 +20,11 @@ export default function RecipePageIngredientsItem({ ingredient }) {
 
   const handleCheckboxClick = ({ _id }, measure) => {
     setIsChecked(prev => !prev);
-
+    console.log(measure);
     if (isChecked) {
       dispatch(deleteIngredient(_id));
     } else {
-      dispatch(addIngredient(id, measure));
+      dispatch(addIngredient({ id, measure }));
     }
   };
 
