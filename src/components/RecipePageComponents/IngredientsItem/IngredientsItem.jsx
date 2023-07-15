@@ -19,7 +19,7 @@ export default function RecipePageIngredientsItem({
         </div>
         <div>
           <QuantityIngredient>{measure}</QuantityIngredient>
-          <CheckboxLabels key={id._id} />
+          <CheckboxLabels key={id._id} id={id._id} />
         </div>
       </ListItem>
     </>

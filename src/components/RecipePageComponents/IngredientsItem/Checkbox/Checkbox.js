@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { CheckBoxWraper } from './Checkbox.styled';
-export default function Checkbox({ key, label }) {
+export default function Checkbox({ id, label }) {
   const [isChecked, setIsChecked] = useState(false);
   return (
     <CheckBoxWraper>
-      <label htmlFor={key}>
+      <label htmlFor={id}>
         <input
-          id={key}
+          id={id}
           type="checkbox"
           checked={isChecked}
           onChange={() => setIsChecked(prev => !prev)}
