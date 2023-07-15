@@ -1,5 +1,7 @@
 import { styled } from '@mui/system';
+
 import { IconButton } from '@mui/material';
+
 
 export const ModalContent = styled('div')`
   position: absolute;
@@ -14,9 +16,9 @@ export const ModalContent = styled('div')`
   height: 327px;
   padding: 32px 24px;
   border-radius: 24px;
-  background: #fafafa;
-  box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
-
+  background-color: var(--bg-color);
+  box-shadow: var(--modal-shadow); 
+  
   @media screen and (min-width: 768px) {
     width: 480px;
     height: 402px;
@@ -35,3 +37,4 @@ export const CloseButton = styled(IconButton)`
   top: 10px;
   right: 10px;
 `;
+

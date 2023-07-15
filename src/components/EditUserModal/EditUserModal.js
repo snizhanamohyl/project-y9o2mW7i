@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom';
 import { ModalContent, CloseButton} from './EditUserModal.styled';
-import { Modal, Button, Typography, TextField } from '@mui/material';
+import {  SaveButton } from './a.styled';
+import { Modal, Typography, TextField } from '@mui/material';
 
 const portal = document.getElementById('modal-root');
 
@@ -22,11 +23,11 @@ export default function EditUserModal({ isOpen, handleCloseModal }) {
             type="text"
             // value={userName} onChange={handleUserNameChange}
           />
-          <Button
+          <SaveButton
           // onClick={handleSaveChanges}
           >
             Save changes
-          </Button>
+          </SaveButton>
         </ModalContent>
       </Modal>,
       portal
