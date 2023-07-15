@@ -4,11 +4,12 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://so-yummy-backend-hg4e.onrender.com/api/';
 
 export const addIngredient = createAsyncThunk(
-  'shoping-list/addIngredient',
+  'shopping-list/add',
 
   async (ingredient, thunkAPI) => {
     try {
       const { data } = await axios.post('/shopping-list', ingredient);
+
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -16,8 +17,8 @@ export const addIngredient = createAsyncThunk(
   }
 );
 
-export const getAllShopingList = createAsyncThunk(
-  'shoping-list/getAllShopingList',
+export const getAllShoppingList = createAsyncThunk(
+  'shopping-list/getAllShopingList',
 
   async (_, thunkAPI) => {
     try {
@@ -29,10 +30,10 @@ export const getAllShopingList = createAsyncThunk(
   }
 );
 export const deleteIngredient = createAsyncThunk(
-  'shoping-list/deleteIngredient',
-  async (ingredientId, thunkAPI) => {
+  'shopping-list/deleteIngredient',
+  async (ingredient, thunkAPI) => {
     try {
-      const { data } = await axios.delete(`/shopping-list/${ingredientId}`);
+      const { data } = await axios.delete(`/shopping-list/${ingredient}`);
 
       return data;
     } catch (e) {

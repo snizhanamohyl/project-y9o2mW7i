@@ -8,23 +8,27 @@ import {
 import CheckboxLabels from '../Checkbox/Checkbox';
 import { addIngredient, deleteIngredient } from 'redux/ShopingList/operations';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function RecipePageIngredientsItem({ ingredient }) {
   const [isChecked, setIsChecked] = useState(false);
   const dispatch = useDispatch();
   const { id, measure } = ingredient;
-  // const newId = id._id.split('').reverse().join('');
 
-  // const newStructure = { ...ingredient.id, ...ingredient.measure };
+  const newId = id._id.split('').reverse().join('');
 
-  const handleCheckboxClick = ({ _id }, measure) => {
+  const newStructure = { ...ingredient.id, measure, newId: newId };
+
+  // useEffect(() => {
+  //   dispatch(addIngredient(newStructure));
+  // }, [dispatch, newStructure]);
+  const handleCheckboxClick = () => {
     setIsChecked(prev => !prev);
-    console.log(measure);
+
     if (isChecked) {
-      dispatch(deleteIngredient(_id));
+      dispatch(deleteIngredient(id._id));
     } else {
-      dispatch(addIngredient({ id, measure }));
+      dispatch(addIngredient(newStructure));
     }
   };
 

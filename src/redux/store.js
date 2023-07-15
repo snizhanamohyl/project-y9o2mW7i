@@ -22,7 +22,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const rootReducer = combineReducers({
-  shopingList: ingredientsReducer,
+  shoppingList: ingredientsReducer,
   auth: persistedReducer,
 });
 
