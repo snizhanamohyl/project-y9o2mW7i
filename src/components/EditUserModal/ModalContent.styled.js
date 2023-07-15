@@ -425,3 +425,22 @@ export const SubmitBtn = styled.button`
   &:focus {
     color: ${p => p.theme.colors.btnHoverBg};
   } */
+
+  export const ErrorMessage = styled.p`
+    position: absolute;
+    color: red;
+    top: 50%;
+    left: ${p => (p.location === 'file' ? '24px' : '0')};
+    transform: ${p =>
+      p.location === 'file' ? 'translateY(-150%)' : 'translateY(-50%)'};
+    font-size: 11px;
+
+    @media screen and (min-width: 768px) {
+      left: ${p => (p.location === 'file' ? '40px' : '0')};
+      font-size: 14px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      left: ${p => (p.location === 'file' ? '50px' : '0')};
+    }
+  `;

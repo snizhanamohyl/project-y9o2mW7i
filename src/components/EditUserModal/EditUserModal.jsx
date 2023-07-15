@@ -9,10 +9,10 @@ import { Formik } from 'formik';
 import sprite from 'assets/sprite.svg';
 import { useAuth } from 'hooks/useAuth';
 // import { updateUser } from 'redux/Auth/authOperations';
-// import {
-//   updateUserValidationSchema,
-//   SUPPORTED_FORMATS,
-// } from '../../../helpers';
+import {
+  // updateUserValidationSchema,
+  SUPPORTED_FORMATS
+} from 'schemas/userUpdateSchema';
 
 
 import {
@@ -25,7 +25,7 @@ import {
   // UserIconStyled,
   // EditBtn,
   // SubmitBtn,
-  // ErrorMessage,
+  ErrorMessage,
 } from './ModalContent.styled';
 
 
@@ -101,34 +101,29 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                     id="avatar"
                     name="avatar"
                     onBlur={() => {
-                      props.setTouched({
-                        avatar: true,
-                      });
+                      props.setTouched({ avatar: true });
                     }}
-                    onChange={
-                      event => {
-                        if (event.target.files[0]) {
-                          // if (
-                          //   SUPPORTED_FORMATS.includes(event.target.files[0].type)
-                          // ) {
+                    onChange={event => {
+                      if (event.target.files[0]) {
+                        if (
+                          SUPPORTED_FORMATS.includes(event.target.files[0].type)
+                        ) {
                           setPathToUserAvatar(
                             window.URL.createObjectURL(event.target.files[0])
                           );
                           props.setFieldValue('avatar', event.target.files[0]);
                         }
+                      } else {
+                        setPathToUserAvatar(user.avatar);
                       }
-                      // else {
-                      //   setPathToUserAvatar(user.avatar);
-                      // }
-                    }
+                    }}
                   />
                 </UserAvatarWrapper>
-
-                {/* {props.errors.avatar && (
+                {props.errors.avatar && (
                   <ErrorMessage location="file">
                     {props.errors.avatar}
                   </ErrorMessage>
-                )} */}
+                )}
                 {/* <InputButtonWrapper>
                   <NameLabel htmlFor="name" id="labelName">
                     <NameInput
