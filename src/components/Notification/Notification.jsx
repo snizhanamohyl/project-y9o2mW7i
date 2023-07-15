@@ -1,4 +1,5 @@
-import Notifation from 'Notification.styled';
+import { useEffect, useState } from 'react';
+import { AlertStyled } from './Notification.styled.jsx';
 
 
 // severity - error
@@ -7,9 +8,20 @@ import Notifation from 'Notification.styled';
 // severity - success
 
 const Notification = ({text, severity}) => {
+    const [showAlert, setShowAlert] = useState(true)
+
+    useEffect( () => {
+        const timer = setTimeout(() => {
+            setShowAlert(false);
+        }, 1000)
+        
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return(
-        <>
-            <Notifation severity={severity}>{text}</Notifation>
+        <>  
+            {showAlert ? (<AlertStyled severity={severity}>{text}</AlertStyled>):(null)}
         </>
     )
 }

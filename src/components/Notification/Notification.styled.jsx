@@ -1,6 +1,8 @@
+import { Alert } from "@mui/material";
 import styled from "@emotion/styled";
 
-export const Notification = styled(Alert)`
+
+export const AlertStyled = styled(Alert)`
     ${({ severity }) => {
     const severityStyles = {
       error: `
@@ -16,8 +18,12 @@ export const Notification = styled(Alert)`
         color: #fff;
       `,
       success: `
-        background-color: #4caf50;
-        color: #fff;
+        border: 1px solid #4caf50;
+        color: #4caf50;
+        position: relative;
+        top: 50%;
+        z-index: 10000;
+        width: 400px;
       `,
     };
 
