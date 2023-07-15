@@ -13,7 +13,11 @@ export default function Categories() {
   const navigate = useNavigate();
   const { categoryName } = useParams();
   const [categories, setCategories] = useState([]);
-  const [value, setValue] = useState(categoryName || '');
+  const [value, setValue] = useState(
+    categoryName === ':categoryName'
+      ? localStorage.getItem('defaultCategory')
+      : categoryName || ''
+  );
   const [recipeList, setRecipeList] = useState([]);
 
   useEffect(() => {
@@ -23,26 +27,41 @@ export default function Categories() {
           return a.name.localeCompare(b.name);
         });
         setCategories(sortedData);
+        localStorage.setItem(
+          'defaultCategory',
+          sortedData[0].name.toLowerCase()
+        );
+
+        if (categoryName) {
+          const categoryExists = sortedData.find(
+            category =>
+              category.name.toLowerCase() === categoryName.toLowerCase()
+          );
+          if (!categoryExists) {
+            navigate(`/categories/${localStorage.getItem('defaultCategory')}`);
+          }
+        }
       })
       .catch(err => console.log(err.message));
-  }, []);
+  }, [categoryName, navigate]);
 
   useEffect(() => {
-    if (!categoryName) {
+    if (categoryName === ':categoryName') {
       return;
+    } else if (categoryName) {
+      fetchRecipesByCategory(categoryName)
+        .then(data => {
+          setRecipeList(data);
+        })
+        .catch(err => console.log(err.message));
     }
-    fetchRecipesByCategory(categoryName)
-      .then(data => {
-        setRecipeList(data);
-      })
-      .catch(err => console.log(err.message));
   }, [categoryName]);
 
   useEffect(() => {
     if (categories.length > 0) {
-      const defaultCategory = categoryName || categories[0].name.toLowerCase();
-      setValue(defaultCategory);
-      navigate(`/categories/${defaultCategory}`);
+      const category = categoryName || localStorage.getItem('defaultCategory');
+      setValue(category);
+      navigate(`/categories/${category}`);
     }
   }, [categoryName, navigate, categories]);
 
@@ -50,21 +69,20 @@ export default function Categories() {
     setValue(newValue);
     navigate(`/categories/${newValue}`);
   };
+
   return categories.length > 0 ? (
-    <>
-      <CustomConteiner>
-        <CategoriesTabs
-          categories={categories}
-          value={value}
-          handleChange={handleChange}
-        />
-        <CategoriesList
-          categories={categories}
-          recipeList={recipeList}
-          value={value}
-        />
-      </CustomConteiner>
-    </>
+    <CustomConteiner>
+      <CategoriesTabs
+        categories={categories}
+        value={value}
+        handleChange={handleChange}
+      />
+      <CategoriesList
+        categories={categories}
+        recipeList={recipeList}
+        value={value}
+      />
+    </CustomConteiner>
   ) : (
     <div>Loading...</div>
   );

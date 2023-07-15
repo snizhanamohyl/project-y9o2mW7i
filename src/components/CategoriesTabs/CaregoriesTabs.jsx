@@ -4,7 +4,7 @@ export default function CategoriesTabs({ value, categories, handleChange }) {
   return (
     <CustomBox>
       <CustomTabs
-        value={value ? value : 'beef'}
+        value={value}
         onChange={handleChange}
         variant="scrollable"
         scrollButtons="auto"
