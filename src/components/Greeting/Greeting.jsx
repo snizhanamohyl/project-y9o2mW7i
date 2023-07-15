@@ -1,13 +1,15 @@
-import sprite from 'assets/sprite.svg';
-import {WelcomeWrapper, Logo, StyledTitle,StyledText} from './Greeting.styled';
+import { WelcomeWrapper, StyledTitle, StyledText } from './Greeting.styled';
+import Logo from 'components/Logo/Logo'
 import AuthNav from '../AuthNav/AuthNav';
+import useWindowWidth from 'hooks/useWindowWidth';
 
 export default function Greeting() { 
+  const width = useWindowWidth();
+  const logoSize = width < 768 ? 54 : 68;
+
   return (
     <WelcomeWrapper>
-      <Logo width="68" height="68">
-        <use href={`${sprite}#icon-logo-44x44BG`}></use>
-      </Logo>
+      <Logo size={logoSize}/>
       <StyledTitle>Welcome to the app!</StyledTitle>
       <StyledText>
         This app offers more than just a collection of recipes - it is designed
