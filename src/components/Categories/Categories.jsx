@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router';
+import { useNavigate, useParams, useLocation } from 'react-router';
 import { CustomConteiner } from './Categories.style';
 import { useEffect, useState } from 'react';
 import {
@@ -11,6 +11,7 @@ import CategoriesTabs from 'components/CategoriesTabs/CaregoriesTabs';
 
 export default function Categories() {
   const navigate = useNavigate();
+  const location = useLocation();
   const { categoryName } = useParams();
   const [categories, setCategories] = useState([]);
   const [value, setValue] = useState(
@@ -27,10 +28,11 @@ export default function Categories() {
           return a.name.localeCompare(b.name);
         });
         setCategories(sortedData);
-        localStorage.setItem(
-          'defaultCategory',
-          sortedData[0].name.toLowerCase()
-        );
+        const defaultCategory = sortedData[0].name.toLowerCase();
+
+        if (!localStorage.defaultCategory) {
+          localStorage.setItem('defaultCategory', defaultCategory);
+        }
 
         if (categoryName) {
           const categoryExists = sortedData.find(
@@ -41,9 +43,14 @@ export default function Categories() {
             navigate(`/categories/${localStorage.getItem('defaultCategory')}`);
           }
         }
+
+        if (location.pathname === '/categories') {
+          setValue(defaultCategory);
+          navigate(`/categories/${defaultCategory}`);
+        }
       })
       .catch(err => console.log(err.message));
-  }, [categoryName, navigate]);
+  }, [categoryName, navigate, location]);
 
   useEffect(() => {
     if (categoryName === ':categoryName') {
@@ -60,13 +67,19 @@ export default function Categories() {
   useEffect(() => {
     if (categories.length > 0) {
       const category = categoryName || localStorage.getItem('defaultCategory');
-      setValue(category);
-      navigate(`/categories/${category}`);
+      if (localStorage.defaultCategory === category) {
+        return;
+      } else {
+        localStorage.setItem('defaultCategory', category);
+        setValue(category);
+        navigate(`/categories/${category}`);
+      }
     }
   }, [categoryName, navigate, categories]);
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
+    localStorage.setItem('defaultCategory', newValue);
     navigate(`/categories/${newValue}`);
   };
 
