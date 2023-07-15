@@ -74,13 +74,6 @@ export const CustomTab = styled(Tab)(({ theme }) => ({
   },
 }));
 
-export const CustomConteiner = styled(Box)(({ theme }) => ({
-  marginTop: '50px',
-  '@media (min-width: 1440px)': {
-    marginTop: '100px',
-  },
-}));
-
 export const CustomBox = styled(Box)(({ theme }) => ({
   borderBottom: '1px solid var(--border-bottom-color)',
 }));

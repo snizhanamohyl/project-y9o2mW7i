@@ -53,10 +53,10 @@ export default function App() {
 
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<PrivateRoute component={MainPage} />}></Route>
-        {/* <Route
+        <Route
           path="/categories"
           element={<PrivateRoute component={CategoriesPage} />}
-        ></Route> */}
+        ></Route>
         <Route
           path="/categories/:categoryName"
           element={
