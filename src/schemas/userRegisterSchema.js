@@ -4,7 +4,11 @@ export const userRegisterSchema = yup.object().shape({
   name: yup
     .string()
     .required('Name is required')
-    .matches(/^[aA-zZ\s]+$/, 'Only alphabets are allowed for this field '),
+    .matches(
+      /^[a-zA-Z0-9\s]+$/,
+      'Only alphabets and numbers are allowed for this field'
+    ),
+
   email: yup
     .string()
     .email('Please enter a valid email')
