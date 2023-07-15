@@ -77,7 +77,6 @@ export const Layout = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding-top: 14px;
     background: ${({ $isMainPage }) => `${$isMainPage ? heroBgDesk : ''} 
       url(${bgSpinachSharedImgDesk}) left bottom no-repeat, var(--bg-color)`};
 
@@ -91,5 +90,5 @@ export const Layout = styled.div`
 `;
 
 export const Wrap = styled.div`
-  padding-top: 64px;
+  padding-top: ${({ $isRecipePage }) => ($isRecipePage ? 0 : '64px')};
 `;

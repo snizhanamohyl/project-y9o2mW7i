@@ -10,6 +10,10 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import SigninPage from 'pages/SigninPage/SigninPage';
 import WelcomePage from 'pages/WelcomePage/WelcomePage';
+
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import SigninPage from 'pages/SigninPage/SigninPage';
+import WelcomePage from 'pages/WelcomePage/WelcomePage';
 // import NotFound from "components/NotFound/NotFound";
 
 // const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
@@ -22,6 +26,7 @@ const CategoriesPage = lazy(() =>
 );
 const MyRecipesPage = lazy(() => import('pages/MyRecipesPage/MyRecipesPage'));
 const AddRecipePage = lazy(() => import('pages/AddRecipePage/AddRecipePage'));
+const RecipePage = lazy(() => import('pages/RecipePage/RecipePage'));
 const SearchPage = lazy(() => import('pages/SearchPage/SearchPage'));
 const ShoppingListPage = lazy(() =>
   import('pages/ShoppingListPage/ShoppingListPage')
@@ -59,9 +64,7 @@ export default function App() {
         ></Route>
         <Route
           path="/categories/:categoryName"
-          element={
-            <PrivateRoute component={CategoriesPage} redirectTo="/welcome" />
-          }
+          element={<PrivateRoute component={CategoriesPage} />}
         ></Route>
         <Route
           path="/add"
