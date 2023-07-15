@@ -1,9 +1,9 @@
-export const shopingList = state => state.shopingList;
-export const ingredientsList = state => state.ingredientsList;
-export const checkedIngredientsList = state => {
-  const checkedIngredientsList = state.ingradients.filter(
-    ingredient => ingredient.checked
-  );
-  return checkedIngredientsList;
-};
-export const checkedIngredient = state => state.ingredients.checked;
+import { createSelector } from 'reselect';
+
+export const getShoppingList = state => state.shoppingList;
+const getIngredients = state => state.ingredients;
+
+export const getCheckedIngredients = createSelector(
+  getIngredients,
+  ingredients => ingredients.filter(ingredient => ingredient.checked)
+);
