@@ -79,3 +79,15 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+export const updateUser = createAsyncThunk(
+  '/auth/update',
+  async (credentials, thunkAPI) => {
+    try {
+      const data = await updateUserInfo(credentials);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

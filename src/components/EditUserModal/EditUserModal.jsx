@@ -1,16 +1,19 @@
 import ReactDOM from 'react-dom';
 import { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import {
+  useDispatch,
+  // useSelector
+} from 'react-redux';
 import { Modal } from '@mui/material';
 import { ModalContent } from './EditUserModal.styled';
 import {CloseIcon, CloseButton} from './ModalContent.styled'
 import { Formik } from 'formik';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import sprite from 'assets/sprite.svg';
 import { useAuth } from 'hooks/useAuth';
-// import { updateUser } from 'redux/Auth/authOperations';
+import { updateUser } from 'redux/auth/auth-operations';
 import {
-  // updateUserValidationSchema,
+  updateUserValidationSchema,
   SUPPORTED_FORMATS
 } from 'schemas/userUpdateSchema';
 
@@ -38,24 +41,24 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
 
 
     const { user } = useAuth();
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [pathToUserAvatar, setPathToUserAvatar] = useState(user.avatar);
 
-    // const handleSubmit = values => {
-    //   const formData = new FormData();
+    const handleSubmit = values => {
+      const formData = new FormData();
 
-    //   if (values.avatar === '') {
-    //     values.avatar = user.avatar;
-    //   }
-    //   formData.append('name', values.name.trim());
-    //   formData.append('avatar', values.avatar);
+      if (values.avatar === '') {
+        values.avatar = user.avatar;
+      }
+      formData.append('name', values.name.trim());
+      formData.append('avatar', values.avatar);
 
-    //   dispatch(updateUser(formData))
-    //     .unwrap()
-    //     .then(() => toast.success('editUser.success'))
-    //     .catch(() => toast.error('editUser.error'));
-    //   handleCloseModal();
-    // };
+      dispatch(updateUser(formData))
+        .unwrap()
+        .then(() => toast.success('editUser.success'))
+        .catch(() => toast.error('editUser.error'));
+      handleCloseModal();
+    };
 
   if (!isOpen) return null;
   
@@ -73,12 +76,12 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
               avatar: '',
               name: user.name,
             }}
-            // validationSchema={updateUserValidationSchema}
-            // onSubmit={(values, actions) => {
-            //   handleSubmit(values);
-            //   actions.setSubmitting(false);
-            //   actions.resetForm();
-            // }}
+            validationSchema={updateUserValidationSchema}
+            onSubmit={(values, actions) => {
+              handleSubmit(values);
+              actions.setSubmitting(false);
+              actions.resetForm();
+            }}
           >
             {props => (
               <FormStyled onSubmit={props.handleSubmit}>
