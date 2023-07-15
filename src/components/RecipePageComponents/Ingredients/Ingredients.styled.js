@@ -13,6 +13,7 @@ export const IngredientsListHead = styled.section`
 export const NameColumn = styled.div`
   display: flex;
   padding: 12px 14px;
+  align-items: center;
   width: 100%;
   margin-bottom: 24px;
   background-color: var(--accent);

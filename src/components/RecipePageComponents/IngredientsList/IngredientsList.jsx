@@ -5,7 +5,7 @@ export default function RecipePageIngredientsList({ ingredients }) {
     <IngredientsList>
       {ingredients?.map(ingredient => (
         <RecipePageIngredientsItem
-          key={ingredients.id}
+          key={ingredient.id._id}
           ingredient={ingredient}
         />
       ))}
