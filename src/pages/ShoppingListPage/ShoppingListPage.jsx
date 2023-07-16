@@ -32,6 +32,11 @@ export default function ShoppingListPage() {
       .catch(error => console.log(error.message));
   }, [ingredients, dispatch]);
 
+  const onDeleteClick = (id) => {
+    dispatch(shoppingListOperations.deleteIngredient(id));
+    console.log(id)
+  };
+
   return (
     <SharedContainer>
       <div>
@@ -51,8 +56,10 @@ export default function ShoppingListPage() {
                 <ProductListItem
                   name={product.name}
                   number={product.measure}
-                  id={product._id}
+                  id={product.newId}
                   url={product.img}
+                  setProducts={setProducts}
+                  onDeleteClick={onDeleteClick}
                 >
                 </ProductListItem>
               </ShoppingListItem>
