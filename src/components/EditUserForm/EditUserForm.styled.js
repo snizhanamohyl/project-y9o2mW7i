@@ -46,12 +46,7 @@ export const FormStyled = styled(Form)`
   }
 `;
 
-export const UserIcon = styled.svg`
-stroke: #c4c4c4;
-
-  &:hover, &:focus {
-  stroke: var(--accent);}
-`;
+export const UserIcon = styled.svg``;
 
 export const PlusIcon = styled.svg`
   position: absolute;
@@ -99,7 +94,12 @@ export const UserImgWrapper = styled.div`
   border-radius: 50%;
   width: 88px;
   height: 88px;
+  transition: border var(--transition-time) var(--transition-function);
 
+  &:hover,
+  &:focus {
+    border: 2px solid var(--accent);
+  }
 
   @media screen and (min-width: 768px) {
     width: 103px;

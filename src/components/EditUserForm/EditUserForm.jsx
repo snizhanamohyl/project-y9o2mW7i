@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from 'redux/auth/selectors';
 import { Formik } from 'formik';
-// import { toast } from 'react-toastify';
 
 import sprite from 'assets/sprite.svg';
 import { updateUser } from 'redux/auth/auth-operations';
@@ -29,24 +28,6 @@ export default function EditUserForm({ handleCloseModal }) {
       }
     dispatch(updateUser(values))
     handleCloseModal();
-
-      // const formData = new FormData();
-
-      // if (values.avatarURL === '') {
-      //   values.avatarURL = user.avatarURL;
-      // }
-
-      // formData.append('name', values.name.trim());
-      // formData.append('avatarURL', values.avatarURL);
-
-
-    
-      // dispatch(updateUser(formData))
-      //   .unwrap()
-      //   .then(() => toast.success('Changes saved!'))
-      //   .catch(() => toast.error('Something went wrong...'));
-      // handleCloseModal();
-
     };
 
     return (
