@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import {updateUserInfo} from 'services/auth-api'
+// import {updateUserInfo} from 'services/auth-api'
 
 axios.defaults.baseURL = 'https://so-yummy-backend-hg4e.onrender.com/api';
 
@@ -85,10 +85,20 @@ export const updateUser = createAsyncThunk(
   '/users/update',
   async (credentials, thunkAPI) => {
     try {
-      const data = await updateUserInfo(credentials);
-      return data;
+      const formData = new FormData();
+      formData.append('name', credentials.name.trim());
+      formData.append('avatarURL', credentials.avatarURL);
+
+      const {data} = await axios.patch('/users/update', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+   
+      });
+           return data;
+
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
+       return thunkAPI.rejectWithValue(error.message);
+     }
   }
 );

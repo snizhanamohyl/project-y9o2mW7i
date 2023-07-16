@@ -1,5 +1,5 @@
 export const initialState = {
-  user: { name: null, email: null, avatarURL: null },
+  user: { name: null, email: null, avatarURL: '' },
   token: null,
   isLoggedIn: false,
   isRefreshing: true,

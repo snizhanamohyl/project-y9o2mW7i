@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from 'redux/auth/selectors';
 import { Formik } from 'formik';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 import sprite from 'assets/sprite.svg';
 import { updateUser } from 'redux/auth/auth-operations';
@@ -23,22 +23,29 @@ export default function EditUserForm({ handleCloseModal }) {
 
     const [pathToUserAvatar, setPathToUserAvatar] = useState(user.avatarURL);
 
-    const handleSubmit = values => {
-      const formData = new FormData();
-
+  const handleSubmit = values => {
       if (values.avatarURL === '') {
         values.avatarURL = user.avatarURL;
       }
+    dispatch(updateUser(values))
+    handleCloseModal();
 
-      formData.append('name', values.name.trim());
-      formData.append('avatarURL', values.avatarURL);
+      // const formData = new FormData();
+
+      // if (values.avatarURL === '') {
+      //   values.avatarURL = user.avatarURL;
+      // }
+
+      // formData.append('name', values.name.trim());
+      // formData.append('avatarURL', values.avatarURL);
+
 
     
-      dispatch(updateUser(formData))
-        .unwrap()
-        .then(() => toast.success('Changes saved!'))
-        .catch(() => toast.error('Something went wrong...'));
-      handleCloseModal();
+      // dispatch(updateUser(formData))
+      //   .unwrap()
+      //   .then(() => toast.success('Changes saved!'))
+      //   .catch(() => toast.error('Something went wrong...'));
+      // handleCloseModal();
 
     };
 
@@ -120,13 +127,6 @@ export default function EditUserForm({ handleCloseModal }) {
                     name="name"
                     id="name"
                     value={props.values.name}
-                    // border={
-                    //   props.touched.name && props.errors.name
-                    //     ? '1px solid #E74A3B'
-                    //     : props.touched.name && props.isValid
-                    //     ? '1px solid #3CBC81'
-                    //     : '1px solid #23262a'
-                    // }
                     onBlur={() => {
                       props.setTouched({
                         name: true,
