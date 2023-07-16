@@ -40,26 +40,17 @@ export const WelcomeWrapper = styled.section`
   }
 `;
 
-export const Logo = styled.svg`
-  width: 54px;
-  height: 54px;
-  margin-bottom: 44px;
-
-  @media screen and (min-width: 768px) {
-    width: 68px;
-    height: 68px;
-  }
-`;
-
 export const StyledTitle = styled.h1`
   color: var(--bg-color);
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.48px;
+  margin-top: 28px;
   margin-bottom: 14px;
 
   @media screen and (min-width: 768px) {
+    margin-top: 44px;
     font-size: 28px;
     letter-spacing: -0.56px;
   }

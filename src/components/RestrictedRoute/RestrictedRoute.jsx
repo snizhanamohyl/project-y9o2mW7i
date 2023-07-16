@@ -12,5 +12,4 @@ export default function RestrictedRoute({
   return isLoggedIn ? <Navigate to={redirectTo} /> : <Component />;
 
   // return <Component />;
-
 }

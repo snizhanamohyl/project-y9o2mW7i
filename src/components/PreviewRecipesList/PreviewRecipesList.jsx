@@ -1,38 +1,31 @@
-import RecipeTitle from "components/RecipeTitle/RecipeTitle";
-import SeeAllBtn from "components/SeeAllBtn/SeeAllBtn";
-import { RecipeItem } from "./PreviewRecipesList.styled";
-import RecipesList from "../RecipesList/RecipesList";
+import { useState, useEffect } from 'react';
+import RecipeTitle from 'components/RecipeTitle/RecipeTitle';
+import SeeAllBtn from 'components/SeeAllBtn/SeeAllBtn';
+import { RecipeItem } from './PreviewRecipesList.styled';
+import RecipesList from '../RecipesList/RecipesList';
+import getAllRecipes from '../../services/getAllRecipes';
+import processData from '../../services/processData';
 
-export default function PreviewRecipesList({ title, breakfastArr,miscellaneousArr, chickenArr, dessertsArr}) {  
-    return (
-        <> 
-        <RecipeItem>
-        <RecipeTitle name={title[0]}/>
-        <RecipesList recipes={breakfastArr}/>            
-        <SeeAllBtn/>        
+export default function PreviewRecipesList() {
+  const [data, setData] = useState([]);
+  const width = window.innerWidth;
+  const pageLimit = width < 768 ? 1 : width >= 1440 ? 4 : 2;
+
+  useEffect(() => {
+    getAllRecipes(pageLimit).then(resp => setData(resp));
+  }, [pageLimit]);
+
+  const recipes = processData(data?.recipes);
+
+  return (
+    <ul>
+      {recipes.map(el => (
+        <RecipeItem key={el.category}>
+          <RecipeTitle name={el.category} />
+          <RecipesList recipes={el.recipes} />
+          <SeeAllBtn category={el.category.toLowerCase()} />
         </RecipeItem>
-
-            
-        <RecipeItem>
-        <RecipeTitle name={title[1]}/>
-        <RecipesList recipes={miscellaneousArr}/>            
-        <SeeAllBtn/>         
-        </RecipeItem>
-
-
-        <RecipeItem>
-        <RecipeTitle name={title[2]}/>
-        <RecipesList recipes={chickenArr}/>            
-        <SeeAllBtn/>         
-        </RecipeItem>
-
-            
-        <RecipeItem>
-        <RecipeTitle name={title[3]}/>
-        <RecipesList recipes={dessertsArr}/>            
-        <SeeAllBtn/>         
-        </RecipeItem>
-         </>
-      
-    ) 
-};
+      ))}
+    </ul>
+  );
+}

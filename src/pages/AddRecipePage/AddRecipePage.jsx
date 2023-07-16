@@ -4,8 +4,11 @@ import FollowUs from 'components/FollowUs/FollowUs';
 import PopularRecipe from 'components/PopularRecipe/PopularRecipe';
 import { Wrapper, Grid } from './AddRecipePage.styled.js';
 import SharedContainer from 'components/SharedContainer/SharedContainer.jsx';
+import useWindowWidth from 'hooks/useWindowWidth.js';
 
 export default function AddRecipePage() {
+  const width = useWindowWidth();
+
   return (
     <SharedContainer isBg>
       <Wrapper>
@@ -13,7 +16,7 @@ export default function AddRecipePage() {
         <Grid>
           <AddRecipeForm />
           <div>
-            <FollowUs />
+            {width >= 1440 && <FollowUs />}
             <PopularRecipe />
           </div>
         </Grid>

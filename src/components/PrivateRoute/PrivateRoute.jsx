@@ -14,5 +14,5 @@ export default function PrivateRoute({
 
   return shouldRedirect ? <Navigate to={redirectTo} /> : <Component />;
 
-
+  // return <Component />;
 }
