@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import sprite from 'assets/sprite.svg';
 import { EditBtn, LogOutBtn } from './PopoverMenu.styled';
 import { logout } from 'redux/auth/auth-operations';
-import EditUserModal from 'components/EditUserModal/EditUserModal';
+import CustomModal from 'components/Modal/Modal'
+import EditUserForm from '../EditUserForm/EditUserForm';
 
 
 export default function PopoverMenu() {
@@ -33,10 +34,9 @@ export default function PopoverMenu() {
       </LogOutBtn>
 
       {isEditModalOpen && (
-        <EditUserModal
-          isOpen={isEditModalOpen}
-          handleCloseModal={toggleModal}
-        />
+        <CustomModal isOpen={isEditModalOpen} handleCloseModal={toggleModal}>
+          <EditUserForm handleCloseModal={toggleModal} />
+        </CustomModal>
       )}
     </>
   );

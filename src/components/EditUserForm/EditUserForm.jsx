@@ -1,7 +1,5 @@
-import ReactDOM from 'react-dom';
 import { useState } from 'react';
 import {useDispatch} from 'react-redux';
-import { Modal } from '@mui/material';
 import { Formik } from 'formik';
 import { toast } from 'react-toastify';
 
@@ -10,17 +8,15 @@ import { useAuth } from 'hooks/useAuth';
 import { updateUser } from 'redux/auth/auth-operations';
 import {updateUserValidationSchema, SUPPORTED_FORMATS} from 'schemas/userUpdateSchema';
 
-import { ModalContent } from './EditUserModal.styled';
-import {CloseIcon, CloseButton} from './ModalContent.styled'
+import { ModalContent } from './ModalContent.styled';
+import {CloseIcon, CloseButton} from './EditUserForm.styled.js'
 
 import {
   FormStyled, UserAvatarWrapper, AvatarLabel, PlusIcon, UserImgWrapper,
   InputButtonWrapper, NameLabel, NameInput, UserIconStyled, EditBtn,
-  EditIcon, SubmitBtn, ErrorMessage} from './ModalContent.styled';
+  EditIcon, SubmitBtn, ErrorMessage} from './EditUserForm.styled.js';
 
-const portal = document.getElementById('modal-root');
-
-export default function EditUserModal({ isOpen, handleCloseModal }) {
+export default function EditUserForm({ handleCloseModal }) {
     const { user } = useAuth();
     const dispatch = useDispatch();
     const [pathToUserAvatar, setPathToUserAvatar] = useState(user.avatar);
@@ -42,10 +38,7 @@ export default function EditUserModal({ isOpen, handleCloseModal }) {
       handleCloseModal();
     };
 
-  if (!isOpen) return null;
-  
-    return ReactDOM.createPortal(
-      <Modal open={isOpen} onClose={handleCloseModal}>
+    return (
 
         <ModalContent>
           <CloseButton type="button" onClick={handleCloseModal}>
@@ -184,7 +177,5 @@ export default function EditUserModal({ isOpen, handleCloseModal }) {
             )}
           </Formik>
         </ModalContent>
-      </Modal>,
-      portal
     );
 }
