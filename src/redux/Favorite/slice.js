@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addRecipeToFavorites, deleteRecipeFromFavorites } from './fetch'
+import { addRecipeToFavorites, deleteRecipeFromFavorites, getAllFavoritList } from './operations'
+import initialState from './initialState';
 
 const handlePending = (state) => {
     state.isLoading = true;
@@ -12,11 +13,7 @@ const handleRejected = (state, action) => {
 
 const favoriteSlice = createSlice({
     name: 'favorite',
-    initialState: {
-      recipeList: [],
-      isLoading: false,
-      error: null,
-    },
+    initialState,
     extraReducers: {
       [addRecipeToFavorites.pending]: handlePending,
       [addRecipeToFavorites.rejected]: handleRejected,
@@ -33,7 +30,20 @@ const favoriteSlice = createSlice({
         const index = state.recipeList.findIndex((recipe) => recipe.id === action.payload);
         state.recipeList.splice(index, 1);
       },
+      [getAllFavoritList.pending]: handlePending,
+      [getAllFavoritList.rejected]: handleRejected,
+      [getAllFavoritList.fulfilled]: (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.recipeList = action.payload;
+      },
+      [logout.fulfilled]: (state) => {
+        state.recipeList = [];
+        state.error = null;
+        state.isLoading = false;
+      },
     },
   });
   
-  export default favoriteSlice.reducer;
+
+  export const favoriteReducer = favoriteSlice.reducer;
