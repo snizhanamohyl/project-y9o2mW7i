@@ -177,6 +177,7 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                       </EditBtn>
                     )}
                   </NameLabel>
+                  
                   {props.errors.name ? (
                     <ErrorMessage>{props.errors.name}</ErrorMessage>
                   ) : null}

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Form, Field } from 'formik';
 
-
 export const CloseButton = styled.button`
   position: absolute;
   top: 24px;
@@ -44,6 +43,22 @@ export const FormStyled = styled(Form)`
   }
 `;
 
+export const PlusIcon = styled.svg`
+  position: absolute;
+  bottom: -5px;
+  right: 110px;
+
+  @media screen and (min-width: 768px) {
+    top: 131px;
+    right: 198px;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 85px;
+    left: 208px;
+  }
+`;
+
 export const UserAvatarWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -63,22 +78,7 @@ export const UserAvatarWrapper = styled.div`
 
 export const AvatarLabel = styled.label`
 cursor: pointer;
-`
-export const PlusIcon = styled.svg`
-    position: absolute;
-    top: 102px;
-    right: 134px;
-
-    @media screen and (min-width: 768px) {
-      top: 131px;
-      right: 198px;
-    }
-
-    @media screen and (min-width: 768px) {
-      top: 141px;
-      right: 208px;
-    }
-  `;
+`;
 
 export const UserImgWrapper = styled.div`
   display: flex;
@@ -91,7 +91,7 @@ export const UserImgWrapper = styled.div`
   height: 88px;
 
   @media screen and (min-width: 768px) {
-       width: 103px;
+    width: 103px;
     height: 103px;
    }
 
@@ -105,8 +105,6 @@ export const UserImgWrapper = styled.div`
     }
   }
 `;
-
-  
 
  export const InputButtonWrapper = styled.div`
   display: flex;
@@ -238,13 +236,13 @@ export const SubmitBtn = styled.button`
   }
 `;
 
-  export const ErrorMessage = styled.p`
-    position: absolute;
-    color: red;
-top: 50 %;`
+export const ErrorMessage = styled.p`
+  position: absolute;
+  color: red;
+  top: 50%; 
 
   
-    /* left: ${p => (p.location === 'file' ? '24px' : '0')};
+    left: ${p => (p.location === 'file' ? '24px' : '0')};
     transform: ${p =>
       p.location === 'file' ? 'translateY(-150%)' : 'translateY(-50%)'};
     font-size: 11px;
@@ -256,5 +254,4 @@ top: 50 %;`
 
     @media screen and (min-width: 1440px) {
       left: ${p => (p.location === 'file' ? '50px' : '0')};
-    } */
-  
+    }`;
