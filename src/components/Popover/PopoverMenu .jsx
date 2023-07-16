@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import sprite from 'assets/sprite.svg';
 import { EditBtn, LogOutBtn } from './PopoverMenu.styled';
-import { logout } from 'redux/auth/auth-operations';
+// import { logout } from 'redux/auth/auth-operations';
 import CustomModal from 'components/Modal/Modal'
 import EditUserForm from '../EditUserForm/EditUserForm';
+import LogoutModal from 'components/LogoutModal/LogoutModal';
 
 
 export default function PopoverMenu() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isLogoutModalOpen, setLogoutModalOpen] = useState(false);
 
-  const toggleModal =() => {setIsEditModalOpen(!isEditModalOpen);}
+  const toggleEditModal = () => { setIsEditModalOpen(!isEditModalOpen); }
+  const toggleLogoutModal = () => { setLogoutModalOpen(!isLogoutModalOpen);}
 
   return (
     <>
-      <EditBtn type="button" onClick={toggleModal}>
+      <EditBtn type="button" onClick={toggleEditModal}>
         Edit profile
         <svg width="14" height="14">
           <use href={`${sprite}#icon-pencil`}></use>
@@ -23,9 +26,10 @@ export default function PopoverMenu() {
       </EditBtn>
       <LogOutBtn
         type="button"
-        onClick={() => {
-          dispatch(logout());
-        }}
+        onClick={toggleLogoutModal}
+        // onClick={() => {
+        //   dispatch(logout());
+        // }}
       >
         Log out
         <svg width="18" height="18">
@@ -34,8 +38,20 @@ export default function PopoverMenu() {
       </LogOutBtn>
 
       {isEditModalOpen && (
-        <CustomModal isOpen={isEditModalOpen} handleCloseModal={toggleModal}>
-          <EditUserForm handleCloseModal={toggleModal} />
+        <CustomModal
+          isOpen={isEditModalOpen}
+          handleCloseModal={toggleEditModal}
+        >
+          <EditUserForm handleCloseModal={toggleEditModal} />
+        </CustomModal>
+      )}
+
+      {isLogoutModalOpen && (
+        <CustomModal
+          isOpen={isLogoutModalOpen}
+          handleCloseModal={toggleLogoutModal}
+        >
+          <LogoutModal handleCloseModal={toggleLogoutModal} />
         </CustomModal>
       )}
     </>
