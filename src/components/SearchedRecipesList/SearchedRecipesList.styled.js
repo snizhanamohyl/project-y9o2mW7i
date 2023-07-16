@@ -1,6 +1,11 @@
 import { Loader } from 'pages/SigninPage/SigninPage.styled';
 import { styled } from 'styled-components';
 
+export const Wrapper = styled.div`
+  position: relative;
+  min-height: 280px;
+`;
+
 export const Spinner = styled(Loader)`
   position: absolute;
   top: 60%;

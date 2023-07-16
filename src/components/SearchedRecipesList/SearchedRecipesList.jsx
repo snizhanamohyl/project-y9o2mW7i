@@ -6,7 +6,7 @@ import useWindowWidth from 'hooks/useWindowWidth';
 import SearchProducts from 'services/search-api';
 import EmptyPage from 'components/EmptyPage/EmptyPage';
 import RecipesList from 'components/RecipesList/RecipesList';
-import { Spinner } from './SearchedRecipesList.styled';
+import { Spinner, Wrapper } from './SearchedRecipesList.styled';
 
 export default function SearchedRecipesList() {
   const [items, setItems] = useState([]);
@@ -36,7 +36,7 @@ export default function SearchedRecipesList() {
   }, [query, type]);
 
   return (
-    <>
+    <Wrapper>
       {isLoading ? (
         <Spinner>
           <Oval
@@ -55,6 +55,6 @@ export default function SearchedRecipesList() {
       ) : (
         <RecipesList recipes={items} />
       )}
-    </>
+    </Wrapper>
   );
 }
