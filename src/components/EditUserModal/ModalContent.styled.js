@@ -19,176 +19,6 @@ export const CloseIcon = styled.svg`
     height: 24px;
   }
 `;
-// export const UploadWindow = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   margin: auto;
-//   margin-bottom: 54px;
-//   background-color: var(--iconAvatar);
-//   border-radius: 50%;
-//   width: 88px;
-//   height: 88px;
-
-//   @media screen and (min-width: 768px) {
-//     width: 103px;
-//     height: 103px;
-//   }
-// `;
-
-// export const UploadLabel = styled.label`
-//   cursor: pointer;
-// `;
-
-// export const UserIconAvatar = styled.svg``;
-
-// export const PlusIcon = styled.svg`
-//   position: absolute;
-//   top: 102px;
-//   right: 134px;
-
-//   @media screen and (min-width: 768px) {
-//     top: 131px;
-//     right: 198px;
-//   }
-
-//   @media screen and (min-width: 768px) {
-//     top: 141px;
-//     right: 208px;
-//   }
-// `;
-
-// export const UploadInput = styled.input`
-//   display: none;
-//   width: 40px;
-//   height: 40px;
-// `;
-
-// export const Form = styled.form`
-//     display: block;
-//     width: 100%;
-// `
-
-
-
-
-
-
-
-// export const UserIcon = styled.svg`
-//   position: absolute;
-//   bottom: 119px;
-//   left: 38px;
-//   height: 18px;
-//   width: 18px;
-
-//   @media screen and (min-width: 768px) {
-//     bottom: 148px;
-//     left: 59px;
-//     height: 24px;
-//     width: 24px;
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     bottom: 160px;
-//     left: 69px;
-//   }
-// `;
-
-// export const PencilIcon = styled.svg`
-//   position: absolute;
-//   bottom: 112px;
-//   right: 38px;
-//   height: 17px;
-//   width: 17px;
-//   translate: 0 -50%;
-//   /* fill: transparent; */
-
-//   @media screen and (min-width: 768px) {
-//     bottom: 141px;
-//     right: 59px;
-//     height: 19px;
-//     width: 19px;
-
-//     @media screen and (min-width: 1440px) {
-//       bottom: 152px;
-//       right: 68px;
-//     }
-//   }
-// `;
-
-  
-// const slideDown = keyframes`
-//   0% {
-//     opacity: 0;
-//   }
-//   100% {
-//     opacity: 1;
-//   }
-// `;
-
-// const slideUpAndFadeOut = keyframes`
-//   0% {
-//     opacity: 1;
-//   }
-//   100% {
-//     opacity: 0;
-//   }
-// `;
-
-// export const ModalWrapper = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   width: 330px;
-//   height: 327px;
-//   padding: 32px 24px;
-//   background-color: ${p => p.theme.colors.bodyBg};
-//   box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.1);
-//   border-radius: ${p => p.theme.radii.modal};
-//   animation: ${p => (p.isShown ? slideDown : slideUpAndFadeOut)} 500ms
-//     ease-in-out ${p => (p.isShown ? '0ms' : '250ms')};
-
-//   @media screen and (min-width: 768px) {
-//     width: 480px;
-//     height: 402px;
-//     padding: 50px 40px;
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//     width: 500px;
-//     height: 425px;
-//     padding: 60px 50px;
-//   }
-// `;
-
-// export const CloseBtn = styled.button`
-//   position: absolute;
-//   top: 18px;
-//   right: 18px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   padding: 0;
-//   background-color: transparent;
-//   border: none;
-
-//   @media screen and (min-width: 768px) {
-//     top: 24px;
-//     right: 24px;
-//   }
-// `;
-// export const CrossIconStyled = styled(CrossIcon)`
-//   width: 20px;
-//   height: 20px;
-//   stroke: ${p => p.theme.colors.mainBtnText};
-
-//   @media screen and (min-width: 768px) {
-//     width: 24px;
-//     height: 24px;
-//   }
-// `;
 
 export const FormStyled = styled(Form)`
   input[type='file'] {
@@ -205,6 +35,7 @@ export const FormStyled = styled(Form)`
     width: 88px;
     height: 88px;
     border-radius: 50%;
+    cursor: pointer;
 
     @media screen and (min-width: 768px) {
       width: 103px;
@@ -220,6 +51,7 @@ export const UserAvatarWrapper = styled.div`
   position: relative;
   margin-bottom: 54px;
 
+
   @media screen and (min-width: 768px) {
     margin-bottom: 50px;
   }
@@ -234,7 +66,6 @@ export const UserImgWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
-  margin-bottom: 54px;
   background-color: var(--iconAvatar);
   border-radius: 50%;
   width: 88px;
