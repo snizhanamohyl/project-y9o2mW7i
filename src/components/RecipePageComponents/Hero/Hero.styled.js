@@ -9,11 +9,10 @@ import bgDeskRetina from 'assets/images/desktop/recipePage-hero-bg-2x.jpg';
 import { retina } from 'vars/styles';
 
 export const SectionHero = styled.section`
-  width: 100%;
+  min-width: 375px;
 
   display: flex;
-  /* margin-left: auto;
-  margin-right: auto; */
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
