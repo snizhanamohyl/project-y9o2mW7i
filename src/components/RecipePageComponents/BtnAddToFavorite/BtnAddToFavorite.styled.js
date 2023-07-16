@@ -15,12 +15,18 @@ export const BtnAddFavorite = styled.button`
 
   font-size: 10px;
   line-height: normal;
-  &:focus,
+  &:focus {
+    background: ${props =>
+      props.$isAddedToFavorite ? 'transparent' : 'var(--accent)'};
+    color: ${props =>
+      props.$isAddedToFavorite ? 'var(--dark-accent)' : 'var(--bg-color)'};
+  }
+
   &:hover {
     background: ${props =>
-      props.$isAddedToFavorite ? 'var(--accent)' : 'transparent'};
+      props.$isAddedToFavorite ? 'transparent' : 'var(--accent)'};
     color: ${props =>
-      props.$isAddedToFavorite ? 'var(--bg-color)' : 'var(--dark-accent)'};
+      props.$isAddedToFavorite ? 'var(--dark-accent)' : 'var(--bg-color)'};
   }
 
   @media (min-width: 768px) {

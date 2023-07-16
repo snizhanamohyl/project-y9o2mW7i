@@ -10,7 +10,7 @@ export default function BtnAddToFavorite({ isAddedToFavorite, id, onClick }) {
     >
       {isAddedToFavorite
         ? 'Added to favorite recipes'
-        : 'Remove to favorite recipes'}
+        : 'Remove from favorite recipes'}
     </BtnAddFavorite>
   );
 }
