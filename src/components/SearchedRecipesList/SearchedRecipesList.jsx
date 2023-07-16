@@ -8,10 +8,9 @@ import EmptyPage from 'components/EmptyPage/EmptyPage';
 import RecipesList from 'components/RecipesList/RecipesList';
 import { Spinner, Wrapper } from './SearchedRecipesList.styled';
 
-export default function SearchedRecipesList() {
+export default function SearchedRecipesList({ isLoading, changeLoadingState }) {
   const [items, setItems] = useState([]);
   const [message, setMessage] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [searchParams] = useSearchParams();
   const query = searchParams.get('query');
   const type = searchParams.get('type');
@@ -20,7 +19,7 @@ export default function SearchedRecipesList() {
 
   useEffect(() => {
     if (!query || !type) return setMessage('Type your request');
-    setIsLoading(true);
+    changeLoadingState(true);
     SearchProducts(type, query)
       .then(data => {
         if (!Array.isArray(data)) {
@@ -31,7 +30,7 @@ export default function SearchedRecipesList() {
       })
       .catch(err => console.log(err.message))
       .finally(() => {
-        setIsLoading(false);
+        changeLoadingState(false);
       });
   }, [query, type]);
 

@@ -1,12 +1,9 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { Button, Form, Input } from './SearchForm.styled';
-import { useSelector } from 'react-redux';
-import { getIsLoading } from 'redux/auth/selectors';
 
-export default function SearchForm({ onSubmit, query }) {
+export default function SearchForm({ onSubmit, query, isLoading }) {
   const navigate = useNavigate();
-  const isLoading = useSelector(getIsLoading);
   const { pathname } = useLocation();
   const isSearchPage = pathname.includes('/search');
 

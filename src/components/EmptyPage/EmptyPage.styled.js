@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Image = styled.picture`
   display: block;
-  margin: 50px auto 0 auto;
+  margin: 0 auto;
   width: 208px;
   height: 133px;
   @media (min-width: 768px) {

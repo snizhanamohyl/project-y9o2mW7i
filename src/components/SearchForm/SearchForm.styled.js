@@ -77,6 +77,10 @@ export const Button = styled.button`
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    &:hover,
+    &:focus {
+      background-color: var(--accent);
+    }
   }
 
   @media (min-width: 768px) {

@@ -10,13 +10,13 @@ const srcsetDesk = `${searchFailedDesk} 1x, ${searchFailedDeskRet} 2x`;
 
 export default function SearchFailed({ description }) {
   return (
-    <div>
+    <>
       <Image>
         <source srcSet={srcsetDesk} media="(min-width: 768px)" />
         <source srcSet={srcsetMob} media="(max-width: 767px)" />
         <img src={searchFailedDesk} alt="Not found"></img>
       </Image>
       <Description>{description}</Description>
-    </div>
+    </>
   );
 }

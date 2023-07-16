@@ -3,7 +3,11 @@ import { styled } from 'styled-components';
 
 export const Wrapper = styled.div`
   position: relative;
-  min-height: 280px;
+  min-height: 333px;
+  margin-top: 50px;
+  @media (min-width: 768px) {
+    min-height: 322px;
+  }
 `;
 
 export const Spinner = styled(Loader)`
