@@ -57,6 +57,7 @@ export const authSlice = createSlice({
     },
     [refreshUser.rejected](state, action) {
       state.isRefreshing = false;
+      state.allowRefreshUser = action.payload;
     },
   },
 });

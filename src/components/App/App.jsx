@@ -1,7 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { refreshUser } from 'redux/auth/auth-operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, refreshUser } from 'redux/auth/auth-operations';
+// import { getAllowRefreshUser, getIsLoggedIn } from 'redux/auth/selectors';
+// import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 import RestrictedRoute from 'components/RestrictedRoute/RestrictedRoute';
@@ -10,6 +12,7 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import SigninPage from 'pages/SigninPage/SigninPage';
 import WelcomePage from 'pages/WelcomePage/WelcomePage';
+import { getAllowRefreshUser, getIsLoggedIn } from 'redux/auth/selectors';
 
 // import NotFound from "components/NotFound/NotFound";
 
@@ -33,10 +36,16 @@ const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 export default function App() {
   const dispatch = useDispatch();
+  const allowRefreshUser = useSelector(getAllowRefreshUser);
+  const isLoggedIn = useSelector(getIsLoggedIn);
 
   useEffect(() => {
     dispatch(refreshUser());
-  }, [dispatch]);
+
+    if (allowRefreshUser === false && isLoggedIn) {
+      dispatch(logout());
+    }
+  }, [dispatch, isLoggedIn, allowRefreshUser]);
 
   return (
     <Routes>
@@ -57,52 +66,36 @@ export default function App() {
 
         <Route
           path="/categories"
-          element={
-            <PrivateRoute component={CategoriesPage} />
-          }
+          element={<PrivateRoute component={CategoriesPage} />}
         ></Route>
         <Route
           path="/categories/:categoryName"
-          element={
-            <PrivateRoute
-              component={CategoriesPage}
-            />
-          }
+          element={<PrivateRoute component={CategoriesPage} />}
         ></Route>
         <Route
           path="/add"
-          element={<PrivateRoute component={AddRecipePage}/>}
+          element={<PrivateRoute component={AddRecipePage} />}
         ></Route>
 
         <Route
           path="/recipe/:recipeId"
-          element={
-            <PrivateRoute
-              component={RecipePage}
-            />
-          }
+          element={<PrivateRoute component={RecipePage} />}
         ></Route>
         <Route
           path="/my"
-          element={<PrivateRoute component={MyRecipesPage}/>}
+          element={<PrivateRoute component={MyRecipesPage} />}
         ></Route>
         <Route
           path="/favorite"
-          element={
-            <PrivateRoute component={FavoritePage} />
-          }
+          element={<PrivateRoute component={FavoritePage} />}
         ></Route>
         <Route
           path="/shopping-list"
-          element={
-            <PrivateRoute
-              component={ShoppingListPage}
-            />
-          }
+          element={<PrivateRoute component={ShoppingListPage} />}
         ></Route>
         <Route
           path="/search"
-          element={<PrivateRoute component={SearchPage}/>}
+          element={<PrivateRoute component={SearchPage} />}
         ></Route>
         <Route
           path="*"
