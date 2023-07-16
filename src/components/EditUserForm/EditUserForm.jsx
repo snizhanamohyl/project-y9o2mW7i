@@ -21,7 +21,7 @@ export default function EditUserForm({ handleCloseModal }) {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
 
-    const [pathToUserAvatar, setPathToUserAvatar] = useState(user.avatarURL);
+  const [pathToUserAvatar, setPathToUserAvatar] = useState(user.avatarURL);
 
   const handleSubmit = values => {
       if (values.avatarURL === '') {
