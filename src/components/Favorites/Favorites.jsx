@@ -18,7 +18,7 @@ const Favorites = () => {
 
 
     useEffect(() => {
-        dispatch().then(data => setRecipes(data))
+        dispatch(setRecipes(recipesAll))
     }, [recipesAll, dispatch]);
 
 

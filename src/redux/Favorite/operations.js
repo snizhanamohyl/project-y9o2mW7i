@@ -4,11 +4,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 const API_BASE_URL = 'https://so-yummy-backend-hg4e.onrender.com/api'; 
 
 export const getAllFavoritList = createAsyncThunk(
-  'favorite/allRecipe',
+  'favorite',
   async (_, { rejectWithValue }) => {
     try {
 
-      const { data } = await axios.get(`${API_BASE_URL}/recipes`);
+      const { data } = await axios.get(`https://64a8b750dca581464b85f54e.mockapi.io/recipes`);
       return data;
 
     } catch (error) {
