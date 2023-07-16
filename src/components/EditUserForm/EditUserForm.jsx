@@ -1,11 +1,10 @@
 import { useState } from 'react';
-// import { Navigate } from 'react-router-dom';
-import {useDispatch} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser } from 'redux/auth/selectors';
 import { Formik } from 'formik';
 import { toast } from 'react-toastify';
 
 import sprite from 'assets/sprite.svg';
-import { useAuth } from 'hooks/useAuth';
 import { updateUser } from 'redux/auth/auth-operations';
 import {updateUserValidationSchema, SUPPORTED_FORMATS} from 'schemas/userUpdateSchema';
 
@@ -18,8 +17,9 @@ import {
   EditIcon, SubmitBtn, ErrorMessage, UserIcon} from './EditUserForm.styled.js';
 
 export default function EditUserForm({ handleCloseModal }) {
-    const { user } = useAuth();
+
   const dispatch = useDispatch();
+  const user = useSelector(getUser);
 
     const [pathToUserAvatar, setPathToUserAvatar] = useState(user.avatarURL);
 
