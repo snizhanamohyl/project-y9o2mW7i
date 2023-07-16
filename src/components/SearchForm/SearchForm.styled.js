@@ -47,13 +47,6 @@ export const Input = styled.input`
   &::placeholder {
     color: var(--placeholder-color);
   }
-  /*   
-  &:-internal-autofill-selected {
-    appearance: none;
-    background-image: none !important;
-    background-color: inherit !important;
-    color: inherit !important;
-  } */
 
   @media (min-width: 768px) {
     font-size: 16px;
@@ -66,7 +59,6 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-  position: relative;
   height: calc(100% + 2px);
   padding: 16px 32px;
   font-size: 14px;
@@ -85,11 +77,6 @@ export const Button = styled.button`
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-  }
-  & div {
-    position: absolute;
-    top: 10px;
-    right: 10px;
   }
 
   @media (min-width: 768px) {
