@@ -28,7 +28,7 @@ import {
   UserIconStyled,
   EditBtn,
   EditIcon,
-  // SubmitBtn,
+  SubmitBtn,
   ErrorMessage,
 } from './ModalContent.styled';
 
@@ -175,23 +175,20 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                     <ErrorMessage>{props.errors.name}</ErrorMessage>
                   ) : null}
 
-                  
-                  {/* <SubmitBtn
-                    type="submit"
-                    disabled={
-                      !(
-                        (props.touched.name &&
-                          props.values.name &&
-                          !props.errors.name) ||
-                        (props.touched.avatar &&
-                          props.values.avatar &&
-                          !props.errors.avatar)
-                      )
-                    }
-                  >
-                    {'editUser.saveBtn'} */}{' '}
-                  */}
-                  {/* </SubmitBtn> */}
+                  <SubmitBtn
+                type="submit"
+                disabled={
+                  !(
+                    (props.touched.name &&
+                      props.values.name &&
+                      !props.errors.name) ||
+                    (props.touched.avatar &&
+                      props.values.avatar &&
+                      !props.errors.avatar)
+                  )
+                }
+              > Save changes
+              </SubmitBtn>
                 </InputButtonWrapper>
               </FormStyled>
             )}

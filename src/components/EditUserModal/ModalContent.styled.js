@@ -117,36 +117,7 @@ export const CloseIcon = styled.svg`
 //   }
 // `;
 
-// export const SaveButton = styled.button`
-//   display: flex;
-//   width: 100%;
-//   height: 49px;
-//   margin-top: 24px;
-
-//   justify-content: center;
-//   align-items: center;
-//   border-radius: 6px;
-//   background: var(--accent);
-//   color: var(--bg-color);
-//   line-height: 1.28;
-//   transition: color var(--transition-time) var(--transition-function);
-
-//   &:hover,
-//   &:focus {
-//     color: var(--dark-accent);
-//   }
-
-//   @media screen and (min-width: 768px) {
-//     font-size: 16px;
-//     line-height: 1.12;
-//   }
-// `;
-
-
-
-
-
-
+  
 // const slideDown = keyframes`
 //   0% {
 //     opacity: 0;
@@ -376,21 +347,17 @@ export const EditIcon = styled.svg`
   }
 `;
 
-/* export const SubmitBtn = styled.button`
+export const SubmitBtn = styled.button`
   width: 282px;
   height: 49px;
   padding: 14px 84px;
-  background-color: ${p => p.theme.colors.mainAccent};
-  border-radius: ${p => p.theme.radii.btnStandart};
+
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--bg-color);
+  line-height: 1.28;
+  transition: color var(--transition-time) var(--transition-function);
   border: none;
-
-  font-family: ${p => p.theme.fonts.btnStandart};
-  line-height: ${p => p.theme.lineHeights.extraContent};
-  font-size: 14px;
-  white-space: nowrap;
-
-  color: ${p => p.theme.colors.btnTextLight};
-  transition: ${p => p.theme.transitions.main};
 
   &:disabled {
     opacity: 0.7;
@@ -402,19 +369,22 @@ export const EditIcon = styled.svg`
     height: 59px;
     padding: 18px 143px;
     font-size: 16px;
-    line-height: ${p => p.theme.lineHeights.btnText};
+    line-height: 1.12;
   }
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.colors.btnHoverBg};
-  } */ 
+    color: var(--dark-accent);
+  }
+`;
 
   export const ErrorMessage = styled.p`
     position: absolute;
     color: red;
-    top: 50%;
-    left: ${p => (p.location === 'file' ? '24px' : '0')};
+top: 50 %;`
+
+  
+    /* left: ${p => (p.location === 'file' ? '24px' : '0')};
     transform: ${p =>
       p.location === 'file' ? 'translateY(-150%)' : 'translateY(-50%)'};
     font-size: 11px;
@@ -426,5 +396,5 @@ export const EditIcon = styled.svg`
 
     @media screen and (min-width: 1440px) {
       left: ${p => (p.location === 'file' ? '50px' : '0')};
-    }
-  `;
+    } */
+  
