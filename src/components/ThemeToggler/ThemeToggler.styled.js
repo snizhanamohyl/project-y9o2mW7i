@@ -5,7 +5,7 @@ export const SwitchBody = styled.button`
   height: 27px;
   position: relative;
   border-radius: 50px;
-  background-color: #efefef;
+  background-color: var(--dark-togler-bg);
   box-shadow: 0px 6px 8px 3px rgba(0, 0, 0, 0.1) inset;
 
   ${({ $customerStyles }) => $customerStyles}
@@ -24,3 +24,5 @@ export const Switch = styled.div`
     mode === 'light' ? 'translate(0, -50%)' : 'translate(-100%, -50%)'};
   transition: all var(--transition-time) var(--transition-function);
 `;
+// background-color: ${({ children }) =>
+//   children.props.mode === 'light' ? '#efefef' : 'var(--accent)'}

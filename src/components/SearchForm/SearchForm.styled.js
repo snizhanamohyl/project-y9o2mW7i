@@ -19,7 +19,7 @@ export const Form = styled.form`
   &:focus-within,
   &:hover,
   &:focus {
-    border-color: rgba(35, 38, 42, 0.2);
+    border-color: var(--input-border-color-focus);
   }
 
   @media (min-width: 768px) {
