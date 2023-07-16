@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 export const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
 
 export const updateUserValidationSchema = Yup.object().shape({
-  avatar: Yup.mixed()
+  avatarURL: Yup.mixed()
     .test('type', 'Only PNG, JPEG and JPG formats are supported', value => {
       return !value || (value && SUPPORTED_FORMATS.includes(value?.type));
     })

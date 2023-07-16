@@ -59,8 +59,8 @@ export const authSlice = createSlice({
       state.isRefreshing = false;
     },
     [updateUser.fulfilled](state, action) {
-      state.user.name = action.payload.data.user.name;
-      state.user.avatarURL = action.payload.data.user.avatarURL;
+      state.user.name = action.payload.name;
+      state.user.avatarURL = action.payload.avatarURL;
     },
     [updateUser.pending](state, action) {
        state.isLoading = true;
