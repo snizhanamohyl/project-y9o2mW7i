@@ -10,6 +10,7 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import SigninPage from 'pages/SigninPage/SigninPage';
 import WelcomePage from 'pages/WelcomePage/WelcomePage';
+import { getAllShoppingList } from 'redux/ShopingList/operations';
 
 // import NotFound from "components/NotFound/NotFound";
 
@@ -36,6 +37,7 @@ export default function App() {
 
   useEffect(() => {
     dispatch(refreshUser());
+    dispatch(getAllShoppingList());
   }, [dispatch]);
 
   return (
@@ -57,52 +59,36 @@ export default function App() {
 
         <Route
           path="/categories"
-          element={
-            <PrivateRoute component={CategoriesPage} />
-          }
+          element={<PrivateRoute component={CategoriesPage} />}
         ></Route>
         <Route
           path="/categories/:categoryName"
-          element={
-            <PrivateRoute
-              component={CategoriesPage}
-            />
-          }
+          element={<PrivateRoute component={CategoriesPage} />}
         ></Route>
         <Route
           path="/add"
-          element={<PrivateRoute component={AddRecipePage}/>}
+          element={<PrivateRoute component={AddRecipePage} />}
         ></Route>
 
         <Route
           path="/recipe/:recipeId"
-          element={
-            <PrivateRoute
-              component={RecipePage}
-            />
-          }
+          element={<PrivateRoute component={RecipePage} />}
         ></Route>
         <Route
           path="/my"
-          element={<PrivateRoute component={MyRecipesPage}/>}
+          element={<PrivateRoute component={MyRecipesPage} />}
         ></Route>
         <Route
           path="/favorite"
-          element={
-            <PrivateRoute component={FavoritePage} />
-          }
+          element={<PrivateRoute component={FavoritePage} />}
         ></Route>
         <Route
           path="/shopping-list"
-          element={
-            <PrivateRoute
-              component={ShoppingListPage}
-            />
-          }
+          element={<PrivateRoute component={ShoppingListPage} />}
         ></Route>
         <Route
           path="/search"
-          element={<PrivateRoute component={SearchPage}/>}
+          element={<PrivateRoute component={SearchPage} />}
         ></Route>
         <Route
           path="*"
