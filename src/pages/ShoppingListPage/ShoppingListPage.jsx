@@ -32,10 +32,6 @@ export default function ShoppingListPage() {
       .catch(error => console.log(error.message));
   }, [ingredients, dispatch]);
 
-  // const onDeleteClick = (id) => {
-  //   dispatch(shoppingListOperations.deleteIngredient(id));
-  // };
-
   return (
     <SharedContainer>
       <div>

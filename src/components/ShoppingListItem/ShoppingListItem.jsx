@@ -20,7 +20,8 @@ export default function ProductListItem({
   const dispatch = useDispatch();
 
   const onDeleteClick = () => {
-    dispatch(shoppingListOperations.deleteIngredient({id}));
+    dispatch(shoppingListOperations.deleteIngredient(id));
+    console.log(id)
   };
 
   return (
