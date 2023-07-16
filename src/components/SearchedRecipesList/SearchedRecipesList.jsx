@@ -1,10 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { Oval } from 'react-loader-spinner';
-import { setIsLoading } from 'redux/auth/auth-slice';
-import { getIsLoading } from 'redux/auth/selectors';
 import useWindowWidth from 'hooks/useWindowWidth';
 import SearchProducts from 'services/search-api';
 import EmptyPage from 'components/EmptyPage/EmptyPage';
@@ -12,11 +9,10 @@ import RecipesList from 'components/RecipesList/RecipesList';
 import { Spinner } from './SearchedRecipesList.styled';
 
 export default function SearchedRecipesList() {
-  const dispatch = useDispatch();
   const [items, setItems] = useState([]);
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [searchParams] = useSearchParams();
-  const isLoading = useSelector(getIsLoading);
   const query = searchParams.get('query');
   const type = searchParams.get('type');
   const width = useWindowWidth();
@@ -24,7 +20,7 @@ export default function SearchedRecipesList() {
 
   useEffect(() => {
     if (!query || !type) return setMessage('Type your request');
-    dispatch(setIsLoading(true));
+    setIsLoading(true);
     SearchProducts(type, query)
       .then(data => {
         if (!Array.isArray(data)) {
@@ -35,13 +31,13 @@ export default function SearchedRecipesList() {
       })
       .catch(err => console.log(err.message))
       .finally(() => {
-        dispatch(setIsLoading(false));
+        setIsLoading(false);
       });
   }, [query, type]);
 
   return (
     <>
-      {isLoading && (
+      {isLoading ? (
         <Spinner>
           <Oval
             height={spinnerSize}
@@ -49,13 +45,12 @@ export default function SearchedRecipesList() {
             color="#fafafa"
             visible={true}
             ariaLabel="oval-loading"
-            secondaryColor="#000"
+            secondaryColor="#8BAA36"
             strokeWidth={8}
             strokeWidthSecondary={8}
           />
         </Spinner>
-      )}
-      {!items || items.length === 0 ? (
+      ) : !items || items.length === 0 ? (
         <EmptyPage description={message} />
       ) : (
         <RecipesList recipes={items} />

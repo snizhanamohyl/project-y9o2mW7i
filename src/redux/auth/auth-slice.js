@@ -5,14 +5,6 @@ import { initialState } from './initial-state';
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {
-    setIsLoading(state, action) {
-      if (action.payload === true) state.isLoading = true;
-      else {
-        state.isLoading = false;
-      }
-    },
-  },
   extraReducers: {
     [register.pending](state, action) {
       state.isLoading = true;
@@ -69,5 +61,4 @@ export const authSlice = createSlice({
   },
 });
 
-export const { setIsLoading } = authSlice.actions;
 export const authReducer = authSlice.reducer;
