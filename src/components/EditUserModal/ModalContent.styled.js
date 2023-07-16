@@ -64,6 +64,21 @@ export const UserAvatarWrapper = styled.div`
 export const AvatarLabel = styled.label`
 cursor: pointer;
 `
+export const PlusIcon = styled.svg`
+    position: absolute;
+    top: 102px;
+    right: 134px;
+
+    @media screen and (min-width: 768px) {
+      top: 131px;
+      right: 198px;
+    }
+
+    @media screen and (min-width: 768px) {
+      top: 141px;
+      right: 208px;
+    }
+  `;
 
 export const UserImgWrapper = styled.div`
   display: flex;

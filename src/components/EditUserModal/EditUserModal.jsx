@@ -22,6 +22,7 @@ import {
   FormStyled,
   UserAvatarWrapper,
   AvatarLabel,
+  PlusIcon, 
   UserImgWrapper,
   InputButtonWrapper,
   NameLabel,
@@ -100,10 +101,9 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                         </svg>
                       </UserImgWrapper>
                     )}
-                    //{' '}
+
                     <PlusIcon width="24px" height="24px">
-                      // <use href={`${sprite}#icon-plus-avatar`}></use>
-                      //{' '}
+                       <use href={`${sprite}#icon-plus-avatar`}></use>                    
                     </PlusIcon>
                   </AvatarLabel>
                   <input
