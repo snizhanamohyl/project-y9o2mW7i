@@ -7,8 +7,10 @@ import Button from 'components/Button/Button';
 import { Form } from './AddRecipeForm.styled';
 import { newRecipeSchema } from 'schemas/newRecipeSchema';
 import { addRecipe } from 'services/addRecipe';
+import { useNavigate } from 'react-router';
 
 export default function AddRecipeForm() {
+  const navigate = useNavigate();
   const formik = useFormik({
     validateOnBlur: false,
     validateOnChange: false,
@@ -22,14 +24,19 @@ export default function AddRecipeForm() {
       instructions: '',
     },
     validationSchema: newRecipeSchema,
-    onSubmit: values => {
-      const { preview, ...otherProperties } = values;
-      const formData = new FormData();
+    onSubmit: async values => {
+      try {
+        const { preview, ...otherProperties } = values;
+        const formData = new FormData();
 
-      formData.append('preview', preview);
-      formData.append('data', JSON.stringify(otherProperties));
+        formData.append('preview', preview);
+        formData.append('data', JSON.stringify(otherProperties));
 
-      addRecipe(formData);
+        await addRecipe(formData);
+        navigate('/my');
+      } catch (error) {
+        console.log(error.message);
+      }
     },
   });
 
