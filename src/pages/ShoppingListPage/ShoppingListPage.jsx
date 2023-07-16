@@ -9,7 +9,7 @@ import ProductListItem from 'components/ShoppingListItem/ShoppingListItem';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
-import * as shoppingListOperations from 'redux/ShopingList/operations';
+import { deleteIngredient, getAllShoppingList } from 'redux/ShopingList/operations';
 import { getShoppingList } from 'redux/ShopingList/selectors';
 import fetchShoppingList from 'services/fetchShoppingList';
 
@@ -19,10 +19,11 @@ export default function ShoppingListPage() {
   const dispatch = useDispatch();
 
   const ingredients = useSelector(getShoppingList);
+  console.log(ingredients)
 
   useEffect(() => {
     if (ingredients !== []) {
-      dispatch(shoppingListOperations.getAllShoppingList());
+      dispatch(getAllShoppingList());
       setProducts(ingredients)
     }
     fetchShoppingList()
@@ -33,7 +34,7 @@ export default function ShoppingListPage() {
   }, [ingredients, dispatch]);
 
   const onDeleteClick = (id) => {
-    dispatch(shoppingListOperations.deleteIngredient(id));
+    dispatch(deleteIngredient(id));
     console.log(id)
   };
 
