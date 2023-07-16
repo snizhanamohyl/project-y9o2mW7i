@@ -20,9 +20,9 @@ export default function RecipePage() {
 
   return (
     <>
-      <RecipePageHero recipe={recipe} />
+      <RecipePageHero recipe={recipe} id={recipeId} />
       <SharedContainer>
-        <RecipePageIngredients ingredients={recipe.ingredients} />
+        <RecipePageIngredients ingredients={recipe.ingredients} id={recipeId} />
         <RecipePageInstruction recipe={recipe} />
       </SharedContainer>
     </>

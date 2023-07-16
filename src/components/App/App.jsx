@@ -58,36 +58,40 @@ export default function App() {
         <Route
           path="/categories"
           element={<PrivateRoute component={CategoriesPage} />}
-        />
+        ></Route>
         <Route
           path="/categories/:categoryName"
           element={<PrivateRoute component={CategoriesPage} />}
-        />
+        ></Route>
         <Route
           path="/add"
           element={<PrivateRoute component={AddRecipePage} />}
-        />
+        ></Route>
+
         <Route
           path="/recipe/:recipeId"
           element={<PrivateRoute component={RecipePage} />}
-        />
+        ></Route>
         <Route
           path="/my"
           element={<PrivateRoute component={MyRecipesPage} />}
-        />
+        ></Route>
         <Route
           path="/favorite"
           element={<PrivateRoute component={FavoritePage} />}
-        />
+        ></Route>
         <Route
           path="/shopping-list"
           element={<PrivateRoute component={ShoppingListPage} />}
-        />
+        ></Route>
         <Route
           path="/search"
           element={<PrivateRoute component={SearchPage} />}
-        />
-        <Route path="*" element={<PrivateRoute component={NotFoundPage} />} />
+        ></Route>
+        <Route
+          path="*"
+          element={<PrivateRoute component={NotFoundPage} />}
+        ></Route>
       </Route>
     </Routes>
   );

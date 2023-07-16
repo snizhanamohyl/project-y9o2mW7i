@@ -10,7 +10,7 @@ export default function CategoriesList({ value, categories, recipeList }) {
       index={item.name.toLowerCase()}
     >
       <Conteiner>
-        <RecipesList recipe={recipeList} />
+        <RecipesList recipes={recipeList} />
       </Conteiner>
     </CustomTabPanel>
   ));

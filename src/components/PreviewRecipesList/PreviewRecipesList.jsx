@@ -22,7 +22,7 @@ export default function PreviewRecipesList() {
       {recipes.map(el => (
         <RecipeItem key={el.category}>
           <RecipeTitle name={el.category} />
-          <RecipesList recipe={el.recipes} />
+          <RecipesList recipes={el.recipes} />
           <SeeAllBtn category={el.category.toLowerCase()} />
         </RecipeItem>
       ))}
