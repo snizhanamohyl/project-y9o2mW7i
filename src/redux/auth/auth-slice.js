@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { login, logout, refreshUser, register } from './auth-operations';
+import { login, logout, refreshUser, register, updateUser } from './auth-operations';
 import { initialState } from './initial-state';
 
 export const authSlice = createSlice({
@@ -18,10 +18,11 @@ export const authSlice = createSlice({
       state.serverError = '';
       state.serverErrorStatus = null;
     },
-     [register.rejected](state, action) {
-      state.serverError = action.payload.data.message || 'An unexpected error occured.';
-       state.isLoading = false;
-       state.serverErrorStatus = action.payload.status;
+    [register.rejected](state, action) {
+      state.serverError =
+        action.payload.data.message || 'An unexpected error occured.';
+      state.isLoading = false;
+      state.serverErrorStatus = action.payload.status;
     },
     [login.pending](state, action) {
       state.isLoading = true;
@@ -36,7 +37,8 @@ export const authSlice = createSlice({
       state.serverErrorStatus = null;
     },
     [login.rejected](state, action) {
-      state.serverError = action.payload.data.message || 'An unexpected error occured.';
+      state.serverError =
+        action.payload.data.message || 'An unexpected error occured.';
       state.serverErrorStatus = action.payload.status;
       state.isLoading = false;
     },
@@ -55,6 +57,17 @@ export const authSlice = createSlice({
     },
     [refreshUser.rejected](state, action) {
       state.isRefreshing = false;
+    },
+    [updateUser.fulfilled](state, action) {
+      state.user.name = action.payload.data.user.name;
+      state.user.avatarURL = action.payload.data.user.avatarURL;
+    },
+    [updateUser.pending](state, action) {
+       state.isLoading = true;
+    },
+    [updateUser.rejected](state, action) {
+      state.isLoading = false;
+      state.serverErrorStatus = action.payload.status;
     },
   },
 });

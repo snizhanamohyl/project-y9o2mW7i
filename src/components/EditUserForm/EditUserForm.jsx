@@ -29,7 +29,7 @@ export default function EditUserForm({ handleCloseModal }) {
       }
 
       formData.append('name', values.name.trim());
-      formData.append('avatar', values.avatar);
+      formData.append('avatarURL', values.avatar);
 
       dispatch(updateUser(formData))
         .unwrap()

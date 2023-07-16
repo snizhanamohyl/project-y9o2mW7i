@@ -82,10 +82,11 @@ export const refreshUser = createAsyncThunk(
 );
 
 export const updateUser = createAsyncThunk(
-  '/auth/update',
+  '/users/update',
   async (credentials, thunkAPI) => {
     try {
       const data = await updateUserInfo(credentials);
+      console.log(data)
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
