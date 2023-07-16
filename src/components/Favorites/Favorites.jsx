@@ -10,7 +10,7 @@ import { getAllFavorites } from '../../redux/Favorite/selectors';
 const Favorites = () => {
     const [recipes, setRecipes] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    
+
     const recipesAll = useSelector(getAllFavorites)
     const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ const Favorites = () => {
 
 
     useEffect(() => {
-        dispatch(setRecipes(recipesAll))
+        dispatch().then(data => setRecipes(data))
     }, [recipesAll, dispatch]);
 
 
