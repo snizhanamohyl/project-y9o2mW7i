@@ -10,12 +10,11 @@ export default function PopoverMenu() {
   const dispatch = useDispatch();
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
-  const handleOpenModal= () => {setIsEditModalOpen(true);};
-  const handleCloseModal = () => {setIsEditModalOpen(false);};
+  const toggleModal =() => {setIsEditModalOpen(!isEditModalOpen);}
 
   return (
     <>
-      <EditBtn type="button" onClick={handleOpenModal}>
+      <EditBtn type="button" onClick={toggleModal}>
         Edit profile
         <svg width="14" height="14">
           <use href={`${sprite}#icon-pencil`}></use>
@@ -35,9 +34,8 @@ export default function PopoverMenu() {
 
       {isEditModalOpen && (
         <EditUserModal
-          handleOpenModal={handleOpenModal}
           isOpen={isEditModalOpen}
-          handleCloseModal={handleCloseModal}
+          handleCloseModal={toggleModal}
         />
       )}
     </>

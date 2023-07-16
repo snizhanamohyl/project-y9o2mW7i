@@ -177,7 +177,6 @@ export default function EditUserModal({ isOpen, handleCloseModal }) {
                       )
                     }
                   >
-                    {' '}
                     Save changes
                   </SubmitBtn>
                 </InputButtonWrapper>
