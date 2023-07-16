@@ -1,48 +1,26 @@
 import ReactDOM from 'react-dom';
 import { useState } from 'react';
-import {
-  useDispatch,
-  // useSelector
-} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import { Modal } from '@mui/material';
-import { ModalContent } from './EditUserModal.styled';
-import {CloseIcon, CloseButton} from './ModalContent.styled'
 import { Formik } from 'formik';
 import { toast } from 'react-toastify';
+
 import sprite from 'assets/sprite.svg';
 import { useAuth } from 'hooks/useAuth';
 import { updateUser } from 'redux/auth/auth-operations';
+import {updateUserValidationSchema, SUPPORTED_FORMATS} from 'schemas/userUpdateSchema';
+
+import { ModalContent } from './EditUserModal.styled';
+import {CloseIcon, CloseButton} from './ModalContent.styled'
+
 import {
-  updateUserValidationSchema,
-  SUPPORTED_FORMATS
-} from 'schemas/userUpdateSchema';
-
-
-import {
-  FormStyled,
-  UserAvatarWrapper,
-  AvatarLabel,
-  PlusIcon, 
-  UserImgWrapper,
-  InputButtonWrapper,
-  NameLabel,
-  NameInput,
-  UserIconStyled,
-  EditBtn,
-  EditIcon,
-  SubmitBtn,
-  ErrorMessage,
-} from './ModalContent.styled';
-
-
-
-
+  FormStyled, UserAvatarWrapper, AvatarLabel, PlusIcon, UserImgWrapper,
+  InputButtonWrapper, NameLabel, NameInput, UserIconStyled, EditBtn,
+  EditIcon, SubmitBtn, ErrorMessage} from './ModalContent.styled';
 
 const portal = document.getElementById('modal-root');
 
-export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModal }) {
-
-
+export default function EditUserModal({ isOpen, handleCloseModal }) {
     const { user } = useAuth();
     const dispatch = useDispatch();
     const [pathToUserAvatar, setPathToUserAvatar] = useState(user.avatar);
@@ -53,6 +31,7 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
       if (values.avatar === '') {
         values.avatar = user.avatar;
       }
+
       formData.append('name', values.name.trim());
       formData.append('avatar', values.avatar);
 
@@ -67,6 +46,7 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
   
     return ReactDOM.createPortal(
       <Modal open={isOpen} onClose={handleCloseModal}>
+
         <ModalContent>
           <CloseButton type="button" onClick={handleCloseModal}>
             <CloseIcon width="24px" height="24px">
@@ -88,6 +68,7 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
           >
             {props => (
               <FormStyled onSubmit={props.handleSubmit}>
+
                 <UserAvatarWrapper>
                   <AvatarLabel htmlFor="avatar">
                     {pathToUserAvatar ? (
@@ -99,13 +80,13 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                         <svg width="40" height="40">
                           <use href={`${sprite}#icon-user-default`}></use>
                         </svg>
-                      </UserImgWrapper>
-                    )}
+                      </UserImgWrapper>)}
 
                     <PlusIcon width="24px" height="24px">
-                       <use href={`${sprite}#icon-plus-avatar`}></use>                    
+                      <use href={`${sprite}#icon-plus-avatar`}></use>                    
                     </PlusIcon>
                   </AvatarLabel>
+
                   <input
                     type="file"
                     id="avatar"
@@ -129,6 +110,7 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                     }}
                   />
                 </UserAvatarWrapper>
+
                 {props.errors.avatar && (
                   <ErrorMessage location="file">
                     {props.errors.avatar}

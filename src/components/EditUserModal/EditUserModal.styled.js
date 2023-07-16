@@ -1,5 +1,4 @@
 import { styled } from '@mui/system';
-import { IconButton } from '@mui/material';
 
 export const ModalContent = styled('div')`
   position: absolute;
@@ -29,10 +28,3 @@ export const ModalContent = styled('div')`
     padding: 60px 50px;
   }
 `;
-
-export const CloseButton = styled(IconButton)`
-  position: relative;
-  top: 10px;
-  right: 10px;
-`;
-
