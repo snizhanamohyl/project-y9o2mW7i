@@ -18,6 +18,7 @@ export default function RecipePageIngredientsItem({ ingredient, recipeId }) {
   const { id, measure } = ingredient;
 
   const newId = id._id.split('').reverse().join('');
+
   const newStructure = {
     ...ingredient.id,
     measure,
