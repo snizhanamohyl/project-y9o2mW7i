@@ -8,7 +8,7 @@ import {
 import CheckboxLabels from '../Checkbox/Checkbox';
 import { addIngredient, deleteIngredient } from 'redux/ShopingList/operations';
 import { useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function RecipePageIngredientsItem({ ingredient }) {
   const [isChecked, setIsChecked] = useState(false);
@@ -19,14 +19,11 @@ export default function RecipePageIngredientsItem({ ingredient }) {
 
   const newStructure = { ...ingredient.id, measure, newId: newId };
 
-  // useEffect(() => {
-  //   dispatch(addIngredient(newStructure));
-  // }, [dispatch, newStructure]);
   const handleCheckboxClick = () => {
     setIsChecked(prev => !prev);
 
     if (isChecked) {
-      dispatch(deleteIngredient(id._id));
+      dispatch(deleteIngredient(newId));
     } else {
       dispatch(addIngredient(newStructure));
     }
@@ -42,8 +39,8 @@ export default function RecipePageIngredientsItem({ ingredient }) {
         <div>
           <QuantityIngredient>{measure}</QuantityIngredient>
           <CheckboxLabels
-            key={id._id}
-            id={id._id}
+            key={newId}
+            id={newId}
             onClick={handleCheckboxClick}
             isChecked={isChecked}
           />
