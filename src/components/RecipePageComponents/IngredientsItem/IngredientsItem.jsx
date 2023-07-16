@@ -7,10 +7,8 @@ import {
 
 import CheckboxLabels from '../Checkbox/Checkbox';
 import { addIngredient, deleteIngredient } from 'redux/ShopingList/operations';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { nanoid } from 'nanoid';
-import { getShoppingList, isChecked } from 'redux/ShopingList/selectors';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 export default function RecipePageIngredientsItem({ ingredient, recipeId }) {
   const [isCheckedId, setIsCheckedId] = useState(false);
