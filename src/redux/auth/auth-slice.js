@@ -18,10 +18,11 @@ export const authSlice = createSlice({
       state.serverError = '';
       state.serverErrorStatus = null;
     },
-     [register.rejected](state, action) {
-      state.serverError = action.payload.data.message || 'An unexpected error occured.';
-       state.isLoading = false;
-       state.serverErrorStatus = action.payload.status;
+    [register.rejected](state, action) {
+      state.serverError =
+        action.payload.data.message || 'An unexpected error occured.';
+      state.isLoading = false;
+      state.serverErrorStatus = action.payload.status;
     },
     [login.pending](state, action) {
       state.isLoading = true;
@@ -36,7 +37,8 @@ export const authSlice = createSlice({
       state.serverErrorStatus = null;
     },
     [login.rejected](state, action) {
-      state.serverError = action.payload.data.message || 'An unexpected error occured.';
+      state.serverError =
+        action.payload.data.message || 'An unexpected error occured.';
       state.serverErrorStatus = action.payload.status;
       state.isLoading = false;
     },
