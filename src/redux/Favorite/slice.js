@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { addRecipeToFavorites, deleteRecipeFromFavorites, getAllFavoritList } from './operations'
-import initialState from './initialState';
+import { logout } from 'redux/auth/auth-operations';
+import { initialState } from './initialState';
 
 const handlePending = (state) => {
     state.isLoading = true;

@@ -37,7 +37,7 @@ export const addRecipeToFavorites = createAsyncThunk(
     async (recipeId, { rejectWithValue }) => {
       try {
 
-        const { data } = await axios.post(`${API_BASE_URL}/recipes/${recipeId}`, recipeId);
+        const { data } = await axios.delete(`${API_BASE_URL}/recipes/${recipeId}`, recipeId);
         return data;
 
       } catch (error) {
