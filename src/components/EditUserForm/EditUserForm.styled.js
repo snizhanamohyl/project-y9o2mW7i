@@ -14,6 +14,9 @@ export const CloseIcon = styled.svg`
   width: 20px;
   height: 20px;
 
+  &:hover, &:focus {
+  color: var(--accent);}
+
   @media screen and (min-width: 768px) {
     width: 24px;
     height: 24px;
@@ -41,6 +44,13 @@ export const FormStyled = styled(Form)`
       height: 103px;
     }
   }
+`;
+
+export const UserIcon = styled.svg`
+stroke: #c4c4c4;
+
+  &:hover, &:focus {
+  stroke: var(--accent);}
 `;
 
 export const PlusIcon = styled.svg`
@@ -90,10 +100,11 @@ export const UserImgWrapper = styled.div`
   width: 88px;
   height: 88px;
 
+
   @media screen and (min-width: 768px) {
     width: 103px;
     height: 103px;
-   }
+  }
 
   @media screen and (min-width: 768px) {
     width: 103px;
@@ -139,7 +150,7 @@ export const NameInput = styled(Field)`
 
   border-radius: 6px;
   background-color: transparent;
-  transition: color var(--transition-time) var(--transition-function);
+  transition: border var(--transition-time) var(--transition-function);
 
   &:hover,
   &:focus {

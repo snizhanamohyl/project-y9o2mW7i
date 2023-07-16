@@ -15,7 +15,7 @@ import {CloseIcon, CloseButton} from './EditUserForm.styled.js'
 import {
   FormStyled, UserAvatarWrapper, AvatarLabel, PlusIcon, UserImgWrapper,
   InputButtonWrapper, NameLabel, NameInput, UserIconStyled, EditBtn,
-  EditIcon, SubmitBtn, ErrorMessage} from './EditUserForm.styled.js';
+  EditIcon, SubmitBtn, ErrorMessage, UserIcon} from './EditUserForm.styled.js';
 
 export default function EditUserForm({ handleCloseModal }) {
     const { user } = useAuth();
@@ -72,9 +72,9 @@ export default function EditUserForm({ handleCloseModal }) {
                     </UserImgWrapper>
                   ) : (
                     <UserImgWrapper>
-                      <svg width="40" height="40">
+                      <UserIcon width="40" height="40">
                         <use href={`${sprite}#icon-user-default`}></use>
-                      </svg>
+                      </UserIcon>
                     </UserImgWrapper>
                   )}
 
@@ -120,13 +120,13 @@ export default function EditUserForm({ handleCloseModal }) {
                     name="name"
                     id="name"
                     value={props.values.name}
-                    border={
-                      props.touched.name && props.errors.name
-                        ? '1px solid #E74A3B'
-                        : props.touched.name && props.isValid
-                        ? '1px solid #3CBC81'
-                        : '1px solid #23262a'
-                    }
+                    // border={
+                    //   props.touched.name && props.errors.name
+                    //     ? '1px solid #E74A3B'
+                    //     : props.touched.name && props.isValid
+                    //     ? '1px solid #3CBC81'
+                    //     : '1px solid #23262a'
+                    // }
                     onBlur={() => {
                       props.setTouched({
                         name: true,
@@ -150,7 +150,7 @@ export default function EditUserForm({ handleCloseModal }) {
                       onClick={() => props.setFieldValue('name', '')}
                     >
                       <EditIcon width="17" height="17">
-                        <use href={`${sprite}#icon-pencil`}></use>
+                        <use href={`${sprite}#icon-edit`}></use>
                       </EditIcon>
                     </EditBtn>
                   )}
