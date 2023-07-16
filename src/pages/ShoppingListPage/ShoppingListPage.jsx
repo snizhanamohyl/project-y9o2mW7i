@@ -32,9 +32,9 @@ export default function ShoppingListPage() {
       .catch(error => console.log(error.message));
   }, [ingredients, dispatch]);
 
-  const onDeleteClick = id => {
-    dispatch(shoppingListOperations.deleteIngredient(id));
-  };
+  // const onDeleteClick = (id) => {
+  //   dispatch(shoppingListOperations.deleteIngredient(id));
+  // };
 
   return (
     <SharedContainer>
@@ -51,30 +51,17 @@ export default function ShoppingListPage() {
           {products &&
           products.map(product => {
             return (
-              <ShoppingListItem key={product.id}>
+              <ShoppingListItem key={product._id}>
                 <ProductListItem
                   name={product.name}
                   number={product.measure}
-                  id={product.id}
-                  onDeleteClick={onDeleteClick}
+                  id={product._id}
                   url={product.img}
                 >
                 </ProductListItem>
               </ShoppingListItem>
             );
           })}
-          {/* <ShoppingListItem>
-            <ProductListItem name="Cucumber" number="5" onDeleteClick={onDeleteClick}></ProductListItem>
-          </ShoppingListItem>
-          <ShoppingListItem>
-            <ProductListItem name="Cucumber" number="5" onDeleteClick={onDeleteClick}></ProductListItem>
-          </ShoppingListItem>
-          <ShoppingListItem>
-            <ProductListItem name="Cucumber" number="5" onDeleteClick={onDeleteClick}></ProductListItem>
-          </ShoppingListItem>
-          <ShoppingListItem>
-            <ProductListItem name="Cucumber" number="5" onDeleteClick={onDeleteClick}></ProductListItem>
-          </ShoppingListItem> */}
         </ShoppingList>
       </div>
     </SharedContainer>

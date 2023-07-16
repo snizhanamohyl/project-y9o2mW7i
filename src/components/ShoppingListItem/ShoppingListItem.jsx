@@ -7,14 +7,22 @@ import {
   SvgRemove
 } from './ShoppingListItem.styled';
 import sprite from 'assets/sprite.svg';
+import { useDispatch } from 'react-redux';
+import * as shoppingListOperations from 'redux/ShopingList/operations';
 
 export default function ProductListItem({
   id,
   name,
   number,
   url,
-  onDeleteClick,
 }) {
+
+  const dispatch = useDispatch();
+
+  const onDeleteClick = () => {
+    dispatch(shoppingListOperations.deleteIngredient({id}));
+  };
+
   return (
     <>
       <ProductContainer>
@@ -23,7 +31,7 @@ export default function ProductListItem({
       </ProductContainer>
       <OptionContainer>
         <NumberContainer>{number}</NumberContainer>
-        <RemoveBtn onClick={() => onDeleteClick(id)}>
+        <RemoveBtn onClick={onDeleteClick}>
           <SvgRemove>
           <use href={sprite + '#icon-X'}></use>
           </SvgRemove>
