@@ -24,7 +24,6 @@ export default function UserLogo () {
   const width = useWindowWidth();
   const avatarSize = width < 768 ? '34px' : '44px';
   const user = useSelector(getUser);
-  console.log(user.avatarURL)
 
   const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = event => { setAnchorEl(event.currentTarget); };
