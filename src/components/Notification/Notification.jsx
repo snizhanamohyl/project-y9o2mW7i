@@ -1,29 +1,61 @@
-import { useEffect, useState } from 'react';
-import { AlertStyled } from './Notification.styled.jsx';
+import React, { useState } from 'react';
+import { Snackbar, Alert, Slide } from '@mui/material';
+import ErrorIcon from '@mui/icons-material/Error';
 
+export default function Notification({ text }) {
+  const [state, setState] = useState({
+    open: true,
+    vertical: 'top',
+    horizontal: 'right',
+    Transition: Slide,
+  });
+  const { vertical, horizontal, open, Transition } = state;
 
-// severity - error
-// severity - warning
-// severity - info
-// severity - success
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setState({ ...state, open: false });
+  };
 
-const Notification = ({text, severity}) => {
-    const [showAlert, setShowAlert] = useState(true)
-
-    useEffect( () => {
-        const timer = setTimeout(() => {
-            setShowAlert(false);
-        }, 1000)
-        
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    return(
-        <>  
-            {showAlert ? (<AlertStyled severity={severity}>{text}</AlertStyled>):(null)}
-        </>
-    )
+  return (
+    <>
+      <Snackbar
+        onClose={handleClose}
+        sx={{
+          maxWidth: '432px',
+        }}
+        anchorOrigin={{ vertical, horizontal }}
+        open={open}
+        autoHideDuration={4000}
+        TransitionComponent={Transition}
+      >
+        <Alert
+          onClose={handleClose}
+          icon={<ErrorIcon />}
+          severity={'error'}
+          sx={{
+            marginTop: '50px',
+            border: '1px solid red',
+            borderRadius: '8px',
+            padding: '15px',
+            fontFamily: 'inherit',
+            display: 'flex',
+            alignItems: 'center',
+            '& .MuiAlert-icon': {
+              padding: '0',
+            },
+            '& .MuiAlert-message': {
+              padding: '0',
+            },
+            '& .MuiAlert-action': {
+              padding: '0',
+            },
+          }}
+        >
+          {text}
+        </Alert>
+      </Snackbar>
+    </>
+  );
 }
-
-export default Notification;

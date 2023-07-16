@@ -1,9 +1,8 @@
-import { Alert } from "@mui/material";
-import styled from "@emotion/styled";
-
+import { Alert } from '@mui/material';
+import styled from '@emotion/styled';
 
 export const AlertStyled = styled(Alert)`
-    ${({ severity }) => {
+  ${({ severity }) => {
     const severityStyles = {
       error: `
         background-color: #f44336;
@@ -29,4 +28,4 @@ export const AlertStyled = styled(Alert)`
 
     return severityStyles[severity] || '';
   }}
-`
+`;
