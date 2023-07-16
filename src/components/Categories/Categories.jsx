@@ -8,6 +8,7 @@ import {
 
 import CategoriesList from 'components/CategoriesList/CategoriesList';
 import CategoriesTabs from 'components/CategoriesTabs/CaregoriesTabs';
+import PageLoader from 'components/PageLoader/PageLoader';
 
 export default function Categories() {
   const navigate = useNavigate();
@@ -66,6 +67,6 @@ export default function Categories() {
       </CustomConteiner>
     </>
   ) : (
-    <div>Loading...</div>
+    <PageLoader />
   );
 }
