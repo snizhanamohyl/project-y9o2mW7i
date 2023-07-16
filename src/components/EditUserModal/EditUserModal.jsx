@@ -21,6 +21,7 @@ import {
 import {
   FormStyled,
   UserAvatarWrapper,
+  AvatarLabel,
   UserImgWrapper,
   InputButtonWrapper,
   NameLabel,
@@ -56,8 +57,8 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
 
       dispatch(updateUser(formData))
         .unwrap()
-        .then(() => toast.success('editUser.success'))
-        .catch(() => toast.error('editUser.error'));
+        .then(() => toast.success('Changes saved!'))
+        .catch(() => toast.error('Something went wrong...'));
       handleCloseModal();
     };
 
@@ -87,7 +88,7 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
             {props => (
               <FormStyled onSubmit={props.handleSubmit}>
                 <UserAvatarWrapper>
-                  <label htmlFor="avatar">
+                  <AvatarLabel htmlFor="avatar">
                     {pathToUserAvatar ? (
                       <UserImgWrapper>
                         <img src={pathToUserAvatar} alt="user-avatar" />
@@ -99,7 +100,12 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                         </svg>
                       </UserImgWrapper>
                     )}
-                  </label>
+                    //{' '}
+                    <PlusIcon width="24px" height="24px">
+                      // <use href={`${sprite}#icon-plus-avatar`}></use>
+                      //{' '}
+                    </PlusIcon>
+                  </AvatarLabel>
                   <input
                     type="file"
                     id="avatar"
@@ -166,7 +172,7 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                         onClick={() => props.setFieldValue('name', '')}
                       >
                         <EditIcon width="17" height="17">
-                             <use href={`${sprite}#icon-pencil`}></use>
+                          <use href={`${sprite}#icon-pencil`}></use>
                         </EditIcon>
                       </EditBtn>
                     )}
@@ -176,19 +182,21 @@ export default function EditUserModal({ isOpen, handleCloseModal, handleOpenModa
                   ) : null}
 
                   <SubmitBtn
-                type="submit"
-                disabled={
-                  !(
-                    (props.touched.name &&
-                      props.values.name &&
-                      !props.errors.name) ||
-                    (props.touched.avatar &&
-                      props.values.avatar &&
-                      !props.errors.avatar)
-                  )
-                }
-              > Save changes
-              </SubmitBtn>
+                    type="submit"
+                    disabled={
+                      !(
+                        (props.touched.name &&
+                          props.values.name &&
+                          !props.errors.name) ||
+                        (props.touched.avatar &&
+                          props.values.avatar &&
+                          !props.errors.avatar)
+                      )
+                    }
+                  >
+                    {' '}
+                    Save changes
+                  </SubmitBtn>
                 </InputButtonWrapper>
               </FormStyled>
             )}

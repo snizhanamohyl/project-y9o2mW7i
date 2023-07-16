@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Form, Field} from 'formik';
+import { Form, Field } from 'formik';
+
 
 export const CloseButton = styled.button`
   position: absolute;
@@ -35,7 +36,6 @@ export const FormStyled = styled(Form)`
     width: 88px;
     height: 88px;
     border-radius: 50%;
-    cursor: pointer;
 
     @media screen and (min-width: 768px) {
       width: 103px;
@@ -61,6 +61,10 @@ export const UserAvatarWrapper = styled.div`
   }
 `;
 
+export const AvatarLabel = styled.label`
+cursor: pointer;
+`
+
 export const UserImgWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -75,8 +79,18 @@ export const UserImgWrapper = styled.div`
        width: 103px;
     height: 103px;
    }
-  
+
+  @media screen and (min-width: 768px) {
+    width: 103px;
+    height: 103px;
+
+    & svg {
+      width: 47px;
+      height: 47px;
+    }
+  }
 `;
+
   
 
  export const InputButtonWrapper = styled.div`
