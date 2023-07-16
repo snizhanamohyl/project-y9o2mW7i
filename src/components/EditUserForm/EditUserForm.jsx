@@ -25,7 +25,6 @@ export default function EditUserForm({ handleCloseModal }) {
 
     const handleSubmit = values => {
       const formData = new FormData();
-      // console.log(values);
 
       if (values.avatarURL === '') {
         values.avatarURL = user.avatarURL;
