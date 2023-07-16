@@ -9,8 +9,16 @@ export const newRecipeSchema = Yup.object({
     .min(10, 'Description must be at least 10 characters')
     .required('Description is required'),
   time: Yup.number().required('Cooking time is required'),
-  image: Yup.mixed().required().required('Image is required'),
-  ingredients: Yup.array().required('Ingredients are required'),
+  preview: Yup.mixed().required().required('Image is required'),
+  ingredients: Yup.array()
+    .of(
+      Yup.object({
+        title: Yup.string().required('Ingredient must have a name'),
+        measure: Yup.string(),
+      })
+    )
+    .min(1),
+
   instructions: Yup.string()
     .min(10, 'Instructions must be at least 10 characters')
     .required('Instructions are required'),

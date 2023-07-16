@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Section = styled.section``;
 
@@ -21,15 +22,18 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   padding-bottom: 13px;
-  display: flex;
-  column-gap: 12px;
-
   border-bottom: 1px solid var(--line-color);
-  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     flex: 1;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  display: flex;
+  column-gap: 12px;
+
+  cursor: pointer;
 `;
 
 export const Image = styled.img`
@@ -52,7 +56,6 @@ export const RecipeTitle = styled.h3`
 
 export const Description = styled.p`
   color: var(--color-text-secondary);
-  text-overflow: ellipsis;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -66,4 +69,13 @@ export const Description = styled.p`
   line-clamp: 2;
 
   overflow: hidden;
+`;
+
+export const FailureMessage = styled.p`
+  margin-top: 10px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--text-primary);
 `;

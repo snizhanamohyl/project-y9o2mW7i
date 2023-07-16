@@ -42,7 +42,7 @@ export default function RecipeDescriptionFields({ formik }) {
     const file = target.files[0];
 
     if (typeof file === 'object') {
-      setFieldValue('image', file);
+      setFieldValue('preview', file);
       setImgUrl(URL.createObjectURL(file));
     }
   };
@@ -67,7 +67,7 @@ export default function RecipeDescriptionFields({ formik }) {
       <FileWrapper $isEmpty={!imgUrl}>
         <input
           type="file"
-          name="image"
+          name="preview"
           accept="image/*"
           hidden
           onChange={handleFileChange}
@@ -81,7 +81,7 @@ export default function RecipeDescriptionFields({ formik }) {
           </svg>
         )}
 
-        {getErrorMessageMarkup('image')}
+        {getErrorMessageMarkup('preview')}
       </FileWrapper>
 
       <div>

@@ -1,5 +1,4 @@
 import { useFormik } from 'formik';
-import axios from 'axios';
 
 import RecipeDescriptionFields from 'components/RecipeDescriptionFields/RecipeDescriptionFields';
 import RecipeIngredientsFields from 'components/RecipeIngredientsFields/RecipeIngredientsFields';
@@ -7,6 +6,7 @@ import RecipePreparationFields from 'components/RecipePreparationFields/RecipePr
 import Button from 'components/Button/Button';
 import { Form } from './AddRecipeForm.styled';
 import { newRecipeSchema } from 'schemas/newRecipeSchema';
+import { addRecipe } from 'services/addRecipe';
 
 export default function AddRecipeForm() {
   const formik = useFormik({
@@ -17,18 +17,19 @@ export default function AddRecipeForm() {
       category: '',
       description: '',
       time: null,
-      image: null,
-      ingredients: [{ title: '', measure: '' }],
+      preview: null,
+      ingredients: [],
       instructions: '',
     },
     validationSchema: newRecipeSchema,
     onSubmit: values => {
+      const { preview, ...otherProperties } = values;
       const formData = new FormData();
-      formData.append('data', JSON.stringify(values));
-      console.log(JSON.parse(formData.get('data')));
 
-      // axios.post('http://localhost:7777/users/avatars', formData);
-      // console.log(JSON.stringify(values, null, 2));
+      formData.append('preview', preview);
+      formData.append('data', JSON.stringify(otherProperties));
+
+      addRecipe(formData);
     },
   });
 

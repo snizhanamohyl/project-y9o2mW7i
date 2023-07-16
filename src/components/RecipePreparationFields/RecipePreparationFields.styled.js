@@ -53,11 +53,8 @@ export const TextArea = styled.textarea`
     opacity: 0.5;
   }
 
-  @media screen and (min-width: 768px) {
-    margin-top: 32px;
-    width: 505px;
-
-    font-size: 18px;
+  & + p {
+    top: 100%;
   }
 
   &:hover {
@@ -67,5 +64,12 @@ export const TextArea = styled.textarea`
   &:focus {
     background-color: var(--white);
     outline-color: var(--input-border-color-focus);
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 32px;
+    width: 505px;
+
+    font-size: 18px;
   }
 `;

@@ -43,7 +43,12 @@ export default function SelectInput({
   return (
     <Wrapper>
       <Label type="button" onClick={() => setIsOpen(state => !state)}>
-        <InputFiled type="text" {...inputProps} />
+        <InputFiled
+          type="text"
+          value={currentOption}
+          {...inputProps}
+          onChange={() => null}
+        />
         <svg width={20} height={20}>
           <use href={Sprite + '#icon-down'}></use>
         </svg>
@@ -66,12 +71,10 @@ export default function SelectInput({
 
 SelectInput.propTypes = {
   options: PropTypes.arrayOf(PropTypes.object),
-  currentOption: PropTypes.string,
   onSelect: PropTypes.func,
 };
 
 SelectInput.defaultProps = {
   options: [],
-  currentOption: '',
   onSelect: () => null,
 };
