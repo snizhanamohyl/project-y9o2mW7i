@@ -51,6 +51,7 @@ const heroBgDeskRet = `url(${bgSpinachMiniImgDeskRet}) left 0 / 116px 398px no-r
   url(${bgShapeImgDesk}) right top no-repeat,`;
 
 export const Layout = styled.div`
+  min-width: 375px;
   position: relative;
   padding-top: ${({ $isRecipePage }) => ($isRecipePage ? 0 : '64px')};
   width: 100vw;

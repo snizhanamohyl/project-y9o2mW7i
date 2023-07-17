@@ -18,6 +18,7 @@ const bgDesk = `url(${bgSpinachDesk}) right top no-repeat`;
 const bgDeskRet = `url(${bgSpinachDeskRet}) right top / 234px 114px no-repeat`;
 
 export const Block = styled.div`
+  min-width: 375px;
   display: flex;
   justify-content: center;
   align-items: center;
