@@ -18,15 +18,25 @@ export default function ShoppingListPage() {
 
   const [isLoading, setIsLoading] = useState(false)
 
+  const [products, setProducts] = useState([])
+
   const dispatch = useDispatch();
 
   const ingredients = useSelector(getShoppingList);
 
   useEffect(() => {
+    if (products.length === 0) {
+      dispatch(getAllShoppingList());
+      setProducts(ingredients)
+    }
+    if (products.length === ingredients.length) {
+      return
+    }
     setIsLoading(true)
     dispatch(getAllShoppingList());
+    setProducts(ingredients)
     setIsLoading(false)
-  }, [dispatch]);
+  }, [dispatch, ingredients, products]);
 
   const onDeleteClick = (id) => {
     dispatch(deleteIngredient(id));
@@ -46,7 +56,7 @@ export default function ShoppingListPage() {
         <ShoppingList>
           {isLoading ? <PageLoader/> : 
                     ingredients.length > 0 ?
-                      ingredients.map(product => {
+                    ingredients.map(product => {
                         const { _id, name, measure, newId, img} = product
                         return (
                           <ShoppingListItem key={_id}>
