@@ -10,7 +10,7 @@ export const ListItem = styled.li`
   align-items: center;
   justify-content: space-between;
 
-  background-color: var(--light-green-bg);
+  background-color: var(--recipe-card-bg);
   border-radius: 8px;
 
   @media (min-width: 768px) {

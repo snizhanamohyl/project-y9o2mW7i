@@ -46,7 +46,7 @@ export const InstructionItem = styled.li`
   align-items: flex-start;
   list-style: none;
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--recipe-instruction-color);
   line-height: 1.17;
   letter-spacing: -0.24px;
 

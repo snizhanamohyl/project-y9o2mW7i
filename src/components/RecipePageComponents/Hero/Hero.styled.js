@@ -12,8 +12,6 @@ export const SectionHero = styled.section`
   width: 100%;
 
   display: flex;
-  /* margin-left: auto;
-  margin-right: auto; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -24,6 +22,7 @@ export const SectionHero = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  color: var(--recipe-text-color);
 
   background-image: url(${bgMob});
   @media ${retina} {
@@ -51,7 +50,7 @@ export const SectionHero = styled.section`
 export const MainTitle = styled.h1`
   margin-bottom: 18px;
 
-  color: var(--accent);
+  color: var(--accent-green);
 
   font-size: 24px;
   font-weight: 600;
@@ -92,11 +91,11 @@ export const BtnAddFavorite = styled.button`
   width: 150px;
   height: 35px;
   margin-bottom: 42px;
-  color: var(--dark-accent);
+  color: var(--recipe-text-color);
   background-color: transparent;
 
   border-radius: 24px 44px;
-  border: 1px solid var(--accent);
+  border: 2px solid var(--accent);
 
   font-size: 10px;
   line-height: normal;

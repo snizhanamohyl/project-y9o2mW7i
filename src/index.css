@@ -58,6 +58,8 @@
   --dark-accent-unchanged: #22252a;
   --mob-bg-color: #ebf3d4;
 
+  --card-title-bg: #ffffff;
+
   --fav-card-text: #23262a;
   --fav-card-bg: #ffffff;
   --is-fav-see-btn: #22252a;
@@ -70,6 +72,9 @@
   --is-fav-del-btn-color: #22252a;
   --is-del-btn-color: #FAFAFA;
 
+  --recipe-text-color: #23262A;
+  --recipe-card-bg: #ebf3d4;
+  --recipe-instruction-color: rgba(0, 0, 0, 0.8);
 
   --bcg-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 46.3%, rgba(0, 0, 0, 0.35) 72.75%, rgba(0, 0, 0, 0) 100%);
   --transition-time: 250ms;
@@ -87,7 +92,6 @@
     --dark-accent: #8baa36;
     --text-primary: #fafafa;
     --title-color: #fafafa;
-    --white: #22252a;
     --input-border-color: rgba(250, 250, 250, 0.2);
     --input-border-color-focus: rgba(250, 250, 250, 0.5);
     --input-bg-color: #22252a;
@@ -96,6 +100,8 @@
     --transparent-btn-color: #fafafa;
     --bottom-block-color: #fafafa;
     --mob-bg-color: #1E1F28;
+
+    --card-title-bg: #2A2C36;
 
     --fav-card-text: rgba(250, 250, 250, 0.60);
     --fav-card-bg: #2A2C36;
@@ -107,6 +113,9 @@
     --is-my-del-btn: #1E1F28;
     --is-fav-del-btn-hover: #8baa36;
     --is-fav-del-btn-color: #fafafa;
+
+    --recipe-card-bg: #2A2C36;
+    --recipe-instruction-color: #fafafa;
 
     & h1 {
       --dark-accent: #fafafa;

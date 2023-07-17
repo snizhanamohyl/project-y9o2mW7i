@@ -49,7 +49,7 @@ export const Title = styled.h1`
   line-height: 1;
   margin-bottom: 14px;
   letter-spacing: -0.3px;
-  color: var(--color-text-secondary);
+  color: var(--dark-accent);
 
   @media (min-width: 768px) {
     font-size: 72px;
