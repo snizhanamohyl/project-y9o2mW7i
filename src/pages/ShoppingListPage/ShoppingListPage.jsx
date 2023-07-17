@@ -43,7 +43,7 @@ export default function ShoppingListPage() {
   };
 
   return (
-    <SharedContainer>
+    <SharedContainer isBg>
       <div>
         <ShoppingListTitle>Shopping list</ShoppingListTitle>
         {ingredients.length > 0 &&

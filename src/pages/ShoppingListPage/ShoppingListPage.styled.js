@@ -7,14 +7,12 @@ export const ShoppingListTitle = styled.h1`
   line-height: 28px;
   letter-spacing: -0.56px;
   color: var(--title-color);
-  margin-top: 50px;
   margin-bottom: 50px;
 
   @media screen and (min-width: 768px) {
     font-size: 32px;
     line-height: 32px;
     letter-spacing: -0.64px;
-    margin-top: 72px;
     margin-bottom: 72px;
   }
 
@@ -22,7 +20,6 @@ export const ShoppingListTitle = styled.h1`
     font-size: 44px;
     line-height: 44px;
     letter-spacing: -0.88px;
-    margin-top: 102px;
     margin-bottom: 72px;
   }
 `;
