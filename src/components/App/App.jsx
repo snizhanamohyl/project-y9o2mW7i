@@ -1,7 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { refreshUser } from 'redux/auth/auth-operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, refreshUser } from 'redux/auth/auth-operations';
+// import { getAllowRefreshUser, getIsLoggedIn } from 'redux/auth/selectors';
+// import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 import RestrictedRoute from 'components/RestrictedRoute/RestrictedRoute';
@@ -10,7 +12,11 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import SigninPage from 'pages/SigninPage/SigninPage';
 import WelcomePage from 'pages/WelcomePage/WelcomePage';
+<<<<<<< HEAD
 import { getAllShoppingList } from 'redux/ShopingList/operations';
+=======
+import { getAllowRefreshUser, getIsLoggedIn } from 'redux/auth/selectors';
+>>>>>>> main
 
 // import NotFound from "components/NotFound/NotFound";
 
@@ -34,11 +40,17 @@ const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 export default function App() {
   const dispatch = useDispatch();
+  const allowRefreshUser = useSelector(getAllowRefreshUser);
+  const isLoggedIn = useSelector(getIsLoggedIn);
 
   useEffect(() => {
     dispatch(refreshUser());
-    dispatch(getAllShoppingList());
-  }, [dispatch]);
+   dispatch(getAllShoppingList());
+ 
+    if (allowRefreshUser === false && isLoggedIn) {
+      dispatch(logout());
+    }
+  }, [dispatch, isLoggedIn, allowRefreshUser]);
 
   return (
     <Routes>
