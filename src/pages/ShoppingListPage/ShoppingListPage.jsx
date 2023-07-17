@@ -4,6 +4,7 @@ import {
   OptionNameContainer,
   ShoppingList,
   ShoppingListTitle,
+  Container
 } from './ShoppingListPage.styled';
 import ProductListItem from 'components/ShoppingListItem/ShoppingListItem';
 import { useEffect, useState } from 'react';
@@ -72,7 +73,7 @@ export default function ShoppingListPage() {
                             </ProductListItem>
                           </ShoppingListItem>
                         );
-                      }): <SearchFailed description="You haven't added any product yet"/>} 
+                      }): <Container><SearchFailed description="You haven't added any product yet"/></Container>} 
         </ShoppingList>
       </div>
     </SharedContainer>
