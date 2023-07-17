@@ -43,13 +43,13 @@ export default function Ingredient({ errors, onDelete, onFieldsChange }) {
 }
 
 Ingredient.propTypes = {
-  errors: PropTypes.array,
+  errors: PropTypes.object,
   onDelete: PropTypes.func,
   onFieldsChange: PropTypes.func,
 };
 
 Ingredient.defaultProps = {
-  errors: [],
+  errors: {},
   onDelete: () => null,
   onFieldsChange: () => null,
 };
