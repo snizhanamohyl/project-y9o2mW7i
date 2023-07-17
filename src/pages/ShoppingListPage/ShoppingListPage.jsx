@@ -6,23 +6,21 @@ import {
   ShoppingListTitle,
 } from './ShoppingListPage.styled';
 import ProductListItem from 'components/ShoppingListItem/ShoppingListItem';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
 import { deleteIngredient, getAllShoppingList } from 'redux/ShopingList/operations';
 import { getShoppingList } from 'redux/ShopingList/selectors';
 
 export default function ShoppingListPage() {
-  const [products, setProducts] = useState();
 
   const dispatch = useDispatch();
 
   const ingredients = useSelector(getShoppingList);
 
   useEffect(() => {
-      dispatch(getAllShoppingList());
-      setProducts(ingredients)
-  },[ingredients]);
+    dispatch(getAllShoppingList());
+  }, [dispatch]);
 
   const onDeleteClick = (id) => {
     dispatch(deleteIngredient(id));
@@ -40,8 +38,8 @@ export default function ShoppingListPage() {
           </OptionNameContainer>
         </ShoppingListHeader>
         <ShoppingList>
-          {products &&
-          products.map(product => {
+          {ingredients &&
+          ingredients.map(product => {
             const { _id, name, measure, newId, img} = product
             return (
               <ShoppingListItem key={_id}>
@@ -50,7 +48,6 @@ export default function ShoppingListPage() {
                   number={measure}
                   id={newId}
                   url={img}
-                  setProducts={setProducts}
                   onDeleteClick={onDeleteClick}
                 >
                 </ProductListItem>
