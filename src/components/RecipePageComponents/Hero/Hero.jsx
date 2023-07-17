@@ -27,7 +27,6 @@ export default function RecipePageHero({ recipe, id }) {
     isAddedToFavorite
       ? dispatch(deleteRecipeFromFavorites(id))
       : dispatch(addRecipeToFavorites(recipe));
-    console.log(recipe);
   };
 
   useEffect(() => {
