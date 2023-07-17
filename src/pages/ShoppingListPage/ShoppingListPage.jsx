@@ -1,7 +1,7 @@
 import SharedContainer from "components/SharedContainer/SharedContainer";
 
 export default function ShoppingListPage() {
-    return <SharedContainer>
+    return <SharedContainer isBg>
         ShoppingListPage
     </SharedContainer>
 }

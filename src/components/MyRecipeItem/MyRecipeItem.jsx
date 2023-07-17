@@ -12,11 +12,18 @@ import {
         } from '../MyRecipeItem/MyRecipesItem.styled.jsx';
 import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel.jsx';
 import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee.jsx';
+import { useDispatch } from "react-redux";
+import { deleteRecipeFromFavorites } from 'redux/Favorite/operations'
 
 
 const MyRecipeItem = ({recipe, isFavorites}) => {
-
+    const dispatch = useDispatch()
     const {preview, title, _id:{$oid}, description, time} = recipe;
+
+    const onClick = () => {
+        dispatch(deleteRecipeFromFavorites($oid))
+        console.log($oid)
+    }
 
     return(
                 <ContainerCard key={$oid}> 
@@ -25,7 +32,7 @@ const MyRecipeItem = ({recipe, isFavorites}) => {
                         <ContainerContent>
                             <ContainerHeaderRecipe>
                                 <TitleCard>{title}</TitleCard>
-                                    <ButtonDelRicepe isFavorites={isFavorites}/>
+                                    <ButtonDelRicepe isFavorites={isFavorites} onClick={onClick}/>
                             </ContainerHeaderRecipe>
                             <TextCard>{description}</TextCard>
                         </ContainerContent>              

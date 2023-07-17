@@ -8,7 +8,7 @@ export const MyRecipesTitle = styled.h1`
     line-height: 28px;
     letter-spacing: -0.56px;
 
-    margin-top: 73px;
+    /* margin-top: 73px; */
     margin-bottom: 50px;
 
     @media screen and (min-width: 767px){
