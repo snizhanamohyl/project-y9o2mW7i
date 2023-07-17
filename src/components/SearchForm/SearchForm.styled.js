@@ -47,13 +47,6 @@ export const Input = styled.input`
   &::placeholder {
     color: var(--placeholder-color);
   }
-  /*   
-  &:-internal-autofill-selected {
-    appearance: none;
-    background-image: none !important;
-    background-color: inherit !important;
-    color: inherit !important;
-  } */
 
   @media (min-width: 768px) {
     font-size: 16px;
@@ -80,6 +73,14 @@ export const Button = styled.button`
   &:focus {
     background-color: ${({ issearchpage }) =>
       issearchpage === 'true' ? 'var(--dark-accent)' : 'var(--accent)'};
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    &:hover,
+    &:focus {
+      background-color: var(--accent);
+    }
   }
 
   @media (min-width: 768px) {

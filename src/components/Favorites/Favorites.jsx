@@ -31,7 +31,7 @@ const Favorites = () => {
     const currentRecipes = recipes.slice(firstRecipeIndex, lastRecipeIndex);
 
     return(
-        <>
+        <>  
             <FavoritePageTitle>Favorite </FavoritePageTitle>
             {recipes.length > 0 ? (
                 <>            
@@ -39,7 +39,7 @@ const Favorites = () => {
                 </>
             ):(
                 <Container>
-                    <EmptyPage description={"Улюблених рецептів немає"}/>
+                    <EmptyPage description={"you haven't added any favorite recipes yet"}/>
                 </Container>
             )}
 

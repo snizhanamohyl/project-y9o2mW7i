@@ -2,7 +2,7 @@ import { useSearchParams } from 'react-router-dom';
 import SearchForm from 'components/SearchForm/SearchForm';
 import SearchTypeSelector from 'components/SearchTypeSelector/SearchTypeSelector';
 
-export default function SearchBar() {
+export default function SearchBar({ isLoading }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query');
   const type = searchParams.get('type');
@@ -20,7 +20,7 @@ export default function SearchBar() {
 
   return (
     <>
-      <SearchForm onSubmit={handleSubmit} query={query} />
+      <SearchForm onSubmit={handleSubmit} query={query} isLoading={isLoading} />
       <SearchTypeSelector onChange={handleChange} type={type} />
     </>
   );
