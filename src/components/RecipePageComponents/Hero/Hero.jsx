@@ -22,11 +22,10 @@ export default function RecipePageHero({ recipe, id }) {
   const favoritesList = useSelector(getAllFavorites);
 
   const onHandleClick = () => {
-    setIsAddedToFavorite(prev => !prev);
-
     isAddedToFavorite
       ? dispatch(deleteRecipeFromFavorites(id))
       : dispatch(addRecipeToFavorites(recipe));
+    setIsAddedToFavorite(prev => !prev);
   };
 
   useEffect(() => {

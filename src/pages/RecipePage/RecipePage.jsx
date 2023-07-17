@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import RecipePageHero from 'components/RecipePageComponents/Hero/Hero';
 import RecipePageInstruction from 'components/RecipePageComponents/Instruction/Instruction';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
@@ -7,11 +7,12 @@ import RecipePageIngredients from 'components/RecipePageComponents/Ingredients/I
 import getRecipeById from 'services/getRecipeById';
 import EmptyPage from '../../components/EmptyPage/EmptyPage';
 import { Container } from './RecipePage.styled';
+import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
 export default function RecipePage() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState('');
-
+  const navigate = useNavigate();
   useEffect(() => {
     getRecipeById(recipeId)
       .then(data => {
@@ -34,9 +35,7 @@ export default function RecipePage() {
           </SharedContainer>
         </>
       ) : (
-        <Container>
-          <EmptyPage description={'Somthing get wrong, refresh your page'} />
-        </Container>
+        navigate('/notFound')
       )}
     </>
   );
