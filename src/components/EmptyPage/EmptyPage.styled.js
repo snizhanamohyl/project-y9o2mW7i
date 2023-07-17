@@ -13,7 +13,7 @@ export const Image = styled.picture`
 
 export const Description = styled.p`
   margin-top: 24px;
-  color: var(--black);
+  color: var(--select-color);
   font-size: 14px;
   font-weight: 500;
   line-height: 1;

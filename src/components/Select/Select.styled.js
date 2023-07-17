@@ -14,7 +14,8 @@ export const Button = styled.button`
   background-color: transparent;
 
   span {
-    transition: color var(--transition-time) var(--transition-function);
+    transition: color var(--transition-time) var(--transition-function),
+      opacity var(--transition-time) var(--transition-function);
   }
 
   svg {
@@ -26,7 +27,8 @@ export const Button = styled.button`
   &:hover,
   &:focus {
     span {
-      color: var(--accent);
+      color: var(--select-options-hover);
+      opacity: 0.8;
     }
   }
 `;
@@ -50,7 +52,7 @@ export const ListWrapper = styled.div`
 
   display: ${({ $isOpen }) => ($isOpen ? 'block' : 'none')};
 
-  background-color: var(--white);
+  background-color: var(--select-options-bg);
   border-radius: 6px;
   box-shadow: 0px 6.518518447875977px 7.8222222328186035px 0px
     rgba(0, 0, 0, 0.03);
@@ -74,7 +76,7 @@ export const List = styled.ul`
 export const Option = styled.li`
   padding: 4px 0;
 
-  color: var(--black);
+  color: var(--select-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -85,7 +87,8 @@ export const Option = styled.li`
   cursor: pointer;
 
   &:hover {
-    color: var(--accent);
+    color: var(--select-options-hover);
+    opacity: 1;
   }
 
   @media screen and (min-width: 768px) {

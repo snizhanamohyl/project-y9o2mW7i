@@ -13,8 +13,8 @@ export const Form = styled.form`
   border: 1px solid var(--input-border-color);
   border-radius: 54px 104px 54px 104px;
   border-right: none;
-  background-color: var(--white);
-  filter: drop-shadow(0px 4px 97px rgba(34, 37, 42, 0.03));
+  background-color: var(--search-input-bg);
+  box-shadow: 0px 4px 97px rgba(34, 37, 42, 0.03);
   transition: border-color var(--transition-time) var(--transition-function);
 
   &:focus-within,
@@ -48,13 +48,6 @@ export const Input = styled.input`
   &::placeholder {
     color: var(--placeholder-color);
   }
-  /*   
-  &:-internal-autofill-selected {
-    appearance: none;
-    background-image: none !important;
-    background-color: inherit !important;
-    color: inherit !important;
-  } */
 
   @media (min-width: 768px) {
     font-size: 16px;
@@ -73,7 +66,7 @@ export const Button = styled.button`
   line-height: normal;
   color: var(--bg-color);
   background-color: ${({ issearchpage }) =>
-    issearchpage === 'true' ? 'var(--accent)' : 'var(--dark-accent)'};
+    issearchpage === 'true' ? 'var(--search-btn)' : 'var(--search-main-btn)'};
   border-radius: 54px 104px 54px 104px;
   transition: background-color var(--transition-time) var(--transition-function);
 
@@ -81,6 +74,7 @@ export const Button = styled.button`
   &:focus {
     background-color: ${({ issearchpage }) =>
       issearchpage === 'true' ? 'var(--dark-accent)' : 'var(--accent)'};
+    color: var(--search-btn-hover);
   }
 
   @media (min-width: 768px) {
