@@ -27,6 +27,7 @@ export const Wrapper = styled.div`
     height: 34px;
     padding: 14px;
     border-radius: 6px;
+    border: 1px solid var(--input-border-color);
     background-color: var(--input-bg-color);
     @media (min-width: 768px) {
       width: 175px;

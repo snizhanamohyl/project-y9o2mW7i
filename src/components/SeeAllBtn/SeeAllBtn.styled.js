@@ -14,12 +14,9 @@ export const SeeAllLink = styled(NavLink)`
   color: var(--bg-color);
   margin-top: 24px;
 
-  &:hover {
-    background-color: var(--dark-accent);
-  }
-
+  &:hover,
   &:focus {
-    background-color: var(--dark-accent);
+    color: var(--see-all-hover);
   }
 
   @media (min-width: 768px) {

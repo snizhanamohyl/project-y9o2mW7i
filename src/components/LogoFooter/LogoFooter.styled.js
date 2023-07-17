@@ -15,7 +15,7 @@ export const LogoFooterLink = styled(Link)`
 `;
 
 export const LogoText = styled.p`
-  color: var(--bg-color);
+  color: var(--title-color);
   margin-left: 8px;
   font-size: 18px;
   font-weight: 700;

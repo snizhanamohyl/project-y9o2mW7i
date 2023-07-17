@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import sprite from 'assets/sprite.svg'
-import { MobHeaderWrap, MobMenuWrap, NavItem, NavList, StyledLink } from "./MobMenu.styled";
+import { MobHeaderWrap, MobMenuWrap, NavItem, NavList, StyledLink, Button } from "./MobMenu.styled";
 import ThemeToggler from "components/ThemeToggler/ThemeToggler";
 import { navOptions } from "vars/navOptions";
 import useWindowWidth from "hooks/useWindowWidth";
@@ -24,11 +24,11 @@ export default function MobMenu({ toggleMenu, isOpen }) {
             <Link to='/' onClick={toggleMenu}>
                 <Logo size={logoSize}/>
             </Link>
-            <button onClick={toggleMenu}>
+            <Button onClick={toggleMenu}>
                 <svg width={32} height={32}>
                     <use href={`${sprite}#icon-x-3232`}></use>
                 </svg>
-            </button>
+            </Button>
         </MobHeaderWrap>
         <nav>
             <NavList>

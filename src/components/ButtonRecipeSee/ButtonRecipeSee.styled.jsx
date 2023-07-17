@@ -1,21 +1,18 @@
 import styled from "@emotion/styled";
+// import { light } from "@mui/material/styles/createPalette";
 import { Link } from "react-router-dom";
 
 export const BtnRecipeSee = styled.div`
-    background-color: var(--text-primary);
     border-radius: 24px 44px;
-    border: 1px solid var(--text-primary);
 
-    color: var(--bg-color);
+    color: #fafafa;
     font-size: 10px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 
     transition: color var(--transition-time) var(--transition-function), 
-                background-color var(--transition-time) var(--transition-function), 
-                border var(--transition-time) var(--transition-function);
-
+                background-color var(--transition-time) var(--transition-function);
 
     @media screen and (min-width: 767px){
         font-size: 14px;
@@ -25,21 +22,12 @@ export const BtnRecipeSee = styled.div`
         font-size: 16px;
     }
 
-    background: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--accent)"};
-    border: ${props => props.isFavorites ? "1px solid var(--dark-accent)" : "1px solid var(--accent)"};
+    background-color: ${({ $isFavorites }) => $isFavorites ? "var(--is-fav-see-btn)" : "var(--accent-green)"};
 
-    &:hover{
-        background-color: ${props => props.isFavorites ? "var(--light-green-bg);" : "var(--dark-accent)"};
-        border: ${props => props.isFavorites ? "1px solid var(--light-green-bg);" : "1px solid var(--dark-accent)"};
-        color: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--bg-color)"};
-    }
-
-    &:focus{
-        background-color: ${props => props.isFavorites ? "var(--light-green-bg);" : "var(--dark-accent)"};
-        border: ${props => props.isFavorites ? "1px solid var(--light-green-bg);" : "1px solid var(--dark-accent)"};
-        color: ${props => props.isFavorites ? "var(--dark-accent)" : "var(--bg-color)"};
-    }
-`
+    &:hover, &:focus {
+        ${({ $isFavorites }) => `background-color: ${$isFavorites ? "var(--is-fav-see-btn-hover)" : "var(--is-my-see-btn-hover)"};
+            color: ${$isFavorites ? "var(--is-fav-see-btn-color)" : "var(--main-light-color"};`       
+    };}`
 
 export const LinkRecipe = styled(Link)`
     display: block;

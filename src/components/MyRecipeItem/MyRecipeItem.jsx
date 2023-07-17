@@ -1,4 +1,3 @@
-import React from "react";
 import {
     ContainerCard,
     ImgCard,
@@ -14,9 +13,8 @@ import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel.jsx';
 import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee.jsx';
 
 
-const MyRecipeItem = ({recipe, isFavorites}) => {
-
-    const {preview, title, _id:{$oid}, description, time} = recipe;
+const MyRecipeItem = ({ recipe, isFavorites }) => {
+    const { preview, title, _id: { $oid }, description, time } = recipe;
 
     return(
                 <ContainerCard key={$oid}> 
@@ -31,7 +29,7 @@ const MyRecipeItem = ({recipe, isFavorites}) => {
                         </ContainerContent>              
                         <ContainerBtnRecipe>
                                 <TimeCard>{time} min</TimeCard>
-                                <ButtonRecipeSee isFavorites={isFavorites} path={`/recipe/${$oid}`}/>
+                    <ButtonRecipeSee isFavorites={isFavorites} path={`/recipe/${$oid}`}/>
                         </ContainerBtnRecipe>
                     </Container>
                 </ContainerCard>

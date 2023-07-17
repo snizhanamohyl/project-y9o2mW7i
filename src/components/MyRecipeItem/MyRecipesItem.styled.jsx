@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 export const ContainerCard = styled.div`
     border-radius: 8px;
-    background: var(--white);
+    background: var(--fav-card-bg);
 
     display: flex;
     align-items: flex-start;
@@ -86,7 +86,7 @@ export const BtnDel = styled.button`
 
 export const TextCard = styled.p`
     overflow: hidden;
-    color: var(--text-primary);
+    color: var(--fav-card-text);
     text-overflow: ellipsis;
     font-size: 8px;
     font-style: normal;

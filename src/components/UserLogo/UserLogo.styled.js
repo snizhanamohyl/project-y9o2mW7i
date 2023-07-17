@@ -19,6 +19,7 @@ export const AvatarImg = styled.img`
 `;
 
 export const UserName = styled.p`
+  color: var(--text-primary);
   font-size: 14px;
   font-weight: 600;
   line-height: 1.7;

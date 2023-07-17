@@ -12,6 +12,7 @@ export const Form = styled.form`
   align-items: center;
   border: 1px solid var(--input-border-color);
   border-radius: 54px 104px 54px 104px;
+  border-right: none;
   background-color: var(--white);
   filter: drop-shadow(0px 4px 97px rgba(34, 37, 42, 0.03));
   transition: border-color var(--transition-time) var(--transition-function);
@@ -19,7 +20,7 @@ export const Form = styled.form`
   &:focus-within,
   &:hover,
   &:focus {
-    border-color: rgba(35, 38, 42, 0.2);
+    border-color: var(--input-border-color-focus);
   }
 
   @media (min-width: 768px) {
