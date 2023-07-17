@@ -4,7 +4,7 @@ import Categories from 'components/Categories/Categories';
 
 export default function CategoriesPage() {
   return (
-    <SharedContainer>
+    <SharedContainer isBg>
       <Title>Categories</Title>
       <Categories />
     </SharedContainer>
