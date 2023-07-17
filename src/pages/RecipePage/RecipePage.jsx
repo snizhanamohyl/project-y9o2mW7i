@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import RecipePageHero from 'components/RecipePageComponents/Hero/Hero';
 import RecipePageInstruction from 'components/RecipePageComponents/Instruction/Instruction';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
@@ -9,18 +9,23 @@ import getRecipeById from 'services/getRecipeById';
 export default function RecipePage() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState('');
-
+  const navigate = useNavigate();
   useEffect(() => {
     getRecipeById(recipeId)
       .then(data => {
-        data ? setRecipe(data) : setRecipe('');
+        if (data) {
+          setRecipe(data);
+        } else {
+          setRecipe('');
+          navigate('/notFound');
+        }
       })
       .catch(err => console.log(err.message));
-  }, [recipeId]);
+  }, [recipeId, navigate]);
 
   return (
     <>
-      <RecipePageHero recipe={recipe} id={recipeId} />
+      <RecipePageHero recipe={recipe} />
       <SharedContainer>
         <RecipePageIngredients ingredients={recipe.ingredients} id={recipeId} />
         <RecipePageInstruction recipe={recipe} />
