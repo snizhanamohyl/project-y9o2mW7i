@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { addRecipeToFavorites, deleteRecipeFromFavorites, getAllFavoritList } from './operations'
-import { logout } from 'redux/auth/auth-operations';
 import { initialState } from './initialState';
 
 const handlePending = (state) => {
@@ -37,12 +36,7 @@ const favoriteSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.recipeList = action.payload;
-      },
-      [logout.fulfilled]: (state) => {
-        state.recipeList = [];
-        state.error = null;
-        state.isLoading = false;
-      },
+      }
     },
   });
   
