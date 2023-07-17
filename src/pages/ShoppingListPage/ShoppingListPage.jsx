@@ -46,13 +46,15 @@ export default function ShoppingListPage() {
     <SharedContainer>
       <div>
         <ShoppingListTitle>Shopping list</ShoppingListTitle>
-        <ShoppingListHeader>
-          <p>Products</p>
-          <OptionNameContainer>
-            <span>Number</span>
-            <span>Remove</span>
-          </OptionNameContainer>
-        </ShoppingListHeader>
+        {ingredients.length > 0 &&
+                <ShoppingListHeader>
+                <p>Products</p>
+                <OptionNameContainer>
+                  <span>Number</span>
+                  <span>Remove</span>
+                </OptionNameContainer>
+              </ShoppingListHeader>
+        }
         <ShoppingList>
           {isLoading ? <PageLoader/> : 
                     ingredients.length > 0 ?
@@ -70,9 +72,7 @@ export default function ShoppingListPage() {
                             </ProductListItem>
                           </ShoppingListItem>
                         );
-                      }): <SearchFailed description="You haven't added any product yet."/>} 
-          
-
+                      }): <SearchFailed description="You haven't added any product yet"/>} 
         </ShoppingList>
       </div>
     </SharedContainer>

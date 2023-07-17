@@ -48,6 +48,7 @@ export const ProductImg = styled.img`
   display: block;
   width: 60px;
   height: 60px;
+  padding: 6px;
   border-radius: 8px;
   background: var(--light-green-bg);
 
