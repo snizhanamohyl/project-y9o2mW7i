@@ -45,7 +45,7 @@ const favoriteSlice = createSlice({
       state.recipeList = action.payload;
     },
     [logout.fulfilled]: state => {
-      state.ingredients = [];
+      state.recipeList = [];
       state.error = null;
       state.isLoading = false;
     },
