@@ -69,10 +69,6 @@ export const RemoveBtn = styled.button`
   height: 14px;
   margin-right: 19px;
 
-  :hover {
-    stroke: var(--accent);
-  }
-
   @media screen and (min-width: 768px) {
     width: 20px;
     height: 20px;
@@ -90,6 +86,10 @@ export const SvgRemove = styled.svg`
   width: 14px;
   height: 14px;
   stroke: #333;
+
+  &:hover {
+    stroke: var(--accent);
+  }
 
   @media screen and (min-width: 768px) {
     width: 20px;

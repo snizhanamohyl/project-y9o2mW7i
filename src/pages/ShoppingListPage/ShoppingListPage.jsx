@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
 import { deleteIngredient, getAllShoppingList } from 'redux/ShopingList/operations';
 import { getShoppingList } from 'redux/ShopingList/selectors';
-import fetchShoppingList from 'services/fetchShoppingList';
 
 export default function ShoppingListPage() {
   const [products, setProducts] = useState();
@@ -19,23 +18,14 @@ export default function ShoppingListPage() {
   const dispatch = useDispatch();
 
   const ingredients = useSelector(getShoppingList);
-  console.log(ingredients)
 
   useEffect(() => {
-    if (ingredients !== []) {
       dispatch(getAllShoppingList());
       setProducts(ingredients)
-    }
-    fetchShoppingList()
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch(error => console.log(error.message));
-  }, [ingredients, dispatch]);
+  },[ingredients]);
 
   const onDeleteClick = (id) => {
     dispatch(deleteIngredient(id));
-    console.log(id)
   };
 
   return (
@@ -52,13 +42,14 @@ export default function ShoppingListPage() {
         <ShoppingList>
           {products &&
           products.map(product => {
+            const { _id, name, measure, newId, img} = product
             return (
-              <ShoppingListItem key={product._id}>
+              <ShoppingListItem key={_id}>
                 <ProductListItem
-                  name={product.name}
-                  number={product.measure}
-                  id={product.newId}
-                  url={product.img}
+                  name={name}
+                  number={measure}
+                  id={newId}
+                  url={img}
                   setProducts={setProducts}
                   onDeleteClick={onDeleteClick}
                 >
