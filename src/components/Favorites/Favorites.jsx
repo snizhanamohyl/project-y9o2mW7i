@@ -15,6 +15,7 @@ const Favorites = () => {
 
     const dispatch = useDispatch();
     const recipesAll = useSelector(getAllFavorites)
+
     console.log(recipesAll)
     
     const recipesPerPage = 4;
@@ -23,7 +24,7 @@ const Favorites = () => {
     useEffect(() => {
         dispatch(getAllFavoritList())
         setRecipes(recipesAll)
-    }, [dispatch]);
+    }, [dispatch, recipesAll]);
 
 
     // індекс останнього рецепту на поточній сторінці
