@@ -57,12 +57,8 @@ export const TextArea = styled.textarea`
     top: 100%;
   }
 
-  &:hover {
-    outline-color: var(--input-border-color-focus);
-  }
-
+  &:hover,
   &:focus {
-    background-color: var(--white);
     outline-color: var(--input-border-color-focus);
   }
 

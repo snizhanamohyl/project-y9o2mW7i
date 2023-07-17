@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Select from 'components/Select/Select';
 import SelectInput from 'components/SelectInput/SelectInput';
 import {
@@ -12,24 +14,19 @@ import Sprite from 'assets/sprite.svg';
 import { useEffect, useState } from 'react';
 
 export default function Ingredient({ errors, onDelete, onFieldsChange }) {
-  const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState(0);
+  const [ingredientId, setIngredientId] = useState('');
+  const [amount, setAmount] = useState(1);
   const [units, setUnits] = useState('tbs');
 
   useEffect(() => {
-    onFieldsChange({ title, measure: `${amount} ${units}` });
+    onFieldsChange({ id: ingredientId, measure: `${amount} ${units}` });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [title, amount, units]);
+  }, [ingredientId, amount, units]);
 
   return (
     <Item>
       <InputWrapper>
-        <SelectInput
-          options={unitList}
-          currentOption={title}
-          inputProps={{ placeholder: 'Enter ingredient' }}
-          onSelect={setTitle}
-        />
+        <SelectInput onSelect={setIngredientId} />
       </InputWrapper>
       <InputWrapper>
         <NumericInput maxLength={3} defaultValue={1} onChange={setAmount} />
@@ -40,7 +37,19 @@ export default function Ingredient({ errors, onDelete, onFieldsChange }) {
           <use href={Sprite + '#icon-X'}></use>
         </svg>
       </RemoveBtn>
-      {Boolean(errors?.title) && <ErrorMessage>{errors?.title}</ErrorMessage>}
+      {Boolean(errors?.id) && <ErrorMessage>{errors?.id}</ErrorMessage>}
     </Item>
   );
 }
+
+Ingredient.propTypes = {
+  errors: PropTypes.array,
+  onDelete: PropTypes.func,
+  onFieldsChange: PropTypes.func,
+};
+
+Ingredient.defaultProps = {
+  errors: [],
+  onDelete: () => null,
+  onFieldsChange: () => null,
+};

@@ -1,15 +1,18 @@
+import { useNavigate } from 'react-router';
+import { useState } from 'react';
 import { useFormik } from 'formik';
 
 import RecipeDescriptionFields from 'components/RecipeDescriptionFields/RecipeDescriptionFields';
 import RecipeIngredientsFields from 'components/RecipeIngredientsFields/RecipeIngredientsFields';
 import RecipePreparationFields from 'components/RecipePreparationFields/RecipePreparationFields';
 import Button from 'components/Button/Button';
+import Notification from 'components/Notification/Notification';
 import { Form } from './AddRecipeForm.styled';
 import { newRecipeSchema } from 'schemas/newRecipeSchema';
 import { addRecipe } from 'services/addRecipe';
-import { useNavigate } from 'react-router';
 
 export default function AddRecipeForm() {
+  const [error, setError] = useState('');
   const navigate = useNavigate();
   const formik = useFormik({
     validateOnBlur: false,
@@ -35,7 +38,10 @@ export default function AddRecipeForm() {
         await addRecipe(formData);
         navigate('/my');
       } catch (error) {
-        console.log(error.message);
+        setError(error.message);
+        setTimeout(() => {
+          setError('');
+        }, 4000);
       }
     },
   });
@@ -48,6 +54,7 @@ export default function AddRecipeForm() {
       <Button type="submit" onClick={formik.handleSubmit}>
         Add
       </Button>
+      {error !== '' && <Notification text={error} />}
     </Form>
   );
 }

@@ -33,8 +33,8 @@ export const InputWrapper = styled.div`
     }
   }
 
-  & ul {
-    padding-left: 46px;
+  &:not(:first-child) ul {
+    padding-left: 56px;
   }
 
   @media screen and (min-width: 768px) {

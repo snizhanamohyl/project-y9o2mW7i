@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-
+import PropTypes from 'prop-types';
 import SectionTitle from 'components/SectionTitle/SectionTitle';
 import Ingredient from 'components/Ingredient/Ingredient';
 import {
@@ -107,3 +107,11 @@ export default function RecipeIngredientsFields({ formik }) {
     </Section>
   );
 }
+
+RecipeIngredientsFields.propTypes = {
+  formik: PropTypes.object,
+};
+
+RecipeIngredientsFields.defaultProps = {
+  formik: {},
+};

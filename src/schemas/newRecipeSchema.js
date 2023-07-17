@@ -13,7 +13,7 @@ export const newRecipeSchema = Yup.object({
   ingredients: Yup.array()
     .of(
       Yup.object({
-        title: Yup.string().required('Ingredient must have a name'),
+        id: Yup.string().required('Ingredient must have a name'),
         measure: Yup.string(),
       })
     )

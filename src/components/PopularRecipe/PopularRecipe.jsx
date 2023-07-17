@@ -19,7 +19,9 @@ export default function PopularRecipe() {
   const windowWidth = useWindowWidth();
 
   useEffect(() => {
-    fetchPopularRecipes().then(data => setRecipes(data));
+    fetchPopularRecipes().then(data => {
+      setRecipes(data);
+    });
   }, []);
 
   const itemsCount = windowWidth >= 768 && windowWidth < 1440 ? 2 : 4;
@@ -27,7 +29,7 @@ export default function PopularRecipe() {
   return (
     <Section>
       <SectionTitle>Popular recipe</SectionTitle>
-      {recipes.length ? (
+      {recipes?.length ? (
         <List>
           {recipes
             .slice(0, itemsCount)
