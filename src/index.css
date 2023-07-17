@@ -101,6 +101,7 @@
   --add-increment-btn: #22252a;
   --add-socials: #8baa36;
   
+  --popover-border: none;
 
   --bcg-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 46.3%, rgba(0, 0, 0, 0.35) 72.75%, rgba(0, 0, 0, 0) 100%);
   --transition-time: 250ms;
@@ -168,6 +169,8 @@
     --add-del-btn: #FAFAFA;
     --add-increment-btn: #fafafa;
     --add-socials: #fafafa;
+
+    --popover-border: 1px solid #8baa36;
 
     & h1 {
       --dark-accent: #fafafa;

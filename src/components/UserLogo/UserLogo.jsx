@@ -14,7 +14,7 @@ const theme = createTheme({
           padding: '18px',
           boxShadow: 'none',
           borderRadius: '8px',
-          border: '1px solid var(--accent)',
+          border: 'var(--popover-border);',
           backgroundColor: 'var(--bg-color)',
         },},},},});
 
@@ -48,7 +48,7 @@ export default function UserLogo () {
             id={id}
             open={open}
             anchorEl={anchorEl}
-            onClose={handleClose}
+          onClose={handleClose}
             anchorOrigin={{
               vertical: 'bottom',
               horizontal: 'left',
