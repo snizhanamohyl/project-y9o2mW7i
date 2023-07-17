@@ -2,21 +2,17 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from 'redux/auth/selectors';
 import { Formik } from 'formik';
-
 import sprite from 'assets/sprite.svg';
 import { updateUser } from 'redux/auth/auth-operations';
 import {updateUserValidationSchema, SUPPORTED_FORMATS} from 'schemas/userUpdateSchema';
-
 import { ModalContent } from './ModalContent.styled';
 import {CloseIcon, CloseButton} from './EditUserForm.styled.js'
-
 import {
   FormStyled, UserAvatarWrapper, AvatarLabel, PlusIcon, UserImgWrapper,
   InputButtonWrapper, NameLabel, NameInput, UserIconStyled, EditBtn,
   EditIcon, SubmitBtn, ErrorMessage, UserIcon} from './EditUserForm.styled.js';
 
 export default function EditUserForm({ handleCloseModal }) {
-
   const dispatch = useDispatch();
   const user = useSelector(getUser);
 
