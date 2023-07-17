@@ -5,7 +5,7 @@ import SharedContainer from '../../components/SharedContainer/SharedContainer';
 
 const MyRecipesPage = () => {
   return (
-            <SharedContainer>
+            <SharedContainer isBg>
                 <MyRecipes />
             </SharedContainer>
   );

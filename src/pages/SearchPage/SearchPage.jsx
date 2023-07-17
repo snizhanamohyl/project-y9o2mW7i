@@ -7,7 +7,7 @@ import { Section, MainPageTitle } from './SearchPage.styled';
 export default function SearchPage() {
   const [isLoading, setIsLoading] = useState(false);
   return (
-    <SharedContainer>
+    <SharedContainer isBg>
       <Section>
         <MainPageTitle>Search</MainPageTitle>
         <SearchBar isLoading={isLoading} />

@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  padding-top: 50px;
+  /* padding-top: 50px; */
   padding-bottom: 100px;
   @media (min-width: 768px) {
-    padding-top: 72px;
+    /* padding-top: 72px; */
     padding-bottom: 200px;
   }
   @media (min-width: 1440px) {
-    padding-top: 105px;
+    /* padding-top: 105px; */
     padding-bottom: 105px;
   }
 `;
