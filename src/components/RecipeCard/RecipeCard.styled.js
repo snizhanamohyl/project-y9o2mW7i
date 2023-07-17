@@ -20,6 +20,7 @@ export const RecipeImg = styled.img`
   width: 344px;
   height: 322px;
   border-radius: 8px;
+  background-color: gray;
 `;
 
 export const Recipe = styled.p`
