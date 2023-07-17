@@ -14,12 +14,15 @@ export const OptionContainer = styled.div`
 `;
 
 export const NumberContainer = styled.span`
-  height: 23px;
+  height: fit-content;
   min-width: 37px;
+  max-width: 100px;
   padding: 4px 8px;
   background-color: var(--accent);
   border-radius: 4px;
   text-align: center;
+  display: flex;
+  justify-content: center;
   color: var(--bg-color);
   font-size: 10px;
   font-style: normal;
@@ -46,6 +49,7 @@ export const ProductImg = styled.img`
   width: 60px;
   height: 60px;
   border-radius: 8px;
+  background: var(--light-green-bg);
 
   @media screen and (min-width: 768px) {
     width: 93px;
