@@ -35,6 +35,11 @@ import {
   ServerError,
 } from 'pages/RegisterPage/RegisterPage.styled';
 
+import {
+  MessageConteinerMedium,
+  MessageConteinerStrong,
+} from './MessageConteiner.style';
+
 const initialValues = {
   name: '',
   email: '',
@@ -63,19 +68,44 @@ export const RegisterForm = () => {
       });
   };
 
+  const getPasswordStrength = password => {
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumbers = /\d/.test(password);
+
+    if (
+      password.length >= 8 &&
+      password.length <= 16 &&
+      (!hasUpperCase || !hasLowerCase) &&
+      hasNumbers
+    ) {
+      return 'Medium';
+    }
+    if (
+      password.length >= 8 &&
+      password.length <= 16 &&
+      (hasUpperCase || hasLowerCase) &&
+      hasNumbers
+    ) {
+      return 'Strong';
+    }
+    return;
+  };
+
   return (
     <>
       {serverError && (
         <Notification text="Oops, something went wrong, please try again later" />
       )}
       <Formik
+        key={'registerForm'}
         initialValues={initialValues}
         validationSchema={userRegisterSchema}
         onSubmit={handlesubmit}
-        validateOnChange={false}
+        validateOnChange={true}
         validateOnBlur={false}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, values }) => (
           <Form autoComplete="off">
             {errors.name && touched.name ? (
               <ErrorInput type="text" name="name" placeholder="Name" />
@@ -150,6 +180,16 @@ export const RegisterForm = () => {
                 name="password"
                 placeholder="Password"
               />
+            )}
+            {getPasswordStrength(values.password) === 'Medium' && (
+              <MessageConteinerMedium>
+                Your password is little secure
+              </MessageConteinerMedium>
+            )}
+            {getPasswordStrength(values.password) === 'Strong' && (
+              <MessageConteinerStrong>
+                Password is secure
+              </MessageConteinerStrong>
             )}
 
             {errors.password && touched.password ? (
