@@ -23,7 +23,7 @@ const Favorites = () => {
     useEffect(() => {
         dispatch(getAllFavoritList())
         setRecipes(recipesAll)
-    }, [dispatch, recipesAll]);
+    }, [dispatch]);
 
 
     // індекс останнього рецепту на поточній сторінці
