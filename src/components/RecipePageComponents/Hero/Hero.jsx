@@ -13,6 +13,7 @@ import { getAllFavorites } from 'redux/Favorite/selectors';
 import {
   addRecipeToFavorites,
   deleteRecipeFromFavorites,
+  getAllFavoritList,
 } from 'redux/Favorite/operations';
 import { useParams } from 'react-router-dom';
 
@@ -20,7 +21,8 @@ export default function RecipePageHero({ recipe }) {
   const { recipeId } = useParams();
   const { title, description, time } = recipe;
   const dispatch = useDispatch();
-  const [isAddedToFavorite, setIsAddedToFavorite] = useState(false);
+  const [isAddedToFavorite, setIsAddedToFavorite] = useState([]);
+  const [isAdded, setIsAdded] = useState(false);
   const favoritesList = useSelector(getAllFavorites);
 
   const onHandleClick = () => {
@@ -34,9 +36,10 @@ export default function RecipePageHero({ recipe }) {
   };
 
   useEffect(() => {
-    setIsAddedToFavorite(
-      favoritesList?.find(el => el._id === recipeId) ? true : false
-    );
+    if (favoritesList.length === 0) {
+      dispatch(getAllFavoritList());
+      setIsAddedToFavorite(favoritesList);
+    }
   }, [favoritesList, recipeId]);
 
   return (

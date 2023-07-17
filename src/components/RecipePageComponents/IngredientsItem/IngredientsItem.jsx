@@ -34,10 +34,8 @@ export default function RecipePageIngredientsItem({ ingredient }) {
   };
 
   useEffect(() => {
-    setIsChecked(
-      shoppingList.find(el => el.newId === newStructure.newId) ? true : false
-    );
-  }, [newStructure.newId, shoppingList]);
+    setIsChecked(shoppingList.find(el => el.newId === recipeId) ? true : false);
+  }, [recipeId, shoppingList]);
 
   return (
     <>
