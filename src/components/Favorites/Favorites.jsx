@@ -12,14 +12,15 @@ const Favorites = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const recipesAll = useSelector(getAllFavorites)
+    console.log(recipesAll)
     const dispatch = useDispatch();
 
     const recipesPerPage = 4;
 
 
     useEffect(() => {
-        dispatch(setRecipes(recipesAll))
-    }, [recipesAll, dispatch]);
+        // dispatch(setRecipes(recipesAll))
+    }, []);
 
 
     // індекс останнього рецепту на поточній сторінці
