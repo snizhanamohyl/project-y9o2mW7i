@@ -5,9 +5,6 @@ import RecipePageInstruction from 'components/RecipePageComponents/Instruction/I
 import SharedContainer from 'components/SharedContainer/SharedContainer';
 import RecipePageIngredients from 'components/RecipePageComponents/Ingredients/Ingredients';
 import getRecipeById from 'services/getRecipeById';
-import EmptyPage from '../../components/EmptyPage/EmptyPage';
-import { Container } from './RecipePage.styled';
-import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
 export default function RecipePage() {
   const { recipeId } = useParams();
@@ -16,27 +13,23 @@ export default function RecipePage() {
   useEffect(() => {
     getRecipeById(recipeId)
       .then(data => {
-        data ? setRecipe(data) : setRecipe('');
+        if (data) {
+          setRecipe(data);
+        } else {
+          setRecipe('');
+          navigate('/notFound');
+        }
       })
       .catch(err => console.log(err.message));
-  }, [recipeId]);
+  }, [recipeId, navigate]);
 
   return (
     <>
-      {recipe ? (
-        <>
-          <RecipePageHero recipe={recipe} id={recipe._id} />
-          <SharedContainer>
-            <RecipePageIngredients
-              ingredients={recipe.ingredients}
-              id={recipeId}
-            />
-            <RecipePageInstruction recipe={recipe} />
-          </SharedContainer>
-        </>
-      ) : (
-        navigate('/notFound')
-      )}
+      <RecipePageHero recipe={recipe} />
+      <SharedContainer>
+        <RecipePageIngredients ingredients={recipe.ingredients} id={recipeId} />
+        <RecipePageInstruction recipe={recipe} />
+      </SharedContainer>
     </>
   );
 }

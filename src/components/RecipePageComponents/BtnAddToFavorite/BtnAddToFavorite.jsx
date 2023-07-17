@@ -6,7 +6,7 @@ export default function BtnAddToFavorite({ isAddedToFavorite, id, onClick }) {
       type="button"
       id={id}
       onClick={onClick}
-      $isAddedToFavorite={isAddedToFavorite}
+      isAddedToFavorite={isAddedToFavorite}
     >
       {isAddedToFavorite
         ? 'Remove from favorite recipes'

@@ -14,25 +14,30 @@ import {
   addRecipeToFavorites,
   deleteRecipeFromFavorites,
 } from 'redux/Favorite/operations';
+import { useParams } from 'react-router-dom';
 
-export default function RecipePageHero({ recipe, id }) {
+export default function RecipePageHero({ recipe }) {
+  const { recipeId } = useParams();
   const { title, description, time } = recipe;
   const dispatch = useDispatch();
   const [isAddedToFavorite, setIsAddedToFavorite] = useState(false);
   const favoritesList = useSelector(getAllFavorites);
 
   const onHandleClick = () => {
-    isAddedToFavorite
-      ? dispatch(deleteRecipeFromFavorites(id))
-      : dispatch(addRecipeToFavorites(recipe));
-    setIsAddedToFavorite(prev => !prev);
+    if (isAddedToFavorite) {
+      dispatch(deleteRecipeFromFavorites(recipeId));
+      setIsAddedToFavorite(prev => !prev);
+    } else {
+      dispatch(addRecipeToFavorites(recipe));
+      setIsAddedToFavorite(prev => !prev);
+    }
   };
 
   useEffect(() => {
     setIsAddedToFavorite(
-      favoritesList?.find(el => el._id === recipe._id) ? true : false
+      favoritesList?.find(el => el._id === recipeId) ? true : false
     );
-  }, [favoritesList, recipe._id]);
+  }, [favoritesList, recipeId]);
 
   return (
     <SectionHero>
@@ -42,7 +47,7 @@ export default function RecipePageHero({ recipe, id }) {
         <BtnAddToFavorite
           type="button"
           onClick={onHandleClick}
-          id={id}
+          id={recipeId}
           isAddedToFavorite={isAddedToFavorite}
         />
 
