@@ -97,6 +97,10 @@
   --add-input-stroke: rgba(250, 250, 250, 0);
   --add-placeholder-color: #000000;
   --add-ingr-input-color: #000000;
+  --add-del-btn: #333333;
+  --add-increment-btn: #22252a;
+  --add-socials: #8baa36;
+  
 
   --bcg-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 46.3%, rgba(0, 0, 0, 0.35) 72.75%, rgba(0, 0, 0, 0) 100%);
   --transition-time: 250ms;
@@ -116,6 +120,7 @@
     --title-color: #fafafa;
     --input-border-color: rgba(250, 250, 250, 0.2);
     --input-border-color-focus: rgba(250, 250, 250, 0.5);
+    --button-border-color: #FAFAFA;
     --input-bg-color: transparent;
     --black: rgba(250, 250, 250, 0.5);
     --footer-nav-hover: #22252a;
@@ -160,6 +165,9 @@
     --add-input-stroke: rgba(250, 250, 250, 0.20);
     --add-placeholder-color: rgba(250, 250, 250, 0.6);
     --add-ingr-input-color: #fafafa;
+    --add-del-btn: #FAFAFA;
+    --add-increment-btn: #fafafa;
+    --add-socials: #fafafa;
 
     & h1 {
       --dark-accent: #fafafa;

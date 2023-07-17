@@ -59,7 +59,7 @@ export const Controller = styled.button`
   &:focus {
     svg {
       stroke: ${({ $decrement }) =>
-        $decrement ? 'var(--accent)' : 'var(--hover-dark)'};
+        $decrement ? 'var(--accent)' : 'var(--add-increment-btn)'};
     }
   }
 `;
@@ -155,16 +155,16 @@ export const RemoveBtn = styled.button`
   border: none;
   outline: none;
   transition: color var(--transition-time) var(--transition-function);
+  color: var(--add-del-btn);
 
   &:hover,
   &:focus {
-    color: var(--accent);
+    color: var(--accent-green);
   }
 
   svg {
     width: 18px;
     height: 18px;
-    stroke: #333333;
   }
 
   @media screen and (min-width: 768px) {
