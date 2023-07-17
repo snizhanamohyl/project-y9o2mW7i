@@ -37,12 +37,10 @@
   --border-bottom-color: #e0e0e0;
   --button-border-color: rgba(51, 51, 51, 0.3);
   --line-color: rgba(112, 112, 112, 0.17);
-  --input-bg-color: #f5f5f5;
+  --input-bg-color: rgba(217, 217, 217, 0.157);
   --input-border-color: #F0F0F0;
   --input-border-color-focus: rgba(35, 38, 42, 0.3);
   --checkbox-color: rgba(126, 126, 126, 0.5);
-  --pagination-shadow: rgba(135, 135, 135, 0.2);
-  --pagination-color: #656565;
   --black: #000000;
   --white: #ffffff;
   --scroll-bar-color: #e7e5e5;
@@ -88,6 +86,18 @@
   --select-options-hover: #8baa36;
   --select-chosen: #000000;
 
+  --pagination-bg: #fafafa;
+  --pagination-shadow: rgba(135, 135, 135, 0.2);
+  --pagination-color: #656565;
+  --pagination-selected-bg: #ebf3d4;
+  --pagination-selected: #22252a;
+
+  --add-input-color: #000000;
+  --add-input-opacity: 0.5;
+  --add-input-stroke: rgba(250, 250, 250, 0);
+  --add-placeholder-color: #000000;
+  --add-ingr-input-color: #000000;
+
   --bcg-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 46.3%, rgba(0, 0, 0, 0.35) 72.75%, rgba(0, 0, 0, 0) 100%);
   --transition-time: 250ms;
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1); 
@@ -106,12 +116,13 @@
     --title-color: #fafafa;
     --input-border-color: rgba(250, 250, 250, 0.2);
     --input-border-color-focus: rgba(250, 250, 250, 0.5);
-    --input-bg-color: #22252a;
+    --input-bg-color: transparent;
     --black: rgba(250, 250, 250, 0.5);
     --footer-nav-hover: #22252a;
     --transparent-btn-color: #fafafa;
     --bottom-block-color: #fafafa;
     --mob-bg-color: #1E1F28;
+    --border-bottom-color: rgba(250, 250, 250, 0.30);
 
     --card-title-bg: #2A2C36;
 
@@ -138,6 +149,17 @@
     --select-options-bg: #8baa36;
     --select-options-hover: #ffffff;
 
+    --pagination-bg: #2A2C36;
+    --pagination-shadow: rgba(135, 135, 135, 0);
+    --pagination-color: rgba(250, 250, 250, 0.60);
+    --pagination-selected-bg: #8baa36;
+    --pagination-selected: #FAFAFA;
+
+    --add-input-color: #fafafa;
+    --add-input-opacity: 1;
+    --add-input-stroke: rgba(250, 250, 250, 0.20);
+    --add-placeholder-color: rgba(250, 250, 250, 0.6);
+    --add-ingr-input-color: #fafafa;
 
     & h1 {
       --dark-accent: #fafafa;

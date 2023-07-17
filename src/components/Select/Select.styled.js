@@ -27,14 +27,14 @@ export const Button = styled.button`
   &:hover,
   &:focus {
     span {
-      color: var(--select-options-hover);
+      color: var(--accent-green);
       opacity: 0.8;
     }
   }
 `;
 
 export const ButtonText = styled.span`
-  color: var(--black);
+  color: var(--add-input-color);
   font-size: 12px;
   font-style: normal;
   line-height: 12px;

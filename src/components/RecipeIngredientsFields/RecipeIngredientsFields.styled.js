@@ -103,6 +103,7 @@ export const InputWrapper = styled.div`
   max-width: 194px;
 
   background-color: var(--input-bg-color);
+  border: 1px solid var(--add-input-stroke);
   border-radius: 6px;
 
   &:first-child {

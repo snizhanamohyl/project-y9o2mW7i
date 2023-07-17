@@ -88,14 +88,14 @@ export const EmailInput = styled.input`
   border-radius: 10px;
   width: 204px;
   height: 38px;
-  border: 1px solid grey;
+  border: 1px solid rgba(250, 250, 250, 0.157);
   color: var(--bg-color);
   font-size: 10px;
   outline: none;
-  transition: var(--transition-time) var(--transition-function);
+  transition: border-color var(--transition-time) var(--transition-function);
 
   &:hover {
-    border: 1px solid var(--bg-color);
+    border-color: rgba(250, 250, 250, 1);
   }
 
   &:focus {
