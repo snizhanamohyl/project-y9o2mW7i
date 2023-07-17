@@ -15,19 +15,6 @@ export const BtnAddFavorite = styled.button`
 
   font-size: 10px;
   line-height: normal;
-  &:focus {
-    background: ${props =>
-      props.$isAddedToFavorite ? 'transparent' : 'var(--accent)'};
-    color: ${props =>
-      props.$isAddedToFavorite ? 'var(--dark-accent)' : 'var(--bg-color)'};
-  }
-
-  &:hover {
-    background: ${props =>
-      props.$isAddedToFavorite ? 'transparent' : 'var(--accent)'};
-    color: ${props =>
-      props.$isAddedToFavorite ? 'var(--dark-accent)' : 'var(--bg-color)'};
-  }
 
   @media (min-width: 768px) {
     margin-bottom: 60px;

@@ -9,8 +9,8 @@ export default function BtnAddToFavorite({ isAddedToFavorite, id, onClick }) {
       $isAddedToFavorite={isAddedToFavorite}
     >
       {isAddedToFavorite
-        ? 'Added to favorite recipes'
-        : 'Remove from favorite recipes'}
+        ? 'Remove from favorite recipes'
+        : 'Add to favorite recipes'}
     </BtnAddFavorite>
   );
 }

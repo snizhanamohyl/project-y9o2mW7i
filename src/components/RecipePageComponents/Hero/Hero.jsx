@@ -8,24 +8,33 @@ import sprite from '../../../assets/sprite.svg';
 import SharedContainer from 'components/SharedContainer/SharedContainer';
 import { useEffect, useState } from 'react';
 import BtnAddToFavorite from '../BtnAddToFavorite/BtnAddToFavorite';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllFavorites } from 'redux/Favorite/selectors';
+import {
+  addRecipeToFavorites,
+  deleteRecipeFromFavorites,
+} from 'redux/Favorite/operations';
 
 export default function RecipePageHero({ recipe, id }) {
   const { title, description, time } = recipe;
+  const dispatch = useDispatch();
   const [isAddedToFavorite, setIsAddedToFavorite] = useState(false);
+  const favoritesList = useSelector(getAllFavorites);
 
   const onHandleClick = () => {
     setIsAddedToFavorite(prev => !prev);
 
-    if (isAddedToFavorite) {
-      localStorage.removeItem(`${id}`);
-    } else {
-      localStorage.setItem(`${id}`, 'isAddedToFavorite');
-    }
+    isAddedToFavorite
+      ? dispatch(deleteRecipeFromFavorites(id))
+      : dispatch(addRecipeToFavorites(recipe));
+    console.log(recipe);
   };
 
   useEffect(() => {
-    setIsAddedToFavorite(localStorage.getItem(`${id}`) || false);
-  }, [id]);
+    setIsAddedToFavorite(
+      favoritesList?.find(el => el._id === recipe._id) ? true : false
+    );
+  }, [favoritesList, recipe._id]);
 
   return (
     <SectionHero>
@@ -33,6 +42,7 @@ export default function RecipePageHero({ recipe, id }) {
         <MainTitle>{title}</MainTitle>
         <RecipeDescription>{description}</RecipeDescription>
         <BtnAddToFavorite
+          type="button"
           onClick={onHandleClick}
           id={id}
           isAddedToFavorite={isAddedToFavorite}
