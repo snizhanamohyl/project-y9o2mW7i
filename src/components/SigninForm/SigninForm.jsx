@@ -64,7 +64,9 @@ export const SigninForm = () => {
 
   return (
     <>
-      {serverError && <Notification text="ТЕкс для передачі" />}
+      {serverError && (
+        <Notification text="Oops, something went wrong, please try again later" />
+      )}
       <Formik
         initialValues={initialValues}
         validationSchema={userSigninSchema}

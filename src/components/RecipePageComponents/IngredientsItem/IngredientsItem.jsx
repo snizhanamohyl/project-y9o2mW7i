@@ -7,33 +7,37 @@ import {
 
 import CheckboxLabels from '../Checkbox/Checkbox';
 import { addIngredient, deleteIngredient } from 'redux/ShopingList/operations';
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getShoppingList } from 'redux/ShopingList/selectors';
 
-export default function RecipePageIngredientsItem({ ingredient, recipeId }) {
-  const [isCheckedId, setIsCheckedId] = useState(false);
+export default function RecipePageIngredientsItem({ ingredient }) {
+  const { recipeId } = useParams();
+  const [isChecked, setIsChecked] = useState(false);
   const dispatch = useDispatch();
+  const shoppingList = useSelector(getShoppingList);
   const { id, measure } = ingredient;
-
-  const newId = id._id.split('').reverse().join('');
+  const newId = (id._id + recipeId).slice(12, 36);
 
   const newStructure = {
     ...ingredient.id,
     measure,
     newId: newId,
-    recipeId: recipeId,
   };
-  // const shoppingList = useSelector(getShoppingList);
-  // console.log(shoppingList);
-  const handleCheckboxClick = () => {
-    setIsCheckedId(prev => !prev);
 
-    if (isCheckedId) {
-      dispatch(deleteIngredient(newId));
-    } else {
-      dispatch(addIngredient(newStructure));
-    }
+  const handleCheckboxClick = () => {
+    setIsChecked(prev => !prev);
+    isChecked
+      ? dispatch(deleteIngredient(newId))
+      : dispatch(addIngredient(newStructure));
   };
+
+  useEffect(() => {
+    setIsChecked(
+      shoppingList.find(el => el.newId === newStructure.newId) ? true : false
+    );
+  }, [newStructure.newId, shoppingList]);
 
   return (
     <>
@@ -48,7 +52,7 @@ export default function RecipePageIngredientsItem({ ingredient, recipeId }) {
             key={newId}
             id={newId}
             onClick={handleCheckboxClick}
-            isChecked={isCheckedId}
+            isChecked={isChecked}
           />
         </div>
       </ListItem>
