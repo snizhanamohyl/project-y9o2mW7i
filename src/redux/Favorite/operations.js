@@ -5,7 +5,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 const API_URL = 'https://64a8b750dca581464b85f54e.mockapi.io/recipes'
 
 export const getAllFavoritList = createAsyncThunk(
-  'favorite',
+  'favorite/getAllFavoritList',
   async (_, { rejectWithValue }) => {
     try {
 
