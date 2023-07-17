@@ -12,7 +12,9 @@ import SharedLayout from 'components/SharedLayout/SharedLayout';
 import RegisterPage from 'pages/RegisterPage/RegisterPage';
 import SigninPage from 'pages/SigninPage/SigninPage';
 import WelcomePage from 'pages/WelcomePage/WelcomePage';
+import { getAllShoppingList } from 'redux/ShopingList/operations';
 import { getAllowRefreshUser, getIsLoggedIn } from 'redux/auth/selectors';
+import { getAllFavoritList } from 'redux/Favorite/operations';
 
 // import NotFound from "components/NotFound/NotFound";
 
@@ -41,6 +43,8 @@ export default function App() {
 
   useEffect(() => {
     dispatch(refreshUser());
+    dispatch(getAllShoppingList());
+    dispatch(getAllFavoritList());
 
     if (allowRefreshUser === false && isLoggedIn) {
       dispatch(logout());

@@ -7,7 +7,7 @@ const MyRecipesList = ({ recipe, isFavorites }) => {
     return (
         <>
             {recipe.map((rec) => (
-                <MyRecipeItem key={rec._id.$oid} recipe={rec} isFavorites={isFavorites}/>
+                <MyRecipeItem key={rec._id} recipe={rec} isFavorites={isFavorites}/>
             ))}
         </>
     );
