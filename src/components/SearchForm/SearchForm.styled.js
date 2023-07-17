@@ -76,6 +76,14 @@ export const Button = styled.button`
       issearchpage === 'true' ? 'var(--dark-accent)' : 'var(--accent)'};
     color: var(--search-btn-hover);
   }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    &:hover,
+    &:focus {
+      background-color: var(--accent);
+    }
+  }
 
   @media (min-width: 768px) {
     padding: 18px 52px;

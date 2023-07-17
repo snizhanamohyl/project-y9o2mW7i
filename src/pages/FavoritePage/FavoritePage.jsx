@@ -4,7 +4,7 @@ import SharedContainer from '../../components/SharedContainer/SharedContainer';
 
 const FavoritePage = () => {
   return (
-            <SharedContainer>
+            <SharedContainer isBg>
                 <Favorites />
             </SharedContainer>
   )
