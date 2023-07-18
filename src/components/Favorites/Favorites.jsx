@@ -11,9 +11,9 @@ import { nanoid } from 'nanoid';
 
 const Favorites = () => {  
   const [currentPage, setCurrentPage] = useState(1);    
-    const recipesPerPage = 4;
+  const recipesPerPage = 4;
 
-    const uniqueKey = nanoid();
+  const uniqueKey = nanoid();
 
   const [recipes, setProducts] = useState([])
   // const [currentRecipes, setCurrentRecipes] = useState([]);
@@ -54,7 +54,7 @@ const Favorites = () => {
             <FavoritePageTitle>Favorite </FavoritePageTitle>
             {recipes.length > 0 ? (
                 <>            
-            <MyRecipesList uniqueKey={uniqueKey} isFavorites={true} recipe={currentRecipes } onDeleteClick={onDeleteClick}/>
+                    <MyRecipesList uniqueKey={uniqueKey} isFavorites={true} recipe={currentRecipes } onDeleteClick={onDeleteClick}/>
                 </>
             ):(
                 <Container>

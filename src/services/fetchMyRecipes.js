@@ -17,11 +17,12 @@ export const fetchDeleteMyRecipes = async (recipeId) => {
     const resp = await axios.delete(`/ownRecipes/${recipeId}`);
     const data = resp.data; 
 
-    if (data && data._id) {
-      return data._id;
-    } else {
+    if (!data) {
       throw new Error('ответ сервера');
     }
+
+    return data
+
   } catch (error) {
     console.error('Ошибка:', error);
     throw error;
