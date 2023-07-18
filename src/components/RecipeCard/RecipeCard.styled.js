@@ -35,7 +35,7 @@ export const Recipe = styled.p`
   padding-left: 16px;
   margin-top: 0;
   margin-bottom: 0;
-  background-color: var(--white);
+  background-color: var(--card-title-bg);
   border-radius: 8px;
 
   font-weight: 500;

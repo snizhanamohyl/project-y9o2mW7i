@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-// const BASE_URL = 'https://so-yummy-backend-hg4e.onrender.com/api/recipes/main-page';
+// const BASE_URL =
+// 'https://so-yummy-backend-hg4e.onrender.com/api/recipes/main-page';
 // const storage = JSON.parse(localStorage.getItem('persist:auth'));
 // const { token } = storage;
 
