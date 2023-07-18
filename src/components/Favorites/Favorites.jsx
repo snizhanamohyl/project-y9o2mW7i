@@ -19,7 +19,6 @@ const Favorites = () => {
   const uniqueKey = nanoid();
 
   const [recipes, setProducts] = useState([]);
-  // const [currentRecipes, setCurrentRecipes] = useState([]);
 
   const dispatch = useDispatch();
 
@@ -42,15 +41,9 @@ const Favorites = () => {
     setCurrentPage(Math.ceil((recipes.length - 1) / 4));
   };
 
-  // useEffect(() => {
-  // індекс останнього рецепту на поточній сторінці
   const lastRecipeIndex = currentPage * recipesPerPage;
-  //індекс першого рецепту на поточній сторінці
   const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
-  //масив рецептів для поточної сторінки
   const currentRecipes = recipes.slice(firstRecipeIndex, lastRecipeIndex);
-  // setCurrentRecipes(currentRecipes);
-  // }, [currentPage, recipes])
 
   return (
     <SectionPage>
@@ -73,15 +66,6 @@ const Favorites = () => {
       )}
 
       {recipes.length > 4 ? (
-        <Pagination
-          recipesPerPage={recipesPerPage}
-          totalRecipe={favRecipes.length}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
-      ) : null}
-
-      {recipes.length > 0 ? (
         <Pagination
           recipesPerPage={recipesPerPage}
           totalRecipe={recipes.length}

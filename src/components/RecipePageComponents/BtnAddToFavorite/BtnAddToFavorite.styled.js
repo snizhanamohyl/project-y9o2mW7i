@@ -4,6 +4,8 @@ export const BtnAddFavorite = styled.button`
   width: 150px;
   height: 35px;
   margin-bottom: 42px;
+  transition: color var(--transition-time) var(--transition-function),
+    background-color var(--transition-time) var(--transition-function);
 
   background: ${({ $toggler }) => ($toggler ? 'var(--accent)' : 'transparent')};
   color: ${({ $toggler }) =>

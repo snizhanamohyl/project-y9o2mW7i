@@ -3,7 +3,7 @@ import MyRecipesList from '../MyRecipesList/MyRecipesList';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import fetchMyRecipes from '../../services/fetchMyRecipes';
-import { MyRecipesTitle } from './MyRecipes.styled';
+import { MyRecipesTitle, Section } from './MyRecipes.styled';
 import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router';
 
@@ -34,14 +34,14 @@ const MyRecipes = () => {
   const currentRecipes = recipes?.slice(firstRecipeIndex, lastRecipeIndex);
 
   return (
-    <>
+    <Section>
       <MyRecipesTitle>My recipes</MyRecipesTitle>
       <MyRecipesList
         uniqueKey={uniqueKey}
         isFavorites={false}
         recipe={currentRecipes}
       />
-      {recipes.length > 0 ? (
+      {recipes.length > 4 ? (
         <Pagination
           recipesPerPage={recipesPerPage}
           totalRecipe={recipes.length}
@@ -49,7 +49,7 @@ const MyRecipes = () => {
           setCurrentPage={setCurrentPage}
         />
       ) : null}
-    </>
+    </Section>
   );
 };
 

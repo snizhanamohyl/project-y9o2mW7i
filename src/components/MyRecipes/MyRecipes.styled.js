@@ -34,3 +34,15 @@ export const Container = styled.div`
     padding-bottom: 100px;
   }
 `;
+
+export const Section = styled.section`
+  padding-bottom: 100px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 200px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-bottom: 100px;
+  }
+`;

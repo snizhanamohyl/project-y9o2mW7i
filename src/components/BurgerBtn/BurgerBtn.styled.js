@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 export const Btn = styled.button`
   transition: color var(--transition-time) var(--transition-function);
-  color: ${({ burgerColor }) => burgerColor};
+  color: ${({ $burgerColor }) => $burgerColor};
 
   & path {
     stroke: currentColor;
