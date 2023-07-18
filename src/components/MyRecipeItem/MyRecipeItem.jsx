@@ -16,9 +16,7 @@ const MyRecipeItem = ({recipe, isFavorites, onDeleteClick}) => {
     const {preview, title, _id, description, time} = recipe;
 
     const onClick = () => {
-        if(isFavorites){
             onDeleteClick(_id);
-        }
     }
 
     return(

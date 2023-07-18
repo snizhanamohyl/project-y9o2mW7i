@@ -11,7 +11,7 @@ export default function NavFooter() {
   
   return (<NavFooterList>
       <NavFooterItem onClick={onClick}>
-        <NavLink to="/search/ingredients">Ingredients</NavLink>      
+        <NavLink to="/search?type=ingredients">Ingredients</NavLink>      
       </NavFooterItem>
     
       <NavFooterItem onClick={onClick}>

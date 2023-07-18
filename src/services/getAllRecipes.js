@@ -5,10 +5,11 @@ async function getAllRecipes(limit) {
     const response = await axios.get(
       `/recipes/main-page?limit=${limit}&page=1`
     );
-    return response.data;
+    return response;
+
   } catch (error) {
-    console.error(error.message);
-    return null;
+
+    return error;
   }
 }
 
