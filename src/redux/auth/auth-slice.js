@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { login, logout, refreshUser, register, updateUser } from './auth-operations';
+import {
+  login,
+  logout,
+  refreshUser,
+  register,
+  updateUser,
+} from './auth-operations';
 import { initialState } from './initial-state';
 
 export const authSlice = createSlice({
@@ -48,7 +54,7 @@ export const authSlice = createSlice({
       state.isLoggedIn = false;
     },
     [refreshUser.fulfilled](state, action) {
-      state.user = action.payload;
+      state.user = action.payload.user;
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },
@@ -64,7 +70,7 @@ export const authSlice = createSlice({
       state.user.avatarURL = action.payload.avatarURL;
     },
     [updateUser.pending](state, action) {
-       state.isLoading = true;
+      state.isLoading = true;
     },
     [updateUser.rejected](state, action) {
       state.isLoading = false;

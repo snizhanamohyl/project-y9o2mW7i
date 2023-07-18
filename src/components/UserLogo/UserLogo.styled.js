@@ -9,7 +9,6 @@ export const Avatar = styled.div`
   margin-right: 14px;
   overflow: hidden;
   border-radius: 50%;
-  border: 2px solid var(--accent);
 
   @media (min-width: 768px) {
     width: 44px;
@@ -35,6 +34,14 @@ export const UserWrap = styled.button`
 
   @media (min-width: 768px) {
     margin-right: 50px;
+  }
+
+  img {
+    transition: transform var(--transition-time) var(--transition-function);
+  }
+
+  &:hover div {
+    transform: scale(1.035);
   }
 `;
 

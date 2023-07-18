@@ -51,17 +51,13 @@ export const FormStyled = styled(Form)`
 
 export const UserIcon = styled.svg`
   stroke: var(--icon-grey);
-
-  /* &:hover,
-  &:focus {
-    stroke: var(--accent);
-  } */
 `;
 
 export const PlusIcon = styled.svg`
   position: absolute;
   bottom: -5px;
   right: 110px;
+  color: var(--accent-green);
 
   @media screen and (min-width: 768px) {
     top: 131px;
@@ -71,6 +67,10 @@ export const PlusIcon = styled.svg`
   @media screen and (min-width: 768px) {
     top: 85px;
     left: 208px;
+  }
+
+  &:hover {
+    color: var(--dark);
   }
 `;
 
@@ -219,7 +219,7 @@ export const EditBtn = styled.button`
 `;
 
 export const EditIcon = styled.svg`
-  stroke: #23262a;
+  stroke: var(--cancel-menu-icon);
   width: 17px;
   height: 17px;
   fill: transparent;
@@ -227,6 +227,10 @@ export const EditIcon = styled.svg`
   @media screen and (min-width: 768px) {
     width: 19px;
     height: 19px;
+  }
+
+  &:hover {
+    stroke: var(--accent-green);
   }
 `;
 
