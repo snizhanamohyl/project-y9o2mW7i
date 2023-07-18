@@ -5,10 +5,15 @@ export const BtnAddFavorite = styled.button`
   height: 35px;
   margin-bottom: 42px;
 
-  background: ${props =>
-    props.isAddedToFavorite ? 'var(--accent)' : 'transparent'};
-  color: ${props =>
-    props.isAddedToFavorite ? 'var(--bg-color)' : 'var(--dark-accent)'};
+  background: ${({ $toggler }) => ($toggler ? 'var(--accent)' : 'transparent')};
+  color: ${({ $toggler }) =>
+    $toggler ? 'var(--bg-color)' : 'var(--dark-accent)'};
+  &:hover {
+    background: ${({ $toggler }) =>
+      $toggler ? 'transparent' : 'var(--accent)'};
+    color: ${({ $toggler }) =>
+      $toggler ? 'var(--dark-accent)' : 'var(--bg-color)'};
+  }
 
   border-radius: 24px 44px;
   border: 1px solid var(--accent);
