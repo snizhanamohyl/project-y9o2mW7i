@@ -30,9 +30,9 @@ export const ShoppingListHeader = styled.div`
   justify-content: space-between;
   list-style: none;
   padding: 10px;
-  background-color: var(--accent);
+  background-color: var(--accent-green);
   border-radius: 8px;
-  color: var(--bg-color);
+  color: var(--main-light-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
@@ -88,7 +88,7 @@ export const ShoppingListItem = styled.li`
   color: var(--pre-title-color);
   font-size: 10px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 18px;
   height: 84px;
   position: relative;
@@ -120,13 +120,11 @@ export const ShoppingListItem = styled.li`
 `;
 
 export const Container = styled.div`
-    padding-top: 50px;
-    padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
-    @media screen and (min-width: 1439px){
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-`
-
-
+  @media screen and (min-width: 1439px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+`;

@@ -24,7 +24,7 @@ export const Label = styled.label`
 export const InputFiled = styled.input`
   width: 100%;
 
-  color: var(--black);
+  color: var(--add-ingr-input-color);
   font-family: inherit;
   font-size: 14px;
   font-style: normal;
@@ -37,8 +37,8 @@ export const InputFiled = styled.input`
   outline: none;
 
   &::placeholder {
-    color: inherit;
-    opacity: 0.5;
+    color: var(--add-placeholder-color);
+    opacity: var(--add-input-opacity);
   }
 
   @media screen and (min-width: 768px) {

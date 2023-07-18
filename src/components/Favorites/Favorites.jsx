@@ -2,7 +2,7 @@ import React from 'react';
 import MyRecipesList from '../MyRecipesItem/MyRecipesList';
 import Pagination from '../../components/Pagination/Pagination';
 import {  useState } from 'react';
-import { FavoritePageTitle, Container } from './Favorites.styled.jsx';
+import { FavoritePageTitle, Container } from './Favorites.styled.js';
 import EmptyPage from '../EmptyPage/EmptyPage';
 import { useSelector } from 'react-redux';
 import { getAllFavorites } from '../../redux/Favorite/selectors';

@@ -17,17 +17,12 @@ export const Avatar = styled.div`
   }
 `;
 
-export const Letter = styled.p`
-  font-weight: 500;
-  font-size: 30px;
-
-`;
-
 export const AvatarImg = styled.img`
   object-fit: cover;
 `;
 
 export const UserName = styled.p`
+  color: ${({ userColor }) => userColor};
   font-size: 14px;
   font-weight: 600;
   line-height: 1.7;
@@ -41,9 +36,6 @@ export const UserWrap = styled.button`
   @media (min-width: 768px) {
     margin-right: 50px;
   }
-
-  &:hover,
-  &:hover p {
-    color: var(--accent);
-  }
 `;
+
+export const Letter = styled.p``;

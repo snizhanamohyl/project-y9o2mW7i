@@ -1,4 +1,3 @@
-import React from "react";
 import {
     ContainerCard,
     ImgCard,
@@ -9,9 +8,9 @@ import {
     TimeCard,
     Container,
     ContainerHeaderRecipe,
-        } from '../MyRecipeItem/MyRecipesItem.styled.jsx';
-import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel.jsx';
-import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee.jsx';
+        } from '../MyRecipeItem/MyRecipesItem.styled.js';
+import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel';
+import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee';
 import { useDispatch } from "react-redux";
 import { deleteRecipeFromFavorites } from 'redux/Favorite/operations'
 
@@ -38,7 +37,7 @@ const MyRecipeItem = ({recipe, isFavorites}) => {
                         </ContainerContent>              
                         <ContainerBtnRecipe>
                                 <TimeCard>{time} min</TimeCard>
-                                <ButtonRecipeSee isFavorites={isFavorites} path={`/recipe/${$oid}`}/>
+                    <ButtonRecipeSee isFavorites={isFavorites} path={`/recipe/${$oid}`}/>
                         </ContainerBtnRecipe>
                     </Container>
                 </ContainerCard>
