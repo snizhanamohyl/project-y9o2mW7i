@@ -14,7 +14,6 @@ import { authReducer } from './auth/auth-slice';
 import { ingredientsReducer } from './ShopingList/slice';
 
 import { favoriteReducer } from './Favorite/slice';
-import { toggleReducer } from './toggle/toggle.slice';
 
 const persistConfig = {
   key: 'auth',
@@ -28,7 +27,6 @@ export const rootReducer = combineReducers({
   shoppingList: ingredientsReducer,
   auth: persistedReducer,
   favorite: favoriteReducer,
-  toggle: toggleReducer,
 });
 
 export const store = configureStore({
