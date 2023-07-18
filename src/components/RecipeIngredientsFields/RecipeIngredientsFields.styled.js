@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import InputNumber from 'components/InputNumber/InputNumber';
 
 export const Section = styled.section`
   margin-bottom: 44px;

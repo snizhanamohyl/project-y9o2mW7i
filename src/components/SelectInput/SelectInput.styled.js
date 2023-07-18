@@ -4,12 +4,16 @@ import SimpleBar from 'simplebar-react';
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  height: 100%;
 `;
 
-export const Label = styled.label`
+export const InputWrapper = styled.label`
+  position: relative;
+
   display: flex;
   align-items: center;
   width: 100%;
+  height: 100%;
 
   border: none;
   outline: none;
@@ -21,7 +25,7 @@ export const Label = styled.label`
   }
 `;
 
-export const InputFiled = styled.input`
+export const InputField = styled.input`
   width: 100%;
 
   color: var(--add-ingr-input-color);
@@ -36,6 +40,17 @@ export const InputFiled = styled.input`
   border: none;
   outline: none;
 
+  opacity: 0;
+  transition: opacity var(--transition-time) var(--transition-function);
+
+  &:focus {
+    opacity: 1;
+
+    & + span {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
   &::placeholder {
     color: var(--add-placeholder-color);
     opacity: var(--add-input-opacity);
@@ -44,6 +59,33 @@ export const InputFiled = styled.input`
   @media screen and (min-width: 768px) {
     font-size: 18px;
   }
+`;
+
+export const Value = styled.span`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  color: var(--black);
+  font-family: inherit;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.28px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+`;
+
+export const Placeholder = styled(Value)`
+  opacity: 0.5;
 `;
 
 export const ListWrapper = styled.div`
@@ -72,13 +114,13 @@ export const List = styled.ul`
 `;
 
 export const Option = styled.li`
-  padding: 4px 0;
+  padding: 3px 0;
 
   color: var(--black);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: calc(18 / 12);
   letter-spacing: -0.24px;
   opacity: 0.5;
 
@@ -105,6 +147,6 @@ export const ScrollBar = styled(SimpleBar)`
   }
 
   @media screen and (min-width: 768px) {
-    max-height: 162px;
+    max-height: 172px;
   }
 `;

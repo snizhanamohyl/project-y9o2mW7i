@@ -1,39 +1,39 @@
 import PropTypes from 'prop-types';
 
 import SectionTitle from 'components/SectionTitle/SectionTitle';
+import ValidationError from 'components/ValidationError/ValidationError';
 import { Section, TextArea } from './RecipePreparationFields.styled';
 
-export default function RecipePreparationFields({
-  preparation,
-  setFieldValue,
-}) {
-  const handleChange = ({ target }) => {
-    const values = target.value.split('\n');
-    const filteredValues = values.filter(
-      (el, index, arr) =>
-        el || index === arr.length - 1 || index === arr.length - 2
-    );
-    setFieldValue('preparation', filteredValues);
-  };
+export default function RecipePreparationFields({ formik }) {
+  const {
+    handleChange,
+    handleBlur,
+    touched,
+    errors,
+    values: { instructions },
+  } = formik;
 
   return (
     <Section>
       <SectionTitle>Recipe Preparation</SectionTitle>
       <TextArea
         placeholder="Enter recipe"
-        value={preparation.join('\n')}
+        name="instructions"
+        value={instructions}
         onChange={handleChange}
+        onBlur={handleBlur}
       ></TextArea>
+      {Boolean(touched.instructions && errors.instructions) && (
+        <ValidationError>{errors.instructions}</ValidationError>
+      )}
     </Section>
   );
 }
 
 RecipePreparationFields.propTypes = {
-  preparation: PropTypes.arrayOf(PropTypes.string),
-  setFieldValue: PropTypes.func,
+  formik: PropTypes.object,
 };
 
 RecipePreparationFields.defaultProps = {
-  preparation: [],
-  setFieldValue: () => null,
+  formik: {},
 };
