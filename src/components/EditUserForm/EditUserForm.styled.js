@@ -81,7 +81,6 @@ export const UserAvatarWrapper = styled.div`
   position: relative;
   margin-bottom: 54px;
 
-
   @media screen and (min-width: 768px) {
     margin-bottom: 50px;
   }
@@ -92,7 +91,7 @@ export const UserAvatarWrapper = styled.div`
 `;
 
 export const AvatarLabel = styled.label`
-cursor: pointer;
+  cursor: pointer;
 `;
 
 export const UserImgWrapper = styled.div`
@@ -105,13 +104,12 @@ export const UserImgWrapper = styled.div`
   width: 88px;
   height: 88px;
   transition: stroke var(--transition-time) var(--transition-function);
- 
- 
-    &:hover,
-    &:focus svg{
-      stroke: var(--accent);
-    }
-  
+
+  &:hover,
+  &:focus svg {
+    stroke: var(--accent);
+  }
+
   @media screen and (min-width: 768px) {
     width: 103px;
     height: 103px;
@@ -128,7 +126,7 @@ export const UserImgWrapper = styled.div`
   }
 `;
 
- export const InputButtonWrapper = styled.div`
+export const InputButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -153,11 +151,11 @@ export const NameInput = styled(Field)`
 
   letter-spacing: -0.28px;
   line-height: normal;
-  color: var(--dark-accent);
+  color: var(--text-primary);
   opacity: 0.8;
 
   outline: none;
-  border: 1px solid grey;
+  border: 1px solid var(--modal-input-stroke);
 
   border-radius: 6px;
   background-color: transparent;
@@ -165,9 +163,10 @@ export const NameInput = styled(Field)`
 
   &:hover,
   &:focus {
-    border: 1px solid var(--accent);
+    /* border: 1px solid var(--accent);
     stroke: green;
-    fill: green;
+    fill: green; */
+    border: 1px solid var(--modal-input-stroke-hover);
   }
 
   @media screen and (min-width: 768px) {
@@ -184,13 +183,13 @@ export const NameInput = styled(Field)`
     padding-right: 18px;
     padding-bottom: 16px;
   }
-`; 
+`;
 
 export const UserIconStyled = styled.svg`
   position: absolute;
   width: 18px;
   height: 18px;
-  stroke: #23262A;
+  stroke: #23262a;
   top: 50%;
   left: 16.5px;
   transform: translateY(-50%);
@@ -223,7 +222,7 @@ export const EditIcon = styled.svg`
   stroke: #23262a;
   width: 17px;
   height: 17px;
-  fill:transparent;
+  fill: transparent;
 
   @media screen and (min-width: 768px) {
     width: 19px;
@@ -238,7 +237,7 @@ export const SubmitBtn = styled.button`
 
   border-radius: 6px;
   background: var(--accent);
-  color: var(--bg-color);
+  color: var(--main-light-color);
   line-height: 1.28;
   transition: color var(--transition-time) var(--transition-function);
   border: none;
@@ -258,26 +257,26 @@ export const SubmitBtn = styled.button`
 
   &:hover,
   &:focus {
-    color: var(--dark-accent);
+    color: var(--dark);
   }
 `;
 
 export const ErrorMessage = styled.p`
   position: absolute;
-  color: red;
-  top: 50%; 
+  color: var(--error-red);
+  top: 50%;
 
-  
-    left: ${p => (p.location === 'file' ? '24px' : '0')};
-    transform: ${p =>
-      p.location === 'file' ? 'translateY(-150%)' : 'translateY(-50%)'};
-    font-size: 11px;
+  left: ${p => (p.location === 'file' ? '24px' : '0')};
+  transform: ${p =>
+    p.location === 'file' ? 'translateY(-150%)' : 'translateY(-50%)'};
+  font-size: 11px;
 
-    @media screen and (min-width: 768px) {
-      left: ${p => (p.location === 'file' ? '40px' : '0')};
-      font-size: 14px;
-    }
+  @media screen and (min-width: 768px) {
+    left: ${p => (p.location === 'file' ? '40px' : '0')};
+    font-size: 14px;
+  }
 
-    @media screen and (min-width: 1440px) {
-      left: ${p => (p.location === 'file' ? '50px' : '0')};
-    }`;
+  @media screen and (min-width: 1440px) {
+    left: ${p => (p.location === 'file' ? '50px' : '0')};
+  }
+`;

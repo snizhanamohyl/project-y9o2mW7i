@@ -16,13 +16,14 @@ const theme = createTheme({
           padding: '18px',
           boxShadow: 'none',
           borderRadius: '8px',
-          border: '1px solid var(--accent)',
+          border: 'var(--popover-border);',
           backgroundColor: 'var(--bg-color)',
         },},},},});
 
 export default function UserLogo () {
   const width = useWindowWidth();
   const avatarSize = width < 768 ? '34px' : '44px';
+  const userColor = width < 1440 ? 'inherit' : '#23262a';
   const user = useSelector(getUser);
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -52,7 +53,7 @@ export default function UserLogo () {
             
         )}
 
-        <UserName>{user.name}</UserName>
+        <UserName userColor={userColor}>{user.name}</UserName>
       </UserWrap>
 
       <ThemeProvider theme={theme}>

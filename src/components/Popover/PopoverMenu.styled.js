@@ -9,13 +9,16 @@ export const EditBtn = styled.button`
   margin-bottom: 28px;
   font-weight: 500;
   line-height: 1.6;
+  color: var(--text-primary);
+  fill: var(--text-primary);
   transition: color, fill, var(--transition-time) var(--transition-function);
 
   @media screen and (min-width: 768px) {
-  gap: 53px;
+    gap: 53px;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: var(--accent);
     fill: var(--accent);
   }
@@ -33,11 +36,11 @@ export const LogOutBtn = styled.a`
   border: none;
   color: var(--bg-color);
   cursor: pointer;
-  transition: background-color, var(--transition-time) var(--transition-function);
+  transition: background-color,
+    var(--transition-time) var(--transition-function);
 
-  &:hover, &:focus {
-    background-color: var(--dark-accent);
+  &:hover,
+  &:focus {
+    background-color: var(--footer-nav-hover);
   }
-
 `;
-

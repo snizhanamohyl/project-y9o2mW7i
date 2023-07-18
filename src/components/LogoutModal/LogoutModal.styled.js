@@ -25,7 +25,6 @@ export const CloseIcon = styled.svg`
   }
 `;
 
-
 export const ConfirmTitle = styled.p`
   margin-bottom: 24px;
   letter-spacing: -0.28px;
@@ -62,8 +61,7 @@ export const LogoutBtn = styled.button`
   line-height: 1.29;
   text-align: center;
   color: var(--bg-color);
-  transition: background-color var(--transition-function)
-    var(--transition-time);
+  transition: background-color var(--transition-function) var(--transition-time);
 
   @media screen and (min-width: 768px) {
     padding: 18px 39px;
@@ -76,7 +74,7 @@ export const LogoutBtn = styled.button`
 
   &:hover,
   &:focus {
-    background-color: var(--text-primary);
+    background-color: var(--dark);
   }
 `;
 
@@ -91,7 +89,7 @@ export const CancelBtn = styled.button`
 
   line-height: 1.29;
   text-align: center;
-  color: var(--text-primary);
+  color: #23262a;
   transition: background-color border var(--transition-function)
     var(--transition-time);
 
@@ -105,7 +103,7 @@ export const CancelBtn = styled.button`
 
   &:hover,
   &:focus {
-    background-color: transparent;
+    background-color: var(--cancel-btn-bg);
     border: 1px solid #23262a;
   }
 `;

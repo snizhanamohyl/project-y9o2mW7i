@@ -7,10 +7,10 @@ import bgSpinachRet from 'assets/images/mobile/mob-menu-spinach-bg-2x.png';
 import bgSpinachImgTab from 'assets/images/tablet/mob-menu-spinach-bg-1x.png';
 import bgSpinachRetTabRet from 'assets/images/tablet/mob-menu-spinach-bg-2x.png';
 
-const BgMob = `url(${bgSpinachImg}) right bottom no-repeat, var(--light-green-bg);`;
-const BgMobRet = `url(${bgSpinachRet}) right bottom / 321px 343px no-repeat, var(--light-green-bg);`;
-const BgTab = `url(${bgSpinachImgTab}) right bottom no-repeat, var(--light-green-bg);`;
-const BgTabRet = `url(${bgSpinachRetTabRet}) right bottom / 591px 505px no-repeat, var(--light-green-bg);`;
+const BgMob = `url(${bgSpinachImg}) right bottom no-repeat, var(--mob-bg-color);`;
+const BgMobRet = `url(${bgSpinachRet}) right bottom / 321px 343px no-repeat, var(--mob-bg-color);`;
+const BgTab = `url(${bgSpinachImgTab}) right bottom no-repeat, var(--mob-bg-color);`;
+const BgTabRet = `url(${bgSpinachRetTabRet}) right bottom / 591px 505px no-repeat, var(--mob-bg-color);`;
 
 export const MobMenuWrap = styled.div`
   min-width: 375px;
@@ -82,6 +82,16 @@ export const StyledLink = styled(NavLink)`
     color: var(--accent);
     font-weight: 600;
   }
+
+  &:hover,
+  &:focus {
+    color: var(--accent);
+  }
+`;
+
+export const Button = styled.button`
+  color: var(--cancel-menu-icon);
+  transition: color var(--transition-time) var(--transition-function);
 
   &:hover,
   &:focus {

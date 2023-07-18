@@ -17,16 +17,17 @@ export const SignUpBtn = styled(NavLink)`
   padding: 12px 24px;
   border-radius: 24px 44px;
   border: none;
-  background-color: var(--accent);
-  color: var(--bg-color);
+  background-color: var(--accent-green);
+  color: var(--main-light-color);
   cursor: pointer;
 
   &:hover,
   &:focus {
-    background-color: var(--dark-accent);
-    transition: background-color var(--transition-time) var(--transition-function);
-}
-  
+    background-color: var(--dark);
+    transition: background-color var(--transition-time)
+      var(--transition-function);
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 16px;
     padding: 22px 44px;
@@ -39,15 +40,16 @@ export const SignInBtn = styled(NavLink)`
   background-color: transparent;
   padding: 12px 24px;
   border-radius: 24px 44px;
-  border: 2px solid var(--bg-color);
-  color: var(--bg-color);
+  border: 2px solid var(--main-light-color);
+  color: var(--main-light-color);
   cursor: pointer;
 
   &:hover,
   &:focus {
-    background-color: var(--dark-accent);
-    border: 2px solid var(--dark-accent);
-    transition: background-color, border, var(--transition-time) var(--transition-function);
+    background-color: var(--dark);
+    border: 2px solid var(--dark);
+    transition: background-color, border,
+      var(--transition-time) var(--transition-function);
   }
   @media screen and (min-width: 768px) {
     font-size: 16px;

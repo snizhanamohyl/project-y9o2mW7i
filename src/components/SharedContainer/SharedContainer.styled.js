@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     width: 6px;
     height: 6px;
     transform: rotate(-25deg);
-    background-color: var(--dark-accent);
+    background-color: var(--cancel-menu-icon);
     position: absolute;
     left: 244px;
     top: 75px;
