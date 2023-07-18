@@ -3,7 +3,9 @@ import {
   IngredientName,
   ListItem,
   QuantityIngredient,
+  Svg,
 } from './IngredientsItem.styled';
+import sprite from '../../../assets/sprite.svg';
 
 import CheckboxLabels from '../Checkbox/Checkbox';
 
@@ -13,7 +15,13 @@ export default function RecipePageIngredientsItem({ ingredient }) {
     <>
       <ListItem>
         <div>
-          <ImageIngredient alt={name} src={img} />
+          {img ? (
+            <ImageIngredient alt={name} src={img} />
+          ) : (
+            <Svg width={57} height={57}>
+              <use href={`${sprite}#icon-icon-food`}></use>
+            </Svg>
+          )}
           <IngredientName>{name}</IngredientName>
         </div>
         <div>

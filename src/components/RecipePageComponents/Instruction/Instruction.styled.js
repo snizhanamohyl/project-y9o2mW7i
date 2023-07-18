@@ -88,3 +88,12 @@ export const InstructionItem = styled.li`
     }
   }
 `;
+
+export const ImageIngredient = styled.img`
+  width: 343px;
+  height: 250px;
+  @media (min-width: 768px) {
+    width: 433px;
+    height: 332px;
+  }
+`;
