@@ -3,18 +3,21 @@ import MyRecipesList from '../MyRecipesItem/MyRecipesList';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
 import fetchMyRecipes from '../../services/fetchMyRecipes';
-import { MyRecipesTitle, Container } from './MyRecipes.styled.jsx';
+import { MyRecipesTitle, Container } from './MyRecipes.styled';
 import EmptyPage from '../EmptyPage/EmptyPage';
 
 const MyRecipes = () => {
     const [recipes, setRecipes] = useState([]);
+
     const [currentPage, setCurrentPage] = useState(1);
 
     const recipesPerPage = 4;
 
     useEffect(() => {
-        fetchMyRecipes().then(data => setRecipes(data))  
+        fetchMyRecipes().then(data => setRecipes(data))
     }, []);
+
+
 
 
     // індекс останнього рецепту на поточній сторінці

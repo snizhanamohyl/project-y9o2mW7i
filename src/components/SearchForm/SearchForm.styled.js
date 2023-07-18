@@ -12,14 +12,15 @@ export const Form = styled.form`
   align-items: center;
   border: 1px solid var(--input-border-color);
   border-radius: 54px 104px 54px 104px;
-  background-color: var(--white);
-  filter: drop-shadow(0px 4px 97px rgba(34, 37, 42, 0.03));
+  border-right: none;
+  background-color: var(--search-input-bg);
+  box-shadow: 0px 4px 97px rgba(34, 37, 42, 0.03);
   transition: border-color var(--transition-time) var(--transition-function);
 
   &:focus-within,
   &:hover,
   &:focus {
-    border-color: rgba(35, 38, 42, 0.2);
+    border-color: var(--input-border-color-focus);
   }
 
   @media (min-width: 768px) {
@@ -65,7 +66,7 @@ export const Button = styled.button`
   line-height: normal;
   color: var(--bg-color);
   background-color: ${({ issearchpage }) =>
-    issearchpage === 'true' ? 'var(--accent)' : 'var(--dark-accent)'};
+    issearchpage === 'true' ? 'var(--search-btn)' : 'var(--search-main-btn)'};
   border-radius: 54px 104px 54px 104px;
   transition: background-color var(--transition-time) var(--transition-function);
 
@@ -73,6 +74,7 @@ export const Button = styled.button`
   &:focus {
     background-color: ${({ issearchpage }) =>
       issearchpage === 'true' ? 'var(--dark-accent)' : 'var(--accent)'};
+    color: var(--search-btn-hover);
   }
   &:disabled {
     opacity: 0.6;

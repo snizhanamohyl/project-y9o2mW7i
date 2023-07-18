@@ -28,7 +28,7 @@ export const NumberContainer = styled.span`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  
+
   @media screen and (min-width: 768px) {
     height: 35px;
     min-width: 68px;
@@ -50,7 +50,7 @@ export const ProductImg = styled.img`
   height: 60px;
   padding: 6px;
   border-radius: 8px;
-  background: var(--light-green-bg);
+  background: var(--recipe-card-bg);
 
   @media screen and (min-width: 768px) {
     width: 93px;
@@ -90,10 +90,11 @@ export const RemoveBtn = styled.button`
 export const SvgRemove = styled.svg`
   width: 14px;
   height: 14px;
-  stroke: #333;
+  stroke: var(--add-del-btn);
+  transition: stroke var(--transition-time) var(--transition-function);
 
   &:hover {
-    stroke: var(--accent);
+    stroke: var(--accent-green);
   }
 
   @media screen and (min-width: 768px) {
@@ -106,5 +107,3 @@ export const SvgRemove = styled.svg`
     height: 20px;
   }
 `;
-
-

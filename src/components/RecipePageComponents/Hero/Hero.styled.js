@@ -23,6 +23,7 @@ export const SectionHero = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  color: var(--recipe-text-color);
 
   background-image: url(${bgMob});
   @media ${retina} {
@@ -50,7 +51,7 @@ export const SectionHero = styled.section`
 export const MainTitle = styled.h1`
   margin-bottom: 18px;
 
-  color: var(--accent);
+  color: var(--accent-green);
 
   font-size: 24px;
   font-weight: 600;

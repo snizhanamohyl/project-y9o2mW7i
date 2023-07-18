@@ -14,7 +14,7 @@ export const TextArea = styled.textarea`
   width: 100%;
   height: 154px;
 
-  color: var(--black);
+  color: var(--add-ingr-input-color);
   font-family: inherit;
   font-size: 14px;
   font-style: normal;
@@ -29,11 +29,11 @@ export const TextArea = styled.textarea`
   border: none;
   outline-color: transparent;
   resize: none;
-  outline: 1px solid transparent;
+  outline: 1px solid var(--add-input-stroke);
 
   &::placeholder {
-    color: inherit;
-    opacity: 0.5;
+    color: var(--add-placeholder-color);
+    opacity: var(--add-input-opacity);
   }
 
   @media screen and (min-width: 768px) {

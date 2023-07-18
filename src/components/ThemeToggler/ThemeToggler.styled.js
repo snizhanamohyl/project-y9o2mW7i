@@ -1,17 +1,19 @@
 import { styled } from 'styled-components';
 
-export const SwitchBody = styled.button`
+export const SwitchBody = styled.label`
   width: 61px;
   height: 27px;
   position: relative;
   border-radius: 50px;
-  background-color: #efefef;
+  background-color: var(--color-toggler-bg);
   box-shadow: 0px 6px 8px 3px rgba(0, 0, 0, 0.1) inset;
 
   ${({ $customerStyles }) => $customerStyles}
 `;
 
-export const Switch = styled.div`
+export const Switch = styled.span`
+  display: block;
+  outline: none;
   width: 21px;
   height: 21px;
   position: absolute;
@@ -23,4 +25,8 @@ export const Switch = styled.div`
   transform: ${({ mode }) =>
     mode === 'light' ? 'translate(0, -50%)' : 'translate(-100%, -50%)'};
   transition: all var(--transition-time) var(--transition-function);
+`;
+
+export const Input = styled.input`
+  opacity: 0;
 `;
