@@ -41,6 +41,6 @@ export const LogOutBtn = styled.a`
 
   &:hover,
   &:focus {
-    background-color: var(--footer-nav-hover);
+    background-color: var(--dark);
   }
 `;

@@ -13,10 +13,11 @@ export const CloseButton = styled.button`
 export const CloseIcon = styled.svg`
   width: 20px;
   height: 20px;
+  stroke: var(--text-primary);
 
   &:hover,
   &:focus {
-    color: var(--accent);
+    stroke: var(--accent);
   }
 
   @media screen and (min-width: 768px) {
@@ -48,12 +49,15 @@ export const FormStyled = styled(Form)`
   }
 `;
 
-export const UserIcon = styled.svg``;
+export const UserIcon = styled.svg`
+  stroke: var(--icon-grey);
+`;
 
 export const PlusIcon = styled.svg`
   position: absolute;
   bottom: -5px;
   right: 110px;
+  color: var(--accent-green);
 
   @media screen and (min-width: 768px) {
     top: 131px;
@@ -63,6 +67,10 @@ export const PlusIcon = styled.svg`
   @media screen and (min-width: 768px) {
     top: 85px;
     left: 208px;
+  }
+
+  &:hover {
+    color: var(--dark);
   }
 `;
 
@@ -95,11 +103,11 @@ export const UserImgWrapper = styled.div`
   border-radius: 50%;
   width: 88px;
   height: 88px;
-  transition: border var(--transition-time) var(--transition-function);
+  transition: stroke var(--transition-time) var(--transition-function);
 
   &:hover,
-  &:focus {
-    border: 2px solid var(--accent);
+  &:focus svg {
+    stroke: var(--accent);
   }
 
   @media screen and (min-width: 768px) {
@@ -155,6 +163,9 @@ export const NameInput = styled(Field)`
 
   &:hover,
   &:focus {
+    /* border: 1px solid var(--accent);
+    stroke: green;
+    fill: green; */
     border: 1px solid var(--modal-input-stroke-hover);
   }
 
@@ -182,6 +193,7 @@ export const UserIconStyled = styled.svg`
   top: 50%;
   left: 16.5px;
   transform: translateY(-50%);
+  stroke: var(--text-primary);
 
   @media screen and (min-width: 768px) {
     width: 24px;
@@ -207,13 +219,18 @@ export const EditBtn = styled.button`
 `;
 
 export const EditIcon = styled.svg`
-  stroke: #23262a;
+  stroke: var(--cancel-menu-icon);
   width: 17px;
   height: 17px;
+  fill: transparent;
 
   @media screen and (min-width: 768px) {
     width: 19px;
     height: 19px;
+  }
+
+  &:hover {
+    stroke: var(--accent-green);
   }
 `;
 
