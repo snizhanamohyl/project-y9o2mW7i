@@ -1,17 +1,26 @@
 const { styled } = require('styled-components');
 
 export const Avatar = styled.div`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 34px;
   height: 34px;
   margin-right: 14px;
   overflow: hidden;
   border-radius: 50%;
+  border: 2px solid var(--accent);
 
   @media (min-width: 768px) {
     width: 44px;
     height: 44px;
   }
+`;
+
+export const Letter = styled.p`
+  font-weight: 500;
+  font-size: 30px;
+
 `;
 
 export const AvatarImg = styled.img`
@@ -33,6 +42,7 @@ export const UserWrap = styled.button`
     margin-right: 50px;
   }
 
+  &:hover,
   &:hover p {
     color: var(--accent);
   }
