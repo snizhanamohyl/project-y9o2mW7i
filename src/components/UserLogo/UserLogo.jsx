@@ -21,6 +21,7 @@ const theme = createTheme({
 export default function UserLogo () {
   const width = useWindowWidth();
   const avatarSize = width < 768 ? '34px' : '44px';
+  const userColor = width < 1440 ? 'inherit' : '#23262a';
 
   const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = event => { setAnchorEl(event.currentTarget); };
@@ -40,7 +41,7 @@ export default function UserLogo () {
               height={avatarSize}
             />
           </Avatar>
-          <UserName>Olena</UserName>
+          <UserName userColor={userColor}>Olena</UserName>
         </UserWrap>
 
         <ThemeProvider theme={theme}>

@@ -4,6 +4,7 @@ export const HeaderBox = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: ${({ $isRecipePage }) => ($isRecipePage ? '#23262a' : 'inherit')};
 `;
 
 export const Menu = styled.div`

@@ -19,7 +19,7 @@ export const AvatarImg = styled.img`
 `;
 
 export const UserName = styled.p`
-  color: var(--text-primary);
+  color: ${({ userColor }) => userColor};
   font-size: 14px;
   font-weight: 600;
   line-height: 1.7;
@@ -32,9 +32,5 @@ export const UserWrap = styled.button`
 
   @media (min-width: 768px) {
     margin-right: 50px;
-  }
-
-  &:hover p {
-    color: var(--accent);
   }
 `;
