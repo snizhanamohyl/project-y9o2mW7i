@@ -5,10 +5,9 @@ export const BtnAddFavorite = styled.button`
   height: 35px;
   margin-bottom: 42px;
 
-  background: ${props =>
-    props.isAddedToFavorite ? 'var(--accent)' : 'transparent'};
-  color: ${props =>
-    props.isAddedToFavorite ? 'var(--bg-color)' : 'var(--dark-accent)'};
+  background: ${({ $toggle }) => ($toggle ? 'var(--accent)' : 'transparent')};
+  color: ${({ $toggle }) =>
+    $toggle ? 'var(--bg-color)' : 'var(--dark-accent)'};
 
   border-radius: 24px 44px;
   border: 1px solid var(--accent);

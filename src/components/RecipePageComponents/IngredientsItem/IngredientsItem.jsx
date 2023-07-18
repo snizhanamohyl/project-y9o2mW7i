@@ -11,10 +11,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getShoppingList } from 'redux/ShopingList/selectors';
+import { toggleValue } from 'redux/toggle/selectors';
+import { toggleOff, toggleOn } from 'redux/toggle/toggle.slice';
 
 export default function RecipePageIngredientsItem({ ingredient }) {
   const { recipeId } = useParams();
-  const [isChecked, setIsChecked] = useState(false);
+  const toggler = useSelector(toggleValue);
+
   const dispatch = useDispatch();
   const shoppingList = useSelector(getShoppingList);
   const { id, measure } = ingredient;
@@ -26,16 +29,7 @@ export default function RecipePageIngredientsItem({ ingredient }) {
     newId: newId,
   };
 
-  const handleCheckboxClick = () => {
-    setIsChecked(prev => !prev);
-    isChecked
-      ? dispatch(deleteIngredient(newId))
-      : dispatch(addIngredient(newStructure));
-  };
-
-  useEffect(() => {
-    setIsChecked(shoppingList.find(el => el.newId === recipeId) ? true : false);
-  }, [recipeId, shoppingList]);
+  useEffect(() => {}, [recipeId, shoppingList, toggler]);
 
   return (
     <>
@@ -46,12 +40,7 @@ export default function RecipePageIngredientsItem({ ingredient }) {
         </div>
         <div>
           <QuantityIngredient>{measure}</QuantityIngredient>
-          <CheckboxLabels
-            key={newId}
-            id={newId}
-            onClick={handleCheckboxClick}
-            isChecked={isChecked}
-          />
+          <CheckboxLabels key={newId} id={newId} newStructure={newStructure} />
         </div>
       </ListItem>
     </>
