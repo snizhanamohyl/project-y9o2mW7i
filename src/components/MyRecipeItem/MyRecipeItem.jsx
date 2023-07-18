@@ -10,23 +10,24 @@ import {
     Container,
     ContainerHeaderRecipe,
         } from '../MyRecipeItem/MyRecipesItem.styled.jsx';
+
 import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel.jsx';
 import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee.jsx';
-import { useDispatch } from "react-redux";
-import { deleteRecipeFromFavorites } from 'redux/Favorite/operations'
 
 
-
-const MyRecipeItem = ({recipe, isFavorites}) => {
-    const dispatch = useDispatch()
+const MyRecipeItem = ({recipe, isFavorites, onDeleteClick}) => {
     const {preview, title, _id, description, time} = recipe;
 
+    console.log(isFavorites)
+
     const onClick = () => {
-            dispatch(deleteRecipeFromFavorites(_id))
+            if(isFavorites){
+                onDeleteClick(_id)
+            }
     }
 
     return(
-                <ContainerCard > 
+                <ContainerCard> 
                     <ImgCard src={preview} alt={title} />
                     <Container>
                         <ContainerContent>

@@ -9,15 +9,9 @@ export const Container = styled.div`
     align-items: center;
 
     padding-top: 22px;
-    padding-bottom: 100px;
 
     @media screen and (min-width: 767px){
       padding-top: 32px;
-      padding-bottom: 200px;
-    }
-
-    @media screen and (min-width: 1439px){
-      padding-bottom: 100px;
     }
 `
 
