@@ -27,20 +27,19 @@ const MyRecipes = () => {
 
   const uniqueKey = nanoid();
 
-  // індекс останнього рецепту на поточній сторінці
-  //   const lastRecipeIndex = currentPage * recipesPerPage;
-  //   //індекс першого рецепту на поточній сторінці
-  //   const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
-  //   //масив рецептів для поточної сторінки
-  //   const currentRecipes = recipes?.slice(firstRecipeIndex, lastRecipeIndex);
-  console.log(recipes);
+  const lastRecipeIndex = currentPage * recipesPerPage;
+
+  const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
+
+  const currentRecipes = recipes?.slice(firstRecipeIndex, lastRecipeIndex);
+
   return (
     <>
       <MyRecipesTitle>My recipes</MyRecipesTitle>
       <MyRecipesList
         uniqueKey={uniqueKey}
         isFavorites={false}
-        recipe={recipes}
+        recipe={currentRecipes}
       />
       {recipes.length > 0 ? (
         <Pagination
