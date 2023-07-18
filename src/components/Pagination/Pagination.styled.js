@@ -11,12 +11,12 @@ export const Container = styled.div`
     padding-top: 22px;
     padding-bottom: 100px;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
       padding-top: 32px;
       padding-bottom: 200px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
       padding-bottom: 100px;
     }
 `
@@ -26,7 +26,7 @@ export const theme = createTheme({
       MuiPagination: {
         styleOverrides: {
           root: {
-            backgroundColor: 'var(--bg-color)',
+            backgroundColor: 'var(--pagination-bg)',
             borderRadius: '26px',
             boxShadow: '0px 4px 4px 0px var(--pagination-shadow)',
           },
@@ -54,14 +54,14 @@ export const theme = createTheme({
         styleOverrides: {
             root: {
               '&.MuiPaginationItem-root.Mui-selected': {
-                backgroundColor: 'var(--light-green-bg)', 
-                color: 'var(--dark-accent)',
+                backgroundColor: 'var(--pagination-selected-bg)', 
+                color: 'var(--pagination-selected)',
               },
               '&.MuiPaginationItem-root:hover': {
-                backgroundColor: 'var(--light-green-bg)',
+                backgroundColor: 'var(--pagination-selected-bg)',
               },
               '&.MuiPaginationItem-root.Mui-selected:hover': {
-                backgroundColor: 'var(--light-green-bg)',
+                backgroundColor: 'var(--pagination-selected-bg)',
               }
             }
         }
