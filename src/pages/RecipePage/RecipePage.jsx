@@ -9,6 +9,7 @@ import getRecipeById from 'services/getRecipeById';
 export default function RecipePage() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState('');
+  
   const navigate = useNavigate();
   useEffect(() => {
     getRecipeById(recipeId)

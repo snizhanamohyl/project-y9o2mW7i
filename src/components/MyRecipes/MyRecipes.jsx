@@ -20,14 +20,12 @@ const MyRecipes = () => {
 
     const uniqueKey = nanoid();
 
-
-
     // індекс останнього рецепту на поточній сторінці
     const lastRecipeIndex = currentPage * recipesPerPage;
     //індекс першого рецепту на поточній сторінці
     const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
     //масив рецептів для поточної сторінки
-    const currentRecipes = recipes.slice(firstRecipeIndex, lastRecipeIndex);
+    const currentRecipes = recipes?.slice(firstRecipeIndex, lastRecipeIndex);
 
 
     return (

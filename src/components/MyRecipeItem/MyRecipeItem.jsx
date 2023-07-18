@@ -15,12 +15,10 @@ import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee';
 const MyRecipeItem = ({recipe, isFavorites, onDeleteClick}) => {
     const {preview, title, _id, description, time} = recipe;
 
-    console.log(isFavorites)
-
     const onClick = () => {
-            if(isFavorites){
-                onDeleteClick(_id)
-            }
+        if(isFavorites){
+            onDeleteClick(_id);
+        }
     }
 
     return(
