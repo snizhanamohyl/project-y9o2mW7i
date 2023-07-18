@@ -90,7 +90,7 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const Button = styled.button`
-  color: var(--bg-color);
+  color: var(--cancel-menu-icon);
   transition: color var(--transition-time) var(--transition-function);
 
   &:hover,
