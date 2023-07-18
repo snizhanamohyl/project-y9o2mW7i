@@ -7,14 +7,12 @@ export const ShoppingListTitle = styled.h1`
   line-height: 28px;
   letter-spacing: -0.56px;
   color: var(--title-color);
-  margin-top: 50px;
   margin-bottom: 50px;
 
   @media screen and (min-width: 768px) {
     font-size: 32px;
     line-height: 32px;
     letter-spacing: -0.64px;
-    margin-top: 72px;
     margin-bottom: 72px;
   }
 
@@ -22,7 +20,6 @@ export const ShoppingListTitle = styled.h1`
     font-size: 44px;
     line-height: 44px;
     letter-spacing: -0.88px;
-    margin-top: 102px;
     margin-bottom: 72px;
   }
 `;
@@ -33,9 +30,9 @@ export const ShoppingListHeader = styled.div`
   justify-content: space-between;
   list-style: none;
   padding: 10px;
-  background-color: var(--accent);
+  background-color: var(--accent-green);
   border-radius: 8px;
-  color: var(--bg-color);
+  color: var(--main-light-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
@@ -71,7 +68,7 @@ export const OptionNameContainer = styled.div`
 `;
 
 export const ShoppingList = styled.ul`
-  padding: 0 8px 100px 0;
+  padding: 0 0px 100px 0;
 
   @media screen and (min-width: 768px) {
     padding: 0 0 200px 0;
@@ -91,7 +88,7 @@ export const ShoppingListItem = styled.li`
   color: var(--pre-title-color);
   font-size: 10px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 18px;
   height: 84px;
   position: relative;
@@ -122,4 +119,12 @@ export const ShoppingListItem = styled.li`
   }
 `;
 
+export const Container = styled.div`
+  padding-top: 50px;
+  padding-bottom: 50px;
 
+  @media screen and (min-width: 1439px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+`;

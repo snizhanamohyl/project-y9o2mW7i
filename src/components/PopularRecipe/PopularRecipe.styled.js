@@ -23,6 +23,13 @@ export const List = styled.ul`
 export const Item = styled.li`
   padding-bottom: 13px;
   border-bottom: 1px solid var(--line-color);
+  transition: border-color var(--transition-time) var(--transition-function);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border-color: var(--input-border-color-focus);
+  }
 
   @media screen and (min-width: 768px) {
     flex: 1;

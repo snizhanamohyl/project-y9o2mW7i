@@ -19,7 +19,7 @@ export const StyledButton = styled.button`
 
   &:hover,
   &:focus {
-    background-color: var(--accent);
+    background-color: var(--footer-nav-hover);
   }
 
   @media screen and (min-width: 768px) {

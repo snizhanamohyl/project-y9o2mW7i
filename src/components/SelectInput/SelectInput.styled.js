@@ -28,7 +28,7 @@ export const InputWrapper = styled.label`
 export const InputField = styled.input`
   width: 100%;
 
-  color: var(--black);
+  color: var(--add-ingr-input-color);
   font-family: inherit;
   font-size: 14px;
   font-style: normal;
@@ -50,6 +50,10 @@ export const InputField = styled.input`
       opacity: 0;
       pointer-events: none;
     }
+    
+  &::placeholder {
+    color: var(--add-placeholder-color);
+    opacity: var(--add-input-opacity);
   }
 
   @media screen and (min-width: 768px) {
