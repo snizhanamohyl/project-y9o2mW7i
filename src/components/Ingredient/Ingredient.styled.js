@@ -50,7 +50,7 @@ export const InputWrapper = styled.div`
 `;
 
 export const NumericInput = styled(InputNumber)`
-  width: 40px;
+  width: 35px;
 
   color: var(--text-primary);
   font-family: inherit;
@@ -65,6 +65,7 @@ export const NumericInput = styled(InputNumber)`
   outline: none;
 
   @media screen and (min-width: 768px) {
+    width: 40px;
     font-size: 18px;
   }
 `;

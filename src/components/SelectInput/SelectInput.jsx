@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Notification from 'components/Notification/Notification';
+import { ThreeDots } from 'react-loader-spinner';
 import {
   Wrapper,
   InputWrapper,
@@ -12,17 +12,18 @@ import {
   ScrollBar,
   Value,
   Placeholder,
+  FailureMessage,
 } from './SelectInput.styled';
 import { fetchIngredients } from 'services/fetchIngredients';
 import Sprite from 'assets/sprite.svg';
 import 'simplebar-react/dist/simplebar.min.css';
 
 export default function SelectInput({ onSelect, inputProps }) {
+  const [isLoaderShown, setIsLoaderShown] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [ingredients, setIngredients] = useState([]);
   const [currentIngredient, setCurrentIngredient] = useState('');
-  const [error, setError] = useState('');
 
   useEffect(() => {
     if (!query) {
@@ -30,15 +31,17 @@ export default function SelectInput({ onSelect, inputProps }) {
     }
 
     const timeoutId = setTimeout(() => {
+      setIsLoaderShown(true);
+
       (async () => {
         try {
           const { data } = await fetchIngredients(query);
           setIngredients(data);
         } catch (error) {
-          setError(error.message);
-          setTimeout(() => {
-            setError('');
-          }, 4000);
+          setIngredients([]);
+          console.log(error.message);
+        } finally {
+          setIsLoaderShown(false);
         }
       })();
     }, 300);
@@ -91,8 +94,17 @@ export default function SelectInput({ onSelect, inputProps }) {
         </svg>
       </InputWrapper>
 
-      {ingredients.length > 0 && (
-        <ListWrapper $isOpen={isOpen}>
+      <ListWrapper $isOpen={isOpen}>
+        {isLoaderShown ? (
+          <ThreeDots
+            height="50"
+            width="50"
+            radius="9"
+            color="var(--accent)"
+            ariaLabel="three-dots-loading"
+            visible
+          />
+        ) : ingredients.length > 0 ? (
           <ScrollBar>
             <List>
               {ingredients.map(({ _id, name }) => (
@@ -102,10 +114,10 @@ export default function SelectInput({ onSelect, inputProps }) {
               ))}
             </List>
           </ScrollBar>
-        </ListWrapper>
-      )}
-
-      {error !== '' && <Notification text={error} />}
+        ) : (
+          query && <FailureMessage>Nothing was found :(</FailureMessage>
+        )}
+      </ListWrapper>
     </Wrapper>
   );
 }

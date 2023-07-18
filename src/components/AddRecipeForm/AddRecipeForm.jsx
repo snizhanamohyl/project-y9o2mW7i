@@ -1,17 +1,19 @@
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import { useFormik } from 'formik';
+import { Oval } from 'react-loader-spinner';
 
 import RecipeDescriptionFields from 'components/RecipeDescriptionFields/RecipeDescriptionFields';
 import RecipeIngredientsFields from 'components/RecipeIngredientsFields/RecipeIngredientsFields';
 import RecipePreparationFields from 'components/RecipePreparationFields/RecipePreparationFields';
 import Button from 'components/Button/Button';
 import Notification from 'components/Notification/Notification';
-import { Form } from './AddRecipeForm.styled';
+import { Form, Backdrop } from './AddRecipeForm.styled';
 import { newRecipeSchema } from 'schemas/newRecipeSchema';
 import { addRecipe } from 'services/addRecipe';
 
 export default function AddRecipeForm() {
+  const [isLoaderShown, setIsLoaderShown] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const formik = useFormik({
@@ -28,12 +30,20 @@ export default function AddRecipeForm() {
     },
     validationSchema: newRecipeSchema,
     onSubmit: async values => {
+      setIsLoaderShown(true);
+
       try {
-        const { preview, ...otherProperties } = values;
+        const { preview, instructions, ...otherProperties } = values;
+
+        const valueArr = instructions.split('\n');
+        const formattedValue = valueArr.filter(el => el).join('\n');
         const formData = new FormData();
 
         formData.append('preview', preview);
-        formData.append('data', JSON.stringify(otherProperties));
+        formData.append(
+          'data',
+          JSON.stringify({ ...otherProperties, instructions: formattedValue })
+        );
 
         await addRecipe(formData);
         navigate('/my');
@@ -42,6 +52,8 @@ export default function AddRecipeForm() {
         setTimeout(() => {
           setError('');
         }, 4000);
+      } finally {
+        setIsLoaderShown(false);
       }
     },
   });
@@ -55,6 +67,21 @@ export default function AddRecipeForm() {
         Add
       </Button>
       {error !== '' && <Notification text={error} />}
+
+      {isLoaderShown && (
+        <Backdrop>
+          <Oval
+            visible
+            height={75}
+            width={75}
+            color="var(--accent)"
+            ariaLabel="oval-loading"
+            secondaryColor="var(--accent)"
+            strokeWidth={8}
+            strokeWidthSecondary={8}
+          />
+        </Backdrop>
+      )}
     </Form>
   );
 }
