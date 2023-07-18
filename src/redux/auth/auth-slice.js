@@ -35,7 +35,6 @@ export const authSlice = createSlice({
       state.resetForm = true;
       state.serverError = '';
       state.serverErrorStatus = null;
-      console.log(state.user)
     },
     [login.rejected](state, action) {
       state.serverError =
