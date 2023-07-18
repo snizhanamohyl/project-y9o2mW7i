@@ -1,19 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { CheckBoxWraper } from './Checkbox.styled';
-import { toggleValue } from 'redux/toggle/selectors';
-import { toggleOff, toggleOn } from 'redux/toggle/toggle.slice';
 import { addIngredient, deleteIngredient } from 'redux/ShopingList/operations';
-import { getAllFavorites } from 'redux/Favorite/selectors';
+import { getShoppingList } from 'redux/ShopingList/selectors';
 export default function Checkbox({ id, label, newStructure }) {
   const dispatch = useDispatch();
-  const toggler = useSelector(toggleValue);
+
+  const shoppingList = useSelector(getShoppingList);
+  const add = shoppingList.find(el => el.newId === id);
 
   function onClick(id) {
-    if (toggler === false) {
-      dispatch(toggleOn());
+    if (!add) {
       dispatch(addIngredient(newStructure));
     } else {
-      dispatch(toggleOff());
       dispatch(deleteIngredient(id));
     }
   }
@@ -21,7 +19,12 @@ export default function Checkbox({ id, label, newStructure }) {
   return (
     <CheckBoxWraper>
       <label htmlFor={id}>
-        <input id={id} type="checkbox" onChange={() => onClick(id)} />
+        <input
+          id={id}
+          type="checkbox"
+          checked={add ? true : false}
+          onChange={() => onClick(id)}
+        />
         <span>{label}</span>
       </label>
     </CheckBoxWraper>

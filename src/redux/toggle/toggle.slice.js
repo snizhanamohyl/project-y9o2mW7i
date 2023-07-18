@@ -11,10 +11,10 @@ const toggleSlice = createSlice({
     toggleOff: (state = initialState) => {
       state.active = false;
     },
-    toggleRevers: (state = initialState) => {
-      state.active = !state.active;
+    addId: (state, action) => {
+      return action.payload;
     },
   },
 });
-export const { toggleOn, toggleOff, toggleRevers } = toggleSlice.actions;
+export const { toggleOn, toggleOff, addId } = toggleSlice.actions;
 export const toggleReducer = toggleSlice.reducer;
