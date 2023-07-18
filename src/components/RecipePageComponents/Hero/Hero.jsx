@@ -12,7 +12,7 @@ import { useParams } from 'react-router-dom';
 export default function RecipePageHero({ recipe }) {
   const { recipeId } = useParams();
   const { title, description, time } = recipe;
-
+  console.log(recipe);
   return (
     <SectionHero>
       <SharedContainer>

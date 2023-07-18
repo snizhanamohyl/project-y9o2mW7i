@@ -12,7 +12,7 @@ export default function RecipePageInstruction({ recipe }) {
   const { instructions, preview, youtube, title } = recipe;
   console.log(recipe);
 
-  const structureTexts = instructions?.split(/\r\n\r\n|\r\n|\n/g);
+  const structureTexts = instructions?.split(/\r\n\r\n|\r\n|\n|\n\n\n|\n\n\|/g);
   const link = youtube?.slice(32);
 
   return (
