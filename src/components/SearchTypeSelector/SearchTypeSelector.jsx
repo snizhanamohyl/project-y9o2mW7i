@@ -4,7 +4,7 @@ import { Wrapper, Label } from './SearchTypeSelector.styled';
 export default function SearchTypeSelector({ onChange, type }) {
   const options = [
     { id: 1, label: 'Title', value: 'query' },
-    { id: 2, label: 'Ingredients', value: 'ingredient' },
+    { id: 2, label: 'Ingredients', value: 'ingredients' },
   ];
   const currentType = options.find(({ value }) => value === type);
 
@@ -13,7 +13,7 @@ export default function SearchTypeSelector({ onChange, type }) {
       <Label>Search by:</Label>
       <Select
         options={options}
-        currentOption={currentType?.label ?? 'Title'}
+        currentOption={currentType?.value}
         onSelect={onChange}
       />
     </Wrapper>
