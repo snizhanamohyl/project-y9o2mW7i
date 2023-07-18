@@ -53,7 +53,7 @@ export default function UserLogo () {
             
         )}
 
-        <UserName>{user.name}</UserName>
+        <UserName userColor={userColor}>{user.name}</UserName>
       </UserWrap>
 
       <ThemeProvider theme={theme}>

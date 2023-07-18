@@ -37,3 +37,5 @@ export const UserWrap = styled.button`
     margin-right: 50px;
   }
 `;
+
+export const Letter = styled.p``;
