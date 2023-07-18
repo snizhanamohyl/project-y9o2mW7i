@@ -12,11 +12,11 @@ export const BtnDel = styled.button`
     transition: color var(--transition-time) var(--transition-function), 
                 background-color var(--transition-time) var(--transition-function);
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         padding: 8px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         padding: 10px;
     }
 
@@ -34,12 +34,12 @@ export const SvgDel = styled.svg`
     width: 14px;
     height: 14px;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         width: 22px;
         height: 22px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         width: 24px;
         height: 24px;
     }

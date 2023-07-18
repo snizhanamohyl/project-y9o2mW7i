@@ -11,12 +11,12 @@ export const Container = styled.div`
     padding-top: 22px;
     padding-bottom: 100px;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
       padding-top: 32px;
       padding-bottom: 200px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
       padding-bottom: 100px;
     }
 `

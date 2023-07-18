@@ -1,4 +1,4 @@
-import { BtnRecipeSee, LinkRecipe } from './ButtonRecipeSee.styled.jsx';
+import { BtnRecipeSee, LinkRecipe } from './ButtonRecipeSee.styled.js';
 
 const ButtonRecipeSee = ({ isFavorites, path }) => {
     return(

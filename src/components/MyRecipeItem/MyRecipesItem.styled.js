@@ -13,12 +13,12 @@ export const ContainerCard = styled.div`
     margin-bottom: 18px;
     padding: 14px 9px;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         padding: 28px 24px;
         gap: 24px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         padding: 40px;
         gap: 40px;
     }
@@ -30,12 +30,12 @@ export const ImgCard = styled.img`
     height: 124px;
     border-radius: 8px;
 
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 768px) {
         width: 228px;
         height: 232px;
     }
 
-    @media screen and (min-width: 1439px) {
+    @media screen and (min-width: 1440px) {
         width: 318px;
         height: 324px;
     }
@@ -51,13 +51,13 @@ export const TitleCard = styled.h2`
     margin-bottom: 14px;
     color: var(--pre-title-color);
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         font-size: 24px;
         line-height: 24px;
         margin-bottom: 28px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         margin-bottom: 50px;
     }
 `
@@ -73,11 +73,11 @@ export const BtnDel = styled.button`
 
     padding: 5px;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         padding: 8px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         padding: 10px;
     }
 
@@ -94,7 +94,7 @@ export const TextCard = styled.p`
     line-height: 10px;
     letter-spacing: -0.16px;
 
-    @media (min-width: 375px) and (max-width: 1439px){
+    @media (min-width: 375px) and (max-width: 1440px){
         display: -webkit-box;
         -webkit-line-clamp: 4; 
         -webkit-box-orient: vertical;
@@ -104,7 +104,7 @@ export const TextCard = styled.p`
 
     max-width: 153px;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         font-size: 14px;
         line-height: 18px;
         letter-spacing: -0.28px;
@@ -112,7 +112,7 @@ export const TextCard = styled.p`
         margin-bottom: 0px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         font-size: 18px;
         line-height: 24px;
         letter-spacing: -0.36px;
@@ -126,11 +126,11 @@ export const Container = styled.div`
     height: 128px;
     width: 100%;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         height: 228px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         height: 324px;
     }
 `
@@ -158,7 +158,7 @@ export const TimeCard = styled.span`
     line-height: 14px;
     letter-spacing: -0.24px;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         font-size: 14px;
         line-height: 20px;
     }
@@ -177,12 +177,12 @@ export const BtnRecipeSee = styled(Link)`
     padding: 6px 14px;
 
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         font-size: 14px;
         padding: 12px 32px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         font-size: 16px;
         padding: 14px 38px 22px 38px
     }
@@ -192,12 +192,12 @@ export const SvgDel = styled.svg`
     width: 14px;
     height: 14px;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         width: 22px;
         height: 22px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         width: 24px;
         height: 24px;
     }

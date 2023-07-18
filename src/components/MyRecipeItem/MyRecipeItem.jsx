@@ -8,9 +8,9 @@ import {
     TimeCard,
     Container,
     ContainerHeaderRecipe,
-        } from '../MyRecipeItem/MyRecipesItem.styled.jsx';
-import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel.jsx';
-import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee.jsx';
+        } from '../MyRecipeItem/MyRecipesItem.styled.js';
+import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel';
+import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee';
 import { useDispatch } from "react-redux";
 import { deleteRecipeFromFavorites } from 'redux/Favorite/operations'
 

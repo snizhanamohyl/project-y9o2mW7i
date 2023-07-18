@@ -14,11 +14,11 @@ export const BtnRecipeSee = styled.div`
     transition: color var(--transition-time) var(--transition-function), 
                 background-color var(--transition-time) var(--transition-function);
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         font-size: 14px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         font-size: 16px;
     }
 
@@ -33,11 +33,11 @@ export const LinkRecipe = styled(Link)`
     display: block;
     padding: 6px 14px;
 
-    @media screen and (min-width: 767px){
+    @media screen and (min-width: 768px){
         padding: 12px 32px;
     }
 
-    @media screen and (min-width: 1439px){
+    @media screen and (min-width: 1440px){
         padding: 14px 38px;
     }
 `

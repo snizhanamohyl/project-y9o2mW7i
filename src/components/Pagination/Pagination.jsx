@@ -1,6 +1,6 @@
 import React from "react";
 import { Pagination } from '@mui/material';
-import { Container, theme } from './Pagination.styled.jsx';
+import { Container, theme } from './Pagination.styled.js';
 import { ThemeProvider } from '@mui/material/styles';
 import useWindowWidth from 'hooks/useWindowWidth';
 

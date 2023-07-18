@@ -1,4 +1,4 @@
-import { BtnDel, SvgDel } from './ButtonDelRecipe.styled.jsx';
+import { BtnDel, SvgDel } from './ButtonDelRecipe.styled.js';
 import sprite from '../../assets/sprite.svg';
 
 const ButtonDelRicepe = ({ isFavorites, onClick, disabled }) => {
