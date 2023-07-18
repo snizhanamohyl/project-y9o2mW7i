@@ -49,7 +49,14 @@ export const FormStyled = styled(Form)`
   }
 `;
 
-export const UserIcon = styled.svg``;
+export const UserIcon = styled.svg`
+  stroke: var(--icon-grey);
+
+  /* &:hover,
+  &:focus {
+    stroke: var(--accent);
+  } */
+`;
 
 export const PlusIcon = styled.svg`
   position: absolute;
@@ -97,13 +104,14 @@ export const UserImgWrapper = styled.div`
   border-radius: 50%;
   width: 88px;
   height: 88px;
-  transition: border var(--transition-time) var(--transition-function);
-
-  &:hover,
-  &:focus {
-    border: 2px solid var(--accent);
-  }
-
+  transition: stroke var(--transition-time) var(--transition-function);
+ 
+ 
+    &:hover,
+    &:focus svg{
+      stroke: var(--accent);
+    }
+  
   @media screen and (min-width: 768px) {
     width: 103px;
     height: 103px;
@@ -158,6 +166,8 @@ export const NameInput = styled(Field)`
   &:hover,
   &:focus {
     border: 1px solid var(--accent);
+    stroke: green;
+    fill: green;
   }
 
   @media screen and (min-width: 768px) {
@@ -184,6 +194,7 @@ export const UserIconStyled = styled.svg`
   top: 50%;
   left: 16.5px;
   transform: translateY(-50%);
+  stroke: var(--text-primary);
 
   @media screen and (min-width: 768px) {
     width: 24px;
@@ -203,15 +214,16 @@ export const EditBtn = styled.button`
   padding: 0;
   border: none;
 
-
   @media screen and (min-width: 768px) {
     right: 18px;
-  }`
+  }
+`;
 
 export const EditIcon = styled.svg`
   stroke: #23262a;
   width: 17px;
   height: 17px;
+  fill:transparent;
 
   @media screen and (min-width: 768px) {
     width: 19px;
