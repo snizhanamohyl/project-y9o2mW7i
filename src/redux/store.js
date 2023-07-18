@@ -11,6 +11,9 @@ import {
 import storage from 'redux-persist/lib/storage';
 import persistStore from 'redux-persist/es/persistStore';
 import { authReducer } from './auth/auth-slice';
+import { ingredientsReducer } from './ShopingList/slice';
+
+import { favoriteReducer } from './Favorite/slice';
 
 const persistConfig = {
   key: 'auth',
@@ -21,7 +24,9 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const rootReducer = combineReducers({
+  shoppingList: ingredientsReducer,
   auth: persistedReducer,
+  favorite: favoriteReducer,
 });
 
 export const store = configureStore({

@@ -1,4 +1,3 @@
-import React from "react";
 import {
     ContainerCard,
     ImgCard,
@@ -9,14 +8,21 @@ import {
     TimeCard,
     Container,
     ContainerHeaderRecipe,
-        } from '../MyRecipeItem/MyRecipesItem.styled.jsx';
-import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel.jsx';
-import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee.jsx';
+        } from '../MyRecipeItem/MyRecipesItem.styled.js';
+import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel';
+import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee';
+import { useDispatch } from "react-redux";
+import { deleteRecipeFromFavorites } from 'redux/Favorite/operations'
 
 
 const MyRecipeItem = ({recipe, isFavorites}) => {
-
+    const dispatch = useDispatch()
     const {preview, title, _id:{$oid}, description, time} = recipe;
+
+    const onClick = () => {
+        dispatch(deleteRecipeFromFavorites($oid))
+        console.log($oid)
+    }
 
     return(
                 <ContainerCard key={$oid}> 
@@ -25,13 +31,13 @@ const MyRecipeItem = ({recipe, isFavorites}) => {
                         <ContainerContent>
                             <ContainerHeaderRecipe>
                                 <TitleCard>{title}</TitleCard>
-                                    <ButtonDelRicepe isFavorites={isFavorites}/>
+                                    <ButtonDelRicepe isFavorites={isFavorites} onClick={onClick}/>
                             </ContainerHeaderRecipe>
                             <TextCard>{description}</TextCard>
                         </ContainerContent>              
                         <ContainerBtnRecipe>
                                 <TimeCard>{time} min</TimeCard>
-                                <ButtonRecipeSee isFavorites={isFavorites} path={`/recipe/${$oid}`}/>
+                    <ButtonRecipeSee isFavorites={isFavorites} path={`/recipe/${$oid}`}/>
                         </ContainerBtnRecipe>
                     </Container>
                 </ContainerCard>

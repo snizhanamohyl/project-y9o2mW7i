@@ -5,12 +5,12 @@ export const ListItem = styled.li`
 
   width: 100%;
   height: 86px;
-  padding: 34px 29px 34px 29px;
+  padding: 34px 29px 34px 18px;
 
   align-items: center;
   justify-content: space-between;
 
-  background-color: var(--light-green-bg);
+  background-color: var(--recipe-card-bg);
   border-radius: 8px;
 
   @media (min-width: 768px) {
@@ -68,6 +68,7 @@ export const IngredientName = styled.span`
 `;
 export const QuantityIngredient = styled.span`
   min-width: 47px;
+  max-width: 100px;
   padding: 4px 4px;
   color: var(--bg-color);
   text-align: center;
@@ -79,6 +80,7 @@ export const QuantityIngredient = styled.span`
   margin-right: 28px;
   @media (min-width: 768px) {
     min-width: 68px;
+    max-width: 150px;
     margin-right: 78px;
     font-size: 18px;
     padding: 4px 8px;

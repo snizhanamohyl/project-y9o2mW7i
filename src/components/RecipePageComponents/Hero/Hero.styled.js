@@ -9,11 +9,10 @@ import bgDeskRetina from 'assets/images/desktop/recipePage-hero-bg-2x.jpg';
 import { retina } from 'vars/styles';
 
 export const SectionHero = styled.section`
-  width: 100%;
+  min-width: 375px;
 
   display: flex;
-  /* margin-left: auto;
-  margin-right: auto; */
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -24,6 +23,7 @@ export const SectionHero = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  color: var(--recipe-text-color);
 
   background-image: url(${bgMob});
   @media ${retina} {
@@ -51,7 +51,7 @@ export const SectionHero = styled.section`
 export const MainTitle = styled.h1`
   margin-bottom: 18px;
 
-  color: var(--accent);
+  color: var(--accent-green);
 
   font-size: 24px;
   font-weight: 600;
@@ -88,35 +88,6 @@ export const RecipeDescription = styled.p`
   }
 `;
 
-export const BtnAddFavorite = styled.button`
-  width: 150px;
-  height: 35px;
-  margin-bottom: 42px;
-  color: var(--dark-accent);
-  background-color: transparent;
-
-  border-radius: 24px 44px;
-  border: 1px solid var(--accent);
-
-  font-size: 10px;
-  line-height: normal;
-  &:hover {
-    color: var(--bg-color);
-    background-color: var(--accent);
-  }
-
-  @media (min-width: 768px) {
-    margin-bottom: 60px;
-    width: 278px;
-    height: 59px;
-
-    letter-spacing: -0.36px;
-    font-size: 16px;
-  }
-  @media (min-width: 1440px) {
-    margin-bottom: 48px;
-  }
-`;
 export const ContainerTimePrepare = styled.div`
   display: flex;
   gap: 4px;

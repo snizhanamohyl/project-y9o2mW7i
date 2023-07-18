@@ -11,7 +11,7 @@ const Img = styled.picture`
   margin-top: 87px;
   margin-left: auto;
   margin-right: auto;
-  display:block;
+  display: block;
   @media screen and (min-width: 768px) {
     margin-top: 96px;
     width: 409px;
@@ -77,7 +77,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  color: var(--bg-color);
+  color: var(--main-light-color);
   font-size: 24;
   line-height: 1.17;
   margin-bottom: 18px;
@@ -96,7 +96,7 @@ const Input = styled(Field)`
   border-radius: 6px;
   border: 0.5px solid var(--input-grey);
   background-color: transparent;
-  color: var(--bg-color);
+  color: var(--main-light-color);
   padding-left: 45px;
   outline: none;
   ::placeholder,
@@ -109,16 +109,16 @@ const Input = styled(Field)`
     padding-left: 7px;
   }
   :focus::-webkit-input-placeholder {
-    color: var(--bg-color);
+    color: var(--main-light-color);
   }
   :focus::placeholder {
-    color: var(--bg-color);
+    color: var(--main-light-color);
   }
   :hover::placeholder {
-    color: var(--bg-color);
+    color: var(--main-light-color);
   }
   :hover::-webkit-input-placeholder {
-    color: var(--bg-color);
+    color: var(--main-light-color);
   }
   @media screen and (min-width: 768px) {
     width: 400px;
@@ -157,38 +157,46 @@ const Button = styled.button`
   box-sizing: border-box;
   width: 279px;
   height: 45px;
-  background-color: var(--accent);
+  background-color: var(--accent-green);
   padding: 12px 106px;
   border-radius: 6px;
   font-family: inherit;
   font-size: 16px;
   line-height: 1.13;
-  color: var(--bg-color);
+  color: var(--main-light-color);
+  transition: color var(--transition-time) var(--transition-function);
   cursor: pointer;
   @media screen and (min-width: 768px) {
     width: 400px;
     height: 56px;
   }
-    &:disabled {
+  &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+  &:hover {
+    color: var(--dark);
   }
 `;
 
 const Link = styled(NavLink)`
   font-family: inherit;
   font-size: 14px;
-  color: var(--bg-color);
+  color: var(--main-light-color);
   margin: auto;
   display: block;
   text-align: center;
   text-decoration: underline;
   margin-top: -10px;
+  transition: color var(--transition-time) var(--transition-function);
   @media screen and (min-width: 768px) {
     font-size: 16px;
   }
   @media screen and (min-width: 1440px) {
     margin-top: 0;
+  }
+  &:hover {
+    color: var(--accent-green);
   }
 `;
 

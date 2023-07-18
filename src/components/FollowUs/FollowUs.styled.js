@@ -17,7 +17,7 @@ export const Socials = styled.ul`
 
   & a {
     transition: color var(--transition-time) var(--transition-function);
-    color: var(--accent);
+    color: var(--add-socials);
   }
 
   & a:hover,

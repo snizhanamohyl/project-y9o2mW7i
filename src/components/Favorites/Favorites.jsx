@@ -1,21 +1,30 @@
 import React from 'react';
 import MyRecipesList from '../MyRecipesItem/MyRecipesList';
 import Pagination from '../../components/Pagination/Pagination';
-import { useEffect, useState } from 'react';
-import { FavoritePageTitle, Container } from './Favorites.styled.jsx';
-import fetchFavorites from '../../services/fetchFavorites';
+import {  useState } from 'react';
+import { FavoritePageTitle, Container } from './Favorites.styled.js';
 import EmptyPage from '../EmptyPage/EmptyPage';
+import { useSelector } from 'react-redux';
+import { getAllFavorites } from '../../redux/Favorite/selectors';
+// import { getAllFavoritList } from '../../redux/Favorite/operations'
+
 
 const Favorites = () => {
-    const [recipes, setRecipes] = useState([]);
+    // const [recipes, setRecipes] = useState([]);
+    const recipes = [];
     const [currentPage, setCurrentPage] = useState(1);
 
+    // const dispatch = useDispatch();
+    const recipesAll = useSelector(getAllFavorites)
+    console.log(recipesAll)
+    
     const recipesPerPage = 4;
 
 
-    useEffect(() => {
-        fetchFavorites().then(data => setRecipes(data))  
-    }, []);
+    // useEffect(() => {
+    //     dispatch(getAllFavoritList())
+    //     setRecipes(recipesAll)
+    // }, [dispatch]);
 
 
     // індекс останнього рецепту на поточній сторінці

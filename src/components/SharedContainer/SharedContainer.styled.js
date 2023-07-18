@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
+  padding-top: ${({ $isBg }) => ($isBg ? '50px' : 0)};
   padding-right: 16px;
   width: 375px;
   ${({ $isBg }) =>
@@ -17,7 +18,7 @@ export const Wrapper = styled.div`
     width: 6px;
     height: 6px;
     transform: rotate(-25deg);
-    background-color: var(--dark-accent);
+    background-color: var(--cancel-menu-icon);
     position: absolute;
     left: 244px;
     top: 75px;
@@ -48,6 +49,7 @@ export const Wrapper = styled.div`
     width: 768px;
     padding-left: 32px;
     padding-right: 32px;
+    padding-top: ${({ $isBg }) => ($isBg ? '72px' : 0)};
     background: ${({ $isBg }) =>
       $isBg
         ? `url(${spot}) 219px 21px / 14px 14px no-repeat, url(${spot}) 726px 34px / 14px 14px no-repeat`
@@ -58,6 +60,7 @@ export const Wrapper = styled.div`
     width: 1440px;
     padding-left: 100px;
     padding-right: 100px;
+    padding-top: ${({ $isBg }) => ($isBg ? '100px' : 0)};
     background: ${({ $isBg }) =>
       $isBg
         ? `url(${spot}) 328px 54px / 14px 14px no-repeat, url(${spot}) 1250px 65px / 14px 14px no-repeat`

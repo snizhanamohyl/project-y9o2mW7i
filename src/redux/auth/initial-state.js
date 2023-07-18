@@ -1,5 +1,5 @@
 export const initialState = {
-  user: { name: null, email: null },
+  user: { name: null, email: null, avatarURL: '' },
   token: null,
   isLoggedIn: false,
   isRefreshing: true,
@@ -7,4 +7,5 @@ export const initialState = {
   serverError: '',
   serverErrorStatus: null,
   resetForm: false,
+  allowRefreshUser: true,
 };

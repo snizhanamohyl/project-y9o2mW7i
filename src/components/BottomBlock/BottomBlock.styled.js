@@ -18,6 +18,7 @@ const bgDesk = `url(${bgSpinachDesk}) right top no-repeat`;
 const bgDeskRet = `url(${bgSpinachDeskRet}) right top / 234px 114px no-repeat`;
 
 export const Block = styled.div`
+  min-width: 375px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,20 +26,20 @@ export const Block = styled.div`
 
   padding-bottom: 28px;
   padding-top: 28px;
-  background: ${bgMob};
+  background: ${bgMob}, var(--bg-color);
 
   @media ${retina} {
-    background: ${bgMobRet};
+    background: ${bgMobRet}, var(--bg-color);
   }
 
   @media (min-width: 768px) {
     height: 78px;
     padding-bottom: 32px;
     padding-top: 32px;
-    background: ${bgTab};
+    background: ${bgTab}, var(--bg-color);
 
     @media ${retina} {
-      background: ${bgTabRet};
+      background: ${bgTabRet}, var(--bg-color);
     }
   }
 
@@ -46,10 +47,10 @@ export const Block = styled.div`
     height: 114px;
     padding-bottom: 50px;
     padding-top: 50px;
-    background: ${bgDesk};
+    background: ${bgDesk}, var(--bg-color);
 
     @media ${retina} {
-      background: ${bgDeskRet};
+      background: ${bgDeskRet}, var(--bg-color);
     }
   }
 `;
@@ -58,7 +59,7 @@ export const ReservedText = styled.p`
   margin-right: 14px;
   line-height: 10px;
   letter-spacing: -0.1px;
-  color: var(--dark-accent);
+  color: var(--bottom-block-color);
   font-size: 10px;
   font-weight: 500;
   opacity: 0.5;
@@ -74,7 +75,7 @@ export const ReservedText = styled.p`
 `;
 
 export const ServiceText = styled.p`
-  color: var(--dark-accent);
+  color: var(--bottom-block-color);
   font-size: 10px;
   font-style: normal;
   font-weight: 400;

@@ -16,8 +16,8 @@ export const NameColumn = styled.div`
   align-items: center;
   width: 100%;
   margin-bottom: 24px;
-  background-color: var(--accent);
-  color: var(--bg-color);
+  background-color: var(--accent-green);
+  color: var(--main-light-color);
   font-size: 10px;
   font-weight: 600;
   line-height: normal;
