@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 export const RecipeInstruction = styled.section`
   max-width: 375px;
   padding: 0 0 100px 0;
@@ -14,7 +15,7 @@ export const RecipeInstruction = styled.section`
     padding: 0 0 262px 0;
 
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
     div {
       max-width: 757px;
     }
