@@ -14,7 +14,7 @@ async function getAllRecipes(limit) {
     //     'Authorization': `Bearer ${token.slice(1, -1)}`
     //   }
     // });
-    return response.data;
+    return response;
   } catch (error) {
     console.error(error.message);
     return null;
