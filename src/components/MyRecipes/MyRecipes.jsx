@@ -2,20 +2,22 @@ import React from 'react';
 import MyRecipesList from '../MyRecipesList/MyRecipesList';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
-import fetchMyRecipes from '../../services/fetchMyRecipes';
-import { MyRecipesTitle, Container } from './MyRecipes.styled';
+import { fetchMyRecipes, fetchDeleteMyRecipes} from '../../services/fetchMyRecipes';
+import { MyRecipesTitle, Container, SectionPage } from './MyRecipes.styled';
 import EmptyPage from '../EmptyPage/EmptyPage';
 import { nanoid } from 'nanoid';
 
 const MyRecipes = () => {
     const [recipes, setRecipes] = useState([]);
 
+    console.log(recipes)
+
     const [currentPage, setCurrentPage] = useState(1);
 
     const recipesPerPage = 4;
 
     useEffect(() => {
-        fetchMyRecipes().then(data => setRecipes(data))
+        fetchMyRecipes().then(data => setRecipes(data)).catch((error) => console.log(error))
     }, []);
 
     const uniqueKey = nanoid();
@@ -24,16 +26,26 @@ const MyRecipes = () => {
     const lastRecipeIndex = currentPage * recipesPerPage;
     //індекс першого рецепту на поточній сторінці
     const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
-    //масив рецептів для поточної сторінки
-    const currentRecipes = recipes?.slice(firstRecipeIndex, lastRecipeIndex);
+
+    let currentRecipes
+    
+    if (Array.isArray(recipes)) {
+        currentRecipes = recipes.slice(firstRecipeIndex, lastRecipeIndex);
+    }else{
+        setRecipes([])
+    }
+
+    const onDeleteClick = (id) => {
+        fetchDeleteMyRecipes(id).then(data => console.log(data._id)).catch((error) => console.log(error))
+    };
 
 
     return (
-        <>
+        <SectionPage>
             <MyRecipesTitle>My recipes</MyRecipesTitle>
             {recipes.length > 0 ? (
                 <>
-                    <MyRecipesList uniqueKey={uniqueKey} isFavorites={false} recipe={currentRecipes}/>
+                    <MyRecipesList uniqueKey={uniqueKey} isFavorites={false} recipe={currentRecipes} onDeleteClick={onDeleteClick}/>
                 </>
             ):(
                 <Container>
@@ -41,7 +53,7 @@ const MyRecipes = () => {
                 </Container>
             )}
     
-            {recipes.length > 0 ? (
+            {recipes.length > 4 ? (
                 <Pagination 
                     recipesPerPage={recipesPerPage} 
                     totalRecipe={recipes.length} 
@@ -49,7 +61,7 @@ const MyRecipes = () => {
                     setCurrentPage={setCurrentPage}
                 /> 
             ):(null)}
-        </>
+        </SectionPage>
       );
     };
     
