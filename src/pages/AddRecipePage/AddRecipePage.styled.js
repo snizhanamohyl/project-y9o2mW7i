@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  padding: 50px 0 100px;
+  padding: 0 0 100px;
 
   @media screen and (min-width: 768px) {
-    padding: 72px 0 200px;
+    padding: 0 0 200px;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 100px 0 200px;
+    padding: 0 0 200px;
   }
 `;
 

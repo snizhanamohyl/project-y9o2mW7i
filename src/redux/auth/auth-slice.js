@@ -58,6 +58,7 @@ export const authSlice = createSlice({
     },
     [refreshUser.rejected](state, action) {
       state.isRefreshing = false;
+      state.allowRefreshUser = action.payload;
     },
     [updateUser.fulfilled](state, action) {
       state.user.name = action.payload.name;

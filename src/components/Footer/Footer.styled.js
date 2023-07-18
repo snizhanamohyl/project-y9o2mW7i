@@ -1,22 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  @media (min-width: 768px) {
-    width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  @media (min-width: 1440px) {
-    width: 1440px;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-`;
-
 export const FooterSection = styled.footer`
+  min-width: 375px;
   text-align: center;
   padding-top: 28px;
   padding-bottom: 18px;

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ImgBox = styled.div`
@@ -46,5 +47,15 @@ export const Recipe = styled.p`
 
   @media (min-width: 768px) {
     width: 268px;
+  }
+`;
+
+export const Link = styled(NavLink)`
+  img {
+    transition: transform var(--transition-time) var(--transition-function);
+  }
+
+  &:hover img {
+    transform: scale(1.035);
   }
 `;

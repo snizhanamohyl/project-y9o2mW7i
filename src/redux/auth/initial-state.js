@@ -7,4 +7,5 @@ export const initialState = {
   serverError: '',
   serverErrorStatus: null,
   resetForm: false,
+  allowRefreshUser: true,
 };

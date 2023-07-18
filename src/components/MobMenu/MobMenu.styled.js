@@ -13,6 +13,7 @@ const BgTab = `url(${bgSpinachImgTab}) right bottom no-repeat, var(--light-green
 const BgTabRet = `url(${bgSpinachRetTabRet}) right bottom / 591px 505px no-repeat, var(--light-green-bg);`;
 
 export const MobMenuWrap = styled.div`
+  min-width: 375px;
   width: 100vw;
   height: 100vh;
   padding: 18px 16px;

@@ -8,14 +8,14 @@ import {
     FooterBoxTab,
     ElementBoxTab,
     FooterBoxDesk,
-    Container,
 } from "./Footer.styled";
 import FollowUs from "components/FollowUs/FollowUs";
+import SharedContainer from "components/SharedContainer/SharedContainer";
 
 export default function Footer() {
     return (<>
         <FooterSection>
-            <Container>
+            <SharedContainer>
                 <FooterBoxDesk>
                     <FooterBoxTab>
                         <ElementBoxTab>
@@ -27,7 +27,7 @@ export default function Footer() {
                     <SubscribeBlock />           
                 </FooterBoxDesk>
                 <FollowUs isFooter/>
-            </Container>            
+            </SharedContainer>    
         </FooterSection> 
         <BottomBlock/>
     </>     
