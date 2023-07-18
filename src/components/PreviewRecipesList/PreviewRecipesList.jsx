@@ -20,23 +20,24 @@ export default function PreviewRecipesList() {
     setStatus("loading");
 
     getAllRecipes(pageLimit).then(resp => {
-      setStatus("idle"); 
+      setStatus("idle");
       setData(resp);
     });
+   
 
   }, [pageLimit]);
 
-  const recipes = processData(data.data?.recipes);
+  const recipes = processData(data?.data?.recipes);
    
+  if (data?.response?.status === 400) {
+    return (<SearchFailed  description={"Try searching for recipes later"}/>)
 
-  if (data.status === 404 || 400) {
-     <SearchFailed  description={"Try searching for recipes later"}/>
   };
   
 
   if (status === "loading") {
     return (<PageLoader />);
-  }
+  };
 
   if (status === "idle" && data.status === 200) {
     return (
