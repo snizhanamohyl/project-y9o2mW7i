@@ -25,7 +25,7 @@ const favoriteSlice = createSlice({
     [addRecipeToFavorites.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.recipeList.push(action.payload);
+      state.recipeList = action.payload;
     },
     [deleteRecipeFromFavorites.pending]: handlePending,
     [deleteRecipeFromFavorites.rejected]: handleRejected,
