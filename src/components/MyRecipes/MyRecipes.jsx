@@ -2,55 +2,75 @@ import React from 'react';
 import MyRecipesList from '../MyRecipesList/MyRecipesList';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
-import fetchMyRecipes from '../../services/fetchMyRecipes';
-import { MyRecipesTitle, Section } from './MyRecipes.styled';
+import { fetchMyRecipes, fetchDeleteMyRecipes} from '../../services/fetchMyRecipes';
+import { MyRecipesTitle, Container, SectionPage } from './MyRecipes.styled';
+import EmptyPage from '../EmptyPage/EmptyPage';
 import { nanoid } from 'nanoid';
+import { useNavigate } from 'react-router';
 import { useNavigate } from 'react-router';
 
 const MyRecipes = () => {
-  const [recipes, setRecipes] = useState([]);
-  const navigate = useNavigate();
-  const [currentPage, setCurrentPage] = useState(1);
+    const [recipes, setRecipes] = useState([]);
+    const navigate = useNavigate();
+    const [currentPage, setCurrentPage] = useState(1);
 
   const recipesPerPage = 4;
 
-  useEffect(() => {
-    fetchMyRecipes().then(data => {
-      if (data) {
-        setRecipes(data);
-      } else {
-        setRecipes('');
-        navigate('/notFound');
-      }
-    });
-  }, [navigate]);
+    useEffect(() => {
+        fetchMyRecipes().then(data => {
+          if (data) {
+            setRecipes(data);
+          } else {
+            setRecipes('');
+            navigate('/notFound');
+          }
+        });
+      }, [navigate]);
 
-  const uniqueKey = nanoid();
+    const uniqueKey = nanoid();
 
-  const lastRecipeIndex = currentPage * recipesPerPage;
+    console.log(recipes)
 
-  const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
+    // індекс останнього рецепту на поточній сторінці
+    const lastRecipeIndex = currentPage * recipesPerPage;
+    //індекс першого рецепту на поточній сторінці
+    const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
 
-  const currentRecipes = recipes?.slice(firstRecipeIndex, lastRecipeIndex);
+    const onDeleteClick = (id) => {
+            fetchDeleteMyRecipes(id)
+            setRecipes(recipes.filter(recipe=>recipe._id !== id))
+    };
 
-  return (
-    <Section>
-      <MyRecipesTitle>My recipes</MyRecipesTitle>
-      <MyRecipesList
-        uniqueKey={uniqueKey}
-        isFavorites={false}
-        recipe={currentRecipes}
-      />
-      {recipes.length > 4 ? (
-        <Pagination
-          recipesPerPage={recipesPerPage}
-          totalRecipe={recipes.length}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
-      ) : null}
-    </Section>
-  );
-};
 
-export default MyRecipes;
+    let currentRecipes
+    
+    if (Array.isArray(recipes)) {
+        currentRecipes = recipes.slice(firstRecipeIndex, lastRecipeIndex);
+    }
+
+    return (
+        <SectionPage>
+            <MyRecipesTitle>My recipes</MyRecipesTitle>
+            {recipes?.length > 0 ? (
+                <>
+                    <MyRecipesList uniqueKey={uniqueKey} isFavorites={false} recipe={currentRecipes} onDeleteClick={onDeleteClick}/>
+                </>
+            ):(
+                <Container>
+                    <EmptyPage description={"you haven't added your recipes yet"}/>
+                </Container>
+            )}
+    
+            {recipes?.length > 4 ? (
+                <Pagination 
+                    recipesPerPage={recipesPerPage} 
+                    totalRecipe={recipes?.length} 
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                /> 
+            ):(null)}
+        </SectionPage>
+      );
+    };
+    
+    export default MyRecipes;

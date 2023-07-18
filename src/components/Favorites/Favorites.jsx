@@ -6,10 +6,7 @@ import { FavoritePageTitle, Container, SectionPage } from './Favorites.styled';
 import EmptyPage from '../EmptyPage/EmptyPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllFavorites } from '../../redux/Favorite/selectors';
-import {
-  getAllFavoritList,
-  deleteRecipeFromFavorites,
-} from '../../redux/Favorite/operations';
+import { getAllFavoritList, deleteRecipeFromFavorites } from '../../redux/Favorite/operations'
 import { nanoid } from 'nanoid';
 
 const Favorites = () => {
@@ -45,25 +42,18 @@ const Favorites = () => {
   const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
   const currentRecipes = recipes.slice(firstRecipeIndex, lastRecipeIndex);
 
-  return (
-    <SectionPage>
-      <FavoritePageTitle>Favorite </FavoritePageTitle>
-      {recipes.length > 0 ? (
-        <>
-          <MyRecipesList
-            uniqueKey={uniqueKey}
-            isFavorites={true}
-            recipe={currentRecipes}
-            onDeleteClick={onDeleteClick}
-          />
-        </>
-      ) : (
-        <Container>
-          <EmptyPage
-            description={"you haven't added any favorite recipes yet"}
-          />
-        </Container>
-      )}
+    return(
+        <SectionPage>  
+            <FavoritePageTitle>Favorite </FavoritePageTitle>
+            {recipes.length > 0 ? (
+                <>            
+            <MyRecipesList uniqueKey={uniqueKey} isFavorites={true} recipe={currentRecipes } onDeleteClick={onDeleteClick}/>
+                </>
+            ):(
+                <Container>
+                    <EmptyPage description={"you haven't added any favorite recipes yet"}/>
+                </Container>
+            )}
 
       {recipes.length > 4 ? (
         <Pagination

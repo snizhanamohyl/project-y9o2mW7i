@@ -35,14 +35,14 @@ export const Container = styled.div`
   }
 `;
 
-export const Section = styled.section`
+export const SectionPage = styled.section`
   padding-bottom: 100px;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     padding-bottom: 200px;
   }
 
-  @media (min-width: 1440px) {
+  @media screen and (min-width: 1440px) {
     padding-bottom: 100px;
   }
 `;
