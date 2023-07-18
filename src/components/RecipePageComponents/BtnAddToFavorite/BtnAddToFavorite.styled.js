@@ -4,11 +4,18 @@ export const BtnAddFavorite = styled.button`
   width: 150px;
   height: 35px;
   margin-bottom: 42px;
+  transition: color var(--transition-time) var(--transition-function),
+    background-color var(--transition-time) var(--transition-function);
 
-  background: ${props =>
-    props.isAddedToFavorite ? 'var(--accent)' : 'transparent'};
-  color: ${props =>
-    props.isAddedToFavorite ? 'var(--bg-color)' : 'var(--dark-accent)'};
+  background: ${({ $toggler }) => ($toggler ? 'var(--accent)' : 'transparent')};
+  color: ${({ $toggler }) =>
+    $toggler ? 'var(--bg-color)' : 'var(--dark-accent)'};
+  &:hover {
+    background: ${({ $toggler }) =>
+      $toggler ? 'transparent' : 'var(--accent)'};
+    color: ${({ $toggler }) =>
+      $toggler ? 'var(--dark-accent)' : 'var(--bg-color)'};
+  }
 
   border-radius: 24px 44px;
   border: 1px solid var(--accent);

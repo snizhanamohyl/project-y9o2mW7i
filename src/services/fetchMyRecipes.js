@@ -1,12 +1,32 @@
 import axios from 'axios';
 
-const fetchMyRecipes = async () => {
-        try {
-            const response = await axios.get('https://64a8b750dca581464b85f54e.mockapi.io/recipes');
-            return response.data
-        } catch (error) {
-            console.error('Error fetching recipes:', error);
-        }
+export const fetchMyRecipes = async () => {
+  try {
+    const response = await axios.get('/ownRecipes');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching recipes:', error);
+  }
+};
+
+
+
+
+export const fetchDeleteMyRecipes = async (recipeId) => {
+  try {
+    const resp = await axios.delete(`/ownRecipes/${recipeId}`);
+    const data = resp.data; 
+
+    if (!data) {
+      throw new Error('ответ сервера');
     }
 
-export default fetchMyRecipes;
+    return data
+
+  } catch (error) {
+    console.error('Ошибка:', error);
+    throw error;
+  }
+}
+
+
