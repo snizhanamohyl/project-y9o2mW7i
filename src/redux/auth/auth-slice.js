@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { login, logout, refreshUser, register } from './auth-operations';
+import { login, logout, refreshUser, register, updateUser } from './auth-operations';
 import { initialState } from './initial-state';
 
 export const authSlice = createSlice({
@@ -35,6 +35,7 @@ export const authSlice = createSlice({
       state.resetForm = true;
       state.serverError = '';
       state.serverErrorStatus = null;
+      console.log(state.user)
     },
     [login.rejected](state, action) {
       state.serverError =
@@ -58,6 +59,17 @@ export const authSlice = createSlice({
     [refreshUser.rejected](state, action) {
       state.isRefreshing = false;
       state.allowRefreshUser = action.payload;
+    },
+    [updateUser.fulfilled](state, action) {
+      state.user.name = action.payload.name;
+      state.user.avatarURL = action.payload.avatarURL;
+    },
+    [updateUser.pending](state, action) {
+       state.isLoading = true;
+    },
+    [updateUser.rejected](state, action) {
+      state.isLoading = false;
+      state.serverErrorStatus = action.payload.status;
     },
   },
 });

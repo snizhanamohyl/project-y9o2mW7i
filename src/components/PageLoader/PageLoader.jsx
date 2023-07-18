@@ -8,7 +8,7 @@ export default function PageLoader() {
         height="80"
         width="80"
         radius="48"
-        color="var(--accent)"
+        color="var(--accent-green)"
         ariaLabel="watch-loading"
         wrapperStyle={{}}
         wrapperClassName=""

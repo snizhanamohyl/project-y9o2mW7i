@@ -36,7 +36,7 @@ export const CustomTabs = styled(props => (
     display: 'none',
 
     '@media (min-width: 768px)': {
-      backgroundColor: 'var(--accent)',
+      backgroundColor: 'var(--accent-green)',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

@@ -17,6 +17,8 @@ export const Wrapper = styled.section`
 `;
 
 export const FileWrapper = styled.label`
+  position: relative;
+
   margin: 0 32px 32px;
   display: flex;
   justify-content: center;
@@ -24,7 +26,7 @@ export const FileWrapper = styled.label`
   height: 268px;
 
   background-color: ${({ $isEmpty }) =>
-    $isEmpty ? 'var(--accent)' : 'transparent'};
+    $isEmpty ? 'var(--accent-green)' : 'transparent'};
   border-radius: 8px;
   cursor: pointer;
 
@@ -55,6 +57,8 @@ export const Preview = styled.img`
 `;
 
 export const Container = styled.div`
+  position: relative;
+
   display: flex;
   align-items: flex-start;
   height: 40px;
@@ -96,7 +100,7 @@ export const Row = styled.div`
 export const Input = styled.input`
   width: 100%;
 
-  color: var(--black);
+  color: var(--add-input-color);
   font-family: inherit;
   font-size: 14px;
   line-height: normal;
@@ -107,7 +111,7 @@ export const Input = styled.input`
 
   &::placeholder {
     color: inherit;
-    opacity: 0.5;
+    opacity: var(--add-input-opacity);
   }
 
   @media screen and (min-width: 768px) {
@@ -116,10 +120,10 @@ export const Input = styled.input`
 `;
 
 export const Text = styled.span`
-  color: var(--black);
+  color: var(--add-input-color);
   font-size: 14px;
   letter-spacing: -0.28px;
-  opacity: 0.5;
+  opacity: var(--add-input-opacity);
 
   cursor: default;
 

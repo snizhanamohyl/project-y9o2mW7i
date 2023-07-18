@@ -1,4 +1,3 @@
-import React from "react";
 import {
     ContainerCard,
     ImgCard,
@@ -9,11 +8,9 @@ import {
     TimeCard,
     Container,
     ContainerHeaderRecipe,
-        } from '../MyRecipeItem/MyRecipesItem.styled.jsx';
-
-import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel.jsx';
-import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee.jsx';
-
+        } from '../MyRecipeItem/MyRecipesItem.styled';
+import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel';
+import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee';
 
 const MyRecipeItem = ({recipe, isFavorites, onDeleteClick}) => {
     const {preview, title, _id, description, time} = recipe;

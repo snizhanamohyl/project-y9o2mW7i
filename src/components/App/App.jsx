@@ -14,6 +14,7 @@ import SigninPage from 'pages/SigninPage/SigninPage';
 import WelcomePage from 'pages/WelcomePage/WelcomePage';
 import { getAllShoppingList } from 'redux/ShopingList/operations';
 import { getAllowRefreshUser, getIsLoggedIn } from 'redux/auth/selectors';
+import { getAllFavoritList } from 'redux/Favorite/operations';
 
 // import NotFound from "components/NotFound/NotFound";
 
@@ -54,18 +55,18 @@ export default function App() {
       <Route
         path="/welcome"
         element={<RestrictedRoute component={WelcomePage} redirectTo="/" />}
-      ></Route>
+      />
       <Route
         path="/signin"
         element={<RestrictedRoute component={SigninPage} redirectTo="/" />}
-      ></Route>
+      />
       <Route
         path="/register"
         element={<RestrictedRoute component={RegisterPage} redirectTo="/" />}
-      ></Route>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<PrivateRoute component={MainPage} />}></Route>
+      />
 
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<PrivateRoute component={MainPage} />} />
         <Route
           path="/categories"
           element={<PrivateRoute component={CategoriesPage} />}

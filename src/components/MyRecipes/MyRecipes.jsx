@@ -2,30 +2,25 @@ import React from 'react';
 import MyRecipesList from '../MyRecipesList/MyRecipesList';
 import Pagination from '../../components/Pagination/Pagination';
 import { useEffect, useState } from 'react';
+import fetchMyRecipes from '../../services/fetchMyRecipes';
 import { MyRecipesTitle, Container } from './MyRecipes.styled';
 import EmptyPage from '../EmptyPage/EmptyPage';
 import { nanoid } from 'nanoid';
-import { useSelector, useDispatch } from 'react-redux';
-import { getAllMyRecipe } from '../../redux/MyRecipe/selectors';
-import { getAllMyRecipeList } from '../../redux/MyRecipe/operations';
 
 const MyRecipes = () => {
     const [recipes, setRecipes] = useState([]);
+
     const [currentPage, setCurrentPage] = useState(1);
-
-    const dispatch = useDispatch();
-    const recipesAll = useSelector(getAllMyRecipe)
-
-    console.log(recipesAll)
 
     const recipesPerPage = 4;
 
     useEffect(() => {
-        dispatch(getAllMyRecipeList())
-        setRecipes(recipesAll)
-    }, [dispatch]);
+        fetchMyRecipes().then(data => setRecipes(data))
+    }, []);
 
     const uniqueKey = nanoid();
+
+
 
     // індекс останнього рецепту на поточній сторінці
     const lastRecipeIndex = currentPage * recipesPerPage;
