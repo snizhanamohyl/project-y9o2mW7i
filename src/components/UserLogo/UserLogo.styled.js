@@ -1,6 +1,7 @@
 const { styled } = require('styled-components');
 
 export const Avatar = styled.div`
+  color: var(--main-light-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +10,7 @@ export const Avatar = styled.div`
   margin-right: 14px;
   overflow: hidden;
   border-radius: 50%;
-  border: 2px solid var(--accent);
+  transition: transform var(--transition-time) var(--transition-function);
 
   @media (min-width: 768px) {
     width: 44px;
@@ -22,7 +23,7 @@ export const AvatarImg = styled.img`
 `;
 
 export const UserName = styled.p`
-  color: ${({ userColor }) => userColor};
+  color: ${({ $userColor }) => $userColor};
   font-size: 14px;
   font-weight: 600;
   line-height: 1.7;
@@ -35,6 +36,10 @@ export const UserWrap = styled.button`
 
   @media (min-width: 768px) {
     margin-right: 50px;
+  }
+
+  &:hover div {
+    transform: scale(1.035);
   }
 `;
 

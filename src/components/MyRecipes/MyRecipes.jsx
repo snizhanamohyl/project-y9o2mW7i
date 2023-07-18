@@ -7,13 +7,14 @@ import { MyRecipesTitle, Container, SectionPage } from './MyRecipes.styled';
 import EmptyPage from '../EmptyPage/EmptyPage';
 import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 
 const MyRecipes = () => {
     const [recipes, setRecipes] = useState([]);
     const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState(1);
 
-    const recipesPerPage = 4;
+  const recipesPerPage = 4;
 
     useEffect(() => {
         fetchMyRecipes().then(data => {

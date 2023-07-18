@@ -12,10 +12,11 @@ export const CloseButton = styled.button`
 export const CloseIcon = styled.svg`
   width: 20px;
   height: 20px;
+  stroke: var(--text-primary);
 
   &:hover,
   &:focus {
-    color: var(--accent);
+    stroke: var(--accent);
   }
 
   @media screen and (min-width: 768px) {

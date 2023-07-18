@@ -2,7 +2,6 @@ import { Formik, Form, ErrorMessage } from 'formik';
 import { Oval } from 'react-loader-spinner';
 import { userRegisterSchema } from 'schemas/userRegisterSchema';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
 import { register } from 'redux/auth/auth-operations';
 import {
   getServerError,
@@ -43,7 +42,6 @@ const initialValues = {
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
 
   const width = useWindowWidth();
   const spinnerSize = width < 768 ? 18 : 20;
@@ -59,7 +57,7 @@ export const RegisterForm = () => {
         resetForm && actions.resetForm();
       })
       .catch(error => {
-        // Handle login error
+        console.log(error);
       });
   };
 

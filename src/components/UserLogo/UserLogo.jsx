@@ -22,6 +22,7 @@ const theme = createTheme({
 
 export default function UserLogo () {
   const width = useWindowWidth();
+
   const avatarSize = width < 768 ? '34px' : '44px';
   const userColor = width < 1440 ? 'inherit' : '#23262a';
   const user = useSelector(getUser);
@@ -32,7 +33,6 @@ export default function UserLogo () {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-  console.log(user)
 
   return (
     <>
@@ -53,7 +53,7 @@ export default function UserLogo () {
             
         )}
 
-        <UserName userColor={userColor}>{user.name}</UserName>
+        <UserName $userColor={userColor}>{user.name}</UserName>
       </UserWrap>
 
       <ThemeProvider theme={theme}>

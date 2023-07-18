@@ -238,7 +238,6 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     height: 100vh;
-    /* padding-top: 170px; */
     align-items: center;
     background-image: url(${bgDesk});
     background-position: 100% 100%;

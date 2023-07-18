@@ -121,7 +121,6 @@ export default function EditUserForm({ handleCloseModal }) {
                     <use href={`${sprite}#icon-user`}></use>
                   </UserIconStyled>
 
-                  {props.values.name && (
                     <EditBtn
                       type="button"
                       onClick={() => props.setFieldValue('name', '')}
@@ -130,7 +129,7 @@ export default function EditUserForm({ handleCloseModal }) {
                         <use href={`${sprite}#icon-edit`}></use>
                       </EditIcon>
                     </EditBtn>
-                  )}
+                
                 </NameLabel>
 
                 {props.errors.name ? (

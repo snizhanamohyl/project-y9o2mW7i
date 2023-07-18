@@ -50,7 +50,8 @@ export const InputField = styled.input`
       opacity: 0;
       pointer-events: none;
     }
-    
+  }
+
   &::placeholder {
     color: var(--add-placeholder-color);
     opacity: var(--add-input-opacity);

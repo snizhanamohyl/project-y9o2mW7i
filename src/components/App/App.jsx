@@ -41,7 +41,6 @@ export default function App() {
   useEffect(() => {
     dispatch(refreshUser());
     dispatch(getAllShoppingList());
-
     if (allowRefreshUser === false && isLoggedIn) {
       dispatch(logout());
     }
