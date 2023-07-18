@@ -41,7 +41,7 @@ export const WelcomeWrapper = styled.section`
 `;
 
 export const StyledTitle = styled.h1`
-  color: var(--bg-color);
+  color: var(--main-light-color);
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
@@ -58,7 +58,7 @@ export const StyledTitle = styled.h1`
 
 export const StyledText = styled.p`
   width: 305px;
-  color: var(--bg-color);
+  color: var(--main-light-color);
   text-align: center;
   margin-bottom: 40px;
 
