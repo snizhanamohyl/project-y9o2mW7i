@@ -17,6 +17,8 @@ export const Wrapper = styled.section`
 `;
 
 export const FileWrapper = styled.label`
+  position: relative;
+
   margin: 0 32px 32px;
   display: flex;
   justify-content: center;
@@ -55,6 +57,8 @@ export const Preview = styled.img`
 `;
 
 export const Container = styled.div`
+  position: relative;
+
   display: flex;
   align-items: flex-start;
   height: 40px;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
+import ScrollBar from 'components/ScrollBar/ScrollBar';
 import {
   Wrapper,
   Button,
@@ -8,7 +9,6 @@ import {
   ListWrapper,
   List,
   Option,
-  ScrollBar,
 } from './Select.styled';
 import Sprite from 'assets/sprite.svg';
 import 'simplebar-react/dist/simplebar.min.css';
@@ -35,10 +35,17 @@ export default function Select({ options, currentOption, onSelect }) {
     onSelect(value);
   };
 
+  const getOptionLabel = val => {
+    const targetOption = options.find(({ value }) => value === val);
+    return targetOption.label;
+  };
+
   return (
     <Wrapper>
       <Button type="button" onClick={() => setIsOpen(state => !state)}>
-        <ButtonText>{currentOption ? currentOption : 'Select...'}</ButtonText>
+        <ButtonText>
+          {currentOption ? getOptionLabel(currentOption) : 'Select...'}
+        </ButtonText>
         <svg width={20} height={20}>
           <use href={Sprite + '#icon-down'}></use>
         </svg>
@@ -48,7 +55,11 @@ export default function Select({ options, currentOption, onSelect }) {
         <ScrollBar>
           <List>
             {options.map(({ label, value }) => (
-              <Option key={value} onClick={() => handleSelect(value)}>
+              <Option
+                key={value}
+                $active={currentOption === value}
+                onClick={() => handleSelect(value)}
+              >
                 {label}
               </Option>
             ))}

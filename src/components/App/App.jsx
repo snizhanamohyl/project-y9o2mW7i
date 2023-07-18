@@ -2,8 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, refreshUser } from 'redux/auth/auth-operations';
-// import { getAllowRefreshUser, getIsLoggedIn } from 'redux/auth/selectors';
-// import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 import RestrictedRoute from 'components/RestrictedRoute/RestrictedRoute';
@@ -14,7 +12,6 @@ import SigninPage from 'pages/SigninPage/SigninPage';
 import WelcomePage from 'pages/WelcomePage/WelcomePage';
 import { getAllShoppingList } from 'redux/ShopingList/operations';
 import { getAllowRefreshUser, getIsLoggedIn } from 'redux/auth/selectors';
-import { getAllFavoritList } from 'redux/Favorite/operations';
 
 // import NotFound from "components/NotFound/NotFound";
 
@@ -44,7 +41,6 @@ export default function App() {
   useEffect(() => {
     dispatch(refreshUser());
     dispatch(getAllShoppingList());
-    dispatch(getAllFavoritList());
     if (allowRefreshUser === false && isLoggedIn) {
       dispatch(logout());
     }
@@ -55,18 +51,18 @@ export default function App() {
       <Route
         path="/welcome"
         element={<RestrictedRoute component={WelcomePage} redirectTo="/" />}
-      ></Route>
+      />
       <Route
         path="/signin"
         element={<RestrictedRoute component={SigninPage} redirectTo="/" />}
-      ></Route>
+      />
       <Route
         path="/register"
         element={<RestrictedRoute component={RegisterPage} redirectTo="/" />}
-      ></Route>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<PrivateRoute component={MainPage} />}></Route>
+      />
 
+      <Route path="/" element={<SharedLayout />}>
+        <Route index element={<PrivateRoute component={MainPage} />} />
         <Route
           path="/categories"
           element={<PrivateRoute component={CategoriesPage} />}

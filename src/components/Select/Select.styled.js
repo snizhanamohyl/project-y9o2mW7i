@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import SimpleBar from 'simplebar-react';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -76,7 +75,7 @@ export const List = styled.ul`
 export const Option = styled.li`
   padding: 4px 0;
 
-  color: var(--select-color);
+  color: ${({ $active }) => ($active ? 'var(--accent)' : 'var(--select-color)')};
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -93,23 +92,5 @@ export const Option = styled.li`
 
   @media screen and (min-width: 768px) {
     font-size: 14px;
-  }
-`;
-
-export const ScrollBar = styled(SimpleBar)`
-  min-width: 100%;
-  width: max-content;
-  max-height: 144px;
-
-  .simplebar-scrollbar::before {
-    background-color: var(--scroll-bar-color);
-    width: 4px;
-  }
-  .simplebar-scrollbar.simplebar-visible::before {
-    opacity: 1;
-  }
-
-  @media screen and (min-width: 768px) {
-    max-height: 162px;
   }
 `;

@@ -6,28 +6,19 @@ import {
 } from './IngredientsItem.styled';
 
 import CheckboxLabels from '../Checkbox/Checkbox';
-import { useParams } from 'react-router-dom';
 
 export default function RecipePageIngredientsItem({ ingredient }) {
-  const { recipeId } = useParams();
-  const { id, measure } = ingredient;
-  const newId = (id._id + recipeId).slice(12, 36);
-
-  const newStructure = {
-    ...ingredient.id,
-    measure,
-    newId: newId,
-  };
+  const { name, img, measure, newId } = ingredient;
   return (
     <>
       <ListItem>
         <div>
-          <ImageIngredient alt={id.name} src={id.img} />
-          <IngredientName>{id.name}</IngredientName>
+          <ImageIngredient alt={name} src={img} />
+          <IngredientName>{name}</IngredientName>
         </div>
         <div>
           <QuantityIngredient>{measure}</QuantityIngredient>
-          <CheckboxLabels key={newId} id={newId} newStructure={newStructure} />
+          <CheckboxLabels key={newId} id={newId} newStructure={ingredient} />
         </div>
       </ListItem>
     </>

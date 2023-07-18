@@ -1,24 +1,28 @@
 @font-face {
   font-family: 'Poppins';
-  src: local('Poppins'), url(./assets/fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+  src: local('Poppins'),
+    url(./assets/fonts/Poppins/Poppins-Regular.ttf) format('truetype');
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: local('Poppins'), url(./assets/fonts/Poppins/Poppins-Medium.ttf) format('truetype');
+  src: local('Poppins'),
+    url(./assets/fonts/Poppins/Poppins-Medium.ttf) format('truetype');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: local('Poppins'), url(./assets/fonts/Poppins/Poppins-SemiBold.ttf) format('truetype');
+  src: local('Poppins'),
+    url(./assets/fonts/Poppins/Poppins-SemiBold.ttf) format('truetype');
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: local('Poppins'), url(./assets/fonts/Poppins/Poppins-Bold.ttf) format('truetype');
+  src: local('Poppins'),
+    url(./assets/fonts/Poppins/Poppins-Bold.ttf) format('truetype');
   font-weight: bold;
 }
 
@@ -42,6 +46,9 @@
   --input-border-color: #F0F0F0;
   --input-border-color-focus: rgba(35, 38, 42, 0.3);
   --checkbox-color: rgba(126, 126, 126, 0.5);
+  --pagination-shadow: rgba(135, 135, 135, 0.2);
+  --pagination-color: #656565;
+
   --black: #000000;
   --white: #ffffff;
   --scroll-bar-color: #e7e5e5;
@@ -115,7 +122,7 @@
   --modal-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
   --bcg-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 46.3%, rgba(0, 0, 0, 0.35) 72.75%, rgba(0, 0, 0, 0) 100%);
   --transition-time: 250ms;
-  --transition-function: cubic-bezier(0.4, 0, 0.2, 1); 
+  --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark {
@@ -287,5 +294,6 @@ svg {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
