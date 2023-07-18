@@ -10,10 +10,13 @@ import {
 } from "./SubscribeBlock.styled";
 import sprite from '../../assets/sprite.svg';
 import useWindowWidth from "../../hooks/useWindowWidth";
+import subscribe from "services/subscribe";
+import Notification from "components/Notification/Notification";
 
 
 export default function SubscribeBlock() {
   const [email, setEmail] = useState("");
+  const [status, setStatus] = useState(null);
   const width = useWindowWidth();
   let logoHeight = 16;
   let logoWidth = 12;
@@ -34,10 +37,24 @@ export default function SubscribeBlock() {
   }; 
    
   const onSendEmail = () => {
-    setEmail("");
+    if (email === "") {
+      setStatus(400);
+      return;
+    }
+
+    subscribe(email)
+      .then(resp => setStatus(resp.status))
+      .catch(setStatus(400));
+
+     setEmail("");   
   };
   
   return (<ButtonsFooterContainer>
+
+    {status === 400
+      ? <Notification text={"Failed to subscribe, please try again."} />
+      : <></>
+    }
 
     <SubscribeMainText>Subscribe to our Newsletter</SubscribeMainText>  
     <SubscribeText>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</SubscribeText>
