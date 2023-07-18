@@ -36,7 +36,7 @@ const MyRecipes = () => {
     }
 
     const onDeleteClick = (id) => {
-        fetchDeleteMyRecipes(id).then(data => console.log(data._id)).catch((error) => console.log(error))
+        fetchDeleteMyRecipes(id).then(data => data._id).catch((error) => console.log(error))
     };
 
 
