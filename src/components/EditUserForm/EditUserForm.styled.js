@@ -125,6 +125,9 @@ export const UserImgWrapper = styled.div`
     }
   }
 `;
+export const Avatar = styled.img`
+object-fit: cover;
+`
 
 export const InputButtonWrapper = styled.div`
   display: flex;
