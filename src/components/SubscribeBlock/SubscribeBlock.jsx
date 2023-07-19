@@ -39,22 +39,28 @@ export default function SubscribeBlock() {
   const onSendEmail = () => {
     if (email === "") {
       setStatus(400);
-      return;
+
+      setTimeout(() => {
+         setStatus(200);
+      }, 2000);
+
+      return
     }
 
     subscribe(email)
-      .then(resp => setStatus(resp.status))
-      .catch(setStatus(400));
-
-     setEmail("");   
+      .then(resp => setStatus(resp?.request?.status))
+      .finally(setStatus(200));
+    
+    setEmail("");
   };
   
+
   return (<ButtonsFooterContainer>
 
     {status === 400
       ? <Notification text={"Failed to subscribe, please try again."} />
       : <></>
-    }
+    } 
 
     <SubscribeMainText>Subscribe to our Newsletter</SubscribeMainText>  
     <SubscribeText>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</SubscribeText>

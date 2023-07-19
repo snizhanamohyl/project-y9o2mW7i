@@ -3,7 +3,8 @@ import axios from "axios";
 const storage = JSON.parse(localStorage.getItem('persist:auth'));
 const { token } = storage;
 
-async function  subscribe(email) {
+
+async function subscribe(email) {
 
     try {
       const response = await axios.patch(`/subscribe`, {
@@ -20,7 +21,7 @@ async function  subscribe(email) {
     }
     catch (error) {
         console.log(error.message);
-         return null;
+         return error;
      }
 };
 
