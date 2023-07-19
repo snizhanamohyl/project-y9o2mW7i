@@ -11,6 +11,12 @@ import { initialState } from './initial-state';
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    resetError(state) {
+      state.serverError = '';
+      state.serverErrorStatus = null;
+    },
+  },
   extraReducers: {
     [register.pending](state, action) {
       state.isLoading = true;
@@ -26,7 +32,7 @@ export const authSlice = createSlice({
     },
     [register.rejected](state, action) {
       state.serverError =
-        action.payload.data.message || 'An unexpected error occured.';
+        action.payload.data.message || 'An unexpected error occured';
       state.isLoading = false;
       state.serverErrorStatus = action.payload.status;
     },
@@ -79,4 +85,5 @@ export const authSlice = createSlice({
   },
 });
 
+export const { resetError } = authSlice.actions;
 export const authReducer = authSlice.reducer;

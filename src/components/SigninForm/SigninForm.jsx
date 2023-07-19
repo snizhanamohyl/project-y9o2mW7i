@@ -32,17 +32,17 @@ import {
 import useWindowWidth from 'hooks/useWindowWidth';
 
 import Notification from 'components/Notification/Notification';
+import { resetError } from 'redux/auth/auth-slice';
+import { useEffect, useState } from 'react';
 
 const initialValues = {
   email: '',
   password: '',
 };
 
-// const message = "but something went wrong, please try again later";
-
 export const SigninForm = () => {
+  const [showNotific, setShowNotific] = useState(false);
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
 
   const width = useWindowWidth();
   const spinnerSize = width < 768 ? 18 : 20;
@@ -58,15 +58,24 @@ export const SigninForm = () => {
         resetForm && actions.resetForm();
       })
       .catch(error => {
-        // Handle login error
+        console.log(error)
       });
   };
 
+  useEffect(() => {
+    const onServerError = () => {
+        if (serverError && (serverErrorStatus === 404 || serverErrorStatus === 500 )) {
+        setShowNotific(true);
+        dispatch(resetError());
+      } 
+    }
+
+    onServerError();
+  }, [dispatch, serverError, serverErrorStatus])
+
   return (
     <>
-      {serverError && (
-        <Notification text="Oops, something went wrong, please try again later" />
-      )}
+      { showNotific && <Notification setShowNotific={setShowNotific} text="Oops, something went wrong, please try again later" />}
       <Formik
         initialValues={initialValues}
         validationSchema={userSigninSchema}
@@ -108,9 +117,6 @@ export const SigninForm = () => {
             {serverError && serverErrorStatus === 401 && (
               <ServerError>{serverError}</ServerError>
             )}
-            {/* {serverError &&
-            serverErrorStatus !== 401 &&
-            navigate(`/error?message=${message}`)} */}
 
             {serverError &&
               serverErrorStatus !== 401 &&

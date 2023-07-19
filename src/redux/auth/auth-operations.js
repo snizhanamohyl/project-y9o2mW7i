@@ -20,7 +20,6 @@ export const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      console.log(error);
       if (error.response) {
         return rejectWithValue(error.response);
       } else {
@@ -39,9 +38,6 @@ export const login = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.response) {
-        // const message = error.response.data.message;
-        console.log(error.response.status);
-        console.log(error.response);
         return rejectWithValue(error.response);
       } else {
         throw new Error('An unexpected error occurred.');
@@ -92,16 +88,14 @@ export const updateUser = createAsyncThunk(
       formData.append('name', credentials.name.trim());
       formData.append('avatarURL', credentials.avatarURL);
 
-      const {data} = await axios.patch('/users/update', formData, {
+      const { data } = await axios.patch('/users/update', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
-   
       });
-           return data;
-
+      return data;
     } catch (error) {
-       return thunkAPI.rejectWithValue(error.message);
-     }
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
 );

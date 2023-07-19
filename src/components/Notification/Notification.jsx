@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Snackbar, Alert, Slide } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
 
-export default function Notification({ text }) {
+export default function Notification({ text, setShowNotific }) {
   const [state, setState] = useState({
     open: true,
     vertical: 'top',
@@ -16,6 +16,7 @@ export default function Notification({ text }) {
       return;
     }
     setState({ ...state, open: false });
+    setShowNotific(false);
   };
 
   return (
