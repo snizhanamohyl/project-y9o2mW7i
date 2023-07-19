@@ -5,13 +5,16 @@ import RecipePageInstruction from 'components/RecipePageComponents/Instruction/I
 import SharedContainer from 'components/SharedContainer/SharedContainer';
 import RecipePageIngredients from 'components/RecipePageComponents/Ingredients/Ingredients';
 import getRecipeById from 'services/getRecipeById';
+import { getAllShoppingList } from 'redux/ShopingList/operations';
+import { useDispatch } from 'react-redux';
 
 export default function RecipePage() {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState('');
-
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   useEffect(() => {
+    dispatch(getAllShoppingList())
     getRecipeById(recipeId)
       .then(data => {
         if (data) {
@@ -22,7 +25,7 @@ export default function RecipePage() {
         }
       })
       .catch(err => console.log(err.message));
-  }, [recipeId, navigate]);
+  }, [recipeId, navigate, dispatch]);
 
   return (
     <>
