@@ -15,7 +15,7 @@ export const OptionContainer = styled.div`
 
 export const NumberContainer = styled.span`
   height: fit-content;
-  min-width: 37px;
+  min-width: 47px;
   max-width: 100px;
   padding: 4px 8px;
   background-color: var(--accent);
@@ -30,15 +30,8 @@ export const NumberContainer = styled.span`
   line-height: normal;
 
   @media screen and (min-width: 768px) {
-    height: 35px;
     min-width: 68px;
-    font-size: 18px;
-    line-height: 26px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    height: 35px;
-    min-width: 68px;
+    max-width: 150px;
     font-size: 18px;
     line-height: 26px;
   }
@@ -59,15 +52,16 @@ export const ProductImg = styled.img`
 `;
 
 export const Svg = styled.svg`
- width: 60px;
+  width: 60px;
   height: 60px;
-    border-radius: 8px;
+  border-radius: 8px;
   background: var(--recipe-card-bg);
   @media screen and (min-width: 768px) {
     width: 93px;
     height: 97px;
-  }`;
-  
+  }
+`;
+
 export const ProductContainer = styled.div`
   display: flex;
   align-items: top;
