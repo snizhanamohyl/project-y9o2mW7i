@@ -45,6 +45,6 @@ export default function MobMenu({ toggleMenu, isOpen }) {
             )}
             </NavList>
         </nav>
-        <ThemeToggler customerStyles={`position: absolute; bottom: 18px; left: 16px; @media (min-width: 768px) {left: 32px; bottom: 32px;}`}/>
+        <ThemeToggler customerStyles={`position: absolute; bottom: 36px; left: 16px; @media (min-width: 768px) {left: 32px; bottom: 32px;}`}/>
     </MobMenuWrap>
 }

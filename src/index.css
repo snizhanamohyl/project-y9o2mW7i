@@ -130,6 +130,8 @@
   --transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   --backdrop-color: rgba(0, 0, 0, 0.05);
+
+  --text-color: #23262a;
 }
 
 .dark {
@@ -204,6 +206,8 @@
 
   --backdrop-color: rgba(255, 255, 255, 0.05);
 
+  --text-color: #fafafa;
+
   & h1 {
     --dark-accent: #fafafa;
   }
@@ -231,7 +235,9 @@
     & button {
       --accent: #22252a;
     }
+    
   }
+  
 }
 
 body {

@@ -1,11 +1,15 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { Button, Form, Input } from './SearchForm.styled';
+import useWindowWidth from 'hooks/useWindowWidth';
 
 export default function SearchForm({ onSubmit, query, isLoading }) {
+  const width = useWindowWidth();
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const isSearchPage = pathname.includes('/search');
+
+  const inputBgColor = width < 768 ? 'var(--card-title-bg)' : 'var(--search-input-bg)';
 
   const submitFromMain = e => {
     e.preventDefault();
@@ -16,7 +20,7 @@ export default function SearchForm({ onSubmit, query, isLoading }) {
   };
 
   return (
-    <Form
+    <Form $inputBgColor={inputBgColor}
       onSubmit={isSearchPage ? onSubmit : submitFromMain}
       issearchpage={isSearchPage.toString()}
     >

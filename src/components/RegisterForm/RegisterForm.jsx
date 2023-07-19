@@ -33,6 +33,8 @@ import {
   Loader,
   ServerError,
 } from 'pages/RegisterPage/RegisterPage.styled';
+import { resetError } from 'redux/auth/auth-slice';
+import { useEffect, useState } from 'react';
 
 const initialValues = {
   name: '',
@@ -41,6 +43,7 @@ const initialValues = {
 };
 
 export const RegisterForm = () => {
+  const [showNotific, setShowNotific] = useState(false);
   const dispatch = useDispatch();
 
   const width = useWindowWidth();
@@ -61,10 +64,28 @@ export const RegisterForm = () => {
       });
   };
 
+  useEffect(() => {
+    const onServerError = () => {
+      if (
+        serverError &&
+        (serverErrorStatus === 404 || serverErrorStatus === 500)
+      ) {
+        setShowNotific(true);
+        dispatch(resetError());
+      }
+    };
+
+    onServerError();
+  }, [dispatch, serverError, serverErrorStatus]);
+
   return (
     <>
-      {serverError && (
-        <Notification text="Oops, something went wrong, please try again later" />
+      {showNotific && (
+        <Notification
+          setShowNotific={setShowNotific}
+          severity="error"
+          text="Oops, something went wrong, please try again later"
+        />
       )}
       <Formik
         initialValues={initialValues}
@@ -73,6 +94,7 @@ export const RegisterForm = () => {
         validateOnChange={false}
         validateOnBlur={false}
       >
+        
         {({ errors, touched }) => (
           <Form autoComplete="off">
             {errors.name && touched.name ? (

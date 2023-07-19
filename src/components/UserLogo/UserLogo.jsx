@@ -6,6 +6,7 @@ import { Avatar, AvatarImg, UserName, UserWrap, Letter} from './UserLogo.styled'
 import PopoverMenu from 'components/Popover/PopoverMenu ';
 import useWindowWidth from "hooks/useWindowWidth";
 import { getUser } from 'redux/auth/selectors';
+import { useLocation } from 'react-router-dom';
 
 const theme = createTheme({
   components: {
@@ -23,8 +24,12 @@ const theme = createTheme({
 export default function UserLogo () {
   const width = useWindowWidth();
 
+  const { pathname } = useLocation();
+  const isMainPage = pathname === '/';
+  const isRecipePage = pathname.includes('/recipe/');
+
   const avatarSize = width < 768 ? '34px' : '44px';
-  const userColor = width < 1440 ? 'inherit' : '#23262a';
+  const userColor = width < 1440 ? 'inherit' : ((isMainPage || isRecipePage) ? '#23262a' : 'var(--text-color)');
   const user = useSelector(getUser);
 
   const [anchorEl, setAnchorEl] = useState(null);

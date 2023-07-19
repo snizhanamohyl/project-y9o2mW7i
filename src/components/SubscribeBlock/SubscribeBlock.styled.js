@@ -1,3 +1,4 @@
+import {Field, Form, ErrorMessage} from "formik";
 import styled from 'styled-components';
 
 export const SubscribeMainText = styled.p`
@@ -48,7 +49,7 @@ export const ButtonsFooterContainer = styled.div`
 
 export const EmailInputBox = styled.div`
   position: relative;
-  margin: 0 auto 12px auto;
+  margin: 0 auto 24px auto;
   width: 204px;
   height: 38px;
 
@@ -61,7 +62,18 @@ export const EmailInputBox = styled.div`
   @media (min-width: 1440px) {
     width: 340px;
     height: 60px;
-    margin: 0 0 16px 0;
+    margin: 0 0 40px 0;
+  }
+`;
+
+export const FormEl = styled(Form)`
+   
+   @media (min-width: 768px) {
+    display: flex;
+  }
+
+   @media (min-width: 1440px) {
+    display: block;
   }
 `;
 
@@ -82,7 +94,13 @@ export const IconLetter = styled.svg`
   }
 `;
 
-export const EmailInput = styled.input`
+export const IconLetterError = styled(IconLetter)`
+   color: var(--error-red);
+`;
+
+
+
+export const EmailInput = styled(Field)`
   background-color: transparent;
   padding-left: 42px;
   border-radius: 10px;
@@ -112,7 +130,7 @@ export const EmailInput = styled.input`
     height: 50px;
     padding-left: 50px;
     margin-left: 0;
-    margin-bottom: 0;
+    margin-bottom: 4px;
     font-weight: 400;
     line-height: 1.28;
     font-size: 14px;
@@ -122,13 +140,14 @@ export const EmailInput = styled.input`
     }
   }
 
+
   @media (min-width: 1440px) {
     width: 340px;
     height: 60px;
     padding-left: 52px;
     margin-right: 0;
     margin-left: 0;
-    margin-bottom: 16px;
+    margin-bottom: 4px;
     font-size: 18px;
 
     &::placeholder {
@@ -136,6 +155,23 @@ export const EmailInput = styled.input`
     }
   }
 `;
+
+export const ErrorEmailInput = styled(EmailInput)`
+  border: 1px solid var(--error-red);
+`;
+
+export const ErrorMessageEmail = styled(ErrorMessage)`
+      color: var(--error-red);
+      text-align: initial;
+      font-size: 10px;
+
+       @media (min-width: 768px) {
+      font-size: 14px;
+      
+  }
+`;
+
+
 
 export const SubscribeBtn = styled.button`
   width: 204px;

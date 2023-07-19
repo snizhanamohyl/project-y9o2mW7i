@@ -18,7 +18,14 @@ export const InputWrapper = styled.div`
   align-items: center;
   height: 53px;
   max-width: 194px;
-  outline: 1px solid var(--add-input-stroke);
+  border: 1px solid var(--add-input-stroke);
+  transition: border-color var(--transition-time) var(--transition-function);
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    border-color: var(--input-border-color-focus);
+  }
 
   background-color: var(--input-bg-color);
   border-radius: 6px;
@@ -41,11 +48,6 @@ export const InputWrapper = styled.div`
   @media screen and (min-width: 768px) {
     max-width: 398px;
     height: 59px;
-  }
-
-  &:hover,
-  &:focus {
-    outline-color: var(--input-border-color-focus);
   }
 `;
 

@@ -23,8 +23,7 @@ export const Button = styled.button`
     transition: stroke var(--transition-time) var(--transition-function);
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     span {
       color: var(--accent-green);
       opacity: 0.8;
@@ -75,13 +74,14 @@ export const List = styled.ul`
 export const Option = styled.li`
   padding: 4px 0;
 
-  color: ${({ $active }) => ($active ? 'var(--accent)' : 'var(--select-color)')};
+  color: ${({ $active }) =>
+    $active ? 'var(--add-socials)' : 'var(--select-color)'};
+  opacity: ${({ $active }) => ($active ? 1 : 0.5)};
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.24px;
-  opacity: 0.5;
   transition: color var(--transition-time) var(--transition-function);
   cursor: pointer;
 
