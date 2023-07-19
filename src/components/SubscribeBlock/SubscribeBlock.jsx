@@ -4,9 +4,11 @@ import {
     ButtonsFooterContainer,
     EmailInput,
     ErrorEmailInput,
+    ErrorMessageEmail,
     EmailInputBox,
     FormEl,
     IconLetter,
+    IconLetterError,
     SubscribeBtn,
     SubscribeMainText,
     SubscribeText,
@@ -49,7 +51,7 @@ export default function SubscribeBlock() {
     resetForm();
   };
   
-
+ 
   return (<ButtonsFooterContainer>
 
     {status === 404
@@ -70,13 +72,22 @@ export default function SubscribeBlock() {
       {({ errors, touched }) => (
         <FormEl>
             <EmailInputBox> 
-                <IconLetter width={logoWidth} height={logoHeight}>
-                <use href={`${sprite}#icon-letter`}></use>    
-                </IconLetter>
-              {errors.email && touched.email ? (
-              <ErrorEmailInput type="email" name="email"  placeholder="Enter your email address"/>
+
+            {errors.email && touched.email ? (
+              <>
+                 <IconLetterError width={logoWidth} height={logoHeight}>
+              <use href={`${sprite}#icon-letter`}></use>    
+                 </IconLetterError>  
+              <ErrorEmailInput type="email" name="email" placeholder="Enter your email address" />
+              <ErrorMessageEmail name="email" component="p"/>
+              </> 
             ) : (
-              <EmailInput type="email" name="email"   placeholder="Enter your email address"/>
+              <>
+                 <IconLetter width={logoWidth} height={logoHeight}>
+              <use href={`${sprite}#icon-letter`}></use>    
+                 </IconLetter>    
+                  <EmailInput type="email" name="email" placeholder="Enter your email address" />
+              </>      
             )}  
           </EmailInputBox>
         <SubscribeBtn type="submit">Subscribe</SubscribeBtn>
