@@ -163,8 +163,12 @@ export const ErrorEmailInput = styled(EmailInput)`
 export const ErrorMessageEmail = styled(ErrorMessage)`
       color: var(--error-red);
       text-align: initial;
+      font-size: 10px;
 
-
+       @media (min-width: 768px) {
+      font-size: 14px;
+      
+  }
 `;
 
 
