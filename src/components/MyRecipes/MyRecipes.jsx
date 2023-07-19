@@ -19,10 +19,13 @@ const MyRecipes = () => {
         fetchMyRecipes().then(data => {
           if (data) {
             setRecipes(data);
-          } else {
-            setRecipes('');
-            navigate('/notFound');
+          } 
+
+          if(data === ''){
+              setRecipes('');
+              navigate('/notFound');
           }
+          
         });
       }, [navigate]);
 
