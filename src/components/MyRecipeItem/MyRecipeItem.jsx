@@ -8,6 +8,7 @@ import {
     TimeCard,
     Container,
     ContainerHeaderRecipe,
+    ContainerImg
         } from '../MyRecipeItem/MyRecipesItem.styled';
 import ButtonDelRicepe from '../ButtonDelRecipe/ButtonDel';
 import ButtonRecipeSee from '../ButtonRecipeSee/ButtonRecipeSee';
@@ -21,7 +22,9 @@ const MyRecipeItem = ({recipe, isFavorites, onDeleteClick}) => {
 
     return(
                 <ContainerCard> 
-                    <ImgCard src={preview} alt={title} />
+                    <ContainerImg>
+                        <ImgCard src={preview} alt={title} />
+                    </ContainerImg>
                     <Container>
                         <ContainerContent>
                             <ContainerHeaderRecipe>

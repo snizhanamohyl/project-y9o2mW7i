@@ -24,11 +24,10 @@ export const ContainerCard = styled.div`
     }
 `
 
-
-export const ImgCard = styled.img`
+export const ContainerImg = styled.div`
     width: 124px;
     height: 124px;
-    border-radius: 8px;
+    flex: 0 0 auto;
 
     @media screen and (min-width: 768px) {
         width: 228px;
@@ -39,6 +38,13 @@ export const ImgCard = styled.img`
         width: 318px;
         height: 324px;
     }
+`
+
+export const ImgCard = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 `
 
 export const TitleCard = styled.h2`
