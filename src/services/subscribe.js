@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const storage = JSON.parse(localStorage.getItem('persist:auth'));
-const { token } = storage;
+// const storage = JSON.parse(localStorage.getItem('persist:auth'));
+// const { token } = storage;
 
 
 async function subscribe(email) {
@@ -10,11 +10,12 @@ async function subscribe(email) {
       const response = await axios.patch(`/subscribe`, {
       "subscription": "subscribe",
       "email": email
-      }, {
-        headers: {
-          Authorization: `Bearer ${token.slice(1, -1)}`,
-        },
-      });
+      })
+      //   , {
+      //   headers: {
+      //     Authorization: `Bearer ${token.slice(1, -1)}`,
+      //   },
+      // });
         
     return response;
 
