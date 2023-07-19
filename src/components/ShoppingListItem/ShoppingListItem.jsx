@@ -4,7 +4,7 @@ import {
   ProductImg,
   ProductContainer,
   RemoveBtn,
-  SvgRemove
+  SvgRemove, Svg
 } from './ShoppingListItem.styled';
 import sprite from 'assets/sprite.svg';
 
@@ -19,7 +19,9 @@ export default function ProductListItem({
   return (
     <>
       <ProductContainer>
-        <ProductImg src={url} />
+        {url? (<ProductImg src={url} />):(<Svg width={57} height={57}>
+              <use href={`${sprite}#icon-icon-food`}></use>
+            </Svg>)}
         <span>{name}</span>
       </ProductContainer>
       <OptionContainer>

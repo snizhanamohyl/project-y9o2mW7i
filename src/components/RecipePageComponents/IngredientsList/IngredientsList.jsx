@@ -8,7 +8,6 @@ export default function RecipePageIngredientsList({ ingredients }) {
       {ingredients?.map(ingredient => {
         const { measure } = ingredient;
         const newId = nanoid(24);
-
         const newStructure = {
           ...ingredient.id,
           measure,

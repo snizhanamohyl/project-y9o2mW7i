@@ -58,6 +58,16 @@ export const ProductImg = styled.img`
   }
 `;
 
+export const Svg = styled.svg`
+ width: 60px;
+  height: 60px;
+    border-radius: 8px;
+  background: var(--recipe-card-bg);
+  @media screen and (min-width: 768px) {
+    width: 93px;
+    height: 97px;
+  }`;
+  
 export const ProductContainer = styled.div`
   display: flex;
   align-items: top;

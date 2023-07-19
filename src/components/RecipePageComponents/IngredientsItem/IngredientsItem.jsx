@@ -11,6 +11,7 @@ import CheckboxLabels from '../Checkbox/Checkbox';
 
 export default function RecipePageIngredientsItem({ ingredient }) {
   const { name, img, measure, newId } = ingredient;
+ 
 
   return (
     <>
