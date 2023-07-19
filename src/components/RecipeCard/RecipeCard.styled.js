@@ -21,6 +21,7 @@ export const RecipeImg = styled.img`
   height: 322px;
   border-radius: 8px;
   background-color: gray;
+  object-fit: cover;
 `;
 
 export const Recipe = styled.p`

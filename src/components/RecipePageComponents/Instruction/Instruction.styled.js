@@ -91,7 +91,7 @@ export const InstructionItem = styled.li`
 `;
 
 export const ImageIngredient = styled.img`
-object-fit: contain;
+  object-fit: cover;
   width: 343px;
   height: 250px;
   @media (min-width: 768px) {

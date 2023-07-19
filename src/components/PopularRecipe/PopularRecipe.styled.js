@@ -47,7 +47,7 @@ export const Image = styled.img`
   min-width: 102px;
   width: 102px;
   height: 85px;
-
+  object-fit: cover;
   border-radius: 8px;
 `;
 
