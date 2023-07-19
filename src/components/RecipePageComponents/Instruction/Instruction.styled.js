@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 export const RecipeInstruction = styled.section`
   max-width: 375px;
   padding: 0 0 100px 0;
@@ -14,7 +15,7 @@ export const RecipeInstruction = styled.section`
     padding: 0 0 262px 0;
 
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
     div {
       max-width: 757px;
     }
@@ -86,5 +87,15 @@ export const InstructionItem = styled.li`
     @media (min-width: 768px) {
       font-size: 14px;
     }
+  }
+`;
+
+export const ImageIngredient = styled.img`
+object-fit: contain;
+  width: 343px;
+  height: 250px;
+  @media (min-width: 768px) {
+    width: 433px;
+    height: 332px;
   }
 `;

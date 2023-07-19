@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const BtnAddFavorite = styled.button`
-  width: 150px;
-  height: 35px;
+  padding: 10px 18px;
   margin-bottom: 42px;
   transition: color var(--transition-time) var(--transition-function),
     background-color var(--transition-time) var(--transition-function);
@@ -25,8 +24,7 @@ export const BtnAddFavorite = styled.button`
 
   @media (min-width: 768px) {
     margin-bottom: 60px;
-    width: 278px;
-    height: 59px;
+    padding: 18px 44px;
 
     letter-spacing: -0.36px;
     font-size: 16px;

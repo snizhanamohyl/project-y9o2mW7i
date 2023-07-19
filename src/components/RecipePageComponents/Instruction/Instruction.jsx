@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import {
+  ImageIngredient,
   Instruction,
   InstructionItem,
   RecipeInstruction,
@@ -8,9 +9,10 @@ import {
 import Video from '../Video/Video';
 
 export default function RecipePageInstruction({ recipe }) {
-  const { instructions, youtube } = recipe;
+  const { instructions, preview, youtube, title } = recipe;
 
-  const structureTexts = instructions?.split(/\r\n\r\n|\r\n|\n/g);
+
+  const structureTexts = instructions?.split(/\r\n\r\n|\r\n|\n|\n\n\n|\n\n\|/g);
   const link = youtube?.slice(32);
 
   return (
@@ -23,7 +25,12 @@ export default function RecipePageInstruction({ recipe }) {
           ))}
         </Instruction>
       </div>
-      <Video link={link} />
+
+      {!link ? (
+        <ImageIngredient alt={title} src={preview} />
+      ) : (
+        <Video link={link} />
+      )}
     </RecipeInstruction>
   );
 }

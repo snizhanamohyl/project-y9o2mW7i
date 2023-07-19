@@ -1,4 +1,4 @@
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import RecipePageIngredientsItem from '../IngredientsItem/IngredientsItem';
 import { IngredientsList } from './IngredientsList.styled';
 export default function RecipePageIngredientsList({ ingredients }) {
@@ -7,9 +7,8 @@ export default function RecipePageIngredientsList({ ingredients }) {
   return (
     <IngredientsList>
       {ingredients?.map(ingredient => {
-        const { id, measure } = ingredient;
-        const newId = (id._id + recipeId).slice(12, 36);
-
+        const { measure } = ingredient;
+        const newId = ingredient.id._id + recipeId;
         const newStructure = {
           ...ingredient.id,
           measure,

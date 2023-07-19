@@ -36,7 +36,22 @@ export const ListItem = styled.li`
     align-items: center;
   }
 `;
+export const Svg = styled.svg`
+  width: 57px;
+  height: 57px;
+  margin-right: 12px;
 
+  @media (min-width: 768px) {
+    width: 112px;
+    height: 112px;
+    margin-right: 24px;
+  }
+  @media (min-width: 1440px) {
+    margin-right: 40px;
+    width: 128px;
+    height: 128px;
+  }
+`;
 export const ImageIngredient = styled.img`
   width: 57px;
   height: 57px;
