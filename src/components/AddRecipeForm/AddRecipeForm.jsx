@@ -66,7 +66,7 @@ export default function AddRecipeForm() {
       <Button type="submit" onClick={formik.handleSubmit}>
         Add
       </Button>
-      {error !== '' && <Notification text={error} />}
+      {error !== '' && <Notification text={error} severity="error" />}
 
       {isLoaderShown && (
         <Backdrop>

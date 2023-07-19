@@ -1,29 +1,28 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
-    ButtonsFooterContainer,
-    EmailInput,
-    EmailInputBox,
-    IconLetter,
-    SubscribeBtn,
-    SubscribeMainText,
-    SubscribeText
-} from "./SubscribeBlock.styled";
+  ButtonsFooterContainer,
+  EmailInput,
+  EmailInputBox,
+  IconLetter,
+  SubscribeBtn,
+  SubscribeMainText,
+  SubscribeText,
+} from './SubscribeBlock.styled';
 import sprite from '../../assets/sprite.svg';
-import useWindowWidth from "../../hooks/useWindowWidth";
-import subscribe from "services/subscribe";
-import Notification from "components/Notification/Notification";
-
+import useWindowWidth from '../../hooks/useWindowWidth';
+import subscribe from 'services/subscribe';
+import Notification from 'components/Notification/Notification';
 
 export default function SubscribeBlock() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [status, setStatus] = useState(null);
   const width = useWindowWidth();
   let logoHeight = 16;
   let logoWidth = 12;
 
   if (width > 768) {
-   logoHeight = 24;
-   logoWidth = 18;
+    logoHeight = 24;
+    logoWidth = 18;
   }
 
   if (width > 1450) {
@@ -31,13 +30,13 @@ export default function SubscribeBlock() {
     logoHeight = 28;
   }
 
-  const onInputChange = (e) => {
+  const onInputChange = e => {
     const { value } = e.currentTarget;
     setEmail(value);
-  }; 
-   
+  };
+
   const onSendEmail = () => {
-    if (email === "") {
+    if (email === '') {
       setStatus(400);
       return;
     }
@@ -46,36 +45,40 @@ export default function SubscribeBlock() {
       .then(resp => setStatus(resp.status))
       .catch(setStatus(400));
 
-     setEmail("");   
+    setEmail('');
   };
-  
-  return (<ButtonsFooterContainer>
 
-    {status === 400
-      ? <Notification text={"Failed to subscribe, please try again."} />
-      : <></>
-    }
+  return (
+    <ButtonsFooterContainer>
+      {status === 400 ? (
+        <Notification
+          text={'Failed to subscribe, please try again.'}
+          severity="error"
+        />
+      ) : (
+        <></>
+      )}
 
-    <SubscribeMainText>Subscribe to our Newsletter</SubscribeMainText>  
-    <SubscribeText>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</SubscribeText>
+      <SubscribeMainText>Subscribe to our Newsletter</SubscribeMainText>
+      <SubscribeText>
+        Subscribe up to our newsletter. Be in touch with latest news and special
+        offers, etc.
+      </SubscribeText>
 
-    <EmailInputBox>
-      <IconLetter width={logoWidth} height={logoHeight}>
-        <use href={`${sprite}#icon-letter`}></use>    
-      </IconLetter>      
-      <EmailInput
-        onChange={onInputChange}
-        name="email"
-        value={email}
-        type="email"
-        placeholder="Enter your email address"
-        />     
+      <EmailInputBox>
+        <IconLetter width={logoWidth} height={logoHeight}>
+          <use href={`${sprite}#icon-letter`}></use>
+        </IconLetter>
+        <EmailInput
+          onChange={onInputChange}
+          name="email"
+          value={email}
+          type="email"
+          placeholder="Enter your email address"
+        />
       </EmailInputBox>
 
-      <SubscribeBtn onClick={onSendEmail}>
-        Subscribe
-      </SubscribeBtn>
-    </ButtonsFooterContainer>);
-};
-
-
+      <SubscribeBtn onClick={onSendEmail}>Subscribe</SubscribeBtn>
+    </ButtonsFooterContainer>
+  );
+}
