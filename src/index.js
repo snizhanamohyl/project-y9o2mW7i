@@ -7,7 +7,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 import 'modern-normalize';
 
 import App from 'components/App/App';
-// import './fonts/Goldman/Goldman-Bold.ttf';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

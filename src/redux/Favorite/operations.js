@@ -32,7 +32,7 @@ export const deleteRecipeFromFavorites = createAsyncThunk(
   async (recipeId, { rejectWithValue }) => {
     try {
       const { data } = await axios.delete(`/favorites/${recipeId}`);
-      return data;
+      return { ...data, recipeId };
     } catch (error) {
       return rejectWithValue(error.message);
     }

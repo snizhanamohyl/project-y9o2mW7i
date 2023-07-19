@@ -23,6 +23,10 @@ export const getAllShoppingList = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const { data } = await axios.get('/shopping-list');
+
+      if (data.length === 0)
+        return thunkAPI.rejectWithValue({ message: 'Shopping list is empty' });
+
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -35,7 +39,7 @@ export const deleteIngredient = createAsyncThunk(
     try {
       const { data } = await axios.delete(`/shopping-list/${ingredient}`);
 
-      return data;
+      return { ...data, newId: ingredient };
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

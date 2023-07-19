@@ -33,7 +33,7 @@ const favoriteSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       const index = state.recipeList?.findIndex(
-        recipe => recipe._id === action.payload._id
+        recipe => recipe._id === action.payload.recipeId
       );
       state.recipeList?.splice(index, 1);
     },

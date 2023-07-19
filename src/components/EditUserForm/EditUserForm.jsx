@@ -10,7 +10,7 @@ import {CloseIcon, CloseButton} from './EditUserForm.styled.js'
 import {
   FormStyled, UserAvatarWrapper, AvatarLabel, PlusIcon, UserImgWrapper,
   InputButtonWrapper, NameLabel, NameInput, UserIconStyled, EditBtn,
-  EditIcon, SubmitBtn, ErrorMessage, UserIcon} from './EditUserForm.styled.js';
+  EditIcon, SubmitBtn, ErrorMessage, UserIcon, Avatar} from './EditUserForm.styled.js';
 
 export default function EditUserForm({ handleCloseModal }) {
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ export default function EditUserForm({ handleCloseModal }) {
                 <AvatarLabel htmlFor="avatarURL">
                   {pathToUserAvatar ? (
                     <UserImgWrapper>
-                      <img src={pathToUserAvatar} alt="user-avatar" />
+                      <Avatar src={pathToUserAvatar} alt="user-avatar" />
                     </UserImgWrapper>
                   ) : (
                     <UserImgWrapper>
