@@ -1,84 +1,109 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { Formik} from "formik";
 import {
-  ButtonsFooterContainer,
-  EmailInput,
-  EmailInputBox,
-  IconLetter,
-  SubscribeBtn,
-  SubscribeMainText,
-  SubscribeText,
-} from './SubscribeBlock.styled';
+    ButtonsFooterContainer,
+    EmailInput,
+    ErrorEmailInput,
+    ErrorMessageEmail,
+    EmailInputBox,
+    FormEl,
+    IconLetter,
+    IconLetterError,
+    SubscribeBtn,
+    SubscribeMainText,
+    SubscribeText,
+} from "./SubscribeBlock.styled";
 import sprite from '../../assets/sprite.svg';
-import useWindowWidth from '../../hooks/useWindowWidth';
-import subscribe from 'services/subscribe';
-import Notification from 'components/Notification/Notification';
+import useWindowWidth from "../../hooks/useWindowWidth";
+import subscribe from "services/subscribe";
+import Notification from "components/Notification/Notification";
+import { userSubscribeSchema } from "schemas/userSubscribeSchema";
+
 
 export default function SubscribeBlock() {
-  const [email, setEmail] = useState('');
   const [status, setStatus] = useState(null);
   const width = useWindowWidth();
   let logoHeight = 16;
   let logoWidth = 12;
 
   if (width > 768) {
-    logoHeight = 24;
-    logoWidth = 18;
+   logoHeight = 24;
+   logoWidth = 18;
   }
 
-  if (width > 1450) {
+  if (width > 1440) {
     logoWidth = 24;
     logoHeight = 28;
   }
 
-  const onInputChange = e => {
-    const { value } = e.currentTarget;
-    setEmail(value);
-  };
+  const onSendEmail = (values, action) => {
+    const { email } = values;
+    const { resetForm } = action;
 
-  const onSendEmail = () => {
-    if (email === '') {
-      setStatus(400);
-      return;
+    if (email === "") {
+       return
     }
 
     subscribe(email)
-      .then(resp => setStatus(resp.status))
-      .catch(setStatus(400));
-
-    setEmail('');
+      .then(resp => setStatus(resp?.request?.status))
+      .finally(setStatus(null))
+    
+    resetForm();
   };
+  
+ 
+  return (<ButtonsFooterContainer>
 
-  return (
-    <ButtonsFooterContainer>
-      {status === 400 ? (
-        <Notification
-          text={'Failed to subscribe, please try again.'}
-          severity="error"
-        />
-      ) : (
-        <></>
-      )}
+    {status === 404
+      ? <Notification severity={"error"} text={"Failed to subscribe, please try again."} />
+      : <></>
+    } 
 
-      <SubscribeMainText>Subscribe to our Newsletter</SubscribeMainText>
-      <SubscribeText>
-        Subscribe up to our newsletter. Be in touch with latest news and special
-        offers, etc.
-      </SubscribeText>
+    {status === 200 
+      ? <Notification severity={"success"} text={"Subscription successful, please check your email"} />
+      : <></>
+    }
 
-      <EmailInputBox>
-        <IconLetter width={logoWidth} height={logoHeight}>
-          <use href={`${sprite}#icon-letter`}></use>
-        </IconLetter>
-        <EmailInput
-          onChange={onInputChange}
-          name="email"
-          value={email}
-          type="email"
-          placeholder="Enter your email address"
-        />
-      </EmailInputBox>
+    <SubscribeMainText>Subscribe to our Newsletter</SubscribeMainText>  
+    <SubscribeText>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</SubscribeText>
 
-      <SubscribeBtn onClick={onSendEmail}>Subscribe</SubscribeBtn>
-    </ButtonsFooterContainer>
-  );
-}
+  <Formik
+        initialValues={{email: ""}}
+        validationSchema={userSubscribeSchema}
+        onSubmit={onSendEmail}
+        validateOnChange={false}
+        validateOnBlur={false} >
+      
+      {({ errors, touched }) => (
+        <FormEl>
+            <EmailInputBox> 
+
+            {errors.email && touched.email ? (
+              <>
+                 <IconLetterError width={logoWidth} height={logoHeight}>
+              <use href={`${sprite}#icon-letter`}></use>    
+                 </IconLetterError>  
+              <ErrorEmailInput type="email" name="email" placeholder="Enter your email address" />
+              <ErrorMessageEmail name="email" component="p"/>
+              </> 
+            ) : (
+              <>
+                 <IconLetter width={logoWidth} height={logoHeight}>
+              <use href={`${sprite}#icon-letter`}></use>    
+                 </IconLetter>    
+                  <EmailInput type="email" name="email" placeholder="Enter your email address" />
+              </>      
+            )}  
+          </EmailInputBox>
+        <SubscribeBtn type="submit">Subscribe</SubscribeBtn>
+        </FormEl>
+      )}  
+     
+    </Formik >
+    
+  </ButtonsFooterContainer>);
+};
+
+
+
+

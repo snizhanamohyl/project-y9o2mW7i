@@ -94,6 +94,7 @@ export const RegisterForm = () => {
         validateOnChange={false}
         validateOnBlur={false}
       >
+        
         {({ errors, touched }) => (
           <Form autoComplete="off">
             {errors.name && touched.name ? (
