@@ -85,8 +85,12 @@ export const updateUser = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const formData = new FormData();
+
       formData.append('name', credentials.name.trim());
-      formData.append('avatarURL', credentials.avatarURL);
+
+      if (credentials.avatarURL !== '') {
+        formData.append('avatarURL', credentials.avatarURL);
+      }
 
       const { data } = await axios.patch('/users/update', formData, {
         headers: {
