@@ -58,24 +58,33 @@ export const SigninForm = () => {
         resetForm && actions.resetForm();
       })
       .catch(error => {
-        console.log(error)
+        console.log(error);
       });
   };
 
   useEffect(() => {
     const onServerError = () => {
-        if (serverError && (serverErrorStatus === 404 || serverErrorStatus === 500 )) {
+      if (
+        serverError &&
+        (serverErrorStatus === 404 || serverErrorStatus === 500)
+      ) {
         setShowNotific(true);
         dispatch(resetError());
-      } 
-    }
+      }
+    };
 
     onServerError();
-  }, [dispatch, serverError, serverErrorStatus])
+  }, [dispatch, serverError, serverErrorStatus]);
 
   return (
     <>
-      { showNotific && <Notification setShowNotific={setShowNotific} text="Oops, something went wrong, please try again later" />}
+      {showNotific && (
+        <Notification
+          setShowNotific={setShowNotific}
+          text="Oops, something went wrong, please try again later"
+          severity="error"
+        />
+      )}
       <Formik
         initialValues={initialValues}
         validationSchema={userSigninSchema}

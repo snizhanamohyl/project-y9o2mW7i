@@ -66,18 +66,27 @@ export const RegisterForm = () => {
 
   useEffect(() => {
     const onServerError = () => {
-        if (serverError && (serverErrorStatus === 404 || serverErrorStatus === 500 )) {
+      if (
+        serverError &&
+        (serverErrorStatus === 404 || serverErrorStatus === 500)
+      ) {
         setShowNotific(true);
         dispatch(resetError());
-      } 
-    }
+      }
+    };
 
     onServerError();
-  }, [dispatch, serverError, serverErrorStatus])
+  }, [dispatch, serverError, serverErrorStatus]);
 
   return (
     <>
-      {showNotific && <Notification setShowNotific={setShowNotific} text="Oops, something went wrong, please try again later" />}
+      {showNotific && (
+        <Notification
+          setShowNotific={setShowNotific}
+          severity="error"
+          text="Oops, something went wrong, please try again later"
+        />
+      )}
       <Formik
         initialValues={initialValues}
         validationSchema={userRegisterSchema}

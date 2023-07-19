@@ -66,7 +66,7 @@ export default function AddRecipeForm() {
       <Button type="submit" onClick={formik.handleSubmit}>
         Add
       </Button>
-      {error !== '' && <Notification text={error} />}
+      {error !== '' && <Notification text={error} severity="error" />}
 
       {isLoaderShown && (
         <Backdrop>
@@ -74,9 +74,9 @@ export default function AddRecipeForm() {
             visible
             height={75}
             width={75}
-            color="var(--accent)"
+            color="var(--accent-green)"
             ariaLabel="oval-loading"
-            secondaryColor="var(--accent)"
+            secondaryColor="var(--accent-green)"
             strokeWidth={8}
             strokeWidthSecondary={8}
           />
