@@ -6,33 +6,20 @@ import { fetchMyRecipes, fetchDeleteMyRecipes} from '../../services/fetchMyRecip
 import { MyRecipesTitle, Container, SectionPage } from './MyRecipes.styled';
 import EmptyPage from '../EmptyPage/EmptyPage';
 import { nanoid } from 'nanoid';
-import { useNavigate } from 'react-router';
 
 const MyRecipes = () => {
     const [recipes, setRecipes] = useState([]);
-    const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState(1);
 
   const recipesPerPage = 4;
 
-    useEffect(() => {
-        fetchMyRecipes().then(data => {
-          if (data) {
-            setRecipes(data);
-          } else {
-            setRecipes('');
-            navigate('/notFound');
-          }
-        });
-      }, [navigate]);
+  useEffect(() => {
+    fetchMyRecipes().then(data => setRecipes(data));
+    }, []);
 
     const uniqueKey = nanoid();
 
-    console.log(recipes)
-
-    // індекс останнього рецепту на поточній сторінці
     const lastRecipeIndex = currentPage * recipesPerPage;
-    //індекс першого рецепту на поточній сторінці
     const firstRecipeIndex = lastRecipeIndex - recipesPerPage;
 
     const onDeleteClick = (id) => {
@@ -41,7 +28,7 @@ const MyRecipes = () => {
     };
 
 
-    let currentRecipes
+  let currentRecipes;
     
     if (Array.isArray(recipes)) {
         currentRecipes = recipes.slice(firstRecipeIndex, lastRecipeIndex);
