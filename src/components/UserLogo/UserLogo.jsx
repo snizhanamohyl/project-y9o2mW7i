@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Popover } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -21,7 +21,9 @@ const theme = createTheme({
           backgroundColor: 'var(--bg-color)',
         },},},},});
 
-export default function UserLogo () {
+export default function UserLogo() {
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
   const width = useWindowWidth();
 
   const { pathname } = useLocation();
@@ -33,11 +35,24 @@ export default function UserLogo () {
   const user = useSelector(getUser);
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const handleClick = event => { setAnchorEl(event.currentTarget); };
-  const handleClose = () => {setAnchorEl(null);};
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+    setIsPopoverOpen(true);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+    setIsPopoverOpen(false);
+  };
 
-  const open = Boolean(anchorEl);
-  const id = open ? 'simple-popover' : undefined;
+  const id = isPopoverOpen ? 'simple-popover' : undefined;
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    
+    if (html) {
+        html.style.overflow = isPopoverOpen ? "hidden" : "auto";
+    }
+  }, [isPopoverOpen]);
 
   return (
     <>
@@ -64,7 +79,7 @@ export default function UserLogo () {
       <ThemeProvider theme={theme}>
         <Popover
           id={id}
-          open={open}
+          open={isPopoverOpen}
           anchorEl={anchorEl}
           onClose={handleClose}
           anchorOrigin={{

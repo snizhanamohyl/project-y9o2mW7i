@@ -8,7 +8,7 @@ export default function RecipePageIngredientsList({ ingredients }) {
     <IngredientsList>
       {ingredients?.map(ingredient => {
         const { measure } = ingredient;
-        const newId = ingredient.id._id + recipeId;
+        const newId = ingredient.id?._id + recipeId;
         const newStructure = {
           ...ingredient.id,
           measure,
