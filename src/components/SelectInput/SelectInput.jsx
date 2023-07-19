@@ -100,7 +100,7 @@ export default function SelectInput({ onSelect, inputProps }) {
             height="50"
             width="50"
             radius="9"
-            color="var(--accent)"
+            color="var(--select-options-hover)"
             ariaLabel="three-dots-loading"
             visible
           />

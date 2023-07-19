@@ -86,7 +86,8 @@ export const Value = styled.span`
 `;
 
 export const Placeholder = styled(Value)`
-  opacity: 0.5;
+  color: var(--add-placeholder-color);
+  opacity: var(--add-input-opacity);
 `;
 
 export const ListWrapper = styled.div`
@@ -98,7 +99,7 @@ export const ListWrapper = styled.div`
   display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
   justify-content: center;
 
-  background-color: var(--white);
+  background-color: var(--select-options-bg);
   border-radius: 6px;
   box-shadow: 0px 6.518518447875977px 7.8222222328186035px 0px
     rgba(0, 0, 0, 0.03);
@@ -118,7 +119,7 @@ export const List = styled.ul`
 export const Option = styled.li`
   padding: 3px 0;
 
-  color: var(--black);
+  color: var(--select-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -127,7 +128,9 @@ export const Option = styled.li`
   opacity: 0.5;
 
   &:hover {
-    color: var(--accent);
+    color: var(--select-options-hover);
+    opacity: 1;
+    cursor: pointer;
   }
 
   @media screen and (min-width: 768px) {
@@ -140,11 +143,11 @@ export const FailureMessage = styled.p`
   display: flex;
   align-items: center;
 
-  color: var(--black);
+  color: var(--select-color);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  opacity: 0.5;
+  opacity: var(--add-input-opacity);
   text-align: center;
 
   @media screen and (min-width: 768px) {

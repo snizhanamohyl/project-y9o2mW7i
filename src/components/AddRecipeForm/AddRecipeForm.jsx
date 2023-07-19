@@ -74,9 +74,9 @@ export default function AddRecipeForm() {
             visible
             height={75}
             width={75}
-            color="var(--accent)"
+            color="var(--accent-green)"
             ariaLabel="oval-loading"
-            secondaryColor="var(--accent)"
+            secondaryColor="var(--accent-green)"
             strokeWidth={8}
             strokeWidthSecondary={8}
           />
