@@ -1,21 +1,24 @@
 import { useState } from "react";
+import { Formik} from "formik";
 import {
     ButtonsFooterContainer,
     EmailInput,
+    ErrorEmailInput,
     EmailInputBox,
+    FormEl,
     IconLetter,
     SubscribeBtn,
     SubscribeMainText,
-    SubscribeText
+    SubscribeText,
 } from "./SubscribeBlock.styled";
 import sprite from '../../assets/sprite.svg';
 import useWindowWidth from "../../hooks/useWindowWidth";
 import subscribe from "services/subscribe";
 import Notification from "components/Notification/Notification";
+import { userSubscribeSchema } from "schemas/userSubscribeSchema";
 
 
 export default function SubscribeBlock() {
-  const [email, setEmail] = useState("");
   const [status, setStatus] = useState(null);
   const width = useWindowWidth();
   let logoHeight = 16;
@@ -31,33 +34,25 @@ export default function SubscribeBlock() {
     logoHeight = 28;
   }
 
-  const onInputChange = (e) => {
-    const { value } = e.currentTarget;
-    setEmail(value);
-  }; 
-   
-  const onSendEmail = () => {
+  const onSendEmail = (values, action) => {
+    const { email } = values;
+    const { resetForm } = action;
+
     if (email === "") {
-      setStatus(400);
-
-      setTimeout(() => {
-         setStatus(200);
-      }, 2000);
-
-      return
+       return
     }
 
     subscribe(email)
       .then(resp => setStatus(resp?.request?.status))
       .finally(setStatus(200));
     
-    setEmail("");
+    resetForm();
   };
   
 
   return (<ButtonsFooterContainer>
 
-    {status === 400
+    {status === 404
       ? <Notification text={"Failed to subscribe, please try again."} />
       : <></>
     } 
@@ -65,23 +60,33 @@ export default function SubscribeBlock() {
     <SubscribeMainText>Subscribe to our Newsletter</SubscribeMainText>  
     <SubscribeText>Subscribe up to our newsletter. Be in touch with latest news and special offers, etc.</SubscribeText>
 
-    <EmailInputBox>
-      <IconLetter width={logoWidth} height={logoHeight}>
-        <use href={`${sprite}#icon-letter`}></use>    
-      </IconLetter>      
-      <EmailInput
-        onChange={onInputChange}
-        name="email"
-        value={email}
-        type="email"
-        placeholder="Enter your email address"
-        />     
-      </EmailInputBox>
-
-      <SubscribeBtn onClick={onSendEmail}>
-        Subscribe
-      </SubscribeBtn>
-    </ButtonsFooterContainer>);
+  <Formik
+        initialValues={{email: ""}}
+        validationSchema={userSubscribeSchema}
+        onSubmit={onSendEmail}
+        validateOnChange={false}
+        validateOnBlur={false} >
+      
+      {({ errors, touched }) => (
+        <FormEl>
+            <EmailInputBox> 
+                <IconLetter width={logoWidth} height={logoHeight}>
+                <use href={`${sprite}#icon-letter`}></use>    
+                </IconLetter>
+              {errors.email && touched.email ? (
+              <ErrorEmailInput type="email" name="email"  placeholder="Enter your email address"/>
+            ) : (
+              <EmailInput type="email" name="email"   placeholder="Enter your email address"/>
+            )}  
+          </EmailInputBox>
+        <SubscribeBtn type="submit">Subscribe</SubscribeBtn>
+        </FormEl>
+      )}  
+     
+    </Formik >
+    
+  </ButtonsFooterContainer>);
 };
+
 
 

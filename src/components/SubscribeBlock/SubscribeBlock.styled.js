@@ -1,3 +1,4 @@
+import {Field, Form} from "formik";
 import styled from 'styled-components';
 
 export const SubscribeMainText = styled.p`
@@ -65,6 +66,17 @@ export const EmailInputBox = styled.div`
   }
 `;
 
+export const FormEl = styled(Form)`
+   
+   @media (min-width: 768px) {
+    display: flex;
+  }
+
+   @media (min-width: 1440px) {
+    display: block;
+  }
+`;
+
 export const IconLetter = styled.svg`
   position: absolute;
   color: var(--bg-color);
@@ -82,7 +94,7 @@ export const IconLetter = styled.svg`
   }
 `;
 
-export const EmailInput = styled.input`
+export const EmailInput = styled(Field)`
   background-color: transparent;
   padding-left: 42px;
   border-radius: 10px;
@@ -122,6 +134,7 @@ export const EmailInput = styled.input`
     }
   }
 
+
   @media (min-width: 1440px) {
     width: 340px;
     height: 60px;
@@ -135,6 +148,10 @@ export const EmailInput = styled.input`
       font-size: 18px;
     }
   }
+`;
+
+export const ErrorEmailInput = styled(EmailInput)`
+  border: 1px solid var(--error-red);
 `;
 
 export const SubscribeBtn = styled.button`
