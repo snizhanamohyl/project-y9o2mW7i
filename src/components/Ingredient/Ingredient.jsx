@@ -34,7 +34,7 @@ export default function Ingredient({ errors, onDelete, onFieldsChange }) {
       </InputWrapper>
       <RemoveBtn type="button" onClick={onDelete}>
         <svg>
-          <use href={Sprite + '#icon-X'} ></use>
+          <use href={Sprite + '#icon-X'}></use>
         </svg>
       </RemoveBtn>
       {Boolean(errors?.id) && <ErrorMessage>{errors?.id}</ErrorMessage>}

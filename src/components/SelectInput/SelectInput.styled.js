@@ -95,7 +95,8 @@ export const ListWrapper = styled.div`
   right: 0;
   z-index: 10;
 
-  display: ${({ $isOpen }) => ($isOpen ? 'block' : 'none')};
+  display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
+  justify-content: center;
 
   background-color: var(--white);
   border-radius: 6px;
@@ -128,6 +129,23 @@ export const Option = styled.li`
   &:hover {
     color: var(--accent);
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+`;
+
+export const FailureMessage = styled.p`
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+  color: var(--black);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.5;
+  text-align: center;
 
   @media screen and (min-width: 768px) {
     font-size: 14px;

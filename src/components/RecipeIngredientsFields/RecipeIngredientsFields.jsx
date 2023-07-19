@@ -36,7 +36,7 @@ export default function RecipeIngredientsFields({ formik }) {
   const onDecrease = useCallback(() => {
     const newIngredients = [...ingredients];
 
-    newIngredients.shift();
+    newIngredients.pop();
     setFieldValue('ingredients', newIngredients);
   }, [ingredients, setFieldValue]);
 
