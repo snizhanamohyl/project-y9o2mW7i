@@ -31,7 +31,7 @@ export default function SubscribeBlock() {
    logoWidth = 18;
   }
 
-  if (width > 1450) {
+  if (width > 1440) {
     logoWidth = 24;
     logoHeight = 28;
   }
