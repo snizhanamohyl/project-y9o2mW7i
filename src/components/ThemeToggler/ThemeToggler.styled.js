@@ -7,6 +7,7 @@ export const SwitchBody = styled.label`
   border-radius: 50px;
   background-color: var(--color-toggler-bg);
   box-shadow: 0px 6px 8px 3px rgba(0, 0, 0, 0.1) inset;
+  cursor: pointer;
 
   ${({ $customerStyles }) => $customerStyles}
 `;
