@@ -19,10 +19,6 @@ export default function EditUserForm({ handleCloseModal }) {
   const [pathToUserAvatar, setPathToUserAvatar] = useState(user.avatarURL);
 
   const handleSubmit = values => {
-      // console.log("🚀 ~ file: EditUserForm.jsx:22 ~ handleSubmit ~ values:", values)
-      // if (values.avatarURL === '') {
-      //   values.avatarURL = user.avatarURL;
-      // }
     dispatch(updateUser(values))
     handleCloseModal();
     };

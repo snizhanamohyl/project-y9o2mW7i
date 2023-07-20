@@ -17,7 +17,7 @@ const theme = createTheme({
           padding: '18px',
           boxShadow: 'none',
           borderRadius: '8px',
-          border: 'var(--popover-border);',
+          border: '1px solid var(--accent-green)',
           backgroundColor: 'var(--bg-color)',
         },},},},});
 
