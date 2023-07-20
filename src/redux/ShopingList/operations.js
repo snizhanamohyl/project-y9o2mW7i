@@ -9,8 +9,9 @@ export const addIngredient = createAsyncThunk(
   async (ingredient, thunkAPI) => {
     try {
       const { data } = await axios.post('/shopping-list', ingredient);
+      const { name, img, desc, measure, newId } = data;
 
-      return data;
+      return { id: { name, img, desc }, measure, newId };
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }
@@ -39,7 +40,7 @@ export const deleteIngredient = createAsyncThunk(
     try {
       const { data } = await axios.delete(`/shopping-list/${ingredient}`);
 
-      return { ...data, newId: ingredient };
+      return { message: data, newId: ingredient };
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

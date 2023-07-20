@@ -60,9 +60,9 @@ export default function ShoppingListPage() {
           {isLoading ? <PageLoader/> : 
                     ingredients.length > 0 ?
                     ingredients.map(product => {
-                        const { _id, name, measure, newId, img} = product
+                      const { id: { name, img }, measure, newId } = product;
                         return (
-                          <ShoppingListItem key={_id}>
+                          <ShoppingListItem key={newId}>
                             <ProductListItem
                               name={name}
                               number={measure}
