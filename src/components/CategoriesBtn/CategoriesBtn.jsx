@@ -1,5 +1,9 @@
 import { BtnCategories } from './CategoriesBtn.styled';
 
 export default function CategoriesBtn() {
-  return <BtnCategories to="/categories">Other categories</BtnCategories>;
+  const onClick = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth"}) 
+  }
+
+  return <BtnCategories to="/categories" onClick={onClick}>Other categories</BtnCategories>;
 }
